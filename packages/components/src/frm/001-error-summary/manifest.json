@@ -1,0 +1,118 @@
+{
+  "id": "FRM-001",
+  "slug": "error-summary",
+  "name": "Error Summary",
+  "category": "FRM",
+  "archetype": "summary",
+  "fixture": {
+    "props": {
+      "errors": [
+        {
+          "id": "email",
+          "message": "Enter your email address in the correct format"
+        },
+        {
+          "id": "name",
+          "message": "Enter your full name"
+        }
+      ]
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Appears on submit, takes focus, names the problem and links to each invalid field. Prefixes the document title with \"Error:\".",
+  "inspiration": [],
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": []
+  },
+  "slots": {},
+  "props": {},
+  "skins": [
+    {
+      "id": "raised",
+      "bind": {
+        "--ds-frm-bg": "color.surface.raised"
+      }
+    },
+    {
+      "id": "sunken",
+      "bind": {
+        "--ds-frm-bg": "color.surface.sunken"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-frm-accent",
+    "--ds-frm-bg",
+    "--ds-frm-border-width",
+    "--ds-frm-fg",
+    "--ds-frm-focus",
+    "--ds-frm-focus-width",
+    "--ds-frm-font",
+    "--ds-frm-padding",
+    "--ds-frm-radius"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default",
+    "focus"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "hover is decorative; focus-visible shows the same cue"
+  },
+  "a11y": {
+    "role": "group",
+    "keyboard": [
+      "Tab",
+      "Enter"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/frm/001-error-summary",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "error",
+      "summary",
+      "validation",
+      "form"
+    ],
+    "interaction": [
+      "feedback"
+    ],
+    "useCases": [
+      "List all form errors at the top with links to each field",
+      "Accessible validation"
+    ],
+    "avoidWhen": [
+      "Single inline hints"
+    ],
+    "pairsWith": [
+      "INP-001",
+      "INP-004",
+      "CTA-014"
+    ]
+  }
+}

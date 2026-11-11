@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S1 — Radius-agnostic effects</title>
+<link rel="stylesheet" href="../../packages/tokens/build/master-yellow/theme.css">
+<link rel="stylesheet" href="../../packages/tokens/build/finova/theme.css">
+<link rel="stylesheet" href="../../packages/tokens/build/lifestyle/theme.css">
+<link rel="stylesheet" href="../../packages/tokens/build/corporate/theme.css">
+<link rel="stylesheet" href="effects.css">
+<style>
+  body { margin: 0; font: 400 14px/1.4 system-ui, sans-serif; background: #e8e8e8; color: #222; }
+  header { padding: 16px 24px; background: #fff; border-bottom: 1px solid #ccc; display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+  header h1 { font-size: 16px; margin: 0; }
+  main { display: grid; grid-template-columns: repeat(auto-fit, minmax(520px, 1fr)); }
+  .brand { background: var(--ds-color-surface-base); color: var(--ds-color-text-primary); padding: 24px; font-family: var(--ds-font-sans); }
+  .brand h2 { margin: 0 0 4px; font-size: 18px; }
+  .brand p { margin: 0 0 16px; color: var(--ds-color-text-secondary); }
+  table { border-collapse: separate; border-spacing: 12px; }
+  th { font-weight: 600; font-size: 12px; text-align: left; color: var(--ds-color-text-secondary); }
+  td { padding: 4px; }
+  .note { font-size: 12px; color: var(--ds-color-text-secondary); margin-top: 8px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>S1 · Radius/colour-agnostic CTA effects (4 effects × 3 radii × brands)</h1>
+  <label><input id="hover" type="checkbox"> force hover state</label>
+  <label><input id="dark" type="checkbox"> dark mode</label>
+  <label><input id="four" type="checkbox"> show all 4 brands</label>
+</header>
+<main id="main"></main>
+
+<template id="arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></template>
+
+<script type="module">
+  const brands = [
+    { slug: "master-yellow", name: "Master Yellow · original CTA-001 look" },
+    { slug: "finova", name: "Finova · blue, sharp" },
+    { slug: "lifestyle", name: "Maison · terracotta, rounded" },
+    { slug: "corporate", name: "Northbridge · green, soft" },
+  ];
+  const radii = [["0 (sharp)", "0px"], ["8px", "8px"], ["pill", "9999px"]];
+  const arrow = document.getElementById("arrow").innerHTML;
+  const effects = [
+    ["shimmer", "CTA-001 shimmer · class B", (l) => `<button class="cta cta--shimmer"><span class="cta__label">${l}</span></button>`],
+    ["wipe", "fill wipe · class C", (l) => `<button class="cta cta--wipe"><span class="cta__label">${l}</span></button>`],
+    ["arrow", "sliding arrow · class C", (l) => `<button class="cta cta--arrow"><span class="cta__label">${l}</span><span class="cta__icon">${arrow}${arrow}</span></button>`],
+    ["ring", "animated border · class C", (l) => `<button class="cta cta--ring"><span class="cta__label">${l}</span></button>`],
+  ];
+  const main = document.getElementById("main");
+  function render() {
+    const all = document.getElementById("four").checked;
+    const dark = document.getElementById("dark").checked;
+    const hover = document.getElementById("hover").checked;
+    main.innerHTML = brands.slice(0, all ? 4 : 2).map((b) => `
+      <section class="brand" data-brand="${b.slug}" ${dark ? 'data-mode="dark"' : ""}>
+        <h2>${b.name}</h2><p>Only <code>--ds-cta-radius</code> changes per column (T4 override).</p>
+        <table><thead><tr><th></th>${radii.map(([n]) => `<th>${n}</th>`).join("")}</tr></thead><tbody>
+        ${effects.map(([id, name, tpl]) => `<tr><th>${name}</th>${radii.map(([, r]) =>
+          `<td style="--ds-cta-radius:${r}">${tpl("Get started").replace('class="cta ', `${hover ? 'data-force-state="hover" ' : ""}class="cta `)}</td>`).join("")}</tr>`).join("")}
+        </tbody></table>
+        <p class="note">Focus ring + disabled: tab into a button; <button class="cta cta--shimmer" disabled style="--ds-cta-radius:${b.slug === "finova" ? "0px" : "9999px"}"><span class="cta__label">Disabled</span></button></p>
+      </section>`).join("");
+  }
+  for (const id of ["hover", "dark", "four"]) document.getElementById(id).addEventListener("change", render);
+  render();
+</script>
+</body>
+</html>

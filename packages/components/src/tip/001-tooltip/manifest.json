@@ -1,0 +1,134 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [
+    "tooltip"
+  ],
+  "props": {
+    "side": [
+      "top",
+      "bottom"
+    ]
+  },
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "fade"
+    ],
+    "params": {
+      "duration": 150
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "TIP-001",
+  "slug": "tooltip",
+  "name": "Tooltip",
+  "category": "TIP",
+  "archetype": "tooltip",
+  "fixture": {
+    "props": {
+      "content": "Opens the annual report as a PDF (2 MB)."
+    },
+    "children": "Annual report"
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Supplementary text on hover and keyboard focus (WCAG 1.4.13): dismissible with Escape, hoverable, persistent. The trigger is a real button described by the tooltip; never carries essential or interactive content.",
+  "skins": [
+    {
+      "id": "inverse",
+      "bind": {
+        "--ds-tip-bg": "color.text.primary",
+        "--ds-tip-fg": "color.surface.base",
+        "--ds-tip-border": "transparent"
+      }
+    },
+    {
+      "id": "raised",
+      "bind": {
+        "--ds-tip-bg": "color.surface.raised",
+        "--ds-tip-fg": "color.text.primary",
+        "--ds-tip-border": "color.border.control"
+      }
+    }
+  ],
+  "states": [
+    "closed",
+    "open",
+    "focus-visible"
+  ],
+  "responsive": {
+    "touchTarget": "36px",
+    "hoverFallback": "touch users get the same text from the trigger's description; never put essential information here"
+  },
+  "a11y": {
+    "role": "tooltip",
+    "keyboard": [
+      "Tab",
+      "Escape"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-tip-radius",
+    "--ds-tip-bg",
+    "--ds-tip-border",
+    "--ds-tip-ease",
+    "--ds-tip-enter-duration",
+    "--ds-tip-fg",
+    "--ds-tip-focus",
+    "--ds-tip-focus-width",
+    "--ds-tip-font",
+    "--ds-tip-max-width",
+    "--ds-tip-padding",
+    "--ds-tip-trigger-bg",
+    "--ds-tip-trigger-border",
+    "--ds-tip-trigger-fg",
+    "--ds-tip-z"
+  ],
+  "code": {
+    "path": "packages/components/src/tip/001-tooltip",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "tooltip",
+      "hint",
+      "help",
+      "overlay"
+    ],
+    "interaction": [
+      "overlay",
+      "hover-press"
+    ],
+    "useCases": [
+      "Short extra info on hover and focus",
+      "Explain an icon"
+    ],
+    "avoidWhen": [
+      "Essential information or links"
+    ],
+    "pairsWith": [
+      "ICN-001",
+      "CTA-003"
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+/* CTA-005 Orbit Border: a conic highlight layer ROTATES (transform) behind an inset cover; the host clips it. */
+@layer components {
+  .ds-cta-005 {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    min-height: var(--ds-cta-height);
+    padding-inline: var(--ds-cta-padding-x);
+    border: var(--ds-cta-border-width) solid var(--ds-cta-border);
+    border-radius: var(--ds-cta-radius);
+    background: var(--ds-cta-bg);
+    color: var(--ds-cta-fg);
+    font: 600 1rem/1 var(--ds-cta-font);
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: clip;
+    border: 0;
+    background: var(--ds-cta-ring-base);
+    transition: background-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), border-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease);
+  }
+  .ds-cta-005[data-size="sm"] { min-height: calc(var(--ds-cta-height) * 0.85); }
+  .ds-cta-005[data-size="lg"] { min-height: calc(var(--ds-cta-height) * 1.15); }
+  .ds-cta-005:focus-visible { outline: 2px solid var(--ds-cta-focus); outline-offset: 3px; }
+  .ds-cta-005:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ds-cta-005__label, .ds-cta-005__icon { position: relative; z-index: 1; }
+  .ds-cta-005[data-loading] { cursor: progress; }
+  .ds-cta-005__spinner { position: relative; z-index: 1; flex: none; width: 1em; height: 1em; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; }
+  .ds-cta-005__status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+@layer components {
+  /* cover: inset by the ring width, radius = host radius minus ring width (never negative) */
+  .ds-cta-005::after {
+    content: "";
+    position: absolute;
+    inset: var(--ds-cta-ring-width);
+    z-index: 0;
+    border-radius: max(0px, calc(var(--ds-cta-radius) - var(--ds-cta-ring-width)));
+    background: var(--ds-cta-bg);
+    transition: background-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease);
+  }
+}
+
+@layer effects {
+  /* Oversized square (>= the button's diagonal for any aspect >= 0.4) so every rotation angle still covers the box. */
+  .ds-cta-005::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 0;
+    width: 250%;
+    aspect-ratio: 1;
+    border-radius: inherit;
+    background: conic-gradient(from 0deg, transparent 0 55%, var(--ds-cta-ring) 85%, transparent 100%);
+    transform: translate(-50%, -50%) rotate(0turn);
+    opacity: 0;
+    transition: opacity var(--ds-cta-fade-duration) var(--ds-cta-fade-ease);
+  }
+  .ds-cta-005:not(:disabled):not([aria-disabled="true"]):hover::after { background: var(--ds-cta-bg-hover); }
+  .ds-cta-005:not(:disabled):not([aria-disabled="true"]):hover { color: var(--ds-cta-fg-hover); }
+  .ds-cta-005:not(:disabled):not([aria-disabled="true"]):hover::before, .ds-cta-005:not(:disabled):not([aria-disabled="true"]):focus-visible::before { opacity: 1; animation: ds-cta-005-orbit var(--ds-cta-orbit-duration) linear infinite; }
+  @keyframes ds-cta-005-orbit { to { transform: translate(-50%, -50%) rotate(1turn); } }
+  .ds-cta-005__spinner { animation: ds-cta-005-spin var(--ds-cta-spin-duration) linear infinite; }
+  @keyframes ds-cta-005-spin { to { transform: rotate(360deg); } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-cta-005, .ds-cta-005::before, .ds-cta-005::after { transition: none; }
+  /* static end state: a full highlight ring instead of a travelling one */
+  .ds-cta-005::before { animation: none !important; background: var(--ds-cta-ring); }
+  .ds-cta-005__spinner { animation: none; border-top-color: currentColor; }
+}

@@ -1,0 +1,22 @@
+/* LDR-002 Progress. Tokens: --ds-ldr-*. The fill scales with transform; indeterminate slides with transform; reduced motion = a still partial bar. */
+@layer components {
+  .ds-ldr-002 { display: flex; flex-direction: column; gap: 0.375rem; font-family: var(--ds-ldr-font); color: var(--ds-ldr-fg); }
+  .ds-ldr-002__head { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.9375rem; font-weight: 600; }
+  .ds-ldr-002__value { color: var(--ds-ldr-muted); font-weight: 400; font-variant-numeric: tabular-nums; }
+  .ds-ldr-002__track { position: relative; overflow: hidden; height: var(--ds-ldr-bar-height); border: 1px solid var(--ds-ldr-bar-border); border-radius: var(--ds-ldr-radius); background: var(--ds-ldr-bar-track); }
+  .ds-ldr-002__fill { position: absolute; inset: 0; background: var(--ds-ldr-bar-fill); transform-origin: left center; transform: scaleX(var(--_p, 0)); transition: transform var(--ds-ldr-fill-duration) var(--ds-ldr-fill-ease); }
+  .ds-ldr-002[data-indeterminate] .ds-ldr-002__fill { right: 60%; transform: none; transition: none; }
+  /* DESIGNS: bar (default), thin, steps */
+  .ds-ldr-002[data-design="thin"] .ds-ldr-002__track { height: var(--ds-ldr-bar-height-thin); border-width: 0; }
+  .ds-ldr-002[data-design="steps"] .ds-ldr-002__track::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(10% - 3px), var(--ds-ldr-bar-gap) calc(10% - 3px), var(--ds-ldr-bar-gap) 10%); }
+}
+
+@layer effects {
+  .ds-ldr-002[data-indeterminate] .ds-ldr-002__fill { animation: ds-ldr-002-slide var(--ds-ldr-slide-duration) ease-in-out infinite; }
+}
+
+@keyframes ds-ldr-002-slide { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-ldr-002__fill { transition: none; animation: none; }
+}

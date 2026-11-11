@@ -1,0 +1,63 @@
+id: REF-065
+name: Supabase mobile menu
+url: https://supabase.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: '"Main menu" button opens a menu with scroll lock, Escape and focus return; the icon swaps with a
+  150 ms opacity fade.'
+visual: mobile menu
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Icon swap between hamburger and close.
+customizable:
+  - colour
+coupling: B
+radiusSupport: any
+a11y: Escape and focus return verified.
+perf:
+  animated:
+    - opacity
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-drawer-supabase/probe.json#0
+  animations:
+    - target: button
+      property: background-color
+      durationMs: 200
+      easing: cubic-bezier(0.22, 1, 0.36, 1)
+    - target: svg
+      property: opacity
+      durationMs: 150
+      easing: cubic-bezier(0, 0, 0.2, 1)
+    - target: svg
+      property: scale
+      durationMs: 150
+      easing: cubic-bezier(0, 0, 0.2, 1)
+    - target: svg
+      property: opacity
+      durationMs: 150
+      easing: cubic-bezier(0, 0, 0.2, 1)
+    - target: svg
+      property: scale
+      durationMs: 150
+      easing: cubic-bezier(0, 0, 0.2, 1)
+  reducedMotionAnimations: 4
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

@@ -1,0 +1,46 @@
+id: REF-038
+name: "Raycast: nav colour shift"
+url: https://www.raycast.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: Nav text colour changes over 200 ms ease-in-out.
+visual: text links
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Colour only.
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - color
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-raycast/probe.json#0
+  animations:
+    - target: a(host)
+      property: color
+      durationMs: 200
+      easing: ease-in-out
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 1
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: ""

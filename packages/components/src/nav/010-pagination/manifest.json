@@ -1,0 +1,131 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "boxed",
+      "pill",
+      "plain",
+      "joined",
+      "compact"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "NAV-010",
+  "slug": "pagination",
+  "name": "Pagination",
+  "category": "NAV",
+  "archetype": "pagination",
+  "fixture": {
+    "props": {
+      "page": 5,
+      "pageCount": 20,
+      "hrefPattern": "#page-{n}",
+      "label": "Pagination"
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A labelled nav of real links: first, last, the current page and its neighbours with single gaps. The current page is aria-current; an unavailable Previous or Next is plain text, not a dead link. Works without JavaScript.",
+  "skins": [
+    {
+      "id": "outlined",
+      "bind": {
+        "--ds-pag-border": "color.border.control"
+      }
+    },
+    {
+      "id": "ghost",
+      "bind": {
+        "--ds-pag-border": "transparent"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "current",
+    "unavailable"
+  ],
+  "responsive": {
+    "touchTarget": "36px",
+    "hoverFallback": "hover is decorative; focus-visible shows the ring"
+  },
+  "a11y": {
+    "role": "navigation",
+    "keyboard": [
+      "Tab",
+      "Enter"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "a"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-pag-radius",
+    "--ds-pag-bg-current",
+    "--ds-pag-bg-hover",
+    "--ds-pag-border",
+    "--ds-pag-ellipsis",
+    "--ds-pag-fade-duration",
+    "--ds-pag-fade-ease",
+    "--ds-pag-fg",
+    "--ds-pag-fg-current",
+    "--ds-pag-fg-hover",
+    "--ds-pag-focus",
+    "--ds-pag-focus-width",
+    "--ds-pag-font",
+    "--ds-pag-gap",
+    "--ds-pag-height",
+    "--ds-pag-padding-x"
+  ],
+  "code": {
+    "path": "packages/components/src/nav/010-pagination",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "pagination",
+      "pages",
+      "list",
+      "navigation"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Long lists and search results",
+      "Real links to each page"
+    ],
+    "avoidWhen": [
+      "Infinite scroll feeds"
+    ],
+    "pairsWith": [
+      "TBL-001",
+      "CRD-004"
+    ]
+  }
+}

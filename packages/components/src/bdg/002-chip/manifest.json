@@ -1,0 +1,117 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "outline",
+      "filled"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "BDG-002",
+  "slug": "chip",
+  "name": "Chip",
+  "category": "BDG",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "removable": true
+    },
+    "children": "Reports"
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A filter chip: a toggle button (aria-pressed) with an optional remove button. Selected shows a check mark and a fill, never colour alone. Two designs.",
+  "skins": [
+    {
+      "id": "default",
+      "bind": {}
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "selected"
+  ],
+  "responsive": {
+    "touchTarget": "32px",
+    "hoverFallback": "hover is decorative; focus-visible shows the ring"
+  },
+  "a11y": {
+    "role": "button",
+    "keyboard": [
+      "Tab",
+      "Space",
+      "Enter"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-badge-radius",
+    "--ds-badge-chip-bg",
+    "--ds-badge-chip-border",
+    "--ds-badge-chip-fg",
+    "--ds-badge-chip-height",
+    "--ds-badge-chip-hover",
+    "--ds-badge-chip-on-bg",
+    "--ds-badge-chip-on-fg",
+    "--ds-badge-fade-duration",
+    "--ds-badge-fade-ease",
+    "--ds-badge-focus",
+    "--ds-badge-focus-width",
+    "--ds-badge-font",
+    "--ds-badge-neutral-bg",
+    "--ds-badge-weight"
+  ],
+  "code": {
+    "path": "packages/components/src/bdg/002-chip",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "chip",
+      "filter",
+      "toggle",
+      "removable"
+    ],
+    "interaction": [
+      "input"
+    ],
+    "useCases": [
+      "Filters and tags the user can toggle or remove",
+      "Selected topics"
+    ],
+    "avoidWhen": [
+      "Static labels (use a badge)"
+    ],
+    "pairsWith": [
+      "INP-001",
+      "TBL-001"
+    ]
+  }
+}

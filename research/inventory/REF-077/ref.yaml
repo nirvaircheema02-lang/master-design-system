@@ -1,0 +1,93 @@
+id: REF-077
+name: "Stripe customers: image zoom card"
+url: https://stripe.com/customers
+sourceKind: production-site
+captured: 2026-11-06
+category: CRD
+interaction: Hovering a customer card scales its picture (transform, 600 ms) inside a clipped frame.
+visual: image card, zoom on hover
+states:
+  - default
+  - hover
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Scale on the image only, clipped by the card radius; any radius works.
+customizable:
+  - radius
+  - aspect ratio
+  - duration
+coupling: B
+radiusSupport: any
+a11y: Zoom is decorative; the focus ring must still show on the card.
+perf:
+  animated:
+    - transform
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/C-stripe-customers/probe.json#0
+  animations:
+    - target: div(child)
+      property: transform
+      durationMs: 600
+      easing: cubic-bezier(0.7, 0, 0, 1)
+    - target: picture(child)
+      property: transform
+      durationMs: 600
+      easing: cubic-bezier(0.7, 0, 0, 1)
+    - target: div(child)
+      property: transform
+      durationMs: 600
+      easing: cubic-bezier(0.7, 0, 0, 1)
+    - target: picture(child)
+      property: transform
+      durationMs: 600
+      easing: cubic-bezier(0.7, 0, 0, 1)
+    - target: div(child)
+      property: transform
+      durationMs: 600
+      easing: cubic-bezier(0.7, 0, 0, 1)
+    - target: picture(child)
+      property: transform
+      durationMs: 600
+      easing: cubic-bezier(0.7, 0, 0, 1)
+    - target: div(child)
+      property: transform
+      durationMs: 600
+      easing: cubic-bezier(0.7, 0, 0, 1)
+    - target: picture(child)
+      property: transform
+      durationMs: 600
+      easing: cubic-bezier(0.7, 0, 0, 1)
+    - target: div(child)
+      property: transform
+      durationMs: 600
+      easing: cubic-bezier(0.7, 0, 0, 1)
+    - target: picture(child)
+      property: transform
+      durationMs: 600
+      easing: cubic-bezier(0.7, 0, 0, 1)
+    - target: div(child)
+      property: transform
+      durationMs: 600
+      easing: cubic-bezier(0.7, 0, 0, 1)
+    - target: picture(child)
+      property: transform
+      durationMs: 600
+      easing: cubic-bezier(0.7, 0, 0, 1)
+  reducedMotionAnimations: 16
+scores:
+  distinctiveness: 4
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 5
+  simplicity: 3
+  license: 3
+  neutrality: 4
+recommendation: adapt
+proposedId: CRD-002
+notes: 600 ms is slow vs the 150-300 ms norm; ours uses the standard duration token.

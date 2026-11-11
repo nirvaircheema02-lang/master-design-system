@@ -1,0 +1,12 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-scr-001:not([data-skin]),
+  .ds-scr-001[data-skin="solid"] {
+    --ds-scp-from: var(--ds-color-accent-ink);
+    --ds-scp-to: var(--ds-color-accent-ink);
+  }
+  .ds-scr-001[data-skin="gradient"] {
+    --ds-scp-from: var(--ds-color-accent-ink);
+    --ds-scp-to: var(--ds-color-text-primary);
+  }
+}

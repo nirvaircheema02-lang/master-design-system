@@ -1,0 +1,24 @@
+/* TXT-005 Section header. Tokens: --ds-sech-*. Static: no motion (wrap in RVL-001 for an entrance). */
+@layer components {
+  .ds-txt-005 { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: var(--ds-sech-gap); box-sizing: border-box; max-inline-size: var(--ds-sech-measure); margin: 0; font-family: var(--ds-sech-font); color: var(--ds-sech-fg); }
+  .ds-txt-005__main { display: flex; flex-direction: column; align-items: flex-start; gap: var(--ds-sech-gap); min-inline-size: 0; }
+  .ds-txt-005__eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0; color: var(--ds-sech-eyebrow); font-size: var(--ds-sech-eyebrow-size); font-weight: var(--ds-sech-eyebrow-weight); letter-spacing: var(--ds-sech-eyebrow-tracking); line-height: 1.3; text-transform: uppercase; }
+  .ds-txt-005__eyebrow::before { content: ""; flex: none; inline-size: var(--ds-sech-rule-length); block-size: var(--ds-sech-rule-width); background: currentColor; opacity: 0.8; }
+  .ds-txt-005__title { margin: 0; color: var(--ds-sech-fg); font-family: var(--ds-sech-display); font-size: clamp(var(--ds-sech-title-min), 4vw, var(--ds-sech-title-max)); font-weight: var(--ds-sech-title-weight); letter-spacing: var(--ds-sech-title-tracking); line-height: var(--ds-sech-title-lh); text-wrap: balance; overflow-wrap: anywhere; }
+  .ds-txt-005__hl { color: var(--ds-sech-hl); background-image: linear-gradient(135deg, var(--ds-sech-hl), var(--ds-sech-hl-to)); }
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .ds-txt-005__hl { -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  }
+  /* Gradient text needs the browser to paint a background: forced colours and print do not, so they get plain text. */
+  @media (forced-colors: active), print {
+    .ds-txt-005__hl { background-image: none; -webkit-text-fill-color: currentColor; color: inherit; }
+  }
+  .ds-txt-005__lede { margin: 0; color: var(--ds-sech-muted); font-size: clamp(var(--ds-sech-lede-min), 1.6vw, var(--ds-sech-lede-max)); line-height: var(--ds-sech-lede-lh); text-wrap: pretty; overflow-wrap: anywhere; }
+  /* DESIGNS: stacked (default), centered, split */
+  .ds-txt-005[data-design="centered"] { justify-items: center; margin-inline: auto; text-align: center; }
+  .ds-txt-005[data-design="centered"] .ds-txt-005__main { align-items: center; }
+  .ds-txt-005[data-design="centered"] .ds-txt-005__eyebrow::after { content: ""; flex: none; inline-size: var(--ds-sech-rule-length); block-size: var(--ds-sech-rule-width); background: currentColor; opacity: 0.8; }
+  @media (min-width: 48rem) {
+    .ds-txt-005[data-design="split"] { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: var(--ds-sech-split-gap); align-items: end; max-inline-size: none; }
+  }
+}

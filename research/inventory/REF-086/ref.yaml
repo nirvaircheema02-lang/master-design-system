@@ -1,0 +1,87 @@
+id: REF-086
+name: "Primer TextInput: loading and outline focus"
+url: https://primer.style/product/components/text-input/
+sourceKind: design-system
+captured: 2026-11-06
+category: INP
+interaction: Outline focus ring; a trailing spinner indicates loading (rotation, 1 s).
+visual: label-above field
+states:
+  - default
+  - focus
+  - loading
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Loading affordance inside the field.
+customizable:
+  - colour
+coupling: B
+radiusSupport: any
+a11y: Outline focus; spinner must stop under reduced motion.
+perf:
+  animated:
+    - rotate
+  js: false
+license:
+  status: not-applicable
+  usage: inspiration-only
+  note: Documentation read only; concept reference, nothing reused.
+measured:
+  probeFile: research/probe/U-in-primer/probe.json#0
+  animations:
+    - target: nav
+      property: "@prc-UnderlineNav-detect-overflow-6HuSH:"
+      durationMs: null
+      easing: linear
+    - target: svg
+      property: "@prc-Spinner-rotate-keyframes-LV51p:transform"
+      durationMs: 1000
+      easing: linear
+    - target: svg
+      property: "@prc-Spinner-rotate-keyframes-LV51p:transform"
+      durationMs: 1000
+      easing: linear
+    - target: svg
+      property: "@prc-Spinner-rotate-keyframes-LV51p:transform"
+      durationMs: 1000
+      easing: linear
+    - target: svg
+      property: "@prc-Spinner-rotate-keyframes-LV51p:transform"
+      durationMs: 1000
+      easing: linear
+    - target: svg
+      property: "@prc-Spinner-rotate-keyframes-LV51p:transform"
+      durationMs: 1000
+      easing: linear
+    - target: svg
+      property: "@prc-Spinner-rotate-keyframes-LV51p:transform"
+      durationMs: 1000
+      easing: linear
+    - target: svg
+      property: "@prc-Spinner-rotate-keyframes-LV51p:transform"
+      durationMs: 1000
+      easing: linear
+    - target: svg
+      property: "@prc-Spinner-rotate-keyframes-LV51p:transform"
+      durationMs: 1000
+      easing: linear
+    - target: svg
+      property: "@prc-Spinner-rotate-keyframes-LV51p:transform"
+      durationMs: 1000
+      easing: linear
+    - target: svg
+      property: "@prc-Spinner-rotate-keyframes-LV51p:transform"
+      durationMs: 1000
+      easing: linear
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 4
+  performance: 4
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

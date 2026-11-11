@@ -1,0 +1,82 @@
+id: REF-058
+name: shadcn/ui Dialog
+url: https://ui.shadcn.com/docs/components/dialog
+sourceKind: design-system
+captured: 2026-11-06
+category: DLG
+interaction: Radix-based dialog styled with overlay and a centred content panel.
+visual: centred modal
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Styling layer over Radix.
+customizable:
+  - colour
+  - radius
+coupling: A
+radiusSupport: any
+a11y: Inherits Radix behaviour.
+perf:
+  animated: []
+  js: false
+license:
+  status: unverified
+  usage: inspiration-only
+  note: Licence not verified from a primary source (register.md).
+measured:
+  probeFile: research/probe/U-dlg-shadcn/probe.json#0
+  animations:
+    - target: button
+      property: background-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: input
+      property: border-bottom-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: input
+      property: border-left-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: input
+      property: border-right-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: input
+      property: border-top-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: div
+      property: "@scroll-fade-reveal-b:"
+      durationMs: 1
+      easing: linear
+    - target: div
+      property: "@scroll-fade-reveal-t:"
+      durationMs: 1
+      easing: linear
+    - target: div
+      property: "@scroll-fade-reveal-b:"
+      durationMs: 1
+      easing: linear
+    - target: div[presentation]
+      property: "@enter:filter+opacity+transform"
+      durationMs: 100
+      easing: linear
+    - target: div[dialog]
+      property: "@enter:filter+opacity+transform"
+      durationMs: 100
+      easing: linear
+  reducedMotionAnimations: 15
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 2
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

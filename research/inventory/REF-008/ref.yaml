@@ -1,0 +1,48 @@
+id: REF-008
+name: "BCG: uppercase CTA with arrow reset"
+url: https://www.bcg.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: Uppercase rectangular CTA; the arrow animates out and a reset arrow animates in (350 ms linear).
+visual: uppercase label, square corners, arrow
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Same mechanics as CTA-002: the arrow clip is on the inner icon box, not the button edge, so
+  square, rounded or pill corners all work."
+customizable:
+  - color
+  - icon
+coupling: C
+radiusSupport: any
+a11y: Arrow aria-hidden.
+perf:
+  animated:
+    - transform
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-bcg/probe.json#0
+  animations:
+    - target: svg(child)
+      property: "@global-button-arrow-reset:right+left"
+      durationMs: 350
+      easing: linear
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 4
+  performance: 4
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: Folds into CTA-002 (square-corner skin).

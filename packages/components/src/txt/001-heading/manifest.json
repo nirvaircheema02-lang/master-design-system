@@ -1,0 +1,133 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "plain",
+      "display",
+      "bar",
+      "rule",
+      "eyebrow"
+    ],
+    "size": [
+      "xs",
+      "sm",
+      "md",
+      "lg",
+      "xl",
+      "2xl",
+      "3xl",
+      "4xl"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "TXT-001",
+  "slug": "heading",
+  "name": "Heading",
+  "category": "TXT",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "level": 2
+    },
+    "children": "Market outlook 2026"
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A heading whose SEMANTIC level (h1-h6) and VISUAL size (type scale) are separate, so a page keeps a correct outline and still looks right. Five designs.",
+  "skins": [
+    {
+      "id": "ink",
+      "bind": {
+        "--ds-type-heading": "color.text.primary"
+      }
+    },
+    {
+      "id": "accent",
+      "bind": {
+        "--ds-type-heading": "color.accent.ink"
+      }
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "heading",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-type-bar",
+    "--ds-type-display",
+    "--ds-type-font",
+    "--ds-type-heading",
+    "--ds-type-lh-normal",
+    "--ds-type-lh-snug",
+    "--ds-type-lh-tight",
+    "--ds-type-rule",
+    "--ds-type-size-2xl",
+    "--ds-type-size-3xl",
+    "--ds-type-size-4xl",
+    "--ds-type-size-lg",
+    "--ds-type-size-md",
+    "--ds-type-size-sm",
+    "--ds-type-size-xl",
+    "--ds-type-size-xs",
+    "--ds-type-tracking-tight",
+    "--ds-type-tracking-wide",
+    "--ds-type-weight-bold",
+    "--ds-type-weight-semibold"
+  ],
+  "code": {
+    "path": "packages/components/src/txt/001-heading",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "heading",
+      "type",
+      "title",
+      "hierarchy"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Page and section titles",
+      "Eyebrow labels"
+    ],
+    "avoidWhen": [
+      "Body copy"
+    ],
+    "pairsWith": [
+      "TXT-002"
+    ]
+  }
+}

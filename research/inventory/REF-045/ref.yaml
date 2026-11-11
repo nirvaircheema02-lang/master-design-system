@@ -1,0 +1,59 @@
+id: REF-045
+name: "Next.js docs: text tabs"
+url: https://nextjs.org/docs/app/getting-started/installation
+sourceKind: production-site
+captured: 2026-11-06
+category: TAB
+interaction: Code-sample tabs whose label colour fades in 150 ms; automatic activation; full tab/tabpanel wiring.
+visual: text tabs
+states:
+  - default
+  - hover
+  - selected
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Colour-only tab change; works with any palette.
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Colour change only (allowed under reduced motion); no movement.
+perf:
+  animated:
+    - color
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-tabs-nextjs/probe.json#0
+  animations:
+    - target: button[tab]
+      property: color
+      durationMs: 150
+      easing: cubic-bezier(0.175, 0.885, 0.32, 1.1)
+    - target: button[tab]
+      property: color
+      durationMs: 150
+      easing: cubic-bezier(0.175, 0.885, 0.32, 1.1)
+    - target: nav
+      property: "@geistdocs-sidebar-fade-top:"
+      durationMs: null
+      easing: linear
+    - target: nav
+      property: "@geistdocs-sidebar-fade-bottom:"
+      durationMs: null
+      easing: linear
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: ""

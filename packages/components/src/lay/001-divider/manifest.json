@@ -1,0 +1,108 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "solid",
+      "dashed",
+      "fade",
+      "thick"
+    ],
+    "orientation": [
+      "horizontal",
+      "vertical"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "LAY-001",
+  "slug": "divider",
+  "name": "Divider",
+  "category": "LAY",
+  "archetype": "atom",
+  "fixture": {
+    "props": {}
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A semantic horizontal break (<hr>), a vertical separator, or a rule with a readable text label. Four designs: solid, dashed, fade, thick.",
+  "skins": [
+    {
+      "id": "strong",
+      "bind": {
+        "--ds-lay-rule": "color.border.control"
+      }
+    },
+    {
+      "id": "soft",
+      "bind": {
+        "--ds-lay-rule": "color.border.subtle"
+      }
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "separator",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-lay-font",
+    "--ds-lay-muted",
+    "--ds-lay-rule",
+    "--ds-lay-rule-thick",
+    "--ds-lay-rule-width"
+  ],
+  "code": {
+    "path": "packages/components/src/lay/001-divider",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "divider",
+      "line",
+      "separator",
+      "rule"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Separate groups of content",
+      "Labelled sections"
+    ],
+    "avoidWhen": [
+      "Spacing alone would do"
+    ],
+    "pairsWith": [
+      "LAY-003"
+    ]
+  }
+}

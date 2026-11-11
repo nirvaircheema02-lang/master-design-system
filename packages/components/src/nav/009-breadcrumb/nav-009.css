@@ -1,0 +1,17 @@
+/* NAV-009 Breadcrumb. Tokens: --ds-nav-*. Links are always underlined (never colour alone); the trail wraps instead of scrolling. */
+@layer components {
+  .ds-nav-009 { font-family: var(--ds-nav-font); font-size: 0.9375rem; }
+  .ds-nav-009__list { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-nav-crumb-gap); margin: 0; padding: 0; list-style: none; }
+  .ds-nav-009__item { display: inline-flex; align-items: center; gap: var(--ds-nav-crumb-gap); min-width: 0; }
+  .ds-nav-009__item + .ds-nav-009__item::before { content: "/"; content: "/" / ""; color: var(--ds-nav-crumb-sep); }
+  .ds-nav-009__link { display: inline-flex; align-items: center; min-height: 1.5rem; border-radius: var(--ds-nav-radius); color: var(--ds-nav-crumb-fg); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; overflow-wrap: anywhere; }
+  .ds-nav-009__link:hover { text-decoration-thickness: 2px; }
+  .ds-nav-009__link:focus-visible { outline: var(--ds-nav-focus-width) solid var(--ds-nav-focus); outline-offset: 2px; }
+  /* DESIGNS: slash (default), chevron, dot, arrow, boxed */
+  .ds-nav-009[data-design="chevron"] .ds-nav-009__item + .ds-nav-009__item::before { content: "\203A"; content: "\203A" / ""; font-size: 1.25em; line-height: 1; }
+  .ds-nav-009[data-design="dot"] .ds-nav-009__item + .ds-nav-009__item::before { content: "\2022"; content: "\2022" / ""; }
+  .ds-nav-009[data-design="arrow"] .ds-nav-009__item + .ds-nav-009__item::before { content: "\2192"; content: "\2192" / ""; }
+  .ds-nav-009[data-design="boxed"] .ds-nav-009__item + .ds-nav-009__item::before { content: none; }
+  .ds-nav-009[data-design="boxed"] .ds-nav-009__link, .ds-nav-009[data-design="boxed"] .ds-nav-009__current { padding: 0.125rem 0.75rem; border: 1px solid var(--ds-nav-crumb-sep); border-radius: var(--ds-nav-radius); }
+  .ds-nav-009__current { color: var(--ds-nav-crumb-current); font-weight: 600; overflow-wrap: anywhere; }
+}

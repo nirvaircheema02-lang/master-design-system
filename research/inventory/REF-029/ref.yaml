@@ -1,0 +1,42 @@
+id: REF-029
+name: Radix Themes Button
+url: https://www.radix-ui.com/themes/docs/components/button
+sourceKind: design-system
+captured: 2026-11-06
+category: CTA
+interaction: "Button props: variant (classic, solid, soft, surface, outline, ghost), size 1-4, color,
+  highContrast, radius, loading."
+visual: six variants
+states:
+  - default
+  - hover
+  - loading
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Brand lever is a closed prop set plus 12-step scales; nested Theme scopes overrides.
+customizable:
+  - variant
+  - color
+  - radius
+coupling: A
+radiusSupport: any
+a11y: Focus ring via --focus-8 token; no further accessibility text on the page.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: inspiration-only
+  note: Documentation read only; concept reference, nothing reused.
+measured: null
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 3
+  performance: 5
+  themability: 3
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: "Adopt: highContrast and radius as first-class intent props; avoid fixed accent names only."

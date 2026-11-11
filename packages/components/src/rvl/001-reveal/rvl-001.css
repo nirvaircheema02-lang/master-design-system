@@ -1,0 +1,21 @@
+/* RVL-001 Reveal on scroll. Tokens: --ds-rvl-*. transform/opacity/clip-path only.
+   Content is visible unless data-reveal="hidden", which only the mounted component sets. Reduced motion and print: always visible. */
+@layer components {
+  .ds-rvl-001 { display: block; }
+  .ds-rvl-001[data-reveal="hidden"] { opacity: 0; transform: translate3d(0, var(--ds-rvl-distance), 0) scale(var(--ds-rvl-rise-scale)); }
+  .ds-rvl-001[data-reveal="shown"] {
+    opacity: 1; transform: none;
+    transition: opacity var(--ds-rvl-fade-duration) var(--ds-rvl-ease) var(--_delay, 0ms), transform var(--ds-rvl-move-duration) var(--ds-rvl-ease) var(--_delay, 0ms), clip-path var(--ds-rvl-move-duration) var(--ds-rvl-ease) var(--_delay, 0ms);
+  }
+  /* DESIGNS: rise (default), scale, clip */
+  .ds-rvl-001[data-design="scale"][data-reveal="hidden"] { transform: scale(var(--ds-rvl-pop-scale)); }
+  .ds-rvl-001[data-design="clip"][data-reveal="hidden"] { clip-path: inset(0 0 100% 0); transform: translateY(var(--ds-rvl-shift)); }
+  .ds-rvl-001[data-design="clip"][data-reveal="shown"] { clip-path: inset(0 0 0 0); }
+  @media print {
+    .ds-rvl-001[data-reveal] { opacity: 1; transform: none; clip-path: none; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-rvl-001[data-reveal], .ds-rvl-001[data-design][data-reveal] { opacity: 1; transform: none; clip-path: none; transition: none; }
+}

@@ -1,0 +1,12 @@
+/* ICN-001 Icon. Tokens: --ds-icon-*. Stroke only; the colour is the surrounding text colour unless a tone is set. */
+@layer components {
+  .ds-icn-001 { flex: none; display: inline-block; vertical-align: middle; fill: none; stroke: var(--_c, currentColor); stroke-width: var(--ds-icon-stroke); stroke-linecap: var(--ds-icon-cap); stroke-linejoin: var(--ds-icon-join); }
+  .ds-icn-001[data-size="sm"] { width: var(--ds-icon-size-sm); height: var(--ds-icon-size-sm); }
+  .ds-icn-001[data-size="md"] { width: var(--ds-icon-size-md); height: var(--ds-icon-size-md); }
+  .ds-icn-001[data-size="lg"] { width: var(--ds-icon-size-lg); height: var(--ds-icon-size-lg); }
+  .ds-icn-001[data-size="xl"] { width: var(--ds-icon-size-xl); height: var(--ds-icon-size-xl); }
+  .ds-icn-001[data-tone="muted"] { --_c: var(--ds-icon-muted); }
+  .ds-icn-001[data-tone="accent"] { --_c: var(--ds-icon-accent); }
+  .ds-icn-001[data-tone="success"] { --_c: var(--ds-icon-success); }
+  .ds-icn-001[data-tone="danger"] { --_c: var(--ds-icon-danger); }
+}

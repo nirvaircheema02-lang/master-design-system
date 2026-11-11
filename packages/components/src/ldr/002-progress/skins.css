@@ -1,0 +1,7 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-ldr-002:not([data-skin]),
+  .ds-ldr-002[data-skin="default"] {
+
+  }
+}

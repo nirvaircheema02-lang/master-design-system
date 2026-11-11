@@ -1,0 +1,61 @@
+id: REF-050
+name: "Base UI Accordion: height transition"
+url: https://base-ui.com/react/components/accordion
+sourceKind: library
+captured: 2026-11-06
+category: ACC
+interaction: Heading-wrapped trigger button with aria-expanded; the panel height animates over 150 ms
+  (ease-out) from a CSS variable while the chevron rotates in 100 ms.
+visual: list of disclosure rows
+states:
+  - default
+  - hover
+  - focus-visible
+  - open
+  - disabled
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Panel height comes from a CSS variable, so any content height works; chevron is decorative.
+  Radius is unaffected: rows are separated by rules and any rounded corners belong to the outer container,
+  which clips the animating panel."
+customizable:
+  - colour
+  - radius
+  - icon
+  - spacing
+coupling: C
+radiusSupport: any
+a11y: Heading contains the only button (APG); reduced motion removes the height and rotate transitions.
+perf:
+  animated:
+    - height
+    - transform
+  js: false
+license:
+  status: verified-permissive
+  usage: clean-room
+  note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+measured:
+  probeFile: research/probe/U-acc-baseui/probe.json#0
+  animations:
+    - target: svg
+      property: transform
+      durationMs: 100
+      easing: ease-out
+    - target: div[region]
+      property: height
+      durationMs: 150
+      easing: ease-out
+  reducedMotionAnimations: 2
+scores:
+  distinctiveness: 3
+  usability: 5
+  a11y: 5
+  performance: 3
+  themability: 4
+  simplicity: 3
+  license: 4
+  neutrality: 4
+recommendation: adapt
+proposedId: ACC-001
+notes: "MIT verified. Height is a layout property: ours uses the grid-rows or content-height technique and a
+  reduced-motion instant open. Only reference measured with a heading wrapper."

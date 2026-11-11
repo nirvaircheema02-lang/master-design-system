@@ -1,0 +1,51 @@
+id: REF-051
+name: "Notion / Vercel pricing FAQ: native details"
+url: https://www.notion.com/pricing
+sourceKind: production-site
+captured: 2026-11-06
+category: ACC
+interaction: "Native <details>/<summary> rows: opens instantly with no height animation; only the chevron
+  rotates (100 ms)."
+visual: plain FAQ rows
+states:
+  - default
+  - hover
+  - open
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Zero-JS baseline; the browser supplies keyboard and state.
+customizable:
+  - colour
+  - icon
+  - spacing
+coupling: A
+radiusSupport: any
+a11y: Native semantics; no heading wrapper (summary is not a heading).
+perf:
+  animated:
+    - transform
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-acc-notion-pricing/probe.json#0
+  animations:
+    - target: svg
+      property: transform
+      durationMs: 100
+      easing: ease-in-out
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 4
+recommendation: adapt
+proposedId: ACC-002
+notes: Same pattern measured on Vercel pricing. Baseline accordion.

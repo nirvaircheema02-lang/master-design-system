@@ -1,0 +1,7 @@
+{ "instances": [
+  { "ref": "TAB-001@1.0.0", "skin": "contained", "props": { "activation": "manual" } },
+  { "ref": "ACC-001@1.0.0", "skin": "boxed", "props": { "type": "multiple" } },
+  { "ref": "NAV-003@1.0.0", "skin": "flat", "props": {} },
+  { "ref": "DLG-001@1.0.0", "skin": "outlined", "props": {} },
+  { "ref": "DLG-003@1.0.0", "skin": "flat", "props": {} }
+] }

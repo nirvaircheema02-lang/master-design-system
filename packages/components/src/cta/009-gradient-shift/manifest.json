@@ -1,0 +1,129 @@
+{
+  "id": "CTA-009",
+  "slug": "gradient-shift",
+  "name": "Gradient Shift CTA",
+  "category": "CTA",
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "The fill slides between the brand fill and its hover shade on hover. Uses only the brand ramp, so it works for any palette.",
+  "inspiration": [],
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "gradient-slide"
+    ],
+    "params": {
+      "duration": 500
+    }
+  },
+  "slots": {
+    "label": {
+      "required": true
+    }
+  },
+  "props": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ]
+  },
+  "skins": [
+    {
+      "id": "solid-accent",
+      "bind": {
+        "--ds-cta-bg": "color.accent",
+        "--ds-cta-bg-hover": "color.accent.hover",
+        "--ds-cta-fg": "color.on-accent",
+        "--ds-cta-fg-hover": "color.on-accent",
+        "--ds-cta-border": "transparent"
+      }
+    },
+    {
+      "id": "surface-gradient",
+      "bind": {
+        "--ds-cta-bg": "color.surface.raised",
+        "--ds-cta-bg-hover": "color.surface.sunken",
+        "--ds-cta-fg": "color.text.primary",
+        "--ds-cta-fg-hover": "color.text.primary",
+        "--ds-cta-border": "color.text.secondary"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-cta-bg",
+    "--ds-cta-bg-hover",
+    "--ds-cta-fg",
+    "--ds-cta-fg-hover",
+    "--ds-cta-border",
+    "--ds-cta-border-width",
+    "--ds-cta-radius",
+    "--ds-cta-height",
+    "--ds-cta-padding-x",
+    "--ds-cta-font",
+    "--ds-cta-focus",
+    "--ds-cta-fade-duration",
+    "--ds-cta-fade-ease",
+    "--ds-cta-spin-duration",
+    "--ds-cta-grad-duration",
+    "--ds-cta-ease"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "active",
+    "loading",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "the slide is decorative; label colour is unchanged"
+  },
+  "a11y": {
+    "role": "button",
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state"
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/cta/009-gradient-shift",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "button",
+      "gradient",
+      "shift",
+      "bold"
+    ],
+    "interaction": [
+      "hover-press"
+    ],
+    "useCases": [
+      "Brand-forward hero actions",
+      "Campaign pages"
+    ],
+    "avoidWhen": [
+      "Strict, minimal brands"
+    ],
+    "pairsWith": [
+      "NAV-006"
+    ],
+    "effects": "subtle"
+  }
+}

@@ -1,0 +1,5 @@
+/* TXT-004 Code / Kbd. Tokens: --ds-type-*. Static. */
+@layer components {
+  .ds-txt-004 { padding: 0.1em 0.4em; border-radius: var(--ds-type-radius); background: var(--ds-type-code-bg); color: var(--ds-type-code-fg); font-family: var(--ds-type-mono); font-size: 0.9em; line-height: var(--ds-type-lh-normal); overflow-wrap: anywhere; }
+  .ds-txt-004[data-as="kbd"] { background: var(--ds-type-kbd-bg); border: 1px solid var(--ds-type-kbd-border); border-bottom-width: 2px; font-weight: var(--ds-type-weight-medium); white-space: nowrap; }
+}

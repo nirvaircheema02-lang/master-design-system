@@ -1,0 +1,142 @@
+{
+  "id": "INP-001",
+  "slug": "text-field",
+  "name": "Text Field",
+  "category": "INP",
+  "archetype": "field",
+  "fixture": {
+    "props": {
+      "label": "Email address",
+      "hint": "We'll only use this to reply.",
+      "type": "email",
+      "autoComplete": "email",
+      "name": "email"
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Label-above text field with hint, error and optional/required marker as one unit. Wires aria-describedby and aria-invalid.",
+  "inspiration": [],
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {
+      "duration": 150
+    },
+    "js": false,
+    "pointerVars": []
+  },
+  "slots": {},
+  "props": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "design": [
+      "boxed",
+      "underline",
+      "filled",
+      "floating",
+      "inline"
+    ]
+  },
+  "skins": [
+    {
+      "id": "outlined",
+      "bind": {
+        "--ds-field-bg": "color.surface.raised",
+        "--ds-field-border": "color.border.control"
+      }
+    },
+    {
+      "id": "filled",
+      "bind": {
+        "--ds-field-bg": "color.surface.sunken",
+        "--ds-field-border": "color.border.control"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-field-radius",
+    "--ds-field-bg",
+    "--ds-field-bg-filled",
+    "--ds-field-border",
+    "--ds-field-border-width",
+    "--ds-field-error",
+    "--ds-field-fade-duration",
+    "--ds-field-fade-ease",
+    "--ds-field-fg",
+    "--ds-field-focus",
+    "--ds-field-focus-width",
+    "--ds-field-font",
+    "--ds-field-gap",
+    "--ds-field-height",
+    "--ds-field-hint",
+    "--ds-field-label",
+    "--ds-field-label-width",
+    "--ds-field-padding-x",
+    "--ds-field-placeholder",
+    "--ds-field-underline-width"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default",
+    "focus",
+    "invalid",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "hover is decorative; focus-visible shows the same cue"
+  },
+  "a11y": {
+    "role": "textbox",
+    "keyboard": [
+      "Tab",
+      "typing"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/inp/001-text-field",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "input",
+      "text",
+      "field",
+      "form"
+    ],
+    "interaction": [
+      "input"
+    ],
+    "useCases": [
+      "Names, emails, search, any one-line text",
+      "Forms"
+    ],
+    "avoidWhen": [
+      "Long text (use a textarea)"
+    ],
+    "pairsWith": [
+      "FRM-001",
+      "CTA-003"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@master-ds/tokens",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./theme": "./src/theme.ts",
+    "./palette": "./src/palette.ts"
+  },
+  "scripts": {
+    "build": "node --experimental-strip-types src/build.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --experimental-strip-types --test src/*.test.ts",
+    "build:palettes": "node --experimental-strip-types src/palettes.ts"
+  },
+  "dependencies": {
+    "@master-ds/contracts": "workspace:*",
+    "culori": "^4.0.0",
+    "style-dictionary": "^5.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.4",
+    "@types/culori": "^2.1.1",
+    "tailwindcss": "^4.3.4"
+  }
+}

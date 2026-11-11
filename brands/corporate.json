@@ -1,0 +1,4 @@
+{ "name": "Northbridge Consulting", "slug": "corporate", "concept": "Corporate consulting: deep green, restrained",
+  "seeds": { "primary": "#1d6b57", "secondary": "#14213d" },
+  "fonts": { "sans": "Source Sans 3, system-ui, sans-serif", "display": "Source Serif 4, serif" },
+  "radiusStrategy": "soft", "density": "comfortable", "motion": "calm" }

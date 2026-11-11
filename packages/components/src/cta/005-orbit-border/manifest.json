@@ -1,0 +1,144 @@
+{
+  "id": "CTA-005",
+  "slug": "orbit-border",
+  "name": "Orbit Border CTA",
+  "category": "CTA",
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A bright arc travels around the edge while the button is hovered or focused. Built from one rotating layer behind an inset cover.",
+  "inspiration": [],
+  "interaction": {
+    "class": "C",
+    "modules": [
+      "orbit-ring"
+    ],
+    "params": {
+      "duration": 2500
+    }
+  },
+  "slots": {
+    "label": {
+      "required": true
+    }
+  },
+  "props": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ]
+  },
+  "skins": [
+    {
+      "id": "solid-accent",
+      "bind": {
+        "--ds-cta-bg": "color.accent",
+        "--ds-cta-bg-hover": "color.accent.hover",
+        "--ds-cta-fg": "color.on-accent",
+        "--ds-cta-fg-hover": "color.on-accent",
+        "--ds-cta-border": "transparent",
+        "--ds-cta-ring": "color.on-accent",
+        "--ds-cta-ring-base": "color.accent.hover"
+      }
+    },
+    {
+      "id": "surface-ring",
+      "bind": {
+        "--ds-cta-bg": "color.surface.raised",
+        "--ds-cta-bg-hover": "color.surface.sunken",
+        "--ds-cta-fg": "color.text.primary",
+        "--ds-cta-fg-hover": "color.text.primary",
+        "--ds-cta-border": "transparent",
+        "--ds-cta-ring": "color.accent.ink",
+        "--ds-cta-ring-base": "color.border.strong"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-cta-bg",
+    "--ds-cta-bg-hover",
+    "--ds-cta-fg",
+    "--ds-cta-fg-hover",
+    "--ds-cta-border",
+    "--ds-cta-border-width",
+    "--ds-cta-radius",
+    "--ds-cta-height",
+    "--ds-cta-padding-x",
+    "--ds-cta-font",
+    "--ds-cta-focus",
+    "--ds-cta-fade-duration",
+    "--ds-cta-fade-ease",
+    "--ds-cta-spin-duration",
+    "--ds-cta-ring",
+    "--ds-cta-ring-base",
+    "--ds-cta-ring-width",
+    "--ds-cta-orbit-duration"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "radiusNote": "The rotating layer is clipped by the host; the cover layer radius is host radius minus the ring width (clamped at 0), so 0, 8px and pill all keep a constant ring.",
+    "requiresHost": [
+      "overflow:clip",
+      "position:relative"
+    ],
+    "minContrast": "AA",
+    "insetLayers": [
+      {
+        "pseudo": "::after",
+        "inset": "--ds-cta-ring-width"
+      }
+    ]
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "active",
+    "loading",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "the arc runs on hover or focus-visible; reduced motion shows a static full ring"
+  },
+  "a11y": {
+    "role": "button",
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state"
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/cta/005-orbit-border",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "button",
+      "border",
+      "orbit",
+      "premium"
+    ],
+    "interaction": [
+      "hover-press"
+    ],
+    "useCases": [
+      "Hero or pricing highlight",
+      "One featured action"
+    ],
+    "avoidWhen": [
+      "Square-only layouts that need a plain edge"
+    ],
+    "pairsWith": [
+      "NAV-006"
+    ],
+    "effects": "full"
+  }
+}

@@ -1,0 +1,47 @@
+/* CTA-012 Underline Draw: a text CTA with no box; a rule draws under the label on hover and focus. */
+@layer components {
+  .ds-cta-012 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    min-height: 2rem;
+    padding-inline: 0.75rem;
+    border: 0;
+    background: transparent;
+    color: var(--ds-cta-link);
+    font: 600 1rem/1 var(--ds-cta-font);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .ds-cta-012:focus-visible { outline: 2px solid var(--ds-cta-focus); outline-offset: 3px; }
+  .ds-cta-012:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ds-cta-012__label { position: relative; }
+  .ds-cta-012[data-loading] { cursor: progress; }
+  .ds-cta-012__spinner { position: relative; z-index: 1; flex: none; width: 1em; height: 1em; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; }
+  .ds-cta-012__status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+@layer effects {
+  .ds-cta-012::after {
+    content: "";
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.3rem;
+    height: var(--ds-cta-underline-width);
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--ds-cta-wipe-duration) var(--ds-cta-ease);
+  }
+  .ds-cta-012:not(:disabled):not([aria-disabled="true"]):hover::after, .ds-cta-012:not(:disabled):not([aria-disabled="true"]):focus-visible::after { transform: scaleX(1); }
+  .ds-cta-012__spinner { animation: ds-cta-012-spin var(--ds-cta-spin-duration) linear infinite; }
+  @keyframes ds-cta-012-spin { to { transform: rotate(360deg); } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-cta-012::after { transition: none; transform: none; opacity: 0; }
+  .ds-cta-012:not(:disabled):not([aria-disabled="true"]):hover::after, .ds-cta-012:not(:disabled):not([aria-disabled="true"]):focus-visible::after { opacity: 1; }
+  .ds-cta-012__spinner { animation: none; border-top-color: currentColor; }
+}

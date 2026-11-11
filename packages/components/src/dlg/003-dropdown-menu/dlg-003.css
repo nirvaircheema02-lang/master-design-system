@@ -1,0 +1,37 @@
+/* DLG-003 Dropdown (actions) menu. Tokens: --ds-menu-*. Opacity + transform only; reduced motion = no animation. */
+@layer components {
+  .ds-dlg-003__trigger {
+    display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.5rem; padding: 0 0.875rem; margin: 0; border: 1px solid var(--ds-menu-trigger-border); border-radius: var(--ds-menu-radius);
+    background: var(--ds-menu-bg); color: var(--ds-menu-fg); font: inherit; font-family: var(--ds-menu-font); font-size: 0.9375rem; font-weight: 600; cursor: pointer;
+    transition: background-color var(--ds-menu-exit-duration) var(--ds-menu-ease);
+  }
+  .ds-dlg-003__trigger:focus-visible { outline: var(--ds-menu-focus-width) solid var(--ds-menu-focus); outline-offset: 2px; }
+  .ds-dlg-003__chevron { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ds-dlg-003 {
+    z-index: var(--ds-menu-z); min-width: var(--ds-menu-min-width); box-sizing: border-box; padding: var(--ds-menu-padding); border: 1px solid var(--ds-menu-border); border-radius: var(--ds-menu-radius);
+    background: var(--ds-menu-bg); color: var(--ds-menu-fg); box-shadow: var(--ds-menu-shadow); font-family: var(--ds-menu-font);
+  }
+  .ds-dlg-003__item {
+    display: flex; align-items: center; min-height: var(--ds-menu-item-height); padding: 0 var(--ds-menu-item-padding-x); border-radius: var(--ds-menu-item-radius);
+    font-size: 0.9375rem; cursor: default; outline: none; user-select: none;
+  }
+  .ds-dlg-003__item[data-destructive] { color: var(--ds-menu-danger); }
+  .ds-dlg-003__item[data-disabled] { opacity: 0.45; pointer-events: none; }
+  .ds-dlg-003__item[data-highlighted] { background: var(--ds-menu-bg-highlight); color: var(--ds-menu-fg-highlight); }
+  .ds-dlg-003__item:focus-visible { outline: var(--ds-menu-focus-width) solid var(--ds-menu-focus); outline-offset: -2px; }
+  .ds-dlg-003__separator { height: 1px; margin: 0.25rem 0.375rem; background: var(--ds-menu-border); }
+}
+
+@layer effects {
+  .ds-dlg-003__trigger:hover { background: var(--ds-menu-bg-hover); }
+  .ds-dlg-003[data-state="open"] { animation: ds-dlg-003-in var(--ds-menu-enter-duration) var(--ds-menu-ease); }
+  .ds-dlg-003[data-state="closed"] { animation: ds-dlg-003-out var(--ds-menu-exit-duration) var(--ds-menu-ease) forwards; }
+}
+
+@keyframes ds-dlg-003-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+@keyframes ds-dlg-003-out { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(-2px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-dlg-003__trigger { transition: none; }
+  .ds-dlg-003[data-state] { animation: none; }
+}

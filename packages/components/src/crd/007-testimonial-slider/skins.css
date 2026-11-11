@@ -1,0 +1,16 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-crd-007:not([data-skin]),
+  .ds-crd-007[data-skin="accent"] {
+    --ds-tsl-mark: var(--ds-color-accent-ink);
+    --ds-tsl-avatar-bg: var(--ds-color-accent-subtle);
+    --ds-tsl-avatar-fg: var(--ds-color-accent-ink);
+    --ds-tsl-fill: var(--ds-color-accent-ink);
+  }
+  .ds-crd-007[data-skin="neutral"] {
+    --ds-tsl-mark: var(--ds-color-text-primary);
+    --ds-tsl-avatar-bg: var(--ds-color-surface-sunken);
+    --ds-tsl-avatar-fg: var(--ds-color-text-primary);
+    --ds-tsl-fill: var(--ds-color-text-primary);
+  }
+}

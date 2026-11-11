@@ -1,0 +1,11 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-cta-001:not([data-skin]),
+  .ds-cta-001[data-skin="solid-accent"] {
+    --ds-cta-bg: var(--ds-color-accent);
+    --ds-cta-bg-hover: var(--ds-color-accent-hover);
+    --ds-cta-fg: var(--ds-color-on-accent);
+    --ds-cta-fg-hover: var(--ds-color-on-accent);
+    --ds-cta-border: transparent;
+  }
+}

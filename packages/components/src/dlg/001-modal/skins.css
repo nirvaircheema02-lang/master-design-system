@@ -1,0 +1,12 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-dlg-001:not([data-skin]),
+  .ds-dlg-001[data-skin="raised"] {
+    --ds-dlg-border: var(--ds-color-border-subtle);
+    --ds-dlg-shadow: var(--ds-elevation-2);
+  }
+  .ds-dlg-001[data-skin="outlined"] {
+    --ds-dlg-border: var(--ds-color-border-control);
+    --ds-dlg-shadow: var(--ds-elevation-1);
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "id": "DLG-001",
+  "slug": "modal",
+  "name": "Modal Dialog",
+  "category": "DLG",
+  "archetype": "dialog",
+  "fixture": {
+    "props": {
+      "triggerLabel": "Open dialog",
+      "title": "Delete project?",
+      "description": "This permanently deletes the project and its history."
+    },
+    "children": "You can export your data first."
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Modal dialog with title, description, body, footer and close. Focus trap, Escape, focus return, outside inertness and scroll lock come from the headless adapter; enter and exit use opacity and transform only.",
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "fade-scale"
+    ],
+    "params": {
+      "duration": 200
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "headless": [
+    "dialog"
+  ],
+  "props": {
+    "design": [
+      "centered",
+      "sheet",
+      "side",
+      "alert",
+      "wide"
+    ]
+  },
+  "skins": [
+    {
+      "id": "raised",
+      "bind": {
+        "--ds-dlg-border": "color.border.subtle",
+        "--ds-dlg-shadow": "elevation.2"
+      }
+    },
+    {
+      "id": "outlined",
+      "bind": {
+        "--ds-dlg-border": "color.border.control",
+        "--ds-dlg-shadow": "elevation.1"
+      }
+    }
+  ],
+  "states": [
+    "closed",
+    "open",
+    "hover",
+    "focus-visible"
+  ],
+  "responsive": {
+    "touchTarget": "36px",
+    "hoverFallback": "hover is decorative; focus ring carries state"
+  },
+  "a11y": {
+    "role": "dialog",
+    "keyboard": [
+      "Tab",
+      "Shift+Tab",
+      "Escape",
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-dlg-radius",
+    "--ds-dlg-alert-width",
+    "--ds-dlg-bg",
+    "--ds-dlg-border",
+    "--ds-dlg-close-bg-hover",
+    "--ds-dlg-ease",
+    "--ds-dlg-enter-duration",
+    "--ds-dlg-exit-duration",
+    "--ds-dlg-fg",
+    "--ds-dlg-focus",
+    "--ds-dlg-focus-width",
+    "--ds-dlg-font",
+    "--ds-dlg-gap",
+    "--ds-dlg-muted",
+    "--ds-dlg-padding",
+    "--ds-dlg-scrim",
+    "--ds-dlg-shadow",
+    "--ds-dlg-sheet-width",
+    "--ds-dlg-side-width",
+    "--ds-dlg-trigger-border",
+    "--ds-dlg-wide-width",
+    "--ds-dlg-width",
+    "--ds-dlg-z"
+  ],
+  "code": {
+    "path": "packages/components/src/dlg/001-modal",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "dialog",
+      "modal",
+      "confirm",
+      "overlay"
+    ],
+    "interaction": [
+      "overlay"
+    ],
+    "useCases": [
+      "Confirm, edit or read something that needs full attention",
+      "5 layouts incl. sheet and side panel"
+    ],
+    "avoidWhen": [
+      "Information that could be inline"
+    ],
+    "pairsWith": [
+      "CTA-003",
+      "INP-001"
+    ]
+  }
+}

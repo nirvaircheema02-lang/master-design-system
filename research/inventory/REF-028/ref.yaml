@@ -1,0 +1,42 @@
+id: REF-028
+name: "Material 3 Button: shape morph"
+url: https://m3.material.io/components/buttons/overview
+sourceKind: design-system
+captured: 2026-11-06
+category: CTA
+interaction: Corner shape morphs on press and when a toggle is selected; five colour styles, five sizes.
+visual: round/square shapes
+states:
+  - enabled
+  - hover
+  - focus
+  - pressed
+  - disabled
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Making radius part of the interaction breaks brands that choose their own radius.
+customizable:
+  - shape
+coupling: C
+radiusSupport: pill-only
+a11y: "Motion guidance: drop decorative morph under reduced motion."
+perf:
+  animated:
+    - border-radius
+  js: false
+license:
+  status: not-applicable
+  usage: inspiration-only
+  note: Documentation read only; concept reference, nothing reused.
+measured: null
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 4
+  performance: 2
+  themability: 1
+  simplicity: 2
+  license: 3
+  neutrality: 2
+recommendation: reject
+proposedId: null
+notes: Reject the morph, keep the per-state token table idea (Material and Carbon).

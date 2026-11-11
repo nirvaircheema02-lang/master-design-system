@@ -1,0 +1,220 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {
+    "brand": {
+      "required": true
+    },
+    "description": {
+      "required": false
+    },
+    "action": {
+      "required": false
+    },
+    "legal": {
+      "required": false
+    }
+  },
+  "headless": [],
+  "props": {
+    "design": [
+      "columns",
+      "centered",
+      "split"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "NAV-011",
+  "slug": "site-footer",
+  "name": "Site Footer",
+  "category": "NAV",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "brand": "Aster",
+      "description": "A short line about the studio and what it does.",
+      "columns": [
+        {
+          "heading": "Services",
+          "links": [
+            {
+              "label": "Strategy",
+              "href": "#s1"
+            },
+            {
+              "label": "Design",
+              "href": "#s2"
+            },
+            {
+              "label": "Engineering",
+              "href": "#s3"
+            }
+          ]
+        },
+        {
+          "heading": "Company",
+          "links": [
+            {
+              "label": "About",
+              "href": "#c1"
+            },
+            {
+              "label": "Work",
+              "href": "#c2"
+            },
+            {
+              "label": "Careers",
+              "href": "#c3"
+            }
+          ]
+        }
+      ],
+      "contactHeading": "Contact",
+      "contact": [
+        {
+          "label": "Email",
+          "value": "hello@example.com",
+          "href": "mailto:hello@example.com"
+        },
+        {
+          "label": "Phone",
+          "value": "+00 000 000 0000",
+          "href": "tel:+000000000000"
+        },
+        {
+          "label": "Location",
+          "value": "City, Country"
+        }
+      ],
+      "legal": "\u00a9 2026 Aster. All rights reserved.",
+      "bottomLinks": [
+        {
+          "label": "Privacy",
+          "href": "#p1"
+        },
+        {
+          "label": "Terms",
+          "href": "#p2"
+        }
+      ],
+      "signature": "Aster",
+      "navLabel": "Footer links",
+      "legalNavLabel": "Legal links"
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "The page's closing region (contentinfo): brand block, link columns each with a real heading, contact items, a bottom bar with a copyright slot and an optional huge decorative signature word that is aria-hidden. Static, token-driven, three structurally different layouts.",
+  "skins": [
+    {
+      "id": "sunken",
+      "bind": {
+        "--ds-ftr-bg": "color.surface.sunken",
+        "--ds-ftr-fg": "color.text.primary",
+        "--ds-ftr-muted": "color.text.secondary",
+        "--ds-ftr-border": "color.border.subtle",
+        "--ds-ftr-sig": "color.text.primary",
+        "--ds-ftr-focus": "color.focus"
+      }
+    },
+    {
+      "id": "accent",
+      "bind": {
+        "--ds-ftr-bg": "color.accent",
+        "--ds-ftr-fg": "color.on-accent",
+        "--ds-ftr-muted": "color.on-accent",
+        "--ds-ftr-border": "color.accent.hover",
+        "--ds-ftr-sig": "color.on-accent",
+        "--ds-ftr-focus": "color.on-accent"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible"
+  ],
+  "responsive": {
+    "touchTarget": "28px links (WCAG 2.5.8 24px minimum)",
+    "hoverFallback": "hover only adds an underline; links are always readable and focusable"
+  },
+  "a11y": {
+    "role": "contentinfo",
+    "keyboard": [
+      "Tab",
+      "Enter"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "a"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-ftr-bg",
+    "--ds-ftr-border",
+    "--ds-ftr-fade-duration",
+    "--ds-ftr-fade-ease",
+    "--ds-ftr-fg",
+    "--ds-ftr-focus",
+    "--ds-ftr-focus-width",
+    "--ds-ftr-font",
+    "--ds-ftr-gap",
+    "--ds-ftr-gutter",
+    "--ds-ftr-link-height",
+    "--ds-ftr-max-width",
+    "--ds-ftr-muted",
+    "--ds-ftr-padding-y",
+    "--ds-ftr-radius",
+    "--ds-ftr-sig",
+    "--ds-ftr-sig-size",
+    "--ds-ftr-sig-strength"
+  ],
+  "code": {
+    "path": "packages/components/src/nav/011-site-footer",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "footer",
+      "contentinfo",
+      "site",
+      "links",
+      "contact"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "The closing region of every page",
+      "Link columns, contact details and legal line in one landmark"
+    ],
+    "avoidWhen": [
+      "A short in-card footer (use plain markup)",
+      "Pages inside an app shell that has no site footer"
+    ],
+    "pairsWith": [
+      "NAV-006",
+      "NAV-008",
+      "CTA-016"
+    ]
+  }
+}

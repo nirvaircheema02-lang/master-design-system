@@ -1,0 +1,12 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-nav-004:not([data-skin]),
+  .ds-nav-004[data-skin="raised"] {
+    --ds-nav-drawer-border: var(--ds-color-border-subtle);
+    --ds-nav-drawer-shadow: var(--ds-elevation-2);
+  }
+  .ds-nav-004[data-skin="outlined"] {
+    --ds-nav-drawer-border: var(--ds-color-border-control);
+    --ds-nav-drawer-shadow: var(--ds-elevation-1);
+  }
+}

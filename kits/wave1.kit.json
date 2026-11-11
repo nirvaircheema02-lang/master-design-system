@@ -1,0 +1,7 @@
+{ "instances": [
+  { "ref": "CTA-001@1.0.0", "skin": "solid-accent", "props": { "size": "md" } },
+  { "ref": "CTA-002@1.0.0", "skin": "solid-accent", "props": { "size": "md" } },
+  { "ref": "CTA-003@1.0.0", "skin": "outline-tint", "props": { "size": "md" } },
+  { "ref": "CTA-004@1.0.0", "skin": "solid-wipe", "props": { "size": "md", "direction": "left" } },
+  { "ref": "CTA-005@1.0.0", "skin": "surface-ring", "props": { "size": "md" } }
+] }

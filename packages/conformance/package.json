@@ -1,0 +1,41 @@
+{
+  "name": "@master-ds/conformance",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "master-conformance": "./src/cli.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --experimental-strip-types --test src/*.test.ts"
+  },
+  "dependencies": {
+    "@master-ds/contracts": "workspace:*",
+    "@master-ds/tokens": "workspace:*",
+    "@axe-core/playwright": "^4.10.0",
+    "culori": "^4.0.0",
+    "esbuild": "^0.25.0",
+    "playwright": "^1.64.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@master-ds/generator": "workspace:*",
+    "pngjs": "^7.0.0",
+    "@master-ds/headless": "workspace:*",
+    "@radix-ui/react-accordion": "^1.2.0",
+    "@radix-ui/react-dialog": "^1.1.0",
+    "@radix-ui/react-dropdown-menu": "^2.1.0",
+    "@radix-ui/react-tabs": "^1.1.0",
+    "@radix-ui/react-popover": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/culori": "^2.1.1",
+    "@types/pngjs": "^6.0.5"
+  }
+}

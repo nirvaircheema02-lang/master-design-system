@@ -1,0 +1,36 @@
+/* NAV-003 Menu trigger (navigation disclosure). Tokens: --ds-nav-*. Opening fades the panel in; closing is instant. */
+@layer components {
+  .ds-nav-003 { position: relative; display: inline-block; font-family: var(--ds-nav-font); }
+  .ds-nav-003__trigger {
+    display: inline-flex; align-items: center; gap: 0.375rem; min-height: var(--ds-nav-height); padding: 0 var(--ds-nav-padding-x); margin: 0; border: 0; border-radius: var(--ds-nav-radius);
+    background: transparent; color: var(--ds-nav-trigger-fg); font: inherit; font-size: 0.9375rem; font-weight: 600; cursor: pointer;
+    transition: background-color var(--ds-nav-fade-duration) var(--ds-nav-fade-ease), color var(--ds-nav-fade-duration) var(--ds-nav-fade-ease);
+  }
+  .ds-nav-003__trigger:focus-visible, .ds-nav-003__link:focus-visible { outline: var(--ds-nav-focus-width) solid var(--ds-nav-focus); outline-offset: 2px; }
+  .ds-nav-003__chevron { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform var(--ds-nav-fade-duration) var(--ds-nav-fade-ease); }
+  .ds-nav-003__panel {
+    position: absolute; z-index: var(--ds-nav-z); top: calc(100% + 0.375rem); left: 0; min-width: var(--ds-nav-panel-min-width); margin: 0; padding: var(--ds-nav-panel-padding); list-style: none;
+    background: var(--ds-nav-panel-bg); border: 1px solid var(--ds-nav-panel-border); border-radius: var(--ds-nav-panel-radius); box-shadow: var(--ds-nav-panel-shadow);
+  }
+  .ds-nav-003__panel[hidden] { display: none; }
+  .ds-nav-003__link {
+    display: flex; align-items: center; min-height: var(--ds-nav-height); padding: 0 var(--ds-nav-padding-x); border-radius: var(--ds-nav-radius);
+    color: var(--ds-nav-fg); font-size: 0.9375rem; text-decoration: none;
+    transition: background-color var(--ds-nav-fade-duration) var(--ds-nav-fade-ease), color var(--ds-nav-fade-duration) var(--ds-nav-fade-ease);
+  }
+  .ds-nav-003__link[aria-current="page"] { background: var(--ds-nav-bg-current); color: var(--ds-nav-fg-current); font-weight: 600; }
+}
+
+@layer effects {
+  .ds-nav-003__trigger:hover { background: var(--ds-nav-bg-hover); color: var(--ds-nav-fg-hover); }
+  .ds-nav-003__trigger[aria-expanded="true"] .ds-nav-003__chevron { transform: rotate(180deg); }
+  .ds-nav-003__link:hover { background: var(--ds-nav-bg-hover); color: var(--ds-nav-fg-hover); }
+  .ds-nav-003__panel[data-state="open"] { animation: ds-nav-003-in var(--ds-nav-fade-duration) var(--ds-nav-fade-ease); }
+}
+
+@keyframes ds-nav-003-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-nav-003__trigger, .ds-nav-003__chevron, .ds-nav-003__link { transition: none; }
+  .ds-nav-003__panel[data-state] { animation: none; }
+}

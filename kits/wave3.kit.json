@@ -1,0 +1,5 @@
+{ "instances": [
+  { "ref": "CTA-010@1.0.0", "skin": "surface-spot", "props": { "size": "md" } },
+  { "ref": "CTA-011@1.0.0", "skin": "surface", "props": { "size": "md" } },
+  { "ref": "CTA-014@1.0.0", "skin": "outline-invert", "props": { "size": "md", "status": "idle" } }
+] }

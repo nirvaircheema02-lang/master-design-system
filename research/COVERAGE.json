@@ -1,0 +1,31 @@
+{
+  "total": 90,
+  "byCategory": {
+    "CTA": 33,
+    "CRD": 7,
+    "NAV": 20,
+    "LAY": 1,
+    "TAB": 7,
+    "ACC": 4,
+    "DLG": 7,
+    "TST": 2,
+    "INP": 9
+  },
+  "bySource": {
+    "internal": 1,
+    "production-site": 55,
+    "library": 18,
+    "design-system": 16
+  },
+  "byRecommendation": {
+    "adapt": 24,
+    "inspiration": 61,
+    "reject": 5
+  },
+  "byCoupling": {
+    "B": 22,
+    "A": 56,
+    "C": 12
+  },
+  "measured": 85
+}

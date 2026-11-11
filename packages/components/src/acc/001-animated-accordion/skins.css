@@ -1,0 +1,12 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-acc-001:not([data-skin]),
+  .ds-acc-001[data-skin="plain"] {
+    --ds-acc-bg: transparent;
+    --ds-acc-outer-border: transparent;
+  }
+  .ds-acc-001[data-skin="boxed"] {
+    --ds-acc-bg: var(--ds-color-surface-raised);
+    --ds-acc-outer-border: var(--ds-color-border-subtle);
+  }
+}

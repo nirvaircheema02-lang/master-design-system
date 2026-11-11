@@ -1,0 +1,8 @@
+/* LAY-002 Container. Tokens: --ds-lay-*. Static. */
+@layer components {
+  .ds-lay-002 { box-sizing: border-box; width: 100%; margin-inline: auto; padding-inline: var(--ds-lay-gutter); max-width: var(--ds-lay-container-lg); font-family: var(--ds-lay-font); }
+  .ds-lay-002[data-size="sm"] { max-width: var(--ds-lay-container-sm); }
+  .ds-lay-002[data-size="md"] { max-width: var(--ds-lay-container-md); }
+  .ds-lay-002[data-size="xl"] { max-width: var(--ds-lay-container-xl); }
+  .ds-lay-002[data-size="prose"] { max-width: var(--ds-lay-container-prose); }
+}

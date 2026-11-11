@@ -1,0 +1,57 @@
+id: REF-035
+name: "Supabase: nav dropdown trigger"
+url: https://supabase.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: Menu trigger and its chevron change colour together (200 ms); opens a panel.
+visual: text trigger with chevron
+states:
+  - default
+  - hover
+  - expanded
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Behaviour belongs to a headless menu (Radix NavigationMenu); styling is tokens.
+customizable:
+  - colour
+  - radius
+coupling: A
+radiusSupport: any
+a11y: Needs aria-expanded and keyboard arrows from the headless layer.
+perf:
+  animated:
+    - color
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-supabase/probe.json#0
+  animations:
+    - target: button(host)
+      property: color
+      durationMs: 200
+      easing: cubic-bezier(0.22, 1, 0.36, 1)
+    - target: svg(child)
+      property: color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: svg(child)
+      property: rotate
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 3
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 5
+  simplicity: 3
+  license: 3
+  neutrality: 5
+recommendation: adapt
+proposedId: NAV-003
+notes: Wraps a headless primitive (ADR 0004).

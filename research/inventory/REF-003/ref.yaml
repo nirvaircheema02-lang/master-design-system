@@ -1,0 +1,70 @@
+id: REF-003
+name: "Magic UI: interactive hover button"
+url: https://magicui.design/docs/components/interactive-hover-button
+sourceKind: library
+captured: 2026-11-06
+category: CTA
+interaction: A small dot grows to fill the button on hover while the label swaps out and a second label with
+  arrow swaps in (300 ms).
+visual: outline pill with dot, label swap
+states:
+  - default
+  - hover
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Dot is a child that scales inside a host with overflow clip, so any radius clips it correctly;
+  label swap uses a duplicated aria-hidden label.
+customizable:
+  - color
+  - radius
+  - icon
+  - size
+coupling: C
+radiusSupport: any
+a11y: Duplicated label must be aria-hidden; reduced motion shows only the end-state label.
+perf:
+  animated:
+    - scale
+    - opacity
+  js: false
+license:
+  status: verified-permissive
+  usage: clean-room
+  note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+measured:
+  probeFile: research/probe/L-magicui-interactive-hover-button/probe.json#0
+  animations:
+    - target: div(child)
+      property: scale
+      durationMs: 300
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: span(child)
+      property: opacity
+      durationMs: 300
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: span(child)
+      property: translate
+      durationMs: 300
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: div(child)
+      property: opacity
+      durationMs: 300
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: div(child)
+      property: translate
+      durationMs: 300
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 5
+scores:
+  distinctiveness: 4
+  usability: 4
+  a11y: 4
+  performance: 4
+  themability: 3
+  simplicity: 3
+  license: 4
+  neutrality: 3
+recommendation: adapt
+proposedId: CTA-008
+notes: 'Measured: child scale 300 ms + opacity 300 ms. Radius claim rests on the host clip (verified in
+  feasibility sketch "chip").'

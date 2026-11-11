@@ -1,0 +1,213 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {},
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "panel-fade"
+    ],
+    "params": {
+      "duration": 150
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "NAV-005",
+  "slug": "mega-menu",
+  "name": "Disclosure Mega Menu",
+  "category": "NAV",
+  "archetype": "megamenu",
+  "fixture": {
+    "props": {
+      "navLabel": "Primary",
+      "items": [
+        {
+          "label": "Solutions",
+          "groups": [
+            {
+              "heading": "Products",
+              "links": [
+                {
+                  "href": "#s5",
+                  "label": "Reports",
+                  "description": "Market research library"
+                },
+                {
+                  "href": "#s6",
+                  "label": "Dashboards",
+                  "description": "Live KPI views"
+                },
+                {
+                  "href": "#s7",
+                  "label": "Data feeds"
+                }
+              ]
+            },
+            {
+              "heading": "Company",
+              "links": [
+                {
+                  "href": "#s10",
+                  "label": "About us",
+                  "current": true
+                },
+                {
+                  "href": "#s11",
+                  "label": "Careers"
+                },
+                {
+                  "href": "#s12",
+                  "label": "Contact"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Resources",
+          "groups": [
+            {
+              "heading": "Learn",
+              "links": [
+                {
+                  "href": "#s15",
+                  "label": "Guides"
+                },
+                {
+                  "href": "#s16",
+                  "label": "Webinars"
+                }
+              ]
+            },
+            {
+              "heading": "Support",
+              "links": [
+                {
+                  "href": "#s18",
+                  "label": "Help centre"
+                },
+                {
+                  "href": "#s19",
+                  "label": "Status"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Pricing",
+          "href": "#s20"
+        }
+      ]
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Site navigation as disclosure buttons that reveal panels of grouped links. Not a menu widget (no menu roles); opens on activation only, one panel at a time; Escape closes and returns focus; outside click and tabbing out close it.",
+  "skins": [
+    {
+      "id": "raised",
+      "bind": {
+        "--ds-nav-panel-shadow": "elevation.2"
+      }
+    },
+    {
+      "id": "flat",
+      "bind": {
+        "--ds-nav-panel-shadow": "elevation.1"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "open",
+    "current"
+  ],
+  "responsive": {
+    "touchTarget": "36px",
+    "hoverFallback": "opens on click or tap only; hover never opens it"
+  },
+  "a11y": {
+    "role": "navigation",
+    "keyboard": [
+      "Tab",
+      "Enter",
+      "Space",
+      "Escape"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button",
+      "a"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-nav-radius",
+    "--ds-nav-bg-current",
+    "--ds-nav-bg-hover",
+    "--ds-nav-fade-duration",
+    "--ds-nav-fade-ease",
+    "--ds-nav-fg",
+    "--ds-nav-fg-current",
+    "--ds-nav-fg-hover",
+    "--ds-nav-focus",
+    "--ds-nav-focus-width",
+    "--ds-nav-font",
+    "--ds-nav-height",
+    "--ds-nav-mega-gap",
+    "--ds-nav-mega-heading",
+    "--ds-nav-mega-width",
+    "--ds-nav-padding-x",
+    "--ds-nav-panel-bg",
+    "--ds-nav-panel-border",
+    "--ds-nav-panel-padding",
+    "--ds-nav-panel-radius",
+    "--ds-nav-panel-shadow",
+    "--ds-nav-trigger-fg",
+    "--ds-nav-z"
+  ],
+  "code": {
+    "path": "packages/components/src/nav/005-mega-menu",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "mega-menu",
+      "navigation",
+      "desktop",
+      "large"
+    ],
+    "interaction": [
+      "reveal"
+    ],
+    "useCases": [
+      "Sites with many sections",
+      "Grouped links"
+    ],
+    "avoidWhen": [
+      "Small sites"
+    ],
+    "pairsWith": [
+      "NAV-006",
+      "NAV-004"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+id: REF-061
+name: Base UI Toast
+url: https://base-ui.com/react/components/toast
+sourceKind: library
+captured: 2026-11-06
+category: TST
+interaction: "Toast stack: new toasts slide in with a 500 ms transform; each toast is exposed as a non-modal
+  dialog; Escape does not dismiss it."
+visual: corner toast stack
+states:
+  - entering
+  - visible
+  - closing
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Headless toast manager; timing and stacking are in the library.
+customizable:
+  - colour
+  - radius
+  - position
+coupling: B
+radiusSupport: any
+a11y: No status/alert role was measured on the demo (toast rendered as a dialog), so announcement must be
+  verified manually.
+perf:
+  animated:
+    - transform
+  js: false
+license:
+  status: verified-permissive
+  usage: clean-room
+  note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+measured:
+  probeFile: research/probe/U-toast-baseui/probe.json#0
+  animations:
+    - target: div[dialog]
+      property: transform
+      durationMs: 500
+      easing: cubic-bezier(0.22, 1, 0.36, 1)
+  reducedMotionAnimations: 3
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 3
+  performance: 4
+  themability: 4
+  simplicity: 3
+  license: 4
+  neutrality: 4
+recommendation: adapt
+proposedId: TST-001
+notes: "Measured on the docs demo only. Standards: critical toasts must not auto-dismiss; must not cover a
+  focused control (WCAG 2.4.11)."

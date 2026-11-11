@@ -1,0 +1,122 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "body",
+      "lead",
+      "caption"
+    ],
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "tone": [
+      "primary",
+      "secondary"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "TXT-002",
+  "slug": "text",
+  "name": "Text",
+  "category": "TXT",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "measure": true
+    },
+    "children": "Ken Research tracks market size, growth drivers and competitive moves across industries. Each report ties a number to its source, so a reader can check the claim behind every chart before relying on it."
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Body copy from the type scale with a readable line height, two tones, an optional measure (about 65 characters per line) and three designs: body, lead, caption.",
+  "skins": [
+    {
+      "id": "strong",
+      "bind": {
+        "--ds-type-text": "color.text.primary"
+      }
+    },
+    {
+      "id": "soft",
+      "bind": {
+        "--ds-type-text": "color.text.secondary"
+      }
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "paragraph",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-type-font",
+    "--ds-type-lh-normal",
+    "--ds-type-lh-relaxed",
+    "--ds-type-lh-snug",
+    "--ds-type-muted",
+    "--ds-type-size-lg",
+    "--ds-type-size-md",
+    "--ds-type-size-sm",
+    "--ds-type-size-xs",
+    "--ds-type-text",
+    "--ds-type-weight-regular"
+  ],
+  "code": {
+    "path": "packages/components/src/txt/002-text",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "text",
+      "body",
+      "paragraph",
+      "reading"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Paragraphs and captions",
+      "Lead text"
+    ],
+    "avoidWhen": [
+      "Headings"
+    ],
+    "pairsWith": [
+      "TXT-001",
+      "TXT-003"
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+id: REF-024
+name: "Shopify: border + shadow CTA"
+url: https://www.shopify.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: Pill CTA changes border colour and shadow on hover (150 ms).
+visual: outlined pill
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Border colour plus shadow, both colour tokens.
+customizable:
+  - color
+  - radius
+coupling: A
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - border-color
+    - box-shadow
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-shopify/probe.json#0
+  animations:
+    - target: button(host)
+      property: border-bottom-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button(host)
+      property: border-left-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button(host)
+      property: border-right-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button(host)
+      property: border-top-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button(host)
+      property: box-shadow
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 5
+  performance: 4
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: ""

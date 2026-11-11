@@ -1,0 +1,40 @@
+id: REF-081
+name: BBC News cards
+url: https://www.bbc.com/news
+sourceKind: production-site
+captured: 2026-11-06
+category: CRD
+interaction: Story cards show no hover or focus motion.
+visual: news card
+states:
+  - default
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Restraint; hierarchy by type.
+customizable:
+  - type scale
+coupling: A
+radiusSupport: any
+a11y: Relies on default focus styles.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/C-bbc/probe.json#1
+  animations: []
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 3
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

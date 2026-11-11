@@ -1,0 +1,10 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-nav-009:not([data-skin]),
+  .ds-nav-009[data-skin="accent"] {
+    --ds-nav-crumb-fg: var(--ds-color-accent-ink);
+  }
+  .ds-nav-009[data-skin="neutral"] {
+    --ds-nav-crumb-fg: var(--ds-color-text-primary);
+  }
+}

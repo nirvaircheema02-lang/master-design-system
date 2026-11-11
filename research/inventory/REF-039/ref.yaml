@@ -1,0 +1,41 @@
+id: REF-039
+name: "Wired: list-row rule"
+url: https://www.wired.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: LAY
+interaction: Section list rows carry a rule (::after) under each entry; editorial rhythm, no hover animation.
+visual: hairline rows
+states:
+  - default
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Pure layout/colour.
+customizable:
+  - rule colour
+  - density
+coupling: A
+radiusSupport: any
+a11y: n/a
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-wired/probe.json#0
+  animations: []
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

@@ -1,0 +1,167 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [
+    "dialog"
+  ],
+  "props": {
+    "side": [
+      "left",
+      "right"
+    ]
+  },
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "slide-in"
+    ],
+    "params": {
+      "duration": 300
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "NAV-004",
+  "slug": "drawer",
+  "name": "Modal Navigation Drawer",
+  "category": "NAV",
+  "archetype": "drawer",
+  "fixture": {
+    "props": {
+      "title": "Menu",
+      "navLabel": "Primary",
+      "links": [
+        {
+          "href": "#s5",
+          "label": "Products"
+        },
+        {
+          "href": "#s10",
+          "label": "Pricing",
+          "current": true
+        },
+        {
+          "href": "#s15",
+          "label": "Docs"
+        },
+        {
+          "href": "#s20",
+          "label": "Contact"
+        }
+      ]
+    },
+    "children": "Menu"
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Mobile navigation drawer: a modal dialog sliding in from a side with a labelled nav. Focus trap, Escape, focus return, outside inertness and scroll lock from the headless adapter; choosing a link closes it.",
+  "skins": [
+    {
+      "id": "raised",
+      "bind": {
+        "--ds-nav-drawer-border": "color.border.subtle",
+        "--ds-nav-drawer-shadow": "elevation.2"
+      }
+    },
+    {
+      "id": "outlined",
+      "bind": {
+        "--ds-nav-drawer-border": "color.border.control",
+        "--ds-nav-drawer-shadow": "elevation.1"
+      }
+    }
+  ],
+  "states": [
+    "closed",
+    "open",
+    "hover",
+    "focus-visible",
+    "current"
+  ],
+  "responsive": {
+    "touchTarget": "36px",
+    "hoverFallback": "hover is decorative; focus ring carries state"
+  },
+  "a11y": {
+    "role": "dialog",
+    "keyboard": [
+      "Tab",
+      "Shift+Tab",
+      "Escape",
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button",
+      "a"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-nav-radius",
+    "--ds-nav-bg-current",
+    "--ds-nav-bg-hover",
+    "--ds-nav-drawer-bg",
+    "--ds-nav-drawer-border",
+    "--ds-nav-drawer-close-bg-hover",
+    "--ds-nav-drawer-ease",
+    "--ds-nav-drawer-enter-duration",
+    "--ds-nav-drawer-exit-duration",
+    "--ds-nav-drawer-fg",
+    "--ds-nav-drawer-scrim",
+    "--ds-nav-drawer-shadow",
+    "--ds-nav-drawer-width",
+    "--ds-nav-drawer-z",
+    "--ds-nav-fg-current",
+    "--ds-nav-fg-hover",
+    "--ds-nav-focus",
+    "--ds-nav-focus-width",
+    "--ds-nav-font",
+    "--ds-nav-height",
+    "--ds-nav-padding-x",
+    "--ds-nav-panel-bg",
+    "--ds-nav-panel-border",
+    "--ds-nav-trigger-fg"
+  ],
+  "code": {
+    "path": "packages/components/src/nav/004-drawer",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "drawer",
+      "mobile",
+      "navigation",
+      "modal"
+    ],
+    "interaction": [
+      "overlay",
+      "reveal"
+    ],
+    "useCases": [
+      "Mobile navigation panel",
+      "Side navigation on small screens"
+    ],
+    "avoidWhen": [
+      "Wide screens with space for a bar"
+    ],
+    "pairsWith": [
+      "NAV-006",
+      "NAV-008"
+    ]
+  }
+}

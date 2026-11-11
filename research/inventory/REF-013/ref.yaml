@@ -1,0 +1,46 @@
+id: REF-013
+name: "Magic UI: shiny button"
+url: https://magicui.design/docs/components/shiny-button
+sourceKind: library
+captured: 2026-11-06
+category: CTA
+interaction: Edge highlight/shadow shifts on hover (box-shadow, 300 ms).
+visual: dark button, bright rim
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Animates box-shadow, which our lint forbids; could be rebuilt as an opacity layer.
+customizable:
+  - color
+coupling: B
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - box-shadow
+  js: false
+license:
+  status: verified-permissive
+  usage: clean-room
+  note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+measured:
+  probeFile: research/probe/L-magicui-shiny-button/probe.json#2
+  animations:
+    - target: button(host)
+      property: box-shadow
+      durationMs: 300
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 3
+  usability: 3
+  a11y: 4
+  performance: 3
+  themability: 3
+  simplicity: 4
+  license: 4
+  neutrality: 3
+recommendation: inspiration
+proposedId: null
+notes: ""

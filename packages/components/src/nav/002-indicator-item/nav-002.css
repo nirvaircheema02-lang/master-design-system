@@ -1,0 +1,24 @@
+/* NAV-002 Indicator-reveal item. Tokens: --ds-nav-*. Current page: indicator always shown + heavier weight. */
+@layer components {
+  .ds-nav-002 {
+    position: relative; display: inline-flex; align-items: center;
+    min-height: var(--ds-nav-height); padding-inline: var(--ds-nav-padding-x);
+    color: var(--ds-nav-fg); font: 500 0.9375rem/1 var(--ds-nav-font); text-decoration: none; white-space: nowrap;
+  }
+  .ds-nav-002:focus-visible { outline: var(--ds-nav-focus-width) solid var(--ds-nav-focus); outline-offset: 2px; }
+  .ds-nav-002[data-current] { font-weight: 700; }
+  .ds-nav-002::after {
+    content: ""; position: absolute; left: var(--ds-nav-padding-x); right: var(--ds-nav-padding-x); bottom: 0.25rem; height: var(--ds-nav-indicator-width);
+    background: var(--ds-nav-indicator); transform: scaleX(0); transform-origin: left;
+    transition: transform var(--ds-nav-slide-duration) var(--ds-nav-fade-ease);
+  }
+}
+
+@layer effects {
+  .ds-nav-002:hover::after, .ds-nav-002:focus-visible::after, .ds-nav-002[data-current]::after { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-nav-002::after { transition: none; transform: none; opacity: 0; }
+  .ds-nav-002:hover::after, .ds-nav-002:focus-visible::after, .ds-nav-002[data-current]::after { opacity: 1; }
+}

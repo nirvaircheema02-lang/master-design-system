@@ -1,0 +1,138 @@
+{
+  "id": "CTA-004",
+  "slug": "fill-wipe",
+  "name": "Fill Wipe CTA",
+  "category": "CTA",
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A fill layer sweeps in from an edge on hover while the label flips colour. Outline by default.",
+  "inspiration": [],
+  "interaction": {
+    "class": "C",
+    "modules": [
+      "fill-wipe"
+    ],
+    "params": {
+      "duration": 300
+    }
+  },
+  "slots": {
+    "label": {
+      "required": true
+    }
+  },
+  "props": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "direction": [
+      "left",
+      "right",
+      "top",
+      "bottom"
+    ]
+  },
+  "skins": [
+    {
+      "id": "outline-wipe",
+      "bind": {
+        "--ds-cta-bg": "transparent",
+        "--ds-cta-bg-hover": "color.accent",
+        "--ds-cta-fg": "color.accent.ink",
+        "--ds-cta-fg-hover": "color.on-accent",
+        "--ds-cta-border": "color.accent.ink"
+      }
+    },
+    {
+      "id": "solid-wipe",
+      "bind": {
+        "--ds-cta-bg": "color.accent",
+        "--ds-cta-bg-hover": "color.accent.hover",
+        "--ds-cta-fg": "color.on-accent",
+        "--ds-cta-fg-hover": "color.on-accent",
+        "--ds-cta-border": "transparent"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-cta-bg",
+    "--ds-cta-bg-hover",
+    "--ds-cta-fg",
+    "--ds-cta-fg-hover",
+    "--ds-cta-border",
+    "--ds-cta-border-width",
+    "--ds-cta-radius",
+    "--ds-cta-height",
+    "--ds-cta-padding-x",
+    "--ds-cta-font",
+    "--ds-cta-focus",
+    "--ds-cta-fade-duration",
+    "--ds-cta-fade-ease",
+    "--ds-cta-spin-duration",
+    "--ds-cta-wipe-duration",
+    "--ds-cta-ease"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "radiusNote": "The fill layer inherits the radius and the host clips it (overflow: clip), so square, rounded and pill corners all clip correctly.",
+    "requiresHost": [
+      "overflow:clip",
+      "position:relative"
+    ],
+    "minContrast": "AA"
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "active",
+    "loading",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "the wipe is decorative; focus-visible triggers the same fill as hover"
+  },
+  "a11y": {
+    "role": "button",
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state"
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/cta/004-fill-wipe",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "button",
+      "fill",
+      "wipe",
+      "bold"
+    ],
+    "interaction": [
+      "hover-press"
+    ],
+    "useCases": [
+      "Secondary action that becomes primary on hover",
+      "Outline buttons"
+    ],
+    "avoidWhen": [
+      "Touch-only screens"
+    ],
+    "pairsWith": [
+      "CRD-004"
+    ],
+    "effects": "full"
+  }
+}

@@ -1,0 +1,53 @@
+id: REF-056
+name: Atlassian Modal dialog
+url: https://atlassian.design/components/modal-dialog/examples
+sourceKind: design-system
+captured: 2026-11-06
+category: DLG
+interaction: Modal that fades and scales in (opacity 0-100 and scale 95-100, 250 ms) with aria-modal=true,
+  named dialog, trap, Escape and focus return.
+visual: centred modal, scale-in
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Scale-in is a transform on the popup.
+customizable:
+  - colour
+  - radius
+coupling: A
+radiusSupport: any
+a11y: aria-modal set; all measured behaviours pass.
+perf:
+  animated:
+    - opacity
+    - transform
+  js: false
+license:
+  status: not-applicable
+  usage: inspiration-only
+  note: Documentation read only; concept reference, nothing reused.
+measured:
+  probeFile: research/probe/U-dlg-atlassian/probe.json#0
+  animations:
+    - target: div
+      property: "@FadeIn0to100:opacity"
+      durationMs: 250
+      easing: linear
+    - target: div
+      property: "@ScaleIn95to100:transform"
+      durationMs: 250
+      easing: linear
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 5
+  performance: 4
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: "Motion value reference: 250 ms fade + scale."

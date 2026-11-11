@@ -1,0 +1,47 @@
+id: REF-022
+name: "Linear: fill fade"
+url: https://linear.app/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: Primary CTA fills over 160 ms on hover; no movement.
+visual: solid fill
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Colour transition on hover; no layout or shape change, so every radius works unchanged.
+customizable:
+  - color
+  - duration
+coupling: A
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - background-color
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-linear/probe.json#0
+  animations:
+    - target: a(host)
+      property: background-color
+      durationMs: 160
+      easing: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: Baseline evidence for CTA-003 (fast fill).

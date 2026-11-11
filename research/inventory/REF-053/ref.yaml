@@ -1,0 +1,41 @@
+id: REF-053
+name: "Cal.com pricing FAQ: span trigger"
+url: https://cal.com/pricing
+sourceKind: production-site
+captured: 2026-11-06
+category: ACC
+interaction: FAQ rows whose toggle is a span carrying aria-expanded, not a button; opens instantly.
+visual: FAQ rows
+states:
+  - default
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Anti-pattern: no keyboard or role from the element itself."
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: A span is not focusable or operable by keyboard without extra work.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-acc-cal-pricing/probe.json#0
+  animations: []
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 1
+  usability: 2
+  a11y: 1
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 3
+recommendation: reject
+proposedId: null
+notes: Evidence of the failure mode our harness must catch (trigger must be a real button or summary).

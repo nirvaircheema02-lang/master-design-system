@@ -1,0 +1,171 @@
+{
+  "id": "CRD-008",
+  "slug": "audit-cta-box",
+  "name": "Audit CTA Box",
+  "category": "CRD",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "eyebrow": "Free review",
+      "title": "Get a free audit of your current setup",
+      "highlight": "free audit",
+      "text": "Tell us where to send it. We look at what you have today and reply with three clear next steps.",
+      "note": "No spam. One reply, usually within two working days.",
+      "coreLabel": "Audit",
+      "pills": [
+        "Search",
+        "Growth",
+        "Design",
+        "Leads"
+      ]
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A soft panel for one high-intent call to action (an email field and a button, passed as a slot) with a heading that can set one phrase in a gradient and a decorative radar. The radar is hidden from assistive tech; one short pulse plays once on load and never under reduced motion. Three designs: radar, mirrored, plain.",
+  "inspiration": [],
+  "discovery": {
+    "tags": [
+      "audit",
+      "cta",
+      "email",
+      "lead",
+      "panel",
+      "radar"
+    ],
+    "interaction": [
+      "feedback"
+    ],
+    "useCases": [
+      "Lead capture with one field",
+      "Free audit or review offers",
+      "A closing offer inside a long page"
+    ],
+    "avoidWhen": [
+      "More than two form fields",
+      "Content that is not an offer"
+    ],
+    "pairsWith": [
+      "INP-001",
+      "CTA-001",
+      "TXT-005"
+    ],
+    "effects": "subtle"
+  },
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "radar-pulse"
+    ],
+    "params": {
+      "duration": 2500,
+      "iterations": 1
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "headless": [],
+  "slots": {
+    "children": {
+      "required": false
+    }
+  },
+  "props": {
+    "design": [
+      "radar",
+      "mirrored",
+      "plain"
+    ]
+  },
+  "skins": [
+    {
+      "id": "raised",
+      "bind": {
+        "--ds-aud-bg": "color.surface.raised",
+        "--ds-aud-border": "color.border.subtle"
+      }
+    },
+    {
+      "id": "sunken",
+      "bind": {
+        "--ds-aud-bg": "color.surface.sunken",
+        "--ds-aud-border": "color.border.strong"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-aud-bg",
+    "--ds-aud-border",
+    "--ds-aud-core-fg",
+    "--ds-aud-core-from",
+    "--ds-aud-core-glow",
+    "--ds-aud-core-size",
+    "--ds-aud-core-to",
+    "--ds-aud-display",
+    "--ds-aud-ease",
+    "--ds-aud-eyebrow",
+    "--ds-aud-fg",
+    "--ds-aud-font",
+    "--ds-aud-gap-wide",
+    "--ds-aud-glow-a",
+    "--ds-aud-glow-b",
+    "--ds-aud-hl-from",
+    "--ds-aud-hl-to",
+    "--ds-aud-label-size",
+    "--ds-aud-lh-relaxed",
+    "--ds-aud-lh-tight",
+    "--ds-aud-muted",
+    "--ds-aud-note-size",
+    "--ds-aud-pad",
+    "--ds-aud-pad-wide",
+    "--ds-aud-pill-bg",
+    "--ds-aud-pill-border",
+    "--ds-aud-pill-dot",
+    "--ds-aud-pill-fg",
+    "--ds-aud-pill-radius",
+    "--ds-aud-pulse",
+    "--ds-aud-pulse-duration",
+    "--ds-aud-radar-max",
+    "--ds-aud-radius",
+    "--ds-aud-ring-1",
+    "--ds-aud-ring-2",
+    "--ds-aud-ring-3",
+    "--ds-aud-text-size",
+    "--ds-aud-title-size",
+    "--ds-aud-tracking-tight",
+    "--ds-aud-tracking-wide",
+    "--ds-aud-weight-bold",
+    "--ds-aud-weight-semibold"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a (the slot owns its targets)",
+    "hoverFallback": "not interactive; the radar is decorative and hidden on print"
+  },
+  "a11y": {
+    "role": "region",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/crd/008-audit-cta-box",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  }
+}

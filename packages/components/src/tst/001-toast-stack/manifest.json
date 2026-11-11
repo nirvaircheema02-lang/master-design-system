@@ -1,0 +1,168 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "placement": [
+      "fixed",
+      "inline"
+    ],
+    "design": [
+      "bar",
+      "thick",
+      "outline",
+      "badge",
+      "slide"
+    ]
+  },
+  "id": "TST-001",
+  "slug": "toast-stack",
+  "name": "Toast Stack",
+  "category": "TST",
+  "archetype": "toast",
+  "fixture": {
+    "props": {
+      "placement": "fixed",
+      "items": [
+        {
+          "id": "saved",
+          "title": "Settings saved",
+          "description": "Your changes are live.",
+          "tone": "success",
+          "durationMs": 0
+        },
+        {
+          "id": "sync",
+          "title": "Sync paused",
+          "tone": "info",
+          "durationMs": 0
+        },
+        {
+          "id": "fail",
+          "title": "Payment failed",
+          "description": "Update your card to continue.",
+          "tone": "critical",
+          "action": {
+            "label": "Update card",
+            "href": "#s3"
+          }
+        }
+      ]
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Toast stack with two live regions that always exist (polite status, assertive alert). A toast never takes focus; critical toasts never auto-dismiss; timers pause on hover and focus; scroll-padding-bottom keeps focused controls out from under the stack.",
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "slide-in"
+    ],
+    "params": {
+      "duration": 200
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "skins": [
+    {
+      "id": "raised",
+      "bind": {
+        "--ds-tst-border": "color.border.subtle",
+        "--ds-tst-shadow": "elevation.2"
+      }
+    },
+    {
+      "id": "outlined",
+      "bind": {
+        "--ds-tst-border": "color.border.control",
+        "--ds-tst-shadow": "elevation.1"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "paused"
+  ],
+  "responsive": {
+    "touchTarget": "36px",
+    "hoverFallback": "timers pause while focus is inside, so keyboard and touch users get the same time"
+  },
+  "a11y": {
+    "role": "status",
+    "keyboard": [
+      "Tab",
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button",
+      "a"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-tst-radius",
+    "--ds-tst-bg",
+    "--ds-tst-border",
+    "--ds-tst-close-bg-hover",
+    "--ds-tst-ease",
+    "--ds-tst-enter-duration",
+    "--ds-tst-fg",
+    "--ds-tst-focus",
+    "--ds-tst-focus-width",
+    "--ds-tst-font",
+    "--ds-tst-gap",
+    "--ds-tst-muted",
+    "--ds-tst-padding",
+    "--ds-tst-shadow",
+    "--ds-tst-tone-critical",
+    "--ds-tst-tone-info",
+    "--ds-tst-tone-success",
+    "--ds-tst-tone-width",
+    "--ds-tst-width",
+    "--ds-tst-z"
+  ],
+  "code": {
+    "path": "packages/components/src/tst/001-toast-stack",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "toast",
+      "notification",
+      "alert",
+      "status"
+    ],
+    "interaction": [
+      "feedback"
+    ],
+    "useCases": [
+      "Confirm that something happened",
+      "Non-blocking messages"
+    ],
+    "avoidWhen": [
+      "Errors that need a decision (use a dialog)"
+    ],
+    "pairsWith": [
+      "FRM-001",
+      "CTA-014"
+    ]
+  }
+}

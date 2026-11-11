@@ -1,0 +1,117 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "reveal": [
+      "on-focus",
+      "always"
+    ]
+  },
+  "id": "NAV-008",
+  "slug": "skip-link",
+  "name": "Skip Link",
+  "category": "NAV",
+  "archetype": "skiplink",
+  "fixture": {
+    "props": {
+      "target": "main"
+    },
+    "children": "Skip to main content"
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "First Tab stop of the page: off-screen until focused, then a readable pill. Activating it moves focus (not just scroll) to the main content. WCAG 2.4.1.",
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "skins": [
+    {
+      "id": "accent",
+      "bind": {
+        "--ds-nav-skip-bg": "color.accent",
+        "--ds-nav-skip-fg": "color.on-accent"
+      }
+    },
+    {
+      "id": "inverse",
+      "bind": {
+        "--ds-nav-skip-bg": "color.text.primary",
+        "--ds-nav-skip-fg": "color.surface.base"
+      }
+    }
+  ],
+  "states": [
+    "hidden",
+    "focus-visible"
+  ],
+  "responsive": {
+    "touchTarget": "36px",
+    "hoverFallback": "keyboard-only control; touch users do not need it"
+  },
+  "a11y": {
+    "role": "link",
+    "keyboard": [
+      "Tab",
+      "Enter"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "a"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-nav-radius",
+    "--ds-nav-focus",
+    "--ds-nav-focus-width",
+    "--ds-nav-font",
+    "--ds-nav-height",
+    "--ds-nav-skip-bg",
+    "--ds-nav-skip-fg",
+    "--ds-nav-skip-z"
+  ],
+  "code": {
+    "path": "packages/components/src/nav/008-skip-link",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "skip-link",
+      "accessibility",
+      "keyboard",
+      "a11y"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Let keyboard users jump to the content",
+      "Every page"
+    ],
+    "avoidWhen": [
+      "Never skip it"
+    ],
+    "pairsWith": [
+      "NAV-006",
+      "NAV-007"
+    ]
+  }
+}

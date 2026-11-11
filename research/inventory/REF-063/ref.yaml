@@ -1,0 +1,110 @@
+id: REF-063
+name: GitHub mobile navigation drawer
+url: https://github.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: At 390 px the "Toggle navigation" button opens a full-height menu over a backdrop; page scroll
+  locks, Escape closes it and focus returns to the button.
+visual: full-height mobile menu
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Modal-style drawer without a dialog role; behaviours verified by probe. Radius is unaffected:
+  the drawer is a full-height edge-anchored panel, so corner radius only applies to inner elements."
+customizable:
+  - colour
+  - width
+coupling: C
+radiusSupport: any
+a11y: Escape and focus return verified; a modal drawer should follow the APG modal dialog (name, trap).
+perf:
+  animated:
+    - transform
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-drawer-github/probe.json#0
+  animations:
+    - target: path
+      property: "@mona-particle-burst__xa1_Cn:opacity+transform"
+      durationMs: 4000
+      easing: linear
+    - target: path
+      property: "@mona-particle-burst__xa1_Cn:opacity+transform"
+      durationMs: 4000
+      easing: linear
+    - target: path
+      property: "@mona-particle-burst__xa1_Cn:opacity+transform"
+      durationMs: 4000
+      easing: linear
+    - target: path
+      property: "@mona-particle-burst__xa1_Cn:opacity+transform"
+      durationMs: 4000
+      easing: linear
+    - target: path
+      property: "@mona-particle-burst__xa1_Cn:opacity+transform"
+      durationMs: 4000
+      easing: linear
+    - target: path
+      property: "@mona-particle-burst__xa1_Cn:opacity+transform"
+      durationMs: 4000
+      easing: linear
+    - target: rect
+      property: "@corner-dot-chase__aZ6slS:opacity"
+      durationMs: 1400
+      easing: linear
+    - target: rect
+      property: "@corner-dot-chase__aZ6slS:opacity"
+      durationMs: 1400
+      easing: linear
+    - target: rect
+      property: "@corner-dot-chase__aZ6slS:opacity"
+      durationMs: 1400
+      easing: linear
+    - target: rect
+      property: "@corner-dot-chase__aZ6slS:opacity"
+      durationMs: 1400
+      easing: linear
+    - target: rect
+      property: "@corner-dot-chase__aZ6slS:opacity"
+      durationMs: 1400
+      easing: linear
+    - target: rect
+      property: "@corner-dot-chase__aZ6slS:opacity"
+      durationMs: 1400
+      easing: linear
+    - target: rect
+      property: "@corner-dot-chase__aZ6slS:opacity"
+      durationMs: 1400
+      easing: linear
+    - target: rect
+      property: "@corner-dot-chase__aZ6slS:opacity"
+      durationMs: 1400
+      easing: linear
+    - target: div
+      property: "@Primer_Brand__LogoSuite-module__LogobarScrollX___eGhi4:transform"
+      durationMs: 60000
+      easing: linear
+    - target: div
+      property: "@Primer_Brand__LogoSuite-module__LogobarScrollX___eGhi4:transform"
+      durationMs: 60000
+      easing: linear
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 4
+  performance: 4
+  themability: 5
+  simplicity: 3
+  license: 3
+  neutrality: 4
+recommendation: adapt
+proposedId: NAV-004
+notes: "Measured: backdrop, scroll lock, Escape, focus return. Dialog role absent, so ours adds role/name/trap
+  via the Dialog primitive."

@@ -1,0 +1,48 @@
+id: REF-076
+name: "Stripe / GitHub / The Verge: non-sticky headers"
+url: https://stripe.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: Headers scroll away with the page; no sticky or hide behaviour.
+visual: static bar
+states:
+  - top
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Simplest option; no 2.4.11 risk.
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: No focus-obscuring risk.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-hdr-stripe/probe.json#0
+  animations:
+    - target: div::after
+      property: opacity
+      durationMs: 150
+      easing: cubic-bezier(0.33, 1, 0.68, 1)
+    - target: nav
+      property: "@detect-scroll:"
+      durationMs: null
+      easing: linear
+  reducedMotionAnimations: null
+scores:
+  distinctiveness: 1
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: 4 of 12 measured headers are not pinned.

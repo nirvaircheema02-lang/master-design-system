@@ -1,0 +1,59 @@
+id: REF-007
+name: "Stripe: fill + arrow nudge"
+url: https://stripe.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: Fill fades (300 ms) while the arrow glyph inside the button nudges forward (transform 300 ms).
+visual: solid fill, trailing chevron
+states:
+  - default
+  - hover
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Arrow lives in an icon slot and the nudge is a translate of the glyph; any clip is on the inner
+  icon box, not the button edge, so the outer radius is unaffected.
+customizable:
+  - color
+  - radius
+  - icon
+coupling: C
+radiusSupport: any
+a11y: Glyph is decorative (aria-hidden).
+perf:
+  animated:
+    - background-color
+    - transform
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-stripe/probe.json#0
+  animations:
+    - target: a(host)
+      property: background-color
+      durationMs: 300
+      easing: cubic-bezier(0.25, 1, 0.5, 1)
+    - target: g(child)
+      property: transform
+      durationMs: 300
+      easing: cubic-bezier(0.25, 1, 0.5, 1)
+    - target: rect(child)
+      property: opacity
+      durationMs: 300
+      easing: cubic-bezier(0.25, 1, 0.5, 1)
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: "Folds into CTA-002 as parameter arrowMotion: swap | nudge. Not a separate component."

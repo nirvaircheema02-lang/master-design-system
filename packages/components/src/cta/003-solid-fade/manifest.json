@@ -1,0 +1,137 @@
+{
+  "id": "CTA-003",
+  "slug": "solid-fade",
+  "name": "Solid Fade CTA",
+  "category": "CTA",
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Baseline call-to-action: the fill, label and border fade between rest and hover. The most common premium treatment, done properly.",
+  "inspiration": [],
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {
+      "duration": 150
+    }
+  },
+  "slots": {
+    "label": {
+      "required": true
+    },
+    "iconTrailing": {
+      "required": false
+    }
+  },
+  "props": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ]
+  },
+  "skins": [
+    {
+      "id": "solid-accent",
+      "bind": {
+        "--ds-cta-bg": "color.accent",
+        "--ds-cta-bg-hover": "color.accent.hover",
+        "--ds-cta-fg": "color.on-accent",
+        "--ds-cta-fg-hover": "color.on-accent",
+        "--ds-cta-border": "transparent"
+      }
+    },
+    {
+      "id": "outline-invert",
+      "bind": {
+        "--ds-cta-bg": "transparent",
+        "--ds-cta-bg-hover": "color.accent",
+        "--ds-cta-fg": "color.accent.ink",
+        "--ds-cta-fg-hover": "color.on-accent",
+        "--ds-cta-border": "color.accent.ink"
+      }
+    },
+    {
+      "id": "outline-tint",
+      "bind": {
+        "--ds-cta-bg": "transparent",
+        "--ds-cta-bg-hover": "color.accent.subtle",
+        "--ds-cta-fg": "color.accent.ink",
+        "--ds-cta-fg-hover": "color.accent.ink",
+        "--ds-cta-border": "color.accent.ink"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-cta-bg",
+    "--ds-cta-bg-hover",
+    "--ds-cta-fg",
+    "--ds-cta-fg-hover",
+    "--ds-cta-border",
+    "--ds-cta-border-width",
+    "--ds-cta-radius",
+    "--ds-cta-height",
+    "--ds-cta-padding-x",
+    "--ds-cta-font",
+    "--ds-cta-focus",
+    "--ds-cta-fade-duration",
+    "--ds-cta-fade-ease",
+    "--ds-cta-spin-duration"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA"
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "active",
+    "loading",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "hover is a colour change only; on coarse pointers :active shows the same fill"
+  },
+  "a11y": {
+    "role": "button",
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state"
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/cta/003-solid-fade",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "button",
+      "fade",
+      "calm",
+      "minimal"
+    ],
+    "interaction": [
+      "hover-press"
+    ],
+    "useCases": [
+      "Quiet primary action",
+      "Dense interfaces"
+    ],
+    "avoidWhen": [
+      "When you need a strong effect"
+    ],
+    "pairsWith": [
+      "INP-001",
+      "FRM-001"
+    ]
+  }
+}

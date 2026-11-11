@@ -1,0 +1,47 @@
+id: REF-001
+name: "Ken Research Button: shimmer"
+url: https://kenresearch.com/
+sourceKind: internal
+captured: 2026-11-06
+category: CTA
+interaction: Solid CTA with a left-to-right light sweep (700 ms) on hover; original look is yellow, pill, dark label.
+visual: solid accent fill, pill, light band sweep
+states:
+  - default
+  - hover
+  - focus-visible
+  - active
+  - loading
+  - disabled
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Shipped as CTA-001: host clips with overflow + radius, sweep layer inherits radius (S1 +
+  conformance proven)."
+customizable:
+  - color
+  - radius
+  - size
+  - duration
+coupling: B
+radiusSupport: any
+a11y: Sweep removed under reduced motion; hover fill change remains.
+perf:
+  animated:
+    - transform
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: Our own Ken Research Button; no third-party code.
+measured: null
+scores:
+  distinctiveness: 4
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 5
+  neutrality: 3
+recommendation: adapt
+proposedId: CTA-001
+notes: Already built (Phase 2).

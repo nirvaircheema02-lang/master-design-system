@@ -1,0 +1,43 @@
+id: REF-047
+name: Atlassian Tabs
+url: https://atlassian.design/components/tabs/examples
+sourceKind: design-system
+captured: 2026-11-06
+category: TAB
+interaction: Tabs with manual activation and complete aria wiring (controls, labelled panel, roving tabindex).
+visual: underline tabs
+states:
+  - default
+  - hover
+  - selected
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Reference for the wiring and keyboard model only.
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Roving tabindex 0/-1; manual activation; panel labelled.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: inspiration-only
+  note: Documentation read only; concept reference, nothing reused.
+measured:
+  probeFile: research/probe/U-tabs-atlassian/probe.json#0
+  animations: []
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

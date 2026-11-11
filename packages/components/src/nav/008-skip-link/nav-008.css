@@ -1,0 +1,12 @@
+/* NAV-008 Skip link. Tokens: --ds-nav-*. Hidden by moving off-screen (never display:none); instant, no animation. */
+@layer components {
+  .ds-nav-008 {
+    position: fixed; z-index: var(--ds-nav-skip-z); top: 0.75rem; left: 0.75rem; display: inline-flex; align-items: center; min-height: var(--ds-nav-height); padding: 0 1rem;
+    border-radius: var(--ds-nav-radius); background: var(--ds-nav-skip-bg); color: var(--ds-nav-skip-fg); font-family: var(--ds-nav-font); font-size: 0.9375rem; font-weight: 600; text-decoration: none;
+    transform: translateY(calc(-100% - 1.5rem));
+  }
+  .ds-nav-008:focus { transform: none; }
+  /* documentation mode: shown in the flow instead of pinned to the viewport */
+  .ds-nav-008[data-reveal="always"] { position: static; transform: none; }
+  .ds-nav-008:focus-visible { outline: var(--ds-nav-focus-width) solid var(--ds-nav-focus); outline-offset: 3px; }
+}

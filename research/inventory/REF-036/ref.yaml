@@ -1,0 +1,46 @@
+id: REF-036
+name: "Notion: nav link fill"
+url: https://www.notion.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: Nav link fills over 150 ms with an ease on hover.
+visual: text links
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Same as NAV-001 with different timing.
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - background-color
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/N-notion-nav/probe.json#0
+  animations:
+    - target: a(host)
+      property: background-color
+      durationMs: 150
+      easing: ease
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 1
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: Duration evidence only.

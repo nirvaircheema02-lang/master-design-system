@@ -1,0 +1,118 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "gap": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "6",
+      "8",
+      "12"
+    ],
+    "direction": [
+      "vertical",
+      "horizontal"
+    ],
+    "align": [
+      "start",
+      "center",
+      "stretch"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "LAY-003",
+  "slug": "stack",
+  "name": "Stack",
+  "category": "LAY",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "items": [
+        "First item",
+        "Second item",
+        "Third item"
+      ],
+      "gap": "4"
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Vertical or horizontal flow with a gap from the spacing scale (never margins on the children). Optional wrapping.",
+  "skins": [
+    {
+      "id": "default",
+      "bind": {}
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "group",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-lay-font",
+    "--ds-lay-gap-1",
+    "--ds-lay-gap-12",
+    "--ds-lay-gap-2",
+    "--ds-lay-gap-3",
+    "--ds-lay-gap-4",
+    "--ds-lay-gap-6",
+    "--ds-lay-gap-8"
+  ],
+  "code": {
+    "path": "packages/components/src/lay/003-stack",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "stack",
+      "gap",
+      "spacing",
+      "layout"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Vertical rhythm between items",
+      "Forms and card contents"
+    ],
+    "avoidWhen": [
+      "Grid layouts"
+    ],
+    "pairsWith": [
+      "LAY-002"
+    ]
+  }
+}

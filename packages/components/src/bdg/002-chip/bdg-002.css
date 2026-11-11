@@ -1,0 +1,23 @@
+/* BDG-002 Chip. Tokens: --ds-badge-*. The fill changes with a colour transition only. */
+@layer components {
+  .ds-bdg-002 { display: inline-flex; align-items: stretch; box-sizing: border-box; min-height: var(--ds-badge-chip-height); border: 1px solid var(--ds-badge-chip-border); border-radius: var(--ds-badge-radius); background: var(--ds-badge-chip-bg); color: var(--ds-badge-chip-fg); font-family: var(--ds-badge-font); transition: background-color var(--ds-badge-fade-duration) var(--ds-badge-fade-ease); }
+  .ds-bdg-002__main, .ds-bdg-002__remove { display: inline-flex; align-items: center; gap: 0.375rem; margin: 0; border: 0; border-radius: inherit; background: transparent; color: inherit; font: inherit; font-size: 0.9375rem; font-weight: var(--ds-badge-weight); cursor: pointer; }
+  .ds-bdg-002__main { padding-inline: 0.75rem; }
+  .ds-bdg-002[data-removable] .ds-bdg-002__main { padding-inline-end: 0.375rem; border-start-end-radius: 0; border-end-end-radius: 0; }
+  .ds-bdg-002__remove { justify-content: center; min-width: 1.75rem; padding: 0 0.25rem; border-start-start-radius: 0; border-end-start-radius: 0; }
+  .ds-bdg-002__check { width: 0; height: 1rem; flex: none; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; overflow: hidden; }
+  .ds-bdg-002[data-selected] .ds-bdg-002__check { width: 1rem; }
+  .ds-bdg-002__remove svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+  .ds-bdg-002[data-selected] { background: var(--ds-badge-chip-on-bg); border-color: var(--ds-badge-chip-on-bg); color: var(--ds-badge-chip-on-fg); }
+  .ds-bdg-002__main:focus-visible, .ds-bdg-002__remove:focus-visible { outline: var(--ds-badge-focus-width) solid var(--ds-badge-focus); outline-offset: 2px; }
+  /* filled: no outline until selected; a tinted resting fill */
+  .ds-bdg-002[data-design="filled"]:not([data-selected]) { background: var(--ds-badge-neutral-bg); border-color: transparent; }
+}
+
+@layer effects {
+  .ds-bdg-002:not([data-selected]):hover { background: var(--ds-badge-chip-hover); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-bdg-002 { transition: none; }
+}

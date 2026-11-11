@@ -1,0 +1,4 @@
+{ "name": "Maison Lifestyle", "slug": "lifestyle", "concept": "Premium lifestyle: terracotta, soft serif",
+  "seeds": { "primary": "#c2603a", "secondary": "#3b2a20" },
+  "fonts": { "sans": "Inter, system-ui, sans-serif", "display": "Playfair Display, serif" },
+  "radiusStrategy": "rounded", "density": "spacious", "motion": "calm" }

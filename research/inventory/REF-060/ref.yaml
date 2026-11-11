@@ -1,0 +1,52 @@
+id: REF-060
+name: Base UI Menu
+url: https://base-ui.com/react/components/menu
+sourceKind: library
+captured: 2026-11-06
+category: DLG
+interaction: Menu panel entering with opacity + transform in 100 ms; Escape and focus return verified.
+visual: popover menu
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Equivalent headless menu.
+customizable:
+  - colour
+  - radius
+coupling: A
+radiusSupport: any
+a11y: Verified behaviours pass.
+perf:
+  animated:
+    - opacity
+    - transform
+  js: false
+license:
+  status: verified-permissive
+  usage: clean-room
+  note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+measured:
+  probeFile: research/probe/U-menu-baseui/probe.json#0
+  animations:
+    - target: div[menu]
+      property: opacity
+      durationMs: 100
+      easing: ease-out
+    - target: div[menu]
+      property: transform
+      durationMs: 100
+      easing: ease-out
+  reducedMotionAnimations: 2
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 3
+  license: 4
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

@@ -1,0 +1,155 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "boxed",
+      "underline",
+      "filled",
+      "pill",
+      "tall"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "INP-005",
+  "slug": "select",
+  "name": "Select",
+  "category": "INP",
+  "archetype": "field",
+  "fixture": {
+    "props": {
+      "label": "Country",
+      "hint": "Where you are based.",
+      "name": "country",
+      "autoComplete": "country-name",
+      "prompt": "Choose a country",
+      "options": [
+        {
+          "value": "in",
+          "label": "India"
+        },
+        {
+          "value": "ae",
+          "label": "United Arab Emirates"
+        },
+        {
+          "value": "us",
+          "label": "United States"
+        },
+        {
+          "value": "gb",
+          "label": "United Kingdom"
+        }
+      ]
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Styled native <select>: label, hint, error, optional prompt. The platform supplies the listbox, keyboard, typeahead and the mobile picker. A custom combobox is a separate, later component.",
+  "skins": [
+    {
+      "id": "outlined",
+      "bind": {
+        "--ds-field-bg": "color.surface.raised",
+        "--ds-field-border": "color.border.control"
+      }
+    },
+    {
+      "id": "filled",
+      "bind": {
+        "--ds-field-bg": "color.surface.sunken",
+        "--ds-field-border": "color.border.control"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "focus-visible",
+    "invalid",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "hover is decorative; focus-visible shows the same cue"
+  },
+  "a11y": {
+    "role": "combobox",
+    "keyboard": [
+      "Tab",
+      "ArrowDown",
+      "ArrowUp",
+      "typeahead"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-field-bg",
+    "--ds-field-border",
+    "--ds-field-border-width",
+    "--ds-field-error",
+    "--ds-field-fade-duration",
+    "--ds-field-fade-ease",
+    "--ds-field-fg",
+    "--ds-field-focus",
+    "--ds-field-focus-width",
+    "--ds-field-font",
+    "--ds-field-gap",
+    "--ds-field-height",
+    "--ds-field-hint",
+    "--ds-field-label",
+    "--ds-field-padding-x",
+    "--ds-field-radius",
+    "--ds-field-underline-width",
+    "--ds-field-bg-filled"
+  ],
+  "code": {
+    "path": "packages/components/src/inp/005-select",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "select",
+      "dropdown",
+      "form",
+      "native"
+    ],
+    "interaction": [
+      "input"
+    ],
+    "useCases": [
+      "Pick one from a long list",
+      "Mobile-friendly pickers"
+    ],
+    "avoidWhen": [
+      "Fewer than five options (use radio)"
+    ],
+    "pairsWith": [
+      "INP-001",
+      "FRM-001"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-lay-001:not([data-skin]),
+  .ds-lay-001[data-skin="strong"] {
+    --ds-lay-rule: var(--ds-color-border-control);
+  }
+  .ds-lay-001[data-skin="soft"] {
+    --ds-lay-rule: var(--ds-color-border-subtle);
+  }
+}

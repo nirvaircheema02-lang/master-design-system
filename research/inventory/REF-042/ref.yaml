@@ -1,0 +1,50 @@
+id: REF-042
+name: "Resend: text link colour shift"
+url: https://resend.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: Secondary text CTA shifts colour over 200 ms on hover.
+visual: text link with arrow
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Colour only; pair with CTA-012 underline when a rule is wanted.
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - color
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-resend/probe.json#2
+  animations:
+    - target: a(host)
+      property: color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: span(child)
+      property: scrollbar-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 2
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: ""

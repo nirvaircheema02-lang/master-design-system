@@ -1,0 +1,18 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-cta-008:not([data-skin]),
+  .ds-cta-008[data-skin="solid-accent"] {
+    --ds-cta-bg: var(--ds-color-accent);
+    --ds-cta-fg: var(--ds-color-on-accent);
+    --ds-cta-border: transparent;
+    --ds-cta-chip: var(--ds-color-on-accent);
+    --ds-cta-fg-on-chip: var(--ds-color-accent);
+  }
+  .ds-cta-008[data-skin="outline"] {
+    --ds-cta-bg: transparent;
+    --ds-cta-fg: var(--ds-color-accent-ink);
+    --ds-cta-border: var(--ds-color-accent-ink);
+    --ds-cta-chip: var(--ds-color-accent);
+    --ds-cta-fg-on-chip: var(--ds-color-on-accent);
+  }
+}

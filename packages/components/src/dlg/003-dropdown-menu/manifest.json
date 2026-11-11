@@ -1,0 +1,161 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "id": "DLG-003",
+  "slug": "dropdown-menu",
+  "name": "Dropdown Menu",
+  "category": "DLG",
+  "archetype": "menu",
+  "fixture": {
+    "props": {
+      "triggerLabel": "Actions",
+      "items": [
+        {
+          "id": "edit",
+          "label": "Edit"
+        },
+        {
+          "id": "duplicate",
+          "label": "Duplicate"
+        },
+        {
+          "id": "archive",
+          "label": "Archive",
+          "disabled": true
+        },
+        {
+          "id": "delete",
+          "label": "Delete",
+          "destructive": true,
+          "separatorBefore": true
+        }
+      ]
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Actions menu (role=menu) opened from a button: arrows, Home/End, typeahead, Escape, focus return and outside dismissal from the headless adapter. For ACTIONS only; site navigation is a disclosure (NAV-003).",
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "fade-slide"
+    ],
+    "params": {
+      "duration": 150
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "headless": [
+    "menu"
+  ],
+  "props": {},
+  "skins": [
+    {
+      "id": "raised",
+      "bind": {
+        "--ds-menu-border": "color.border.subtle",
+        "--ds-menu-shadow": "elevation.2"
+      }
+    },
+    {
+      "id": "flat",
+      "bind": {
+        "--ds-menu-border": "color.border.control",
+        "--ds-menu-shadow": "elevation.1"
+      }
+    }
+  ],
+  "states": [
+    "closed",
+    "open",
+    "hover",
+    "highlighted",
+    "focus-visible",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "32px",
+    "hoverFallback": "opens on click or tap; hover only highlights"
+  },
+  "a11y": {
+    "role": "menu",
+    "keyboard": [
+      "Enter",
+      "Space",
+      "ArrowDown",
+      "ArrowUp",
+      "Home",
+      "End",
+      "Escape",
+      "Tab"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-menu-radius",
+    "--ds-menu-bg",
+    "--ds-menu-bg-highlight",
+    "--ds-menu-bg-hover",
+    "--ds-menu-border",
+    "--ds-menu-danger",
+    "--ds-menu-ease",
+    "--ds-menu-enter-duration",
+    "--ds-menu-exit-duration",
+    "--ds-menu-fg",
+    "--ds-menu-fg-highlight",
+    "--ds-menu-focus",
+    "--ds-menu-focus-width",
+    "--ds-menu-font",
+    "--ds-menu-item-height",
+    "--ds-menu-item-padding-x",
+    "--ds-menu-item-radius",
+    "--ds-menu-min-width",
+    "--ds-menu-padding",
+    "--ds-menu-shadow",
+    "--ds-menu-trigger-border",
+    "--ds-menu-z"
+  ],
+  "code": {
+    "path": "packages/components/src/dlg/003-dropdown-menu",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "menu",
+      "dropdown",
+      "actions",
+      "overlay"
+    ],
+    "interaction": [
+      "overlay"
+    ],
+    "useCases": [
+      "A list of actions on one item",
+      "Row menus"
+    ],
+    "avoidWhen": [
+      "Site navigation (use the menu trigger)"
+    ],
+    "pairsWith": [
+      "TBL-001"
+    ]
+  }
+}

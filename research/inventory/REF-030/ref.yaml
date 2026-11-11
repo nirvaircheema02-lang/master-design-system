@@ -1,0 +1,42 @@
+id: REF-030
+name: "Carbon Button: per-state token table"
+url: https://carbondesignsystem.com/components/button/style/
+sourceKind: design-system
+captured: 2026-11-06
+category: CTA
+interaction: Every variant lists tokens for default, hover, focus, active and disabled; token names are
+  identical across themes.
+visual: primary/secondary/tertiary/ghost
+states:
+  - default
+  - hover
+  - focus
+  - active
+  - disabled
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Pattern: manifest should carry a per-state token table, not a flat token list."
+customizable:
+  - theme
+coupling: A
+radiusSupport: any
+a11y: Icon-only buttons need a label on hover and focus.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: inspiration-only
+  note: Documentation read only; concept reference, nothing reused.
+measured: null
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: ""

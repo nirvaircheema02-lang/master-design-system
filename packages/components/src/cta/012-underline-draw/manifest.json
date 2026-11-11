@@ -1,0 +1,112 @@
+{
+  "id": "CTA-012",
+  "slug": "underline-draw",
+  "name": "Underline Draw CTA",
+  "category": "CTA",
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A text-style call to action with no box: a rule draws under the label on hover and focus. Renders a real <a> when given href.",
+  "inspiration": [],
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "underline-draw"
+    ],
+    "params": {
+      "duration": 300
+    }
+  },
+  "slots": {
+    "label": {
+      "required": true
+    }
+  },
+  "props": {},
+  "skins": [
+    {
+      "id": "accent-ink",
+      "bind": {
+        "--ds-cta-link": "color.accent.ink"
+      }
+    },
+    {
+      "id": "neutral",
+      "bind": {
+        "--ds-cta-link": "color.text.primary"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-cta-link",
+    "--ds-cta-font",
+    "--ds-cta-focus",
+    "--ds-cta-underline-width",
+    "--ds-cta-wipe-duration",
+    "--ds-cta-ease",
+    "--ds-cta-spin-duration"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [
+      "position:relative"
+    ],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "active",
+    "loading",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "32px",
+    "hoverFallback": "the rule is decorative; focus-visible also draws it"
+  },
+  "a11y": {
+    "role": "button",
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button",
+      "a"
+    ]
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/cta/012-underline-draw",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "button",
+      "underline",
+      "text-button",
+      "minimal"
+    ],
+    "interaction": [
+      "hover-press"
+    ],
+    "useCases": [
+      "Tertiary and text actions",
+      "Editorial pages"
+    ],
+    "avoidWhen": [
+      "Primary actions that must look like buttons"
+    ],
+    "pairsWith": [
+      "TXT-003"
+    ],
+    "effects": "subtle"
+  }
+}

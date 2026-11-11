@@ -1,0 +1,10 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-frm-001:not([data-skin]),
+  .ds-frm-001[data-skin="raised"] {
+    --ds-frm-bg: var(--ds-color-surface-raised);
+  }
+  .ds-frm-001[data-skin="sunken"] {
+    --ds-frm-bg: var(--ds-color-surface-sunken);
+  }
+}

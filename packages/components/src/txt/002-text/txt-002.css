@@ -1,0 +1,12 @@
+/* TXT-002 Text. Tokens: --ds-type-*. Static. */
+@layer components {
+  .ds-txt-002 { margin: 0; color: var(--ds-type-text); font-family: var(--ds-type-font); font-weight: var(--ds-type-weight-regular); line-height: var(--ds-type-lh-normal); overflow-wrap: anywhere; }
+  .ds-txt-002[data-size="sm"] { font-size: var(--ds-type-size-sm); }
+  .ds-txt-002[data-size="md"] { font-size: var(--ds-type-size-md); }
+  .ds-txt-002[data-size="lg"] { font-size: var(--ds-type-size-lg); line-height: var(--ds-type-lh-snug); }
+  .ds-txt-002[data-tone="secondary"] { color: var(--ds-type-muted); }
+  .ds-txt-002[data-measure] { max-width: 65ch; }
+  /* DESIGNS: body (default), lead, caption */
+  .ds-txt-002[data-design="lead"] { font-size: var(--ds-type-size-lg); line-height: var(--ds-type-lh-relaxed); }
+  .ds-txt-002[data-design="caption"] { font-size: var(--ds-type-size-xs); line-height: var(--ds-type-lh-normal); color: var(--ds-type-muted); letter-spacing: 0.01em; }
+}

@@ -1,0 +1,20 @@
+/* NAV-001 Pill-hover item. Tokens: --ds-nav-*. Current page: persistent pill + heavier weight (not hover-dependent). */
+@layer components {
+  .ds-nav-001 {
+    display: inline-flex; align-items: center;
+    min-height: var(--ds-nav-height); padding-inline: var(--ds-nav-padding-x);
+    border-radius: var(--ds-nav-radius);
+    color: var(--ds-nav-fg); font: 500 0.9375rem/1 var(--ds-nav-font); text-decoration: none; white-space: nowrap;
+    transition: background-color var(--ds-nav-fade-duration) var(--ds-nav-fade-ease), color var(--ds-nav-fade-duration) var(--ds-nav-fade-ease);
+  }
+  .ds-nav-001:focus-visible { outline: var(--ds-nav-focus-width) solid var(--ds-nav-focus); outline-offset: 2px; }
+  .ds-nav-001[data-current] { background: var(--ds-nav-bg-current); color: var(--ds-nav-fg-current); font-weight: 700; }
+}
+
+@layer effects {
+  .ds-nav-001:hover { background: var(--ds-nav-bg-hover); color: var(--ds-nav-fg-hover); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-nav-001 { transition: none; }
+}

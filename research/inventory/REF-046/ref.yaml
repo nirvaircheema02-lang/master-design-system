@@ -1,0 +1,111 @@
+id: REF-046
+name: "shadcn/ui Tabs: segmented pill"
+url: https://ui.shadcn.com/docs/components/tabs
+sourceKind: design-system
+captured: 2026-11-06
+category: TAB
+interaction: "Segmented-control style tabs: the selected tab gets a filled pill with a shadow, background and
+  shadow fade over 150 ms; manual activation."
+visual: pill segmented control
+states:
+  - default
+  - hover
+  - selected
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Fill pill behind the label; animates box-shadow (paint), which our rules forbid.
+customizable:
+  - colour
+  - radius
+coupling: A
+radiusSupport: any
+a11y: Selected pill is not the only cue if text weight also changes.
+perf:
+  animated:
+    - background-color
+    - box-shadow
+  js: false
+license:
+  status: unverified
+  usage: inspiration-only
+  note: Licence not verified from a primary source (register.md).
+measured:
+  probeFile: research/probe/U-tabs-shadcn/probe.json#0
+  animations:
+    - target: button[tab]
+      property: background-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button[tab]
+      property: box-shadow
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button[tab]
+      property: color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button[tab]
+      property: color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button[tab]
+      property: background-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button[tab]
+      property: box-shadow
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button[tab]
+      property: border-bottom-color
+      durationMs: 149
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button[tab]
+      property: border-left-color
+      durationMs: 149
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button[tab]
+      property: border-right-color
+      durationMs: 149
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button[tab]
+      property: border-top-color
+      durationMs: 149
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button[tab]
+      property: box-shadow
+      durationMs: 149
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button[tab]
+      property: outline-color
+      durationMs: 149
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button[tab]
+      property: outline-width
+      durationMs: 149
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: div
+      property: "@scroll-fade-reveal-b:"
+      durationMs: 1
+      easing: linear
+    - target: div
+      property: "@scroll-fade-reveal-t:"
+      durationMs: 1
+      easing: linear
+    - target: div
+      property: "@scroll-fade-reveal-b:"
+      durationMs: 1
+      easing: linear
+  reducedMotionAnimations: 9
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 4
+  performance: 3
+  themability: 4
+  simplicity: 4
+  license: 2
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: Basis for a segmented variant (TAB-002), inspiration-led.

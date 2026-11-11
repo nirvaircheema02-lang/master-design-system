@@ -1,0 +1,133 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "pill",
+      "square",
+      "large",
+      "slim",
+      "split"
+    ]
+  },
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "thumb-slide"
+    ],
+    "params": {
+      "duration": 150
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "INP-007",
+  "slug": "switch",
+  "name": "Switch",
+  "category": "INP",
+  "archetype": "choice",
+  "fixture": {
+    "props": {
+      "label": "Email notifications",
+      "hint": "A weekly summary, never more.",
+      "name": "notify"
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A native checkbox with role=switch. The label never changes with the state; the state is carried by aria-checked and the thumb position. For settings that apply immediately.",
+  "skins": [
+    {
+      "id": "standard",
+      "bind": {
+        "--ds-choice-track-off": "color.border.control"
+      }
+    },
+    {
+      "id": "strong",
+      "bind": {
+        "--ds-choice-track-off": "color.text.secondary"
+      }
+    }
+  ],
+  "states": [
+    "off",
+    "on",
+    "focus-visible",
+    "invalid",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "36px",
+    "hoverFallback": "the whole label row is the hit area"
+  },
+  "a11y": {
+    "role": "switch",
+    "keyboard": [
+      "Tab",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-choice-error",
+    "--ds-choice-fade-duration",
+    "--ds-choice-fade-ease",
+    "--ds-choice-focus",
+    "--ds-choice-focus-width",
+    "--ds-choice-font",
+    "--ds-choice-gap",
+    "--ds-choice-hint",
+    "--ds-choice-label",
+    "--ds-choice-thumb",
+    "--ds-choice-thumb-on",
+    "--ds-choice-track-h",
+    "--ds-choice-track-off",
+    "--ds-choice-track-on",
+    "--ds-choice-track-w",
+    "--ds-choice-radius"
+  ],
+  "code": {
+    "path": "packages/components/src/inp/007-switch",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "switch",
+      "toggle",
+      "setting",
+      "form"
+    ],
+    "interaction": [
+      "input"
+    ],
+    "useCases": [
+      "Settings that apply immediately",
+      "On and off"
+    ],
+    "avoidWhen": [
+      "Choices that need a Submit button (use a checkbox)"
+    ],
+    "pairsWith": [
+      "TST-001"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+/* DLG-002 Popover (non-modal). Tokens: --ds-pop-*. Opacity + transform only; reduced motion = no animation. */
+@layer components {
+  .ds-dlg-002__trigger {
+    display: inline-flex; align-items: center; min-height: 2.5rem; padding: 0 0.875rem; margin: 0; border: 1px solid var(--ds-pop-trigger-border); border-radius: var(--ds-pop-radius);
+    background: var(--ds-pop-bg); color: var(--ds-pop-fg); font: inherit; font-family: var(--ds-pop-font); font-size: 0.9375rem; font-weight: 600; cursor: pointer;
+  }
+  .ds-dlg-002__trigger:focus-visible, .ds-dlg-002__close:focus-visible { outline: var(--ds-pop-focus-width) solid var(--ds-pop-focus); outline-offset: 2px; }
+  .ds-dlg-002 {
+    z-index: var(--ds-pop-z); box-sizing: border-box; width: var(--ds-pop-width); padding: var(--ds-pop-padding); border: 1px solid var(--ds-pop-border); border-radius: var(--ds-pop-radius);
+    background: var(--ds-pop-bg); color: var(--ds-pop-fg); box-shadow: var(--ds-pop-shadow); font-family: var(--ds-pop-font); outline: none;
+  }
+  .ds-dlg-002__title { margin: 0 2rem var(--ds-pop-gap) 0; font-size: 1rem; font-weight: 700; line-height: 1.35; }
+  .ds-dlg-002__body { color: var(--ds-pop-muted); font-size: 0.9375rem; line-height: 1.5; }
+  .ds-dlg-002__body a { color: var(--ds-pop-fg); text-decoration: underline; }
+  .ds-dlg-002__close { position: absolute; top: 0.5rem; right: 0.5rem; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; padding: 0; border: 0; border-radius: var(--ds-pop-radius); background: transparent; color: var(--ds-pop-fg); cursor: pointer; }
+  .ds-dlg-002__close svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+}
+
+@layer effects {
+  .ds-dlg-002__trigger:hover, .ds-dlg-002__close:hover { background: var(--ds-pop-bg-hover); }
+  .ds-dlg-002[data-state="open"] { animation: ds-dlg-002-in var(--ds-pop-enter-duration) var(--ds-pop-ease); }
+  .ds-dlg-002[data-state="closed"] { animation: ds-dlg-002-out var(--ds-pop-exit-duration) var(--ds-pop-ease) forwards; }
+}
+
+@keyframes ds-dlg-002-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+@keyframes ds-dlg-002-out { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(-2px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-dlg-002[data-state] { animation: none; }
+}

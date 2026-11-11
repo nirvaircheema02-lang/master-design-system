@@ -1,0 +1,7 @@
+{ "instances": [
+  { "ref": "NAV-008@1.0.0", "skin": "inverse", "props": {} },
+  { "ref": "NAV-009@1.0.0", "skin": "neutral", "props": {} },
+  { "ref": "NAV-006@1.0.0", "skin": "lifted", "props": {} },
+  { "ref": "NAV-007@1.0.0", "skin": "soft", "props": {} },
+  { "ref": "TST-001@1.0.0", "skin": "outlined", "props": { "placement": "fixed" } }
+] }

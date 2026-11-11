@@ -1,0 +1,141 @@
+{
+  "id": "CRD-004",
+  "slug": "stretched-title",
+  "name": "Stretched-Title Link Card",
+  "category": "CRD",
+  "archetype": "card",
+  "fixture": {
+    "props": {
+      "title": "Quarterly report",
+      "href": "#report",
+      "meta": "Report \u00b7 12 min read",
+      "image": {
+        "src": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='400'%3E%3Crect width='640' height='400' fill='%23c8d0e0'/%3E%3C/svg%3E",
+        "alt": ""
+      }
+    },
+    "children": "A short summary of what the card links to."
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Card whose title is the only link and is stretched over the whole card by CSS. Name = heading text; focus rings the card.",
+  "inspiration": [],
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {
+      "duration": 150
+    },
+    "js": false,
+    "pointerVars": []
+  },
+  "slots": {},
+  "props": {
+    "design": [
+      "classic",
+      "elevated",
+      "accent-bar",
+      "horizontal",
+      "minimal"
+    ]
+  },
+  "skins": [
+    {
+      "id": "outlined",
+      "bind": {
+        "--ds-card-bg": "color.surface.raised",
+        "--ds-card-bg-hover": "color.surface.sunken",
+        "--ds-card-border": "color.border.subtle",
+        "--ds-card-border-hover": "color.border.control"
+      }
+    },
+    {
+      "id": "filled",
+      "bind": {
+        "--ds-card-bg": "color.surface.sunken",
+        "--ds-card-bg-hover": "color.surface.raised",
+        "--ds-card-border": "transparent",
+        "--ds-card-border-hover": "color.border.control"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-card-radius",
+    "--ds-card-accent",
+    "--ds-card-bg",
+    "--ds-card-bg-hover",
+    "--ds-card-border",
+    "--ds-card-border-hover",
+    "--ds-card-fade-duration",
+    "--ds-card-fade-ease",
+    "--ds-card-fg",
+    "--ds-card-focus",
+    "--ds-card-focus-width",
+    "--ds-card-font",
+    "--ds-card-gap",
+    "--ds-card-media-ratio",
+    "--ds-card-muted",
+    "--ds-card-padding",
+    "--ds-card-shadow",
+    "--ds-card-shadow-hover"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "hover is decorative; focus-visible shows the same cue"
+  },
+  "a11y": {
+    "role": "link",
+    "keyboard": [
+      "Tab",
+      "Enter"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "a"
+    ],
+    "inertStates": []
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/crd/004-stretched-title",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "card",
+      "link",
+      "title",
+      "listing"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "The default clickable card",
+      "Lists of reports or articles"
+    ],
+    "avoidWhen": [
+      "Cards with several actions"
+    ],
+    "pairsWith": [
+      "CRD-002",
+      "NAV-010"
+    ]
+  }
+}

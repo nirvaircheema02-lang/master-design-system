@@ -1,0 +1,10 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-inp-007:not([data-skin]),
+  .ds-inp-007[data-skin="standard"] {
+    --ds-choice-track-off: var(--ds-color-border-control);
+  }
+  .ds-inp-007[data-skin="strong"] {
+    --ds-choice-track-off: var(--ds-color-text-secondary);
+  }
+}

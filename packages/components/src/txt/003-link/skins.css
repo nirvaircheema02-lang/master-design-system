@@ -1,0 +1,10 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-txt-003:not([data-skin]),
+  .ds-txt-003[data-skin="accent"] {
+    --ds-type-link: var(--ds-color-accent-ink);
+  }
+  .ds-txt-003[data-skin="neutral"] {
+    --ds-type-link: var(--ds-color-text-primary);
+  }
+}

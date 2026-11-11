@@ -1,0 +1,47 @@
+id: REF-011
+name: "Glossier: marching-ants dashed border"
+url: https://www.glossier.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: On hover a dashed border appears to travel around the button (background-position, 1.5 s linear, infinite).
+visual: outlined button, animated dashes
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Dashes are drawn with background gradients along the rectangle edges, so rounded corners cannot be followed.
+customizable:
+  - color
+  - dash length
+coupling: B
+radiusSupport: square-only
+a11y: "Infinite animation: needs a stop and a reduced-motion static dashed border."
+perf:
+  animated:
+    - background-position
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-glossier/probe.json#0
+  animations:
+    - target: a(host)
+      property: "@marching-ants-full-1:backgroundPositionX+backgroundPositionY"
+      durationMs: 1500
+      easing: linear
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 4
+  usability: 3
+  a11y: 3
+  performance: 3
+  themability: 2
+  simplicity: 3
+  license: 3
+  neutrality: 3
+recommendation: inspiration
+proposedId: null
+notes: Square-corner brands only. Not a Master candidate unless a rounded method is found.

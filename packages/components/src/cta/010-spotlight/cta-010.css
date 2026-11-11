@@ -1,0 +1,52 @@
+/* CTA-010 Spotlight: a pool of light follows the pointer; JS only writes --_mx/--_my, the layer only fades (opacity). */
+@layer components {
+  .ds-cta-010 {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    min-height: var(--ds-cta-height);
+    padding-inline: var(--ds-cta-padding-x);
+    border: var(--ds-cta-border-width) solid var(--ds-cta-border);
+    border-radius: var(--ds-cta-radius);
+    background: var(--ds-cta-bg);
+    color: var(--ds-cta-fg);
+    font: 600 1rem/1 var(--ds-cta-font);
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: clip;
+    transition: background-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), border-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease);
+  }
+  .ds-cta-010[data-size="sm"] { min-height: calc(var(--ds-cta-height) * 0.85); }
+  .ds-cta-010[data-size="lg"] { min-height: calc(var(--ds-cta-height) * 1.15); }
+  .ds-cta-010:focus-visible { outline: 2px solid var(--ds-cta-focus); outline-offset: 3px; }
+  .ds-cta-010:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ds-cta-010__label, .ds-cta-010__icon { position: relative; z-index: 1; }
+  .ds-cta-010[data-loading] { cursor: progress; }
+  .ds-cta-010__spinner { position: relative; z-index: 1; flex: none; width: 1em; height: 1em; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; }
+  .ds-cta-010__status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+@layer effects {
+  .ds-cta-010::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    /* the pool blends toward the hover shade, which the token gate keeps readable against the label */
+    background: radial-gradient(var(--ds-cta-spot-size) circle at var(--_mx, 50%) var(--_my, 50%), var(--ds-cta-spot), transparent 70%);
+    opacity: 0;
+    transition: opacity var(--ds-cta-fade-duration) var(--ds-cta-fade-ease);
+  }
+  .ds-cta-010:not(:disabled):not([aria-disabled="true"]):hover::before, .ds-cta-010:not(:disabled):not([aria-disabled="true"]):focus-visible::before { opacity: 1; }
+  .ds-cta-010__spinner { animation: ds-cta-010-spin var(--ds-cta-spin-duration) linear infinite; }
+  @keyframes ds-cta-010-spin { to { transform: rotate(360deg); } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-cta-010, .ds-cta-010::before { transition: none; }
+  .ds-cta-010__spinner { animation: none; border-top-color: currentColor; }
+}

@@ -1,0 +1,43 @@
+/* CTA-009 Gradient Shift: the fill slides between the fill colour and its hover colour (paint only, no layout). */
+@layer components {
+  .ds-cta-009 {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    min-height: var(--ds-cta-height);
+    padding-inline: var(--ds-cta-padding-x);
+    border: var(--ds-cta-border-width) solid var(--ds-cta-border);
+    border-radius: var(--ds-cta-radius);
+    background: var(--ds-cta-bg);
+    color: var(--ds-cta-fg);
+    font: 600 1rem/1 var(--ds-cta-font);
+    white-space: nowrap;
+    cursor: pointer;
+    background: linear-gradient(100deg, var(--ds-cta-bg) 0 35%, var(--ds-cta-bg-hover) 65% 100%);
+    background-size: 220% 100%;
+    background-position: 0 0;
+    transition: background-position var(--ds-cta-grad-duration) var(--ds-cta-ease), color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), border-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease);
+  }
+  .ds-cta-009[data-size="sm"] { min-height: calc(var(--ds-cta-height) * 0.85); }
+  .ds-cta-009[data-size="lg"] { min-height: calc(var(--ds-cta-height) * 1.15); }
+  .ds-cta-009:focus-visible { outline: 2px solid var(--ds-cta-focus); outline-offset: 3px; }
+  .ds-cta-009:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ds-cta-009__label, .ds-cta-009__icon { position: relative; z-index: 1; }
+  .ds-cta-009[data-loading] { cursor: progress; }
+  .ds-cta-009__spinner { position: relative; z-index: 1; flex: none; width: 1em; height: 1em; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; }
+  .ds-cta-009__status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+@layer effects {
+  .ds-cta-009:not(:disabled):not([aria-disabled="true"]):hover, .ds-cta-009:not(:disabled):not([aria-disabled="true"]):focus-visible { background-position: 100% 0; color: var(--ds-cta-fg-hover); }
+  .ds-cta-009__spinner { animation: ds-cta-009-spin var(--ds-cta-spin-duration) linear infinite; }
+  @keyframes ds-cta-009-spin { to { transform: rotate(360deg); } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-cta-009 { transition: none; }
+  .ds-cta-009__spinner { animation: none; border-top-color: currentColor; }
+}

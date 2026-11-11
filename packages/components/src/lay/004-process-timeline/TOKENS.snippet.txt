@@ -1,0 +1,8 @@
+  component.ptl = {
+    fg: t("{color.text.primary}", "color"), muted: t("{color.text.secondary}", "color"), font: t("{font.sans}"),
+    "node-size": t("3rem", "dimension"), "node-bg": t("{color.surface.base}", "color"), "node-border": t("{color.border.control}", "color"), "node-fg": t("{color.text.secondary}", "color"),
+    "node-border-on": t("{color.accent.ink}", "color"), "node-fg-on": t("{color.accent.ink}", "color"), "node-bg-current": t("{color.accent.subtle}", "color"), "node-fg-current": t("{color.accent.ink}", "color"),
+    line: t("{color.border.subtle}", "color"), "line-width": t("2px", "dimension"), fill: t("{color.accent.ink}", "color"), head: t("{color.accent.ink}", "color"),
+    gap: t("2.375rem", "dimension"), "col-gap": t("1.375rem", "dimension"), "text-max": t("32.5rem", "dimension"),
+    "glide-duration": t("{duration.base}", "duration"), "glide-ease": t("{ease.out}"), "fade-duration": t("{duration.fast}", "duration"), "fade-ease": t("{ease.standard}"),
+  };

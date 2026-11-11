@@ -1,0 +1,14 @@
+/* AVT-001 Avatar. Tokens: --ds-avt-*. Static. */
+@layer components {
+  .ds-avt-001 { --_s: var(--ds-avt-size-md); display: inline-grid; place-items: center; flex: none; box-sizing: border-box; width: var(--_s); height: var(--_s); overflow: hidden; border-radius: 50%; background: var(--ds-avt-bg); color: var(--ds-avt-fg); font-family: var(--ds-avt-font); font-weight: 700; font-size: calc(var(--_s) * 0.38); line-height: 1; vertical-align: middle; }
+  .ds-avt-001[data-size="sm"] { --_s: var(--ds-avt-size-sm); }
+  .ds-avt-001[data-size="lg"] { --_s: var(--ds-avt-size-lg); }
+  .ds-avt-001[data-size="xl"] { --_s: var(--ds-avt-size-xl); }
+  .ds-avt-001__img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .ds-avt-001__initials { letter-spacing: 0.02em; }
+  /* DESIGNS: circle (default), rounded, square, ring */
+  .ds-avt-001[data-design="rounded"] { border-radius: var(--ds-avt-radius); }
+  .ds-avt-001[data-design="square"] { border-radius: 0; }
+  .ds-avt-001[data-design="ring"] { overflow: visible; outline: var(--ds-avt-ring-width) solid var(--ds-avt-ring); outline-offset: var(--ds-avt-ring-gap); }
+  .ds-avt-001[data-design="ring"] .ds-avt-001__img { border-radius: 50%; }
+}

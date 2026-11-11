@@ -1,0 +1,4 @@
+{ "name": "Finova", "slug": "finova", "concept": "Fintech: blue, navy, sharp corners",
+  "seeds": { "primary": "#1f4fd8", "secondary": "#0b1f4b" },
+  "fonts": { "sans": "Inter, system-ui, sans-serif" },
+  "radiusStrategy": "sharp", "density": "comfortable", "motion": "standard" }

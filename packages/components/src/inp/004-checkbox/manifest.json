@@ -1,0 +1,153 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "box",
+      "card",
+      "pill",
+      "bar",
+      "large"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "INP-004",
+  "slug": "checkbox",
+  "name": "Checkbox Group",
+  "category": "INP",
+  "archetype": "choice",
+  "fixture": {
+    "props": {
+      "legend": "Which topics interest you?",
+      "hint": "Select all that apply.",
+      "name": "topics",
+      "defaultValue": [
+        "reports"
+      ],
+      "options": [
+        {
+          "value": "reports",
+          "label": "Market reports"
+        },
+        {
+          "value": "data",
+          "label": "Data feeds",
+          "hint": "API access included"
+        },
+        {
+          "value": "news",
+          "label": "News alerts"
+        },
+        {
+          "value": "beta",
+          "label": "Beta features",
+          "disabled": true
+        }
+      ]
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A fieldset with a legend and native checkboxes, so Space, focus and form posting are the browser's. The check mark (not colour) shows the checked state.",
+  "skins": [
+    {
+      "id": "outlined",
+      "bind": {
+        "--ds-choice-bg": "color.surface.raised"
+      }
+    },
+    {
+      "id": "filled",
+      "bind": {
+        "--ds-choice-bg": "color.surface.sunken"
+      }
+    }
+  ],
+  "states": [
+    "unchecked",
+    "checked",
+    "focus-visible",
+    "invalid",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "36px",
+    "hoverFallback": "the whole label row is the hit area"
+  },
+  "a11y": {
+    "role": "checkbox",
+    "keyboard": [
+      "Tab",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-choice-radius",
+    "--ds-choice-bg",
+    "--ds-choice-bg-checked",
+    "--ds-choice-border",
+    "--ds-choice-border-width",
+    "--ds-choice-error",
+    "--ds-choice-fade-duration",
+    "--ds-choice-fade-ease",
+    "--ds-choice-fg-check",
+    "--ds-choice-focus",
+    "--ds-choice-focus-width",
+    "--ds-choice-font",
+    "--ds-choice-gap",
+    "--ds-choice-hint",
+    "--ds-choice-label",
+    "--ds-choice-size"
+  ],
+  "code": {
+    "path": "packages/components/src/inp/004-checkbox",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "checkbox",
+      "multi-select",
+      "form",
+      "choice"
+    ],
+    "interaction": [
+      "input"
+    ],
+    "useCases": [
+      "Pick any number of options",
+      "Agree or opt in"
+    ],
+    "avoidWhen": [
+      "Choose exactly one (use radio)"
+    ],
+    "pairsWith": [
+      "FRM-001",
+      "INP-006"
+    ]
+  }
+}

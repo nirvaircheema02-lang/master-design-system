@@ -1,0 +1,51 @@
+id: REF-016
+name: "Aceternity: glow-blue button"
+url: https://ui.aceternity.com/components/tailwindcss-buttons
+sourceKind: library
+captured: 2026-11-06
+category: CTA
+interaction: Fill and box-shadow change together on hover (200 ms linear).
+visual: blue button with halo
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Shadow animation again; use an opacity layer.
+customizable:
+  - color
+coupling: B
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - background-color
+    - box-shadow
+  js: false
+license:
+  status: proprietary
+  usage: inspiration-only
+  note: "Aceternity: proprietary and ambiguous terms (register.md). Do not copy code or visuals."
+measured:
+  probeFile: research/probe/L-aceternity-buttons/probe.json#1
+  animations:
+    - target: button(host)
+      property: background-color
+      durationMs: 200
+      easing: linear
+    - target: button(host)
+      property: box-shadow
+      durationMs: 200
+      easing: linear
+  reducedMotionAnimations: 2
+scores:
+  distinctiveness: 2
+  usability: 3
+  a11y: 4
+  performance: 3
+  themability: 3
+  simplicity: 4
+  license: 2
+  neutrality: 3
+recommendation: inspiration
+proposedId: null
+notes: ""

@@ -1,0 +1,42 @@
+id: REF-090
+name: Radix Themes TextField
+url: https://www.radix-ui.com/themes/docs/components/text-field
+sourceKind: design-system
+captured: 2026-11-06
+category: INP
+interaction: 30 px fields with a 3 px radius; docs demos are placeholder-only.
+visual: compact field
+states:
+  - default
+  - focus
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Placeholder-only demos again.
+customizable:
+  - colour
+  - radius
+coupling: A
+radiusSupport: any
+a11y: No visible label in the demo.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: inspiration-only
+  note: Documentation read only; concept reference, nothing reused.
+measured:
+  probeFile: research/probe/U-in-radix-themes/probe.json#0
+  animations: []
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 3
+  a11y: 2
+  performance: 5
+  themability: 4
+  simplicity: 5
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

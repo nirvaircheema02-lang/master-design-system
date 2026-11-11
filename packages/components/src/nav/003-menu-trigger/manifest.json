@@ -1,0 +1,145 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "id": "NAV-003",
+  "slug": "menu-trigger",
+  "name": "Menu Trigger",
+  "category": "NAV",
+  "archetype": "navmenu",
+  "fixture": {
+    "props": {
+      "links": [
+        {
+          "href": "#overview",
+          "label": "Overview"
+        },
+        {
+          "href": "#pricing",
+          "label": "Pricing",
+          "current": true
+        },
+        {
+          "href": "#docs",
+          "label": "Docs"
+        }
+      ]
+    },
+    "children": "Products"
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Site-navigation disclosure: a button (aria-expanded) that reveals a list of links. Not a menu widget (no menu roles); opens only on activation; Escape and outside click close it and Escape returns focus.",
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "panel-fade"
+    ],
+    "params": {
+      "duration": 150
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "headless": [],
+  "props": {},
+  "skins": [
+    {
+      "id": "raised",
+      "bind": {
+        "--ds-nav-panel-shadow": "elevation.2"
+      }
+    },
+    {
+      "id": "flat",
+      "bind": {
+        "--ds-nav-panel-shadow": "elevation.1"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "open"
+  ],
+  "responsive": {
+    "touchTarget": "40px",
+    "hoverFallback": "opens on click or tap only; hover never opens it"
+  },
+  "a11y": {
+    "role": "navigation",
+    "keyboard": [
+      "Tab",
+      "Enter",
+      "Space",
+      "Escape"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button",
+      "a"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-nav-radius",
+    "--ds-nav-bg-current",
+    "--ds-nav-bg-hover",
+    "--ds-nav-fade-duration",
+    "--ds-nav-fade-ease",
+    "--ds-nav-fg",
+    "--ds-nav-fg-current",
+    "--ds-nav-fg-hover",
+    "--ds-nav-focus",
+    "--ds-nav-focus-width",
+    "--ds-nav-font",
+    "--ds-nav-height",
+    "--ds-nav-padding-x",
+    "--ds-nav-panel-bg",
+    "--ds-nav-panel-border",
+    "--ds-nav-panel-min-width",
+    "--ds-nav-panel-padding",
+    "--ds-nav-panel-radius",
+    "--ds-nav-panel-shadow",
+    "--ds-nav-trigger-fg",
+    "--ds-nav-z"
+  ],
+  "code": {
+    "path": "packages/components/src/nav/003-menu-trigger",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "menu",
+      "disclosure",
+      "navigation",
+      "mobile"
+    ],
+    "interaction": [
+      "reveal"
+    ],
+    "useCases": [
+      "A short list of links behind a button",
+      "Mobile menus"
+    ],
+    "avoidWhen": [
+      "Action menus (use the dropdown menu)"
+    ],
+    "pairsWith": [
+      "NAV-006"
+    ]
+  }
+}

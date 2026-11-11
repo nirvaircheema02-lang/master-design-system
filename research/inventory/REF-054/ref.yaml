@@ -1,0 +1,53 @@
+id: REF-054
+name: Radix Dialog
+url: https://www.radix-ui.com/primitives/docs/components/dialog
+sourceKind: library
+captured: 2026-11-06
+category: DLG
+interaction: "Headless modal dialog: focus moves in, Tab is trapped, Escape closes, focus returns, page scroll
+  locks; overlay and content fade in 150 ms (keyframes)."
+visual: centred modal with overlay
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Our spike S6 verified focus, trap, Escape, return, scroll lock, outside click and exit animation;
+  no aria-modal is set (outside content is aria-hidden).
+customizable:
+  - everything via CSS
+coupling: A
+radiusSupport: any
+a11y: Name, description, trap, return all verified; reduced motion is ours to implement.
+perf:
+  animated:
+    - opacity
+  js: false
+license:
+  status: verified-permissive
+  usage: dependency
+  note: MIT, primary LICENSE read (register.md).
+measured:
+  probeFile: research/probe/U-dlg-radix/probe.json#0
+  animations:
+    - target: div
+      property: "@styles-module__9pObyW__overlayShow:opacity"
+      durationMs: 150
+      easing: linear
+    - target: div[dialog]
+      property: "@styles-module__9pObyW__contentShow:opacity+transform"
+      durationMs: 150
+      easing: linear
+  reducedMotionAnimations: 2
+scores:
+  distinctiveness: 3
+  usability: 5
+  a11y: 5
+  performance: 4
+  themability: 5
+  simplicity: 3
+  license: 5
+  neutrality: 5
+recommendation: adapt
+proposedId: DLG-001
+notes: "Dependency under ADR 0004. Measured on the docs demo: dialog role, named, focus inside, trapped,
+  scroll locked, Escape closes, focus returns."

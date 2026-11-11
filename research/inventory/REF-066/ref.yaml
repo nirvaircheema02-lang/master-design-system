@@ -1,0 +1,60 @@
+id: REF-066
+name: "Notion mobile menu: slide and fade"
+url: https://www.notion.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: Menu panel slides in with a 350 ms transform while a layer fades in over 400 ms.
+visual: mobile menu
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Motion values for a drawer entrance. Radius is unaffected: the sliding panel is edge-anchored;
+  clip is on the viewport, not on rounded corners."
+customizable:
+  - colour
+coupling: C
+radiusSupport: any
+a11y: Open state was not detected by the probe heuristic; motion values only.
+perf:
+  animated:
+    - transform
+    - opacity
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-drawer-notion/probe.json#0
+  animations:
+    - target: div
+      property: transform
+      durationMs: 350
+      easing: cubic-bezier(0.16, 1, 0.3, 1)
+    - target: div
+      property: opacity
+      durationMs: 400
+      easing: ease-out
+    - target: div
+      property: opacity
+      durationMs: 400
+      easing: ease-out
+    - target: nav
+      property: "@HWB10a_navShadowScrolled:boxShadow"
+      durationMs: null
+      easing: linear
+  reducedMotionAnimations: 5
+scores:
+  distinctiveness: 2
+  usability: 3
+  a11y: 3
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

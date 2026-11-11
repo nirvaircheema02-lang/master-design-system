@@ -1,0 +1,133 @@
+{
+  "id": "CTA-013",
+  "slug": "press-depth",
+  "name": "Press Depth CTA",
+  "category": "CTA",
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "The button face moves toward a fixed offset layer on hover and presses flush on click. Only the face moves; the box never resizes.",
+  "inspiration": [],
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "press-depth"
+    ],
+    "params": {
+      "duration": 150
+    }
+  },
+  "slots": {
+    "label": {
+      "required": true
+    }
+  },
+  "props": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ]
+  },
+  "skins": [
+    {
+      "id": "solid-accent",
+      "bind": {
+        "--ds-cta-bg": "color.accent",
+        "--ds-cta-bg-hover": "color.accent.hover",
+        "--ds-cta-fg": "color.on-accent",
+        "--ds-cta-fg-hover": "color.on-accent",
+        "--ds-cta-border": "transparent",
+        "--ds-cta-shadow": "color.text.primary"
+      }
+    },
+    {
+      "id": "surface-ink",
+      "bind": {
+        "--ds-cta-bg": "color.surface.raised",
+        "--ds-cta-bg-hover": "color.surface.sunken",
+        "--ds-cta-fg": "color.text.primary",
+        "--ds-cta-fg-hover": "color.text.primary",
+        "--ds-cta-border": "color.text.primary",
+        "--ds-cta-shadow": "color.text.primary"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-cta-bg",
+    "--ds-cta-bg-hover",
+    "--ds-cta-fg",
+    "--ds-cta-fg-hover",
+    "--ds-cta-border",
+    "--ds-cta-border-width",
+    "--ds-cta-radius",
+    "--ds-cta-height",
+    "--ds-cta-padding-x",
+    "--ds-cta-font",
+    "--ds-cta-focus",
+    "--ds-cta-fade-duration",
+    "--ds-cta-fade-ease",
+    "--ds-cta-spin-duration",
+    "--ds-cta-shadow",
+    "--ds-cta-press-offset"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [
+      "position:relative"
+    ],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "active",
+    "loading",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "hover moves the face; on touch the :active press shows the same depth"
+  },
+  "a11y": {
+    "role": "button",
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state"
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/cta/013-press-depth",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "button",
+      "press",
+      "depth",
+      "tactile"
+    ],
+    "interaction": [
+      "hover-press"
+    ],
+    "useCases": [
+      "Playful products",
+      "Actions that should feel physical"
+    ],
+    "avoidWhen": [
+      "Formal, quiet brands"
+    ],
+    "pairsWith": [
+      "INP-001"
+    ],
+    "effects": "subtle"
+  }
+}

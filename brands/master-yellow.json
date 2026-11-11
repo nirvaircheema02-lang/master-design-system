@@ -1,0 +1,4 @@
+{ "name": "Master Yellow", "slug": "master-yellow", "concept": "Reference brand: yellow pill CTA (CTA-001 original look)",
+  "seeds": { "primary": "#f5c518", "secondary": "#1a1a1a" },
+  "fonts": { "sans": "DM Sans, system-ui, sans-serif", "display": "Noto Serif, serif" },
+  "radiusStrategy": "pill", "density": "comfortable", "motion": "standard" }

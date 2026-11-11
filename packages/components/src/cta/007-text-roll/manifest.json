@@ -1,0 +1,130 @@
+{
+  "id": "CTA-007",
+  "slug": "text-roll",
+  "name": "Text Roll CTA",
+  "category": "CTA",
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "On hover the label rolls up out of the button while a duplicate (hidden from assistive tech) rolls in from below.",
+  "inspiration": [],
+  "interaction": {
+    "class": "C",
+    "modules": [
+      "text-roll"
+    ],
+    "params": {
+      "duration": 300
+    }
+  },
+  "slots": {
+    "label": {
+      "required": true
+    }
+  },
+  "props": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ]
+  },
+  "skins": [
+    {
+      "id": "solid-accent",
+      "bind": {
+        "--ds-cta-bg": "color.accent",
+        "--ds-cta-bg-hover": "color.accent.hover",
+        "--ds-cta-fg": "color.on-accent",
+        "--ds-cta-fg-hover": "color.on-accent",
+        "--ds-cta-border": "transparent"
+      }
+    },
+    {
+      "id": "outline-tint",
+      "bind": {
+        "--ds-cta-bg": "transparent",
+        "--ds-cta-bg-hover": "color.accent.subtle",
+        "--ds-cta-fg": "color.accent.ink",
+        "--ds-cta-fg-hover": "color.accent.ink",
+        "--ds-cta-border": "color.accent.ink"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-cta-bg",
+    "--ds-cta-bg-hover",
+    "--ds-cta-fg",
+    "--ds-cta-fg-hover",
+    "--ds-cta-border",
+    "--ds-cta-border-width",
+    "--ds-cta-radius",
+    "--ds-cta-height",
+    "--ds-cta-padding-x",
+    "--ds-cta-font",
+    "--ds-cta-focus",
+    "--ds-cta-fade-duration",
+    "--ds-cta-fade-ease",
+    "--ds-cta-spin-duration",
+    "--ds-cta-slide-duration",
+    "--ds-cta-ease"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": [],
+    "radiusNote": "The clip lives on the inner label box, not the button edge, so the outer radius never affects it."
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "active",
+    "loading",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "the roll is decorative; fill change remains"
+  },
+  "a11y": {
+    "role": "button",
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state"
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/cta/007-text-roll",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "button",
+      "text",
+      "roll",
+      "playful"
+    ],
+    "interaction": [
+      "hover-press"
+    ],
+    "useCases": [
+      "Short labels that deserve a flourish",
+      "Marketing pages"
+    ],
+    "avoidWhen": [
+      "Long labels"
+    ],
+    "pairsWith": [
+      "CRD-004"
+    ],
+    "effects": "full"
+  }
+}

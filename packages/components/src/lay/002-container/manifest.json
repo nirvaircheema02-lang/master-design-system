@@ -1,0 +1,102 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "size": [
+      "sm",
+      "md",
+      "lg",
+      "xl",
+      "prose"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "LAY-002",
+  "slug": "container",
+  "name": "Container",
+  "category": "LAY",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "size": "md"
+    },
+    "children": "Content sits on a centred column with a gutter, so it never touches the screen edge and never gets wider than its cap."
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Centres content, caps its width (sm, md, lg, xl, prose) and keeps a gutter so text never touches the screen edge.",
+  "skins": [
+    {
+      "id": "default",
+      "bind": {}
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "group",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-lay-container-lg",
+    "--ds-lay-container-md",
+    "--ds-lay-container-prose",
+    "--ds-lay-container-sm",
+    "--ds-lay-container-xl",
+    "--ds-lay-font",
+    "--ds-lay-gutter"
+  ],
+  "code": {
+    "path": "packages/components/src/lay/002-container",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "container",
+      "width",
+      "gutter",
+      "layout"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Constrain page width",
+      "Consistent side gutters"
+    ],
+    "avoidWhen": [
+      "Full-bleed sections"
+    ],
+    "pairsWith": [
+      "LAY-003"
+    ]
+  }
+}

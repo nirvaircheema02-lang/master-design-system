@@ -1,0 +1,42 @@
+id: REF-075
+name: Wired shrinking header
+url: https://www.wired.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: A 364 px editorial masthead collapses to a compact bar on scroll.
+visual: masthead
+states:
+  - top
+  - scrolled
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Height change on scroll (layout).
+customizable:
+  - height
+coupling: B
+radiusSupport: any
+a11y: Large fixed headers cover content.
+perf:
+  animated:
+    - height
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-hdr-wired/probe.json#0
+  animations: []
+  reducedMotionAnimations: null
+scores:
+  distinctiveness: 3
+  usability: 2
+  a11y: 3
+  performance: 2
+  themability: 3
+  simplicity: 3
+  license: 3
+  neutrality: 3
+recommendation: inspiration
+proposedId: null
+notes: ""

@@ -1,0 +1,116 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "dir": "scr/001-scroll-progress",
+  "id": "SCR-001",
+  "slug": "scroll-progress",
+  "name": "Scroll Progress Bar",
+  "category": "SCR",
+  "description": "A fixed bar along a viewport edge that fills as the page (or one article, via targetRef) scrolls. The fill is a scaleX transform driven by a CSS variable written on scroll, so React never re-renders. Decorative: hidden from assistive technology. Three designs: line, bar, bottom.",
+  "fixture": {
+    "props": {}
+  },
+  "props": {
+    "design": [
+      "line",
+      "bar",
+      "bottom"
+    ]
+  },
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "scroll-scale"
+    ],
+    "params": {
+      "duration": 150
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "skins": [
+    {
+      "id": "solid",
+      "bind": {
+        "--ds-scp-from": "color.accent.ink",
+        "--ds-scp-to": "color.accent.ink"
+      }
+    },
+    {
+      "id": "gradient",
+      "bind": {
+        "--ds-scp-from": "color.accent.ink",
+        "--ds-scp-to": "color.text.primary"
+      }
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "none",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "discovery": {
+    "tags": [
+      "scroll",
+      "progress",
+      "reading",
+      "bar",
+      "indicator"
+    ],
+    "interaction": [
+      "scroll"
+    ],
+    "useCases": [
+      "Long articles and case studies",
+      "Long landing pages"
+    ],
+    "avoidWhen": [
+      "Short pages",
+      "You need a spoken progress value (use LDR-002)"
+    ],
+    "pairsWith": [
+      "NAV-006",
+      "LDR-002"
+    ]
+  },
+  "tokens": [
+    "--ds-scp-duration",
+    "--ds-scp-ease",
+    "--ds-scp-from",
+    "--ds-scp-height",
+    "--ds-scp-height-thick",
+    "--ds-scp-to",
+    "--ds-scp-track",
+    "--ds-scp-z"
+  ],
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "archetype": "atom",
+  "code": {
+    "path": "packages/components/src/scr/001-scroll-progress",
+    "hash": null
+  }
+}

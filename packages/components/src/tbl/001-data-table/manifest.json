@@ -1,0 +1,189 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "plain",
+      "lines",
+      "zebra",
+      "grid",
+      "rows"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {
+      "duration": 150
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "TBL-001",
+  "slug": "data-table",
+  "name": "Data Table",
+  "category": "TBL",
+  "archetype": "table",
+  "fixture": {
+    "props": {
+      "caption": "Quarterly revenue by region (USD thousands)",
+      "columns": [
+        {
+          "id": "region",
+          "label": "Region",
+          "sortable": true
+        },
+        {
+          "id": "q1",
+          "label": "Q1",
+          "numeric": true,
+          "sortable": true
+        },
+        {
+          "id": "q2",
+          "label": "Q2",
+          "numeric": true,
+          "sortable": true
+        },
+        {
+          "id": "share",
+          "label": "Share %",
+          "numeric": true
+        }
+      ],
+      "rows": [
+        {
+          "region": "North America",
+          "q1": 412,
+          "q2": 455,
+          "share": 31
+        },
+        {
+          "region": "Europe",
+          "q1": 388,
+          "q2": 401,
+          "share": 27
+        },
+        {
+          "region": "Asia Pacific",
+          "q1": 520,
+          "q2": 610,
+          "share": 35
+        },
+        {
+          "region": "Middle East",
+          "q1": 96,
+          "q2": 120,
+          "share": 7
+        },
+        {
+          "region": "Latin America",
+          "q1": 74,
+          "q2": 81,
+          "share": 5
+        }
+      ]
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A real table: caption, column headers with scope, row headers, numeric columns right-aligned in tabular figures. Sortable columns are buttons inside the header with aria-sort on exactly the sorted column and an announcement; a focusable scroll region keeps narrow screens from scrolling the page.",
+  "skins": [
+    {
+      "id": "plain",
+      "bind": {
+        "--ds-tbl-stripe": "transparent"
+      }
+    },
+    {
+      "id": "striped",
+      "bind": {
+        "--ds-tbl-stripe": "color.surface.sunken"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "sorted"
+  ],
+  "responsive": {
+    "touchTarget": "36px",
+    "hoverFallback": "row hover is decorative; the sort buttons keep a focus ring"
+  },
+  "a11y": {
+    "role": "table",
+    "keyboard": [
+      "Tab",
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-tbl-radius",
+    "--ds-tbl-bg",
+    "--ds-tbl-border",
+    "--ds-tbl-border-strong",
+    "--ds-tbl-fade-duration",
+    "--ds-tbl-fade-ease",
+    "--ds-tbl-fg",
+    "--ds-tbl-focus",
+    "--ds-tbl-focus-width",
+    "--ds-tbl-font",
+    "--ds-tbl-header-bg",
+    "--ds-tbl-muted",
+    "--ds-tbl-padding-x",
+    "--ds-tbl-padding-y",
+    "--ds-tbl-row-gap",
+    "--ds-tbl-row-hover",
+    "--ds-tbl-rule",
+    "--ds-tbl-stripe"
+  ],
+  "code": {
+    "path": "packages/components/src/tbl/001-data-table",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "table",
+      "data",
+      "sort",
+      "rows"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Comparing rows of data",
+      "Sortable columns"
+    ],
+    "avoidWhen": [
+      "Layout (tables are for data)"
+    ],
+    "pairsWith": [
+      "NAV-010",
+      "BDG-001",
+      "CRD-005"
+    ]
+  }
+}

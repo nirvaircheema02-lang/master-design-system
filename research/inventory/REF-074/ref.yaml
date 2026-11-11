@@ -1,0 +1,51 @@
+id: REF-074
+name: "Mercury header: blur on scroll"
+url: https://mercury.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: Header background, shadow and backdrop blur appear on scroll.
+visual: translucent bar
+states:
+  - top
+  - scrolled
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: backdrop-filter is paint-heavy.
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Translucency can reduce contrast over content (1.4.3/1.4.11).
+perf:
+  animated:
+    - background-color
+    - backdrop-filter
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-hdr-mercury/probe.json#0
+  animations:
+    - target: div
+      property: background-color
+      durationMs: 500
+      easing: cubic-bezier(0, 0, 0.6, 1)
+    - target: nav
+      property: background-color
+      durationMs: 500
+      easing: cubic-bezier(0, 0, 0.6, 1)
+  reducedMotionAnimations: null
+scores:
+  distinctiveness: 3
+  usability: 3
+  a11y: 3
+  performance: 3
+  themability: 4
+  simplicity: 3
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

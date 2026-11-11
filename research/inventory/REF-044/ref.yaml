@@ -1,0 +1,49 @@
+id: REF-044
+name: "Radix Tabs: automatic activation"
+url: https://www.radix-ui.com/primitives/docs/components/tabs
+sourceKind: library
+captured: 2026-11-06
+category: TAB
+interaction: Headless tabs where focus movement also selects (automatic activation); state exposed as
+  data-state; the tablist is the tab stop.
+visual: unstyled
+states:
+  - default
+  - active
+  - disabled
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Candidate headless layer (ADR 0004); styling via data-state.
+customizable:
+  - everything via CSS
+coupling: A
+radiusSupport: any
+a11y: Automatic activation is only advisable when panels render instantly; Radix points aria-controls at
+  panels that may be unmounted.
+perf:
+  animated: []
+  js: false
+license:
+  status: verified-permissive
+  usage: dependency
+  note: MIT, primary LICENSE read (register.md).
+measured:
+  probeFile: research/probe/U-tabs-radix/probe.json#0
+  animations:
+    - target: button
+      property: opacity
+      durationMs: 80
+      easing: ease-out
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 5
+  a11y: 4
+  performance: 5
+  themability: 5
+  simplicity: 4
+  license: 5
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: "Measured: automatic activation, tabindex -1 on tabs (list is the stop). Chosen default headless layer
+  in ADR 0004."

@@ -1,0 +1,44 @@
+id: REF-071
+name: Vercel sticky header
+url: https://vercel.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: Sticky header that gains a background and shadow after the page scrolls.
+visual: sticky bar
+states:
+  - top
+  - scrolled
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "position: sticky with a scroll-state class; no layout change."
+customizable:
+  - colour
+  - height
+coupling: A
+radiusSupport: any
+a11y: "Sticky headers can hide focused content (WCAG 2.4.11): measured NO scroll-padding-top here; ours sets it."
+perf:
+  animated:
+    - background-color
+    - box-shadow
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-hdr-vercel/probe.json#0
+  animations: []
+  reducedMotionAnimations: null
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 4
+  performance: 4
+  themability: 4
+  simplicity: 3
+  license: 3
+  neutrality: 4
+recommendation: adapt
+proposedId: NAV-006
+notes: ""

@@ -1,0 +1,3606 @@
+# Authoring source for research/inventory/. Edit this, then run pnpm research build.
+# Measurements + screenshots come from research/probe via probe: <job>#<target> (see packages/research).
+- id: REF-001
+  name: "Ken Research Button: shimmer"
+  url: https://kenresearch.com/
+  sourceKind: internal
+  category: CTA
+  interaction: Solid CTA with a left-to-right light sweep (700 ms) on hover; original look is yellow, pill, dark label.
+  visual: solid accent fill, pill, light band sweep
+  states:
+    - default
+    - hover
+    - focus-visible
+    - active
+    - loading
+    - disabled
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Shipped as CTA-001: host clips with overflow + radius, sweep layer inherits radius (S1 + conformance proven)."
+  customizable:
+    - color
+    - radius
+    - size
+    - duration
+  coupling: B
+  radiusSupport: any
+  a11y: Sweep removed under reduced motion; hover fill change remains.
+  perf:
+    animated:
+      - transform
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: Our own Ken Research Button; no third-party code.
+  scores:
+    distinctiveness: 4
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 5
+    neutrality: 3
+  recommendation: adapt
+  proposedId: CTA-001
+  notes: Already built (Phase 2).
+- id: REF-002
+  name: "Vercel: solid CTA fade"
+  url: https://vercel.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: Primary CTA changes fill over 150 ms on hover with a standard ease; nothing else moves.
+  visual: solid fill, small radius
+  states:
+    - default
+    - hover
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour transition on hover; no layout or shape change, so every radius works unchanged.
+  customizable:
+    - color
+    - radius
+    - size
+    - duration
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - background-color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 5
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: adapt
+  proposedId: CTA-003
+  notes: Baseline CTA. 41 of 109 measured CTAs are colour/opacity-only, so a polished plain fill is the most common
+    premium treatment and our CTAs currently have NO transition on hover.
+  probe: S-vercel#1
+- id: REF-003
+  name: "Magic UI: interactive hover button"
+  url: https://magicui.design/docs/components/interactive-hover-button
+  sourceKind: library
+  category: CTA
+  interaction: A small dot grows to fill the button on hover while the label swaps out and a second label with arrow swaps
+    in (300 ms).
+  visual: outline pill with dot, label swap
+  states:
+    - default
+    - hover
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Dot is a child that scales inside a host with overflow clip, so any radius clips it correctly; label swap
+    uses a duplicated aria-hidden label.
+  customizable:
+    - color
+    - radius
+    - icon
+    - size
+  coupling: C
+  radiusSupport: any
+  a11y: Duplicated label must be aria-hidden; reduced motion shows only the end-state label.
+  perf:
+    animated:
+      - scale
+      - opacity
+    js: false
+  license:
+    status: verified-permissive
+    usage: clean-room
+    note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+  scores:
+    distinctiveness: 4
+    usability: 4
+    a11y: 4
+    performance: 4
+    themability: 3
+    simplicity: 3
+    license: 4
+    neutrality: 3
+  recommendation: adapt
+  proposedId: CTA-008
+  notes: 'Measured: child scale 300 ms + opacity 300 ms. Radius claim rests on the host clip (verified in feasibility
+    sketch "chip").'
+  probe: L-magicui-interactive-hover-button#0
+- id: REF-004
+  name: "Plaid: rotating border layer"
+  url: https://plaid.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: On hover a conic-gradient layer inside the button rotates continuously (2.5 s linear) to draw a travelling
+    highlight around the edge.
+  visual: dark fill with travelling edge light
+  states:
+    - default
+    - hover
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Measured as a TRANSFORM rotation of a pseudo layer, not an animated custom property: compositor-friendly.
+    Layer is clipped by the host and masked to a ring; inner cover radius is host radius minus ring width, so 0, 8px and
+    pill all work."
+  customizable:
+    - color
+    - radius
+    - ring width
+    - speed
+  coupling: C
+  radiusSupport: any
+  a11y: Infinite animation only while hovered/focused; must stop under reduced motion and respect the 5 s rule.
+  perf:
+    animated:
+      - rotate
+    js: false
+    note: rotate on a large pseudo layer; verify raster cost on low-end devices
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 5
+    usability: 4
+    a11y: 3
+    performance: 4
+    themability: 4
+    simplicity: 3
+    license: 3
+    neutrality: 4
+  recommendation: adapt
+  proposedId: CTA-005
+  notes: Replaces the @property-angle technique from the S1 spike (ADR 0003 exception) with a rotating layer; to be proven
+    in Phase 3.
+  probe: S-plaid#0
+- id: REF-005
+  name: "Resend: glow / inner highlight"
+  url: https://resend.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: Primary CTA gains a soft highlight (::after opacity + transform 300 ms) and a shadow change (200 ms) on hover.
+  visual: dark button with light rim
+  states:
+    - default
+    - hover
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Our version fades a pre-drawn shadow layer by opacity; the layer inherits radius so every shape works.
+  customizable:
+    - color
+    - radius
+    - intensity
+  coupling: B
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove. Highlight layer hidden under reduced motion.
+  perf:
+    animated:
+      - opacity
+      - transform
+      - box-shadow
+    js: false
+    note: source uses box-shadow animation; ours must not
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 4
+    performance: 3
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: adapt
+  proposedId: CTA-006
+  notes: "Source animates box-shadow (paint). Master rule: animate an opacity layer instead (lint rule no-animated-shadow)."
+  probe: S-resend#1
+- id: REF-006
+  name: "Figma: underline / indicator reveal"
+  url: https://www.figma.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: A line under a text link fades and slides in (::after opacity + transform, 250 ms ease) on hover.
+  visual: text link with thin rule
+  states:
+    - default
+    - hover
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Link has no box, so radius is irrelevant; rule is a scaleX layer; works for any colour.
+  customizable:
+    - color
+    - thickness
+    - offset
+  coupling: B
+  radiusSupport: any
+  a11y: Rule must also appear on :focus-visible, not hover only.
+  perf:
+    animated:
+      - opacity
+      - transform
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: adapt
+  proposedId: CTA-012
+  notes: Measured on a nav link; applies to inline and standalone text links.
+  probe: S-figma#0
+- id: REF-007
+  name: "Stripe: fill + arrow nudge"
+  url: https://stripe.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: Fill fades (300 ms) while the arrow glyph inside the button nudges forward (transform 300 ms).
+  visual: solid fill, trailing chevron
+  states:
+    - default
+    - hover
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Arrow lives in an icon slot and the nudge is a translate of the glyph; any clip is on the inner icon box,
+    not the button edge, so the outer radius is unaffected.
+  customizable:
+    - color
+    - radius
+    - icon
+  coupling: C
+  radiusSupport: any
+  a11y: Glyph is decorative (aria-hidden).
+  perf:
+    animated:
+      - background-color
+      - transform
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: "Folds into CTA-002 as parameter arrowMotion: swap | nudge. Not a separate component."
+  probe: S-stripe#0
+- id: REF-008
+  name: "BCG: uppercase CTA with arrow reset"
+  url: https://www.bcg.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: Uppercase rectangular CTA; the arrow animates out and a reset arrow animates in (350 ms linear).
+  visual: uppercase label, square corners, arrow
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Same mechanics as CTA-002: the arrow clip is on the inner icon box, not the button edge, so square,
+    rounded or pill corners all work."
+  customizable:
+    - color
+    - icon
+  coupling: C
+  radiusSupport: any
+  a11y: Arrow aria-hidden.
+  perf:
+    animated:
+      - transform
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 4
+    performance: 4
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: Folds into CTA-002 (square-corner skin).
+  probe: S-bcg#0
+- id: REF-009
+  name: "Cal.com: icon swap with blur"
+  url: https://cal.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: Icon inside the button crossfades with a blur/opacity/transform enter and exit (300 ms) on hover.
+  visual: solid dark button with icon
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Icon slot swap; the clip is on the inner icon box, not the button edge, so the outer radius never affects
+    it. Blur/filter animation is paint-heavy.
+  customizable:
+    - icon
+    - color
+  coupling: C
+  radiusSupport: any
+  a11y: Decorative icon only.
+  perf:
+    animated:
+      - filter
+      - opacity
+      - transform
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 4
+    usability: 3
+    a11y: 4
+    performance: 3
+    themability: 4
+    simplicity: 3
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: Option for CTA-002 icon motion; avoid animating filter in the Master.
+  probe: S-cal#0
+- id: REF-010
+  name: "Framer: opacity with spring-like easing"
+  url: https://www.framer.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: CTA fades 400 ms using a CSS linear() easing that approximates a spring.
+  visual: solid CTA
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: linear() easing is a motion-token change only, no structure.
+  customizable:
+    - duration
+    - easing
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - opacity
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 4
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 5
+    simplicity: 4
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: 'Motion-token evidence: add a "spring" easing token expressed as linear(); check Baseline support before use.'
+  probe: S-framer#0
+- id: REF-011
+  name: "Glossier: marching-ants dashed border"
+  url: https://www.glossier.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: On hover a dashed border appears to travel around the button (background-position, 1.5 s linear, infinite).
+  visual: outlined button, animated dashes
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Dashes are drawn with background gradients along the rectangle edges, so rounded corners cannot be followed.
+  customizable:
+    - color
+    - dash length
+  coupling: B
+  radiusSupport: square-only
+  a11y: "Infinite animation: needs a stop and a reduced-motion static dashed border."
+  perf:
+    animated:
+      - background-position
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 4
+    usability: 3
+    a11y: 3
+    performance: 3
+    themability: 2
+    simplicity: 3
+    license: 3
+    neutrality: 3
+  recommendation: inspiration
+  proposedId: null
+  notes: Square-corner brands only. Not a Master candidate unless a rounded method is found.
+  probe: S-glossier#0
+- id: REF-012
+  name: "Magic UI: rainbow button"
+  url: https://magicui.design/docs/components/rainbow-button
+  sourceKind: library
+  category: CTA
+  interaction: Multi-hue gradient glow/border that scrolls continuously (background-position, 2 s linear, infinite).
+  visual: dark button, rainbow edge
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Hues are fixed, so it cannot follow a brand palette; a single-brand-ramp gradient would be a different effect.
+  customizable:
+    - speed
+  coupling: B
+  radiusSupport: any
+  a11y: Infinite at rest; fails the 5 s motion rule without a pause control.
+  perf:
+    animated:
+      - background-position
+    js: false
+  license:
+    status: verified-permissive
+    usage: clean-room
+    note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+  scores:
+    distinctiveness: 4
+    usability: 3
+    a11y: 3
+    performance: 2
+    themability: 2
+    simplicity: 3
+    license: 4
+    neutrality: 1
+  recommendation: inspiration
+  proposedId: null
+  notes: "Brand-neutrality 1: rainbow hues belong to no brand. Gradient-shift (CTA-009) uses the brand ramp instead."
+  probe: L-magicui-rainbow-button#1
+- id: REF-013
+  name: "Magic UI: shiny button"
+  url: https://magicui.design/docs/components/shiny-button
+  sourceKind: library
+  category: CTA
+  interaction: Edge highlight/shadow shifts on hover (box-shadow, 300 ms).
+  visual: dark button, bright rim
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Animates box-shadow, which our lint forbids; could be rebuilt as an opacity layer.
+  customizable:
+    - color
+  coupling: B
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - box-shadow
+    js: false
+  license:
+    status: verified-permissive
+    usage: clean-room
+    note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+  scores:
+    distinctiveness: 3
+    usability: 3
+    a11y: 4
+    performance: 3
+    themability: 3
+    simplicity: 4
+    license: 4
+    neutrality: 3
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: L-magicui-shiny-button#2
+- id: REF-014
+  name: "Aceternity: press / lift button"
+  url: https://ui.aceternity.com/components/tailwindcss-buttons
+  sourceKind: library
+  category: CTA
+  interaction: Button shifts a few pixels and its shadow changes on hover (box-shadow + translate, 200 ms).
+  visual: offset-shadow button
+  states:
+    - default
+    - hover
+    - active
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Pattern is generic (offset layer + translate). Aceternity code and visuals must not be copied.
+  customizable:
+    - color
+    - offset
+  coupling: B
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - translate
+      - box-shadow
+    js: false
+  license:
+    status: proprietary
+    usage: inspiration-only
+    note: "Aceternity: proprietary and ambiguous terms (register.md). Do not copy code or visuals."
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 4
+    performance: 2
+    themability: 3
+    simplicity: 4
+    license: 2
+    neutrality: 3
+  recommendation: inspiration
+  proposedId: null
+  notes: Inspiration for CTA-013 press depth; implementation is original (feasibility sketch "press").
+  probe: L-aceternity-buttons#2
+- id: REF-015
+  name: "Aceternity: invert button"
+  url: https://ui.aceternity.com/components/tailwindcss-buttons
+  sourceKind: library
+  category: CTA
+  interaction: Fill, text colour and border colour swap on hover (200 ms).
+  visual: outline to solid inversion
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Colour only: a skin of the solid-fade CTA."
+  customizable:
+    - color
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - background-color
+      - color
+      - border-color
+    js: false
+  license:
+    status: proprietary
+    usage: inspiration-only
+    note: "Aceternity: proprietary and ambiguous terms (register.md). Do not copy code or visuals."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 4
+    simplicity: 5
+    license: 2
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: Becomes skin "outline-invert" of CTA-003.
+  probe: L-aceternity-buttons#0
+- id: REF-016
+  name: "Aceternity: glow-blue button"
+  url: https://ui.aceternity.com/components/tailwindcss-buttons
+  sourceKind: library
+  category: CTA
+  interaction: Fill and box-shadow change together on hover (200 ms linear).
+  visual: blue button with halo
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Shadow animation again; use an opacity layer.
+  customizable:
+    - color
+  coupling: B
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - background-color
+      - box-shadow
+    js: false
+  license:
+    status: proprietary
+    usage: inspiration-only
+    note: "Aceternity: proprietary and ambiguous terms (register.md). Do not copy code or visuals."
+  scores:
+    distinctiveness: 2
+    usability: 3
+    a11y: 4
+    performance: 3
+    themability: 3
+    simplicity: 4
+    license: 2
+    neutrality: 3
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: L-aceternity-buttons#1
+- id: REF-017
+  name: "Aceternity: hover-border-gradient"
+  url: https://ui.aceternity.com/components/hover-border-gradient
+  sourceKind: library
+  category: CTA
+  interaction: Button with gradient border; background fades over 500 ms on hover.
+  visual: dark pill with gradient rim
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Gradient rim around a pill; rim needs the same inherit/mask technique as the animated border.
+  customizable:
+    - color
+  coupling: C
+  radiusSupport: any
+  a11y: Gradient border must not be the only focus indicator.
+  perf:
+    animated:
+      - background-color
+    js: false
+  license:
+    status: proprietary
+    usage: inspiration-only
+    note: "Aceternity: proprietary and ambiguous terms (register.md). Do not copy code or visuals."
+  scores:
+    distinctiveness: 3
+    usability: 3
+    a11y: 3
+    performance: 4
+    themability: 3
+    simplicity: 3
+    license: 2
+    neutrality: 3
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: T-aceternity-hover-border#0
+- id: REF-018
+  name: "Motion Primitives: magnetic"
+  url: https://motion-primitives.com/docs/magnetic
+  sourceKind: library
+  category: CTA
+  interaction: Button follows the pointer with a small displacement while hovered (JS pointer tracking).
+  visual: plain button, subtle pull
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Displacement is JS-driven so the Web Animations probe could not measure it; our sketch sets a clamped
+    translate from pointer position and disables itself under reduced motion.
+  customizable:
+    - strength
+    - radius
+  coupling: B
+  radiusSupport: any
+  a11y: JS must no-op under reduced motion; never move focus targets while keyboard focused.
+  perf:
+    animated:
+      - translate
+    js: true
+  license:
+    status: unverified
+    usage: inspiration-only
+    note: Licence not verified from a primary source (register.md).
+  scores:
+    distinctiveness: 4
+    usability: 3
+    a11y: 3
+    performance: 5
+    themability: 5
+    simplicity: 4
+    license: 2
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: Measured only the colour fade (300 ms). Magnetic behaviour NOT measured here. Feasibility sketch "mag" passes.
+  probe: T-mp-magnetic#0
+- id: REF-019
+  name: "Ramp: fill fade"
+  url: https://ramp.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: Primary CTA fills over 300 ms on hover; no movement.
+  visual: solid fill
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour transition on hover; no layout or shape change, so every radius works unchanged.
+  customizable:
+    - color
+    - duration
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - background-color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: Baseline evidence for CTA-003 (duration evidence).
+  probe: S-ramp#0
+- id: REF-020
+  name: "Brex: fill fade"
+  url: https://www.brex.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: Primary CTA fills over 500 ms with border colour on hover; no movement.
+  visual: solid fill
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour transition on hover; no layout or shape change, so every radius works unchanged.
+  customizable:
+    - color
+    - duration
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - background-color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: Baseline evidence for CTA-003 (slowest observed fill).
+  probe: S-brex#0
+- id: REF-021
+  name: "Wise: fill fade"
+  url: https://wise.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: Primary CTA fills over 150 ms ease-in-out on hover; no movement.
+  visual: solid fill
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour transition on hover; no layout or shape change, so every radius works unchanged.
+  customizable:
+    - color
+    - duration
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - background-color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: Baseline evidence for CTA-003 (fill + border).
+  probe: S-wise#0
+- id: REF-022
+  name: "Linear: fill fade"
+  url: https://linear.app/
+  sourceKind: production-site
+  category: CTA
+  interaction: Primary CTA fills over 160 ms on hover; no movement.
+  visual: solid fill
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour transition on hover; no layout or shape change, so every radius works unchanged.
+  customizable:
+    - color
+    - duration
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - background-color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: Baseline evidence for CTA-003 (fast fill).
+  probe: S-linear#0
+- id: REF-023
+  name: "Mercury: fill fade"
+  url: https://mercury.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: Primary CTA fills over 300 ms on hover; no movement.
+  visual: solid fill
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour transition on hover; no layout or shape change, so every radius works unchanged.
+  customizable:
+    - color
+    - duration
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - background-color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: Baseline evidence for CTA-003 (fill).
+  probe: S-mercury#1
+- id: REF-024
+  name: "Shopify: border + shadow CTA"
+  url: https://www.shopify.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: Pill CTA changes border colour and shadow on hover (150 ms).
+  visual: outlined pill
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Border colour plus shadow, both colour tokens.
+  customizable:
+    - color
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - border-color
+      - box-shadow
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 4
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: S-shopify#0
+- id: REF-025
+  name: shadcn/ui Button
+  url: https://ui.shadcn.com/docs/components/button
+  sourceKind: design-system
+  category: CTA
+  interaction: Button exposes variant and size as props, supports an inline icon via data-icon, and transitions colours over 150 ms.
+  visual: six variants, sizes
+  states:
+    - default
+    - hover
+    - focus-visible
+    - disabled
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Props API is a fixed set; styling is CSS variables via Tailwind.
+  customizable:
+    - variant
+    - size
+    - icon
+  coupling: A
+  radiusSupport: any
+  a11y: No accessibility section on the page (read 2026-11-05).
+  perf:
+    animated:
+      - background-color
+      - color
+    js: false
+  license:
+    status: unverified
+    usage: inspiration-only
+    note: Licence not verified from a primary source (register.md).
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 3
+    performance: 5
+    themability: 4
+    simplicity: 5
+    license: 2
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: MIT shown on repo page, full text unread, so treated as concept reference only.
+  probe: L-shadcn-button#1
+- id: REF-026
+  name: Base UI Button
+  url: https://base-ui.com/react/components/button
+  sourceKind: design-system
+  category: CTA
+  interaction: "Headless button: data-disabled attribute, focusableWhenDisabled for loading, render prop to swap the
+    element, nativeButton flag."
+  visual: unstyled
+  states:
+    - default
+    - disabled
+    - loading
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Candidate headless layer for complex widgets (ADR 0004). Adapter boundary keeps us swappable.
+  customizable:
+    - render
+    - state attributes
+  coupling: A
+  radiusSupport: any
+  a11y: Documents the loading-keeps-focus caveat and aria-labelledby for label changes.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: verified-permissive
+    usage: dependency
+    note: MIT, primary LICENSE read (register.md).
+  scores:
+    distinctiveness: 2
+    usability: 5
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 4
+    license: 5
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: MIT verified. Use as dependency candidate in Phase 4 evaluation, not a CTA component.
+  probe: D-baseui-button#0
+- id: REF-027
+  name: "Primer Button: loading and inactive"
+  url: https://primer.style/product/components/button/
+  sourceKind: design-system
+  category: CTA
+  interaction: Loading keeps the label and focus with aria-disabled and a polite live region; "inactive" looks disabled
+    but stays interactive.
+  visual: four variants, three sizes
+  states:
+    - default
+    - hover
+    - active
+    - loading
+    - inactive
+    - disabled
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Pattern only: state semantics, independent of colour or radius."
+  customizable:
+    - variant
+    - size
+  coupling: A
+  radiusSupport: any
+  a11y: 24x24 target minimum; loading must not remove the button or focus.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: inspiration-only
+    note: Documentation read only; concept reference, nothing reused.
+  scores:
+    distinctiveness: 3
+    usability: 5
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 4
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: "Drives a Master platform fix: our loading state currently sets disabled (drops focus). See
+    research/architecture/NOTES.md."
+- id: REF-028
+  name: "Material 3 Button: shape morph"
+  url: https://m3.material.io/components/buttons/overview
+  sourceKind: design-system
+  category: CTA
+  interaction: Corner shape morphs on press and when a toggle is selected; five colour styles, five sizes.
+  visual: round/square shapes
+  states:
+    - enabled
+    - hover
+    - focus
+    - pressed
+    - disabled
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Making radius part of the interaction breaks brands that choose their own radius.
+  customizable:
+    - shape
+  coupling: C
+  radiusSupport: pill-only
+  a11y: "Motion guidance: drop decorative morph under reduced motion."
+  perf:
+    animated:
+      - border-radius
+    js: false
+  license:
+    status: not-applicable
+    usage: inspiration-only
+    note: Documentation read only; concept reference, nothing reused.
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 4
+    performance: 2
+    themability: 1
+    simplicity: 2
+    license: 3
+    neutrality: 2
+  recommendation: reject
+  proposedId: null
+  notes: Reject the morph, keep the per-state token table idea (Material and Carbon).
+- id: REF-029
+  name: Radix Themes Button
+  url: https://www.radix-ui.com/themes/docs/components/button
+  sourceKind: design-system
+  category: CTA
+  interaction: "Button props: variant (classic, solid, soft, surface, outline, ghost), size 1-4, color, highContrast,
+    radius, loading."
+  visual: six variants
+  states:
+    - default
+    - hover
+    - loading
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Brand lever is a closed prop set plus 12-step scales; nested Theme scopes overrides.
+  customizable:
+    - variant
+    - color
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: Focus ring via --focus-8 token; no further accessibility text on the page.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: inspiration-only
+    note: Documentation read only; concept reference, nothing reused.
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 3
+    performance: 5
+    themability: 3
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: "Adopt: highContrast and radius as first-class intent props; avoid fixed accent names only."
+- id: REF-030
+  name: "Carbon Button: per-state token table"
+  url: https://carbondesignsystem.com/components/button/style/
+  sourceKind: design-system
+  category: CTA
+  interaction: Every variant lists tokens for default, hover, focus, active and disabled; token names are identical across themes.
+  visual: primary/secondary/tertiary/ghost
+  states:
+    - default
+    - hover
+    - focus
+    - active
+    - disabled
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Pattern: manifest should carry a per-state token table, not a flat token list."
+  customizable:
+    - theme
+  coupling: A
+  radiusSupport: any
+  a11y: Icon-only buttons need a label on hover and focus.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: inspiration-only
+    note: Documentation read only; concept reference, nothing reused.
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+- id: REF-031
+  name: "Vercel templates: card tint"
+  url: https://vercel.com/templates
+  sourceKind: production-site
+  category: CRD
+  interaction: Whole card is a link; its surface tints over 150 ms on hover while content stays put.
+  visual: image card with tint
+  states:
+    - default
+    - hover
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour-only surface change; works with any card radius and any brand.
+  customizable:
+    - surface colour
+    - radius
+    - density
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - background-color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 5
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: adapt
+  proposedId: CRD-001
+  notes: Baseline card.
+  probe: C-vercel-templates#0
+- id: REF-032
+  name: "The Verge: editorial cards"
+  url: https://www.theverge.com/
+  sourceKind: production-site
+  category: CRD
+  interaction: Story cards show no hover change at all; hierarchy comes from type and image.
+  visual: large image + headline
+  states:
+    - default
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "No interaction: restraint is the design. A card variant with link underline on the headline only."
+  customizable:
+    - type scale
+    - density
+  coupling: A
+  radiusSupport: any
+  a11y: Relies on a visible link affordance on focus.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: Evidence that editorial brands want a no-motion card.
+  probe: C-theverge-cards#1
+- id: REF-033
+  name: "Mercury: pill hover on nav links"
+  url: https://mercury.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: Nav link gets a filled pill background over 300 ms on hover.
+  visual: text links, pill hover
+  states:
+    - default
+    - hover
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour-only background on a rounded box; radius comes from the nav-item token.
+  customizable:
+    - surface colour
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - background-color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 5
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: adapt
+  proposedId: NAV-001
+  notes: Baseline nav item.
+  probe: N-mercury-nav#1
+- id: REF-034
+  name: "Figma: nav indicator reveal"
+  url: https://www.figma.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: Nav item shows an indicator that fades and slides in under the label (::after opacity + transform, 250 ms).
+  visual: text nav, thin indicator
+  states:
+    - default
+    - hover
+    - focus-visible
+    - current
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Indicator is a layer under the label; reusable for the current-page state.
+  customizable:
+    - colour
+    - thickness
+  coupling: B
+  radiusSupport: any
+  a11y: Current page must be shown without relying on hover.
+  perf:
+    animated:
+      - opacity
+      - transform
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 5
+    simplicity: 4
+    license: 3
+    neutrality: 5
+  recommendation: adapt
+  proposedId: NAV-002
+  notes: ""
+  probe: S-figma#1
+- id: REF-035
+  name: "Supabase: nav dropdown trigger"
+  url: https://supabase.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: Menu trigger and its chevron change colour together (200 ms); opens a panel.
+  visual: text trigger with chevron
+  states:
+    - default
+    - hover
+    - expanded
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Behaviour belongs to a headless menu (Radix NavigationMenu); styling is tokens.
+  customizable:
+    - colour
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: Needs aria-expanded and keyboard arrows from the headless layer.
+  perf:
+    animated:
+      - color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 5
+    simplicity: 3
+    license: 3
+    neutrality: 5
+  recommendation: adapt
+  proposedId: NAV-003
+  notes: Wraps a headless primitive (ADR 0004).
+  probe: S-supabase#0
+- id: REF-036
+  name: "Notion: nav link fill"
+  url: https://www.notion.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: Nav link fills over 150 ms with an ease on hover.
+  visual: text links
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Same as NAV-001 with different timing.
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - background-color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 1
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: Duration evidence only.
+  probe: N-notion-nav#0
+- id: REF-037
+  name: "Stripe: nav link fade"
+  url: https://stripe.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: Logo/nav link fades (opacity 240 ms) on hover.
+  visual: logo link
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Opacity only.
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - opacity
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 1
+    usability: 3
+    a11y: 4
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: N-stripe-nav#1
+- id: REF-038
+  name: "Raycast: nav colour shift"
+  url: https://www.raycast.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: Nav text colour changes over 200 ms ease-in-out.
+  visual: text links
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour only.
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 1
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: S-raycast#0
+- id: REF-039
+  name: "Wired: list-row rule"
+  url: https://www.wired.com/
+  sourceKind: production-site
+  category: LAY
+  interaction: Section list rows carry a rule (::after) under each entry; editorial rhythm, no hover animation.
+  visual: hairline rows
+  states:
+    - default
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Pure layout/colour.
+  customizable:
+    - rule colour
+    - density
+  coupling: A
+  radiusSupport: any
+  a11y: n/a
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: S-wired#0
+- id: REF-040
+  name: "Monzo: fill fade"
+  url: https://monzo.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: Secondary CTA fills over 300 ms on hover.
+  visual: solid fill, pill
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour transition on hover; no layout or shape change, so every radius works unchanged.
+  customizable:
+    - color
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - background-color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: Baseline CTA-003 evidence (pill corners).
+  probe: S-monzo#0
+- id: REF-041
+  name: "Shopify: start-for-free fill"
+  url: https://www.shopify.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: Primary CTA fills over 150 ms on hover.
+  visual: solid fill
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour transition on hover; no layout or shape change, so every radius works unchanged.
+  customizable:
+    - color
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - background-color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: Baseline CTA-003 evidence.
+  probe: S-shopify#1
+- id: REF-042
+  name: "Resend: text link colour shift"
+  url: https://resend.com/
+  sourceKind: production-site
+  category: CTA
+  interaction: Secondary text CTA shifts colour over 200 ms on hover.
+  visual: text link with arrow
+  states:
+    - default
+    - hover
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour only; pair with CTA-012 underline when a rule is wanted.
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only, which reduced-motion allows; no movement to remove.
+  perf:
+    animated:
+      - color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: S-resend#2
+- name: "Base UI Tabs: sliding indicator"
+  url: https://base-ui.com/react/components/tabs
+  sourceKind: library
+  category: TAB
+  interaction: Tabs with manual activation (arrows move focus, Enter/Space select) and an indicator that slides under the
+    active tab, driven by CSS variables (translate + width, 150 ms).
+  visual: underline tabs with indicator
+  states:
+    - default
+    - hover
+    - focus-visible
+    - selected
+    - disabled
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Headless parts; indicator position comes from CSS variables, so it follows any tab size or radius.
+  customizable:
+    - colour
+    - indicator thickness
+    - orientation
+  coupling: B
+  radiusSupport: any
+  a11y: Selected tab tied to a labelled panel; manual activation avoids sluggish arrow keys; reduced motion removes the
+    slide.
+  perf:
+    animated:
+      - translate
+      - width
+    js: false
+  license:
+    status: verified-permissive
+    usage: clean-room
+    note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+  scores:
+    distinctiveness: 3
+    usability: 5
+    a11y: 5
+    performance: 4
+    themability: 4
+    simplicity: 3
+    license: 4
+    neutrality: 4
+  recommendation: adapt
+  proposedId: TAB-001
+  notes: "MIT verified. Measured: roving tabindex 0/-1/-1, arrow moves focus only, indicator translate+width 150 ms.
+    aria-controls only on the mounted panel."
+  probe: U-tabs-baseui#0
+  id: REF-043
+- name: "Radix Tabs: automatic activation"
+  url: https://www.radix-ui.com/primitives/docs/components/tabs
+  sourceKind: library
+  category: TAB
+  interaction: Headless tabs where focus movement also selects (automatic activation); state exposed as data-state; the
+    tablist is the tab stop.
+  visual: unstyled
+  states:
+    - default
+    - active
+    - disabled
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Candidate headless layer (ADR 0004); styling via data-state.
+  customizable:
+    - everything via CSS
+  coupling: A
+  radiusSupport: any
+  a11y: Automatic activation is only advisable when panels render instantly; Radix points aria-controls at panels that may
+    be unmounted.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: verified-permissive
+    usage: dependency
+    note: MIT, primary LICENSE read (register.md).
+  scores:
+    distinctiveness: 2
+    usability: 5
+    a11y: 4
+    performance: 5
+    themability: 5
+    simplicity: 4
+    license: 5
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: "Measured: automatic activation, tabindex -1 on tabs (list is the stop). Chosen default headless layer in ADR 0004."
+  probe: U-tabs-radix#0
+  id: REF-044
+- name: "Next.js docs: text tabs"
+  url: https://nextjs.org/docs/app/getting-started/installation
+  sourceKind: production-site
+  category: TAB
+  interaction: Code-sample tabs whose label colour fades in 150 ms; automatic activation; full tab/tabpanel wiring.
+  visual: text tabs
+  states:
+    - default
+    - hover
+    - selected
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour-only tab change; works with any palette.
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only (allowed under reduced motion); no movement.
+  perf:
+    animated:
+      - color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-tabs-nextjs#0
+  id: REF-045
+- name: "shadcn/ui Tabs: segmented pill"
+  url: https://ui.shadcn.com/docs/components/tabs
+  sourceKind: design-system
+  category: TAB
+  interaction: "Segmented-control style tabs: the selected tab gets a filled pill with a shadow, background and shadow
+    fade over 150 ms; manual activation."
+  visual: pill segmented control
+  states:
+    - default
+    - hover
+    - selected
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Fill pill behind the label; animates box-shadow (paint), which our rules forbid.
+  customizable:
+    - colour
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: Selected pill is not the only cue if text weight also changes.
+  perf:
+    animated:
+      - background-color
+      - box-shadow
+    js: false
+  license:
+    status: unverified
+    usage: inspiration-only
+    note: Licence not verified from a primary source (register.md).
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 4
+    performance: 3
+    themability: 4
+    simplicity: 4
+    license: 2
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: Basis for a segmented variant (TAB-002), inspiration-led.
+  probe: U-tabs-shadcn#0
+  id: REF-046
+- name: Atlassian Tabs
+  url: https://atlassian.design/components/tabs/examples
+  sourceKind: design-system
+  category: TAB
+  interaction: Tabs with manual activation and complete aria wiring (controls, labelled panel, roving tabindex).
+  visual: underline tabs
+  states:
+    - default
+    - hover
+    - selected
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Reference for the wiring and keyboard model only.
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Roving tabindex 0/-1; manual activation; panel labelled.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: inspiration-only
+    note: Documentation read only; concept reference, nothing reused.
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-tabs-atlassian#0
+  id: REF-047
+- name: "Stripe docs: tabs without panel roles"
+  url: https://docs.stripe.com/payments/quickstart
+  sourceKind: production-site
+  category: TAB
+  interaction: Language tabs that look right but expose no aria-controls, no tabpanel role and no panel label; focus moves
+    with arrows, selection does not follow.
+  visual: text tabs, 300 ms opacity swap
+  states:
+    - default
+    - selected
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Visual pattern is fine; the markup is the anti-pattern.
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: "Fails the APG tab pattern: panels are not programmatically tied to tabs."
+  perf:
+    animated:
+      - opacity
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 3
+    a11y: 1
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: reject
+  proposedId: null
+  notes: Evidence that production tab UIs often omit the wiring; our harness requires it.
+  probe: U-tabs-stripe-docs#0
+  id: REF-048
+- name: GOV.UK Tabs
+  url: https://design-system.service.gov.uk/components/tabs/
+  sourceKind: design-system
+  category: TAB
+  interaction: "Progressive-enhancement tabs: a list of in-page links works without JS and is upgraded to tabs with JS;
+    panel change is instant."
+  visual: plain text tabs
+  states:
+    - default
+    - selected
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Pattern: no-JS fallback; no animation at all."
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Accessibility exemplar; measured tab roles appear after enhancement.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: inspiration-only
+    note: Documentation read only; concept reference, nothing reused.
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-tabs-govuk#0
+  id: REF-049
+- name: "Base UI Accordion: height transition"
+  url: https://base-ui.com/react/components/accordion
+  sourceKind: library
+  category: ACC
+  interaction: Heading-wrapped trigger button with aria-expanded; the panel height animates over 150 ms (ease-out) from a
+    CSS variable while the chevron rotates in 100 ms.
+  visual: list of disclosure rows
+  states:
+    - default
+    - hover
+    - focus-visible
+    - open
+    - disabled
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Panel height comes from a CSS variable, so any content height works; chevron is decorative. Radius is
+    unaffected: rows are separated by rules and any rounded corners belong to the outer container, which clips the
+    animating panel."
+  customizable:
+    - colour
+    - radius
+    - icon
+    - spacing
+  coupling: C
+  radiusSupport: any
+  a11y: Heading contains the only button (APG); reduced motion removes the height and rotate transitions.
+  perf:
+    animated:
+      - height
+      - transform
+    js: false
+  license:
+    status: verified-permissive
+    usage: clean-room
+    note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+  scores:
+    distinctiveness: 3
+    usability: 5
+    a11y: 5
+    performance: 3
+    themability: 4
+    simplicity: 3
+    license: 4
+    neutrality: 4
+  recommendation: adapt
+  proposedId: ACC-001
+  notes: "MIT verified. Height is a layout property: ours uses the grid-rows or content-height technique and a
+    reduced-motion instant open. Only reference measured with a heading wrapper."
+  probe: U-acc-baseui#0
+  id: REF-050
+- name: "Notion / Vercel pricing FAQ: native details"
+  url: https://www.notion.com/pricing
+  sourceKind: production-site
+  category: ACC
+  interaction: "Native <details>/<summary> rows: opens instantly with no height animation; only the chevron rotates (100 ms)."
+  visual: plain FAQ rows
+  states:
+    - default
+    - hover
+    - open
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Zero-JS baseline; the browser supplies keyboard and state.
+  customizable:
+    - colour
+    - icon
+    - spacing
+  coupling: A
+  radiusSupport: any
+  a11y: Native semantics; no heading wrapper (summary is not a heading).
+  perf:
+    animated:
+      - transform
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 4
+  recommendation: adapt
+  proposedId: ACC-002
+  notes: Same pattern measured on Vercel pricing. Baseline accordion.
+  probe: U-acc-notion-pricing#0
+  id: REF-051
+- name: "Supabase pricing FAQ: grid-rows animation"
+  url: https://supabase.com/pricing
+  sourceKind: production-site
+  category: ACC
+  interaction: Button trigger with aria-controls; panel opens by animating grid-template-rows over 150 ms and the chevron
+    rotates 200 ms.
+  visual: FAQ rows
+  states:
+    - default
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "grid-template-rows 0fr to 1fr gives smooth height without measuring; layout-affecting though. Radius is
+    unaffected: the animating row sits inside a container that owns the corners and clips overflow."
+  customizable:
+    - colour
+    - icon
+  coupling: C
+  radiusSupport: any
+  a11y: aria-expanded + aria-controls present.
+  perf:
+    animated:
+      - grid-template-rows
+      - rotate
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 4
+    performance: 3
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-acc-supabase-pricing#0
+  id: REF-052
+- name: "Cal.com pricing FAQ: span trigger"
+  url: https://cal.com/pricing
+  sourceKind: production-site
+  category: ACC
+  interaction: FAQ rows whose toggle is a span carrying aria-expanded, not a button; opens instantly.
+  visual: FAQ rows
+  states:
+    - default
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Anti-pattern: no keyboard or role from the element itself."
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: A span is not focusable or operable by keyboard without extra work.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 1
+    usability: 2
+    a11y: 1
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 3
+  recommendation: reject
+  proposedId: null
+  notes: Evidence of the failure mode our harness must catch (trigger must be a real button or summary).
+  probe: U-acc-cal-pricing#0
+  id: REF-053
+- name: Radix Dialog
+  url: https://www.radix-ui.com/primitives/docs/components/dialog
+  sourceKind: library
+  category: DLG
+  interaction: "Headless modal dialog: focus moves in, Tab is trapped, Escape closes, focus returns, page scroll locks;
+    overlay and content fade in 150 ms (keyframes)."
+  visual: centred modal with overlay
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Our spike S6 verified focus, trap, Escape, return, scroll lock, outside click and exit animation; no
+    aria-modal is set (outside content is aria-hidden).
+  customizable:
+    - everything via CSS
+  coupling: A
+  radiusSupport: any
+  a11y: Name, description, trap, return all verified; reduced motion is ours to implement.
+  perf:
+    animated:
+      - opacity
+    js: false
+  license:
+    status: verified-permissive
+    usage: dependency
+    note: MIT, primary LICENSE read (register.md).
+  scores:
+    distinctiveness: 3
+    usability: 5
+    a11y: 5
+    performance: 4
+    themability: 5
+    simplicity: 3
+    license: 5
+    neutrality: 5
+  recommendation: adapt
+  proposedId: DLG-001
+  notes: "Dependency under ADR 0004. Measured on the docs demo: dialog role, named, focus inside, trapped, scroll locked,
+    Escape closes, focus returns."
+  probe: U-dlg-radix#0
+  id: REF-054
+- name: Base UI Dialog
+  url: https://base-ui.com/react/components/dialog
+  sourceKind: library
+  category: DLG
+  interaction: Headless modal dialog with starting/ending-style transitions (opacity 150/100 ms), three modal modes and
+    configurable initial/final focus.
+  visual: centred modal
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Equivalent behaviour to Radix in spike S6; 23.9 KB gzip vs 14.2 KB.
+  customizable:
+    - everything via CSS
+  coupling: A
+  radiusSupport: any
+  a11y: Same verified behaviours; focus guards need a settle in tests.
+  perf:
+    animated:
+      - opacity
+    js: false
+  license:
+    status: verified-permissive
+    usage: clean-room
+    note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+  scores:
+    distinctiveness: 3
+    usability: 5
+    a11y: 5
+    performance: 4
+    themability: 5
+    simplicity: 3
+    license: 4
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: Alternative adapter target (ADR 0004).
+  probe: U-dlg-baseui#0
+  id: REF-055
+- name: Atlassian Modal dialog
+  url: https://atlassian.design/components/modal-dialog/examples
+  sourceKind: design-system
+  category: DLG
+  interaction: Modal that fades and scales in (opacity 0-100 and scale 95-100, 250 ms) with aria-modal=true, named dialog,
+    trap, Escape and focus return.
+  visual: centred modal, scale-in
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Scale-in is a transform on the popup.
+  customizable:
+    - colour
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: aria-modal set; all measured behaviours pass.
+  perf:
+    animated:
+      - opacity
+      - transform
+    js: false
+  license:
+    status: not-applicable
+    usage: inspiration-only
+    note: Documentation read only; concept reference, nothing reused.
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 5
+    performance: 4
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: "Motion value reference: 250 ms fade + scale."
+  probe: U-dlg-atlassian#0
+  id: REF-056
+- name: Primer Dialog
+  url: https://primer.style/product/components/dialog/
+  sourceKind: design-system
+  category: DLG
+  interaction: Modal dialog with aria-modal=true, named, focus inside, trapped, Escape and return.
+  visual: centred modal
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Behaviour reference only.
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Verified behaviours pass.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: inspiration-only
+    note: Documentation read only; concept reference, nothing reused.
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-dlg-primer#0
+  id: REF-057
+- name: shadcn/ui Dialog
+  url: https://ui.shadcn.com/docs/components/dialog
+  sourceKind: design-system
+  category: DLG
+  interaction: Radix-based dialog styled with overlay and a centred content panel.
+  visual: centred modal
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Styling layer over Radix.
+  customizable:
+    - colour
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: Inherits Radix behaviour.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: unverified
+    usage: inspiration-only
+    note: Licence not verified from a primary source (register.md).
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 2
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-dlg-shadcn#0
+  id: REF-058
+- name: Radix Dropdown Menu
+  url: https://www.radix-ui.com/primitives/docs/components/dropdown-menu
+  sourceKind: library
+  category: DLG
+  interaction: Menu button that opens a menu panel with a 400 ms keyframe entrance; Escape closes and focus returns to the trigger.
+  visual: popover menu
+  states:
+    - closed
+    - open
+    - item-highlight
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Headless menu with typeahead and arrow keys; styling via data-state.
+  customizable:
+    - colour
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: Menu roles are correct HERE (an actions menu), unlike site navigation.
+  perf:
+    animated:
+      - opacity
+      - transform
+    js: false
+  license:
+    status: verified-permissive
+    usage: dependency
+    note: MIT, primary LICENSE read (register.md).
+  scores:
+    distinctiveness: 3
+    usability: 5
+    a11y: 5
+    performance: 4
+    themability: 5
+    simplicity: 3
+    license: 5
+    neutrality: 5
+  recommendation: adapt
+  proposedId: DLG-003
+  notes: Actions menu, not navigation (APG).
+  probe: U-menu-radix#0
+  id: REF-059
+- name: Base UI Menu
+  url: https://base-ui.com/react/components/menu
+  sourceKind: library
+  category: DLG
+  interaction: Menu panel entering with opacity + transform in 100 ms; Escape and focus return verified.
+  visual: popover menu
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Equivalent headless menu.
+  customizable:
+    - colour
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: Verified behaviours pass.
+  perf:
+    animated:
+      - opacity
+      - transform
+    js: false
+  license:
+    status: verified-permissive
+    usage: clean-room
+    note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 3
+    license: 4
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-menu-baseui#0
+  id: REF-060
+- name: Base UI Toast
+  url: https://base-ui.com/react/components/toast
+  sourceKind: library
+  category: TST
+  interaction: "Toast stack: new toasts slide in with a 500 ms transform; each toast is exposed as a non-modal dialog;
+    Escape does not dismiss it."
+  visual: corner toast stack
+  states:
+    - entering
+    - visible
+    - closing
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Headless toast manager; timing and stacking are in the library.
+  customizable:
+    - colour
+    - radius
+    - position
+  coupling: B
+  radiusSupport: any
+  a11y: No status/alert role was measured on the demo (toast rendered as a dialog), so announcement must be verified
+    manually.
+  perf:
+    animated:
+      - transform
+    js: false
+  license:
+    status: verified-permissive
+    usage: clean-room
+    note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 3
+    performance: 4
+    themability: 4
+    simplicity: 3
+    license: 4
+    neutrality: 4
+  recommendation: adapt
+  proposedId: TST-001
+  notes: "Measured on the docs demo only. Standards: critical toasts must not auto-dismiss; must not cover a focused
+    control (WCAG 2.4.11)."
+  probe: U-toast-baseui#0
+  id: REF-061
+- name: Sonner / shadcn toast
+  url: https://sonner.emilkowal.ski/
+  sourceKind: library
+  category: TST
+  interaction: Toast items fade and rise in over 400 ms (opacity + transform, ease); stacked in a list.
+  visual: corner toast
+  states:
+    - entering
+    - visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Item animation is two compositor properties.
+  customizable:
+    - colour
+    - radius
+  coupling: B
+  radiusSupport: any
+  a11y: Status role not measured on the demo.
+  perf:
+    animated:
+      - opacity
+      - transform
+    js: false
+  license:
+    status: unverified
+    usage: inspiration-only
+    note: Licence not verified from a primary source (register.md).
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 3
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 2
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-toast-sonner#0
+  id: REF-062
+- name: GitHub mobile navigation drawer
+  url: https://github.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: At 390 px the "Toggle navigation" button opens a full-height menu over a backdrop; page scroll locks,
+    Escape closes it and focus returns to the button.
+  visual: full-height mobile menu
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Modal-style drawer without a dialog role; behaviours verified by probe. Radius is unaffected: the drawer
+    is a full-height edge-anchored panel, so corner radius only applies to inner elements."
+  customizable:
+    - colour
+    - width
+  coupling: C
+  radiusSupport: any
+  a11y: Escape and focus return verified; a modal drawer should follow the APG modal dialog (name, trap).
+  perf:
+    animated:
+      - transform
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 4
+    performance: 4
+    themability: 5
+    simplicity: 3
+    license: 3
+    neutrality: 4
+  recommendation: adapt
+  proposedId: NAV-004
+  notes: "Measured: backdrop, scroll lock, Escape, focus return. Dialog role absent, so ours adds role/name/trap via the
+    Dialog primitive."
+  probe: U-drawer-github#0
+  id: REF-063
+- name: "Vercel mobile menu: dialog without focus"
+  url: https://vercel.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: The mobile menu is role=dialog with aria-modal=true and traps Tab, but focus does NOT move inside when it opens.
+  visual: mobile menu
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Anti-pattern: modal semantics without initial focus. Radius is unaffected: a full-height edge-anchored
+    panel with no outer corners to clip."
+  customizable:
+    - colour
+  coupling: C
+  radiusSupport: any
+  a11y: Focus must move into a modal on open (APG).
+  perf:
+    animated:
+      - visibility
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 3
+    a11y: 1
+    performance: 4
+    themability: 4
+    simplicity: 3
+    license: 3
+    neutrality: 4
+  recommendation: reject
+  proposedId: null
+  notes: ""
+  probe: U-drawer-vercel#0
+  id: REF-064
+- name: Supabase mobile menu
+  url: https://supabase.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: '"Main menu" button opens a menu with scroll lock, Escape and focus return; the icon swaps with a 150 ms
+    opacity fade.'
+  visual: mobile menu
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Icon swap between hamburger and close.
+  customizable:
+    - colour
+  coupling: B
+  radiusSupport: any
+  a11y: Escape and focus return verified.
+  perf:
+    animated:
+      - opacity
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-drawer-supabase#0
+  id: REF-065
+- name: "Notion mobile menu: slide and fade"
+  url: https://www.notion.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: Menu panel slides in with a 350 ms transform while a layer fades in over 400 ms.
+  visual: mobile menu
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Motion values for a drawer entrance. Radius is unaffected: the sliding panel is edge-anchored; clip is on
+    the viewport, not on rounded corners."
+  customizable:
+    - colour
+  coupling: C
+  radiusSupport: any
+  a11y: Open state was not detected by the probe heuristic; motion values only.
+  perf:
+    animated:
+      - transform
+      - opacity
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 3
+    a11y: 3
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-drawer-notion#0
+  id: REF-066
+- name: Notion desktop mega menu
+  url: https://www.notion.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: '"Product" button opens a mega panel with an opacity + transform entrance (250 ms); Escape closes it and
+    focus returns; no menu roles and no scroll lock.'
+  visual: mega menu panel
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Disclosure pattern as recommended by the APG for site navigation: button + aria-expanded + panel."
+  customizable:
+    - colour
+    - radius
+    - width
+  coupling: B
+  radiusSupport: any
+  a11y: Matches the APG disclosure navigation guidance; verified Escape and focus return.
+  perf:
+    animated:
+      - opacity
+      - transform
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 4
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 4
+    simplicity: 3
+    license: 3
+    neutrality: 4
+  recommendation: adapt
+  proposedId: NAV-005
+  notes: ""
+  probe: U-mega-notion#0
+  id: REF-067
+- name: Stripe mega menu
+  url: https://stripe.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: '"Products" opens a mega panel; arrow glyphs inside translate (250 ms); the page scroll locks while it is open.'
+  visual: mega menu panel
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Scroll lock on a desktop disclosure is unusual.
+  customizable:
+    - colour
+  coupling: B
+  radiusSupport: any
+  a11y: Escape and focus return verified.
+  perf:
+    animated:
+      - transform
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 4
+    simplicity: 3
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-mega-stripe#0
+  id: REF-068
+- name: "Vercel mega menu: 700 ms fade"
+  url: https://vercel.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: '"Products" panel fades in over 700 ms.'
+  visual: mega menu panel
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Too slow for a menu: most measured overlays are 100-250 ms."
+  customizable:
+    - colour
+  coupling: B
+  radiusSupport: any
+  a11y: Escape and focus return verified.
+  perf:
+    animated:
+      - opacity
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 3
+    a11y: 4
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: Counter-example for motion tokens (see platform items).
+  probe: U-mega-vercel#0
+  id: REF-069
+- name: Supabase / GitHub mega menus
+  url: https://supabase.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: Menu triggers change colour with their chevron in 200 ms; panels open with Escape and focus return.
+  visual: mega menu panel
+  states:
+    - closed
+    - open
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Colour-only trigger feedback.
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Colour change only (allowed under reduced motion); no movement.
+  perf:
+    animated:
+      - color
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 5
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-mega-supabase#0
+  id: REF-070
+- name: Vercel sticky header
+  url: https://vercel.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: Sticky header that gains a background and shadow after the page scrolls.
+  visual: sticky bar
+  states:
+    - top
+    - scrolled
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "position: sticky with a scroll-state class; no layout change."
+  customizable:
+    - colour
+    - height
+  coupling: A
+  radiusSupport: any
+  a11y: "Sticky headers can hide focused content (WCAG 2.4.11): measured NO scroll-padding-top here; ours sets it."
+  perf:
+    animated:
+      - background-color
+      - box-shadow
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 4
+    performance: 4
+    themability: 4
+    simplicity: 3
+    license: 3
+    neutrality: 4
+  recommendation: adapt
+  proposedId: NAV-006
+  notes: ""
+  probe: U-hdr-vercel#0
+  id: REF-071
+- name: Wise hide-on-scroll header
+  url: https://wise.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: Header slides away when scrolling down and returns when scrolling up.
+  visual: hide-on-scroll bar
+  states:
+    - visible
+    - hidden
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Transform-based hide; must also reveal on keyboard focus.
+  customizable:
+    - height
+    - colour
+  coupling: B
+  radiusSupport: any
+  a11y: A hidden header must reappear when focus enters it; keep it out of the tab order only while truly hidden.
+  perf:
+    animated:
+      - transform
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 4
+    usability: 3
+    a11y: 3
+    performance: 4
+    themability: 4
+    simplicity: 3
+    license: 3
+    neutrality: 4
+  recommendation: adapt
+  proposedId: NAV-007
+  notes: 1 of 12 measured headers hides on scroll.
+  probe: U-hdr-wise#0
+  id: REF-072
+- name: Linear fixed header with scroll-padding
+  url: https://linear.app/
+  sourceKind: production-site
+  category: NAV
+  interaction: Fixed header and html scroll-padding-top set, so anchor and focus targets are not covered.
+  visual: fixed bar
+  states:
+    - top
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: The scroll-padding companion is the part worth keeping.
+  customizable:
+    - height
+  coupling: A
+  radiusSupport: any
+  a11y: Satisfies the intent of WCAG 2.4.11 (technique C43).
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: Only 2 of 12 measured headers (Linear, Notion) set scroll-padding-top.
+  probe: U-hdr-linear#0
+  id: REF-073
+- name: "Mercury header: blur on scroll"
+  url: https://mercury.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: Header background, shadow and backdrop blur appear on scroll.
+  visual: translucent bar
+  states:
+    - top
+    - scrolled
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: backdrop-filter is paint-heavy.
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Translucency can reduce contrast over content (1.4.3/1.4.11).
+  perf:
+    animated:
+      - background-color
+      - backdrop-filter
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 3
+    a11y: 3
+    performance: 3
+    themability: 4
+    simplicity: 3
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-hdr-mercury#0
+  id: REF-074
+- name: Wired shrinking header
+  url: https://www.wired.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: A 364 px editorial masthead collapses to a compact bar on scroll.
+  visual: masthead
+  states:
+    - top
+    - scrolled
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Height change on scroll (layout).
+  customizable:
+    - height
+  coupling: B
+  radiusSupport: any
+  a11y: Large fixed headers cover content.
+  perf:
+    animated:
+      - height
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 2
+    a11y: 3
+    performance: 2
+    themability: 3
+    simplicity: 3
+    license: 3
+    neutrality: 3
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-hdr-wired#0
+  id: REF-075
+- name: "Stripe / GitHub / The Verge: non-sticky headers"
+  url: https://stripe.com/
+  sourceKind: production-site
+  category: NAV
+  interaction: Headers scroll away with the page; no sticky or hide behaviour.
+  visual: static bar
+  states:
+    - top
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Simplest option; no 2.4.11 risk.
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: No focus-obscuring risk.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 1
+    usability: 4
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: 4 of 12 measured headers are not pinned.
+  probe: U-hdr-stripe#0
+  id: REF-076
+- name: "Stripe customers: image zoom card"
+  url: https://stripe.com/customers
+  sourceKind: production-site
+  category: CRD
+  interaction: Hovering a customer card scales its picture (transform, 600 ms) inside a clipped frame.
+  visual: image card, zoom on hover
+  states:
+    - default
+    - hover
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Scale on the image only, clipped by the card radius; any radius works.
+  customizable:
+    - radius
+    - aspect ratio
+    - duration
+  coupling: B
+  radiusSupport: any
+  a11y: Zoom is decorative; the focus ring must still show on the card.
+  perf:
+    animated:
+      - transform
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 4
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 5
+    simplicity: 3
+    license: 3
+    neutrality: 4
+  recommendation: adapt
+  proposedId: CRD-002
+  notes: 600 ms is slow vs the 150-300 ms norm; ours uses the standard duration token.
+  probe: C-stripe-customers#0
+  id: REF-077
+- name: "Awwwards: hover reveal card"
+  url: https://www.awwwards.com/websites/
+  sourceKind: production-site
+  category: CRD
+  interaction: Hovering a card reveals an information layer (opacity + visibility, 300 ms).
+  visual: image card with hover overlay
+  states:
+    - default
+    - hover
+    - focus-within
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Information only on hover fails keyboard and touch; ours reveals on focus-within and shows the title always.
+  customizable:
+    - colour
+    - radius
+  coupling: B
+  radiusSupport: any
+  a11y: Hover-only content is an accessibility risk; keep essential content visible.
+  perf:
+    animated:
+      - opacity
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 3
+    a11y: 3
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 3
+  recommendation: adapt
+  proposedId: CRD-003
+  notes: ""
+  probe: C-awwwards#0
+  id: REF-078
+- name: "Linear customers card: brightness shift"
+  url: https://linear.app/customers
+  sourceKind: production-site
+  category: CRD
+  interaction: Hovering shifts a CSS filter on the card image (200 ms).
+  visual: image card
+  states:
+    - default
+    - hover
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: filter animates (paint-heavy).
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Focus ring 1px; low visibility.
+  perf:
+    animated:
+      - filter
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 3
+    performance: 3
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: C-linear-customers#0
+  id: REF-079
+- name: "GitHub Explore: link card"
+  url: https://github.com/explore
+  sourceKind: production-site
+  category: CRD
+  interaction: Card title is an underlined link on hover; keyboard focus shows a solid 2px ring; no motion.
+  visual: text-led link card
+  states:
+    - default
+    - hover
+    - focus-visible
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Title link with focus ring; the stretched-hit-area pattern would extend it.
+  customizable:
+    - type scale
+    - density
+  coupling: A
+  radiusSupport: any
+  a11y: 2px solid focus ring measured.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 5
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 4
+    license: 3
+    neutrality: 5
+  recommendation: adapt
+  proposedId: CRD-004
+  notes: "Basis for the stretched-title card: name = heading text, one primary link, hit area stretched by CSS (standards
+    notes, section 4)."
+  probe: C-github-explore#0
+  id: REF-080
+- name: BBC News cards
+  url: https://www.bbc.com/news
+  sourceKind: production-site
+  category: CRD
+  interaction: Story cards show no hover or focus motion.
+  visual: news card
+  states:
+    - default
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Restraint; hierarchy by type.
+  customizable:
+    - type scale
+  coupling: A
+  radiusSupport: any
+  a11y: Relies on default focus styles.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 3
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: C-bbc#1
+  id: REF-081
+- name: "GitHub login: text field"
+  url: https://github.com/login
+  sourceKind: production-site
+  category: INP
+  interaction: Label above, 40 px field with a 6 px radius; on focus the border changes and a ring (box-shadow) appears;
+    autocomplete tokens set; required.
+  visual: label-above text field
+  states:
+    - default
+    - hover
+    - focus
+    - disabled
+    - invalid
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Static ring colour change; no layout shift.
+  customizable:
+    - colour
+    - radius
+    - height
+  coupling: A
+  radiusSupport: any
+  a11y: Visible label, autocomplete=username/current-password, required marked.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 5
+    a11y: 5
+    performance: 5
+    themability: 5
+    simplicity: 5
+    license: 3
+    neutrality: 5
+  recommendation: adapt
+  proposedId: INP-001
+  notes: "Measured focus delta: border + shadow, no transition."
+  probe: U-in-github#1
+  id: REF-082
+- name: "Supabase sign-in: hinted field"
+  url: https://supabase.com/dashboard/sign-in
+  sourceKind: production-site
+  category: INP
+  interaction: 34 px fields with a border/outline/ring change over 200 ms on focus and aria-describedby wiring for hints.
+  visual: label-above field
+  states:
+    - default
+    - focus
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Describedby wiring is the part to keep.
+  customizable:
+    - colour
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: aria-describedby present; autocomplete set.
+  perf:
+    animated:
+      - border-color
+      - box-shadow
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 5
+    performance: 4
+    themability: 5
+    simplicity: 4
+    license: 3
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-in-supabase#0
+  id: REF-083
+- name: "shadcn Input: ring on focus"
+  url: https://ui.shadcn.com/docs/components/input
+  sourceKind: design-system
+  category: INP
+  interaction: 32 px field, 10 px radius; border colour and ring change over 150 ms on focus. The docs demos use
+    placeholder-only fields.
+  visual: bordered field
+  states:
+    - default
+    - focus
+    - disabled
+    - invalid
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Ring + border transition; demo omits visible labels.
+  customizable:
+    - colour
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: Placeholder-only demos teach the anti-pattern (WCAG 3.3.2).
+  perf:
+    animated:
+      - border-color
+      - box-shadow
+    js: false
+  license:
+    status: unverified
+    usage: inspiration-only
+    note: Licence not verified from a primary source (register.md).
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 2
+    performance: 4
+    themability: 5
+    simplicity: 5
+    license: 2
+    neutrality: 5
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-in-shadcn#0
+  id: REF-084
+- name: "Vercel login: aria-only label"
+  url: https://vercel.com/login
+  sourceKind: production-site
+  category: INP
+  interaction: Email field with NO visible label (only aria-label) and a box-shadow ring transition (150 ms).
+  visual: unlabelled field
+  states:
+    - default
+    - focus
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: "Anti-pattern: visible labels are required (WCAG 3.3.2)."
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Visible label missing.
+  perf:
+    animated:
+      - box-shadow
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 2
+    a11y: 1
+    performance: 4
+    themability: 4
+    simplicity: 5
+    license: 3
+    neutrality: 4
+  recommendation: reject
+  proposedId: null
+  notes: ""
+  probe: U-in-vercel#0
+  id: REF-085
+- name: "Primer TextInput: loading and outline focus"
+  url: https://primer.style/product/components/text-input/
+  sourceKind: design-system
+  category: INP
+  interaction: Outline focus ring; a trailing spinner indicates loading (rotation, 1 s).
+  visual: label-above field
+  states:
+    - default
+    - focus
+    - loading
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Loading affordance inside the field.
+  customizable:
+    - colour
+  coupling: B
+  radiusSupport: any
+  a11y: Outline focus; spinner must stop under reduced motion.
+  perf:
+    animated:
+      - rotate
+    js: false
+  license:
+    status: not-applicable
+    usage: inspiration-only
+    note: Documentation read only; concept reference, nothing reused.
+  scores:
+    distinctiveness: 3
+    usability: 4
+    a11y: 4
+    performance: 4
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-in-primer#0
+  id: REF-086
+- name: Atlassian Textfield
+  url: https://atlassian.design/components/textfield/examples
+  sourceKind: design-system
+  category: INP
+  interaction: 36 px field whose border colour transitions in 150 ms on focus; label above; describedby wiring.
+  visual: label-above field
+  states:
+    - default
+    - focus
+    - invalid
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Border-colour transition.
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: describedby present on the second field.
+  perf:
+    animated:
+      - border-color
+    js: false
+  license:
+    status: not-applicable
+    usage: inspiration-only
+    note: Documentation read only; concept reference, nothing reused.
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 5
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-in-atlassian#0
+  id: REF-087
+- name: Base UI Input / Field
+  url: https://base-ui.com/react/components/input
+  sourceKind: library
+  category: INP
+  interaction: Headless input with outline focus; Field parts wire label, description and error.
+  visual: unstyled
+  states:
+    - default
+    - focus
+    - invalid
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Candidate for the field wiring layer (ADR 0004).
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Wiring helps aria-describedby/aria-invalid; styling is ours.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: verified-permissive
+    usage: clean-room
+    note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+  scores:
+    distinctiveness: 2
+    usability: 4
+    a11y: 4
+    performance: 5
+    themability: 5
+    simplicity: 4
+    license: 4
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-in-baseui#0
+  id: REF-088
+- name: Stripe contact form field
+  url: https://stripe.com/contact/sales
+  sourceKind: production-site
+  category: INP
+  interaction: 48 px email field with the label to the left; custom focus styling (no outline or border change detected by
+    computed style).
+  visual: large field
+  states:
+    - default
+    - focus
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Large target; focus style is custom and was not captured.
+  customizable:
+    - colour
+  coupling: A
+  radiusSupport: any
+  a11y: Autocomplete=email set.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: clean-room
+    note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+  scores:
+    distinctiveness: 2
+    usability: 3
+    a11y: 3
+    performance: 5
+    themability: 4
+    simplicity: 4
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-in-stripe#0
+  id: REF-089
+- name: Radix Themes TextField
+  url: https://www.radix-ui.com/themes/docs/components/text-field
+  sourceKind: design-system
+  category: INP
+  interaction: 30 px fields with a 3 px radius; docs demos are placeholder-only.
+  visual: compact field
+  states:
+    - default
+    - focus
+  responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+  feasibility: Placeholder-only demos again.
+  customizable:
+    - colour
+    - radius
+  coupling: A
+  radiusSupport: any
+  a11y: No visible label in the demo.
+  perf:
+    animated: []
+    js: false
+  license:
+    status: not-applicable
+    usage: inspiration-only
+    note: Documentation read only; concept reference, nothing reused.
+  scores:
+    distinctiveness: 2
+    usability: 3
+    a11y: 2
+    performance: 5
+    themability: 4
+    simplicity: 5
+    license: 3
+    neutrality: 4
+  recommendation: inspiration
+  proposedId: null
+  notes: ""
+  probe: U-in-radix-themes#0
+  id: REF-090

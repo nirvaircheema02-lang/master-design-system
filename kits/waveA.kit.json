@@ -1,0 +1,10 @@
+{ "instances": [
+  { "ref": "CRD-002@1.0.0", "skin": "filled", "props": {} },
+  { "ref": "CRD-003@1.0.0", "skin": "outlined", "props": {} },
+  { "ref": "CRD-004@1.0.0", "skin": "filled", "props": {} },
+  { "ref": "INP-001@1.0.0", "skin": "filled", "props": { "size": "md" } },
+  { "ref": "FRM-001@1.0.0", "skin": "sunken", "props": {} },
+  { "ref": "ACC-002@1.0.0", "skin": "boxed", "props": {} },
+  { "ref": "NAV-001@1.0.0", "skin": "neutral", "props": {} },
+  { "ref": "NAV-002@1.0.0", "skin": "neutral", "props": {} }
+] }

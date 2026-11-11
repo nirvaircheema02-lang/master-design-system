@@ -1,0 +1,551 @@
+[
+ {
+  "id": "U-tabs-radix",
+  "url": "https://www.radix-ui.com/primitives/docs/components/tabs",
+  "kind": "tab",
+  "max": 1
+ },
+ {
+  "id": "U-tabs-baseui",
+  "url": "https://base-ui.com/react/components/tabs",
+  "kind": "tab",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-tabs-shadcn",
+  "url": "https://ui.shadcn.com/docs/components/tabs",
+  "kind": "tab",
+  "scope": "main",
+  "max": 2
+ },
+ {
+  "id": "U-tabs-govuk",
+  "url": "https://design-system.service.gov.uk/components/tabs/",
+  "kind": "tab",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-tabs-carbon",
+  "url": "https://carbondesignsystem.com/components/tabs/usage/",
+  "kind": "tab",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-tabs-atlassian",
+  "url": "https://atlassian.design/components/tabs/examples",
+  "kind": "tab",
+  "max": 1
+ },
+ {
+  "id": "U-tabs-primer",
+  "url": "https://primer.style/product/components/underline-nav/",
+  "kind": "tab",
+  "max": 1
+ },
+ {
+  "id": "U-tabs-nextjs",
+  "url": "https://nextjs.org/docs/app/getting-started/installation",
+  "kind": "tab",
+  "max": 1
+ },
+ {
+  "id": "U-tabs-stripe-docs",
+  "url": "https://docs.stripe.com/payments/quickstart",
+  "kind": "tab",
+  "max": 1
+ },
+ {
+  "id": "U-tabs-tailwind",
+  "url": "https://tailwindcss.com/docs/installation/using-vite",
+  "kind": "tab",
+  "max": 1
+ },
+ {
+  "id": "U-tabs-vercel-docs",
+  "url": "https://vercel.com/docs/frameworks/nextjs",
+  "kind": "tab",
+  "max": 1
+ },
+ {
+  "id": "U-acc-radix",
+  "url": "https://www.radix-ui.com/primitives/docs/components/accordion",
+  "kind": "accordion",
+  "max": 1
+ },
+ {
+  "id": "U-acc-baseui",
+  "url": "https://base-ui.com/react/components/accordion",
+  "kind": "accordion",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-acc-shadcn",
+  "url": "https://ui.shadcn.com/docs/components/accordion",
+  "kind": "accordion",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-acc-govuk",
+  "url": "https://design-system.service.gov.uk/components/accordion/",
+  "kind": "accordion",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-acc-carbon",
+  "url": "https://carbondesignsystem.com/components/accordion/usage/",
+  "kind": "accordion",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-acc-stripe-pricing",
+  "url": "https://stripe.com/pricing",
+  "kind": "accordion",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-acc-vercel-pricing",
+  "url": "https://vercel.com/pricing",
+  "kind": "accordion",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-acc-linear-pricing",
+  "url": "https://linear.app/pricing",
+  "kind": "accordion",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-acc-notion-pricing",
+  "url": "https://www.notion.com/pricing",
+  "kind": "accordion",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-acc-supabase-pricing",
+  "url": "https://supabase.com/pricing",
+  "kind": "accordion",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-acc-cal-pricing",
+  "url": "https://cal.com/pricing",
+  "kind": "accordion",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-dlg-radix",
+  "url": "https://www.radix-ui.com/primitives/docs/components/dialog",
+  "kind": "trigger",
+  "match": "edit profile",
+  "max": 1
+ },
+ {
+  "id": "U-dlg-baseui",
+  "url": "https://base-ui.com/react/components/dialog",
+  "kind": "trigger",
+  "scope": "main",
+  "match": "view notifications|open|dialog",
+  "max": 1
+ },
+ {
+  "id": "U-dlg-shadcn",
+  "url": "https://ui.shadcn.com/docs/components/dialog",
+  "kind": "trigger",
+  "scope": "main",
+  "match": "open dialog|edit profile|share",
+  "max": 1
+ },
+ {
+  "id": "U-dlg-carbon",
+  "url": "https://carbondesignsystem.com/components/modal/usage/",
+  "kind": "trigger",
+  "scope": "main",
+  "match": "launch modal|open",
+  "max": 1
+ },
+ {
+  "id": "U-dlg-primer",
+  "url": "https://primer.style/product/components/dialog/",
+  "kind": "trigger",
+  "scope": "main",
+  "match": "show dialog|open",
+  "max": 1
+ },
+ {
+  "id": "U-dlg-atlassian",
+  "url": "https://atlassian.design/components/modal-dialog/examples",
+  "kind": "trigger",
+  "match": "open|show",
+  "max": 1
+ },
+ {
+  "id": "U-pop-radix",
+  "url": "https://www.radix-ui.com/primitives/docs/components/popover",
+  "kind": "trigger",
+  "match": "more info|open|popover",
+  "max": 1
+ },
+ {
+  "id": "U-menu-radix",
+  "url": "https://www.radix-ui.com/primitives/docs/components/dropdown-menu",
+  "kind": "trigger",
+  "match": "customise|options|menu",
+  "max": 1
+ },
+ {
+  "id": "U-menu-baseui",
+  "url": "https://base-ui.com/react/components/menu",
+  "kind": "trigger",
+  "scope": "main",
+  "match": "song|menu|open",
+  "max": 1
+ },
+ {
+  "id": "U-tip-radix",
+  "url": "https://www.radix-ui.com/primitives/docs/components/tooltip",
+  "kind": "trigger",
+  "match": "add|tooltip",
+  "max": 1
+ },
+ {
+  "id": "U-toast-sonner",
+  "url": "https://sonner.emilkowal.ski/",
+  "kind": "trigger",
+  "match": "render a toast|show|toast",
+  "max": 1
+ },
+ {
+  "id": "U-toast-baseui",
+  "url": "https://base-ui.com/react/components/toast",
+  "kind": "trigger",
+  "scope": "main",
+  "match": "add toast|toast",
+  "max": 1
+ },
+ {
+  "id": "U-toast-shadcn",
+  "url": "https://ui.shadcn.com/docs/components/sonner",
+  "kind": "trigger",
+  "scope": "main",
+  "match": "show toast|toast",
+  "max": 1
+ },
+ {
+  "id": "U-mega-stripe",
+  "url": "https://stripe.com/",
+  "kind": "trigger",
+  "match": "products|solutions|developers",
+  "max": 1
+ },
+ {
+  "id": "U-mega-vercel",
+  "url": "https://vercel.com/",
+  "kind": "trigger",
+  "match": "products|solutions|resources",
+  "max": 1
+ },
+ {
+  "id": "U-mega-supabase",
+  "url": "https://supabase.com/",
+  "kind": "trigger",
+  "match": "product|developers|solutions",
+  "max": 1
+ },
+ {
+  "id": "U-mega-notion",
+  "url": "https://www.notion.com/",
+  "kind": "trigger",
+  "match": "product|solutions|resources",
+  "max": 1
+ },
+ {
+  "id": "U-mega-github",
+  "url": "https://github.com/",
+  "kind": "trigger",
+  "match": "platform|solutions|resources",
+  "max": 1
+ },
+ {
+  "id": "U-drawer-stripe",
+  "url": "https://stripe.com/",
+  "kind": "trigger",
+  "match": "menu|navigation|open",
+  "viewport": "mobile",
+  "max": 1
+ },
+ {
+  "id": "U-drawer-vercel",
+  "url": "https://vercel.com/",
+  "kind": "trigger",
+  "match": "menu|navigation|open",
+  "viewport": "mobile",
+  "max": 1
+ },
+ {
+  "id": "U-drawer-linear",
+  "url": "https://linear.app/",
+  "kind": "trigger",
+  "match": "menu|navigation|open",
+  "viewport": "mobile",
+  "max": 1
+ },
+ {
+  "id": "U-drawer-notion",
+  "url": "https://www.notion.com/",
+  "kind": "trigger",
+  "match": "menu|navigation|open",
+  "viewport": "mobile",
+  "max": 1
+ },
+ {
+  "id": "U-drawer-github",
+  "url": "https://github.com/",
+  "kind": "trigger",
+  "match": "menu|navigation|open",
+  "viewport": "mobile",
+  "max": 1
+ },
+ {
+  "id": "U-drawer-supabase",
+  "url": "https://supabase.com/",
+  "kind": "trigger",
+  "match": "menu|navigation|open",
+  "viewport": "mobile",
+  "max": 1
+ },
+ {
+  "id": "U-in-github",
+  "url": "https://github.com/login",
+  "kind": "input",
+  "max": 2
+ },
+ {
+  "id": "U-in-vercel",
+  "url": "https://vercel.com/login",
+  "kind": "input",
+  "max": 1
+ },
+ {
+  "id": "U-in-supabase",
+  "url": "https://supabase.com/dashboard/sign-in",
+  "kind": "input",
+  "max": 2
+ },
+ {
+  "id": "U-in-linear",
+  "url": "https://linear.app/login",
+  "kind": "input",
+  "max": 1
+ },
+ {
+  "id": "U-in-notion",
+  "url": "https://www.notion.com/login",
+  "kind": "input",
+  "max": 1
+ },
+ {
+  "id": "U-in-cal",
+  "url": "https://cal.com/signup",
+  "kind": "input",
+  "max": 3
+ },
+ {
+  "id": "U-in-stripe",
+  "url": "https://stripe.com/contact/sales",
+  "kind": "input",
+  "max": 3
+ },
+ {
+  "id": "U-in-shadcn",
+  "url": "https://ui.shadcn.com/docs/components/input",
+  "kind": "input",
+  "scope": "main",
+  "max": 2
+ },
+ {
+  "id": "U-in-baseui",
+  "url": "https://base-ui.com/react/components/input",
+  "kind": "input",
+  "scope": "main",
+  "max": 1
+ },
+ {
+  "id": "U-in-carbon",
+  "url": "https://carbondesignsystem.com/components/text-input/usage/",
+  "kind": "input",
+  "scope": "main",
+  "max": 2
+ },
+ {
+  "id": "U-in-primer",
+  "url": "https://primer.style/product/components/text-input/",
+  "kind": "input",
+  "scope": "main",
+  "max": 2
+ },
+ {
+  "id": "U-in-govuk",
+  "url": "https://design-system.service.gov.uk/components/text-input/",
+  "kind": "input",
+  "scope": "main",
+  "max": 2
+ },
+ {
+  "id": "U-in-atlassian",
+  "url": "https://atlassian.design/components/textfield/examples",
+  "kind": "input",
+  "max": 2
+ },
+ {
+  "id": "U-in-radix-themes",
+  "url": "https://www.radix-ui.com/themes/docs/components/text-field",
+  "kind": "input",
+  "max": 2
+ },
+ {
+  "id": "U-hdr-stripe",
+  "url": "https://stripe.com/",
+  "kind": "header",
+  "max": 1
+ },
+ {
+  "id": "U-hdr-vercel",
+  "url": "https://vercel.com/",
+  "kind": "header",
+  "max": 1
+ },
+ {
+  "id": "U-hdr-linear",
+  "url": "https://linear.app/",
+  "kind": "header",
+  "max": 1
+ },
+ {
+  "id": "U-hdr-notion",
+  "url": "https://www.notion.com/",
+  "kind": "header",
+  "max": 1
+ },
+ {
+  "id": "U-hdr-github",
+  "url": "https://github.com/",
+  "kind": "header",
+  "max": 1
+ },
+ {
+  "id": "U-hdr-mercury",
+  "url": "https://mercury.com/",
+  "kind": "header",
+  "max": 1
+ },
+ {
+  "id": "U-hdr-ramp",
+  "url": "https://ramp.com/",
+  "kind": "header",
+  "max": 1
+ },
+ {
+  "id": "U-hdr-wise",
+  "url": "https://wise.com/",
+  "kind": "header",
+  "max": 1
+ },
+ {
+  "id": "U-hdr-supabase",
+  "url": "https://supabase.com/",
+  "kind": "header",
+  "max": 1
+ },
+ {
+  "id": "U-hdr-theverge",
+  "url": "https://www.theverge.com/",
+  "kind": "header",
+  "max": 1
+ },
+ {
+  "id": "U-hdr-wired",
+  "url": "https://www.wired.com/",
+  "kind": "header",
+  "max": 1
+ },
+ {
+  "id": "U-hdr-arc",
+  "url": "https://arc.net/",
+  "kind": "header",
+  "max": 1
+ },
+ {
+  "id": "U-hdr-framer",
+  "url": "https://www.framer.com/",
+  "kind": "header",
+  "max": 1
+ },
+ {
+  "id": "C-dribbble",
+  "url": "https://dribbble.com/shots/popular",
+  "kind": "card"
+ },
+ {
+  "id": "C-awwwards",
+  "url": "https://www.awwwards.com/websites/",
+  "kind": "card"
+ },
+ {
+  "id": "C-producthunt",
+  "url": "https://www.producthunt.com/",
+  "kind": "card"
+ },
+ {
+  "id": "C-github-explore",
+  "url": "https://github.com/explore",
+  "kind": "card"
+ },
+ {
+  "id": "C-unsplash",
+  "url": "https://unsplash.com/",
+  "kind": "card"
+ },
+ {
+  "id": "C-stripe-customers",
+  "url": "https://stripe.com/customers",
+  "kind": "card"
+ },
+ {
+  "id": "C-vercel-customers",
+  "url": "https://vercel.com/customers",
+  "kind": "card"
+ },
+ {
+  "id": "C-linear-customers",
+  "url": "https://linear.app/customers",
+  "kind": "card"
+ },
+ {
+  "id": "C-airbnb",
+  "url": "https://www.airbnb.com/",
+  "kind": "card"
+ },
+ {
+  "id": "C-medium",
+  "url": "https://medium.com/",
+  "kind": "card"
+ },
+ {
+  "id": "C-bbc",
+  "url": "https://www.bbc.com/news",
+  "kind": "card"
+ }
+]

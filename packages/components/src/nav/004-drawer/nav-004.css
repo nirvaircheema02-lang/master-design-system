@@ -1,0 +1,45 @@
+/* NAV-004 Modal navigation drawer. Tokens: --ds-nav-*. Slides with transform + opacity only; reduced motion = no animation. */
+@layer components {
+  .ds-nav-004__trigger {
+    display: inline-flex; align-items: center; gap: 0.5rem; min-height: var(--ds-nav-height); padding: 0 var(--ds-nav-padding-x); margin: 0; border: 1px solid var(--ds-nav-panel-border); border-radius: var(--ds-nav-radius);
+    background: var(--ds-nav-panel-bg); color: var(--ds-nav-trigger-fg); font: inherit; font-family: var(--ds-nav-font); font-size: 0.9375rem; font-weight: 600; cursor: pointer;
+  }
+  .ds-nav-004__trigger svg, .ds-nav-004__close svg { width: 1.125rem; height: 1.125rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+  .ds-nav-004__trigger:focus-visible, .ds-nav-004__link:focus-visible, .ds-nav-004__close:focus-visible { outline: var(--ds-nav-focus-width) solid var(--ds-nav-focus); outline-offset: 2px; }
+  .ds-nav-004__overlay { position: fixed; inset: 0; z-index: var(--ds-nav-drawer-z); background: var(--ds-nav-drawer-scrim); }
+  .ds-nav-004 {
+    position: fixed; z-index: var(--ds-nav-drawer-z); top: 0; bottom: 0; box-sizing: border-box; width: var(--ds-nav-drawer-width); overflow-y: auto; padding: 1rem;
+    background: var(--ds-nav-drawer-bg); color: var(--ds-nav-drawer-fg); border: 0 solid var(--ds-nav-drawer-border); box-shadow: var(--ds-nav-drawer-shadow); font-family: var(--ds-nav-font);
+  }
+  .ds-nav-004[data-side="left"] { left: 0; border-right-width: 1px; }
+  .ds-nav-004[data-side="right"] { right: 0; border-left-width: 1px; }
+  .ds-nav-004__title { margin: 0 2.5rem 0.75rem 0; font-size: 1.125rem; font-weight: 700; }
+  .ds-nav-004__list { display: flex; flex-direction: column; gap: 0.125rem; margin: 0; padding: 0; list-style: none; }
+  .ds-nav-004__link {
+    display: flex; align-items: center; min-height: var(--ds-nav-height); padding: 0 var(--ds-nav-padding-x); border-radius: var(--ds-nav-radius); color: var(--ds-nav-drawer-fg); font-size: 1rem; font-weight: 500; text-decoration: none;
+  }
+  .ds-nav-004__link[aria-current="page"] { background: var(--ds-nav-bg-current); color: var(--ds-nav-fg-current); font-weight: 700; }
+  .ds-nav-004__close { position: absolute; top: 0.75rem; right: 0.75rem; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; padding: 0; border: 0; border-radius: var(--ds-nav-radius); background: transparent; color: var(--ds-nav-drawer-fg); cursor: pointer; }
+}
+
+@layer effects {
+  .ds-nav-004__link:hover { background: var(--ds-nav-bg-hover); color: var(--ds-nav-fg-hover); }
+  .ds-nav-004__close:hover { background: var(--ds-nav-drawer-close-bg-hover); }
+  .ds-nav-004__overlay[data-state="open"] { animation: ds-nav-004-fade-in var(--ds-nav-drawer-enter-duration) var(--ds-nav-drawer-ease); }
+  .ds-nav-004__overlay[data-state="closed"] { animation: ds-nav-004-fade-out var(--ds-nav-drawer-exit-duration) var(--ds-nav-drawer-ease) forwards; }
+  .ds-nav-004[data-side="left"][data-state="open"] { animation: ds-nav-004-in-left var(--ds-nav-drawer-enter-duration) var(--ds-nav-drawer-ease); }
+  .ds-nav-004[data-side="left"][data-state="closed"] { animation: ds-nav-004-out-left var(--ds-nav-drawer-exit-duration) var(--ds-nav-drawer-ease) forwards; }
+  .ds-nav-004[data-side="right"][data-state="open"] { animation: ds-nav-004-in-right var(--ds-nav-drawer-enter-duration) var(--ds-nav-drawer-ease); }
+  .ds-nav-004[data-side="right"][data-state="closed"] { animation: ds-nav-004-out-right var(--ds-nav-drawer-exit-duration) var(--ds-nav-drawer-ease) forwards; }
+}
+
+@keyframes ds-nav-004-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ds-nav-004-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes ds-nav-004-in-left { from { transform: translateX(-100%); } to { transform: none; } }
+@keyframes ds-nav-004-out-left { from { transform: none; } to { transform: translateX(-100%); } }
+@keyframes ds-nav-004-in-right { from { transform: translateX(100%); } to { transform: none; } }
+@keyframes ds-nav-004-out-right { from { transform: none; } to { transform: translateX(100%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-nav-004__overlay[data-state], .ds-nav-004[data-state] { animation: none; }
+}

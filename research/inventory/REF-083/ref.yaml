@@ -1,0 +1,64 @@
+id: REF-083
+name: "Supabase sign-in: hinted field"
+url: https://supabase.com/dashboard/sign-in
+sourceKind: production-site
+captured: 2026-11-06
+category: INP
+interaction: 34 px fields with a border/outline/ring change over 200 ms on focus and aria-describedby wiring for hints.
+visual: label-above field
+states:
+  - default
+  - focus
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Describedby wiring is the part to keep.
+customizable:
+  - colour
+  - radius
+coupling: A
+radiusSupport: any
+a11y: aria-describedby present; autocomplete set.
+perf:
+  animated:
+    - border-color
+    - box-shadow
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-in-supabase/probe.json#0
+  animations:
+    - target: input
+      property: border-bottom-color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: input
+      property: border-left-color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: input
+      property: border-right-color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: input
+      property: border-top-color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: input
+      property: outline-color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 5
+  performance: 4
+  themability: 5
+  simplicity: 4
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: ""

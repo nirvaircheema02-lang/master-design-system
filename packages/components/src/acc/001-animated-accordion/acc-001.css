@@ -1,0 +1,47 @@
+/* ACC-001 Animated accordion. Tokens: --ds-acc-*. The panel height is animated on purpose (manifest: interaction.layoutProps). */
+@layer components {
+  .ds-acc-001 { border: 1px solid var(--ds-acc-outer-border); border-radius: var(--ds-acc-radius); overflow: hidden; background: var(--ds-acc-bg); color: var(--ds-acc-fg); font-family: var(--ds-acc-font); }
+  .ds-acc-001__item + .ds-acc-001__item { border-top: 1px solid var(--ds-acc-border); }
+  .ds-acc-001__heading { margin: 0; font-size: 1rem; line-height: 1.4; font-weight: 600; }
+  .ds-acc-001__trigger {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: 100%; min-height: 2.75rem;
+    padding: var(--ds-acc-padding-y) var(--ds-acc-padding-x); margin: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: start; cursor: pointer;
+    transition: background-color var(--ds-acc-fade-duration) var(--ds-acc-fade-ease);
+  }
+  .ds-acc-001__trigger:focus-visible { outline: var(--ds-acc-focus-width) solid var(--ds-acc-focus); outline-offset: -2px; }
+  .ds-acc-001__trigger[data-disabled] { opacity: 0.45; cursor: not-allowed; }
+  .ds-acc-001__chevron { flex: none; width: 1.25rem; height: 1.25rem; fill: none; stroke: var(--ds-acc-fg); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform var(--ds-acc-fade-duration) var(--ds-acc-fade-ease); }
+  .ds-acc-001__plus { display: none; flex: none; width: 1.25rem; height: 1.25rem; fill: none; stroke: var(--ds-acc-fg); stroke-width: 2; stroke-linecap: round; }
+  .ds-acc-001__vbar { transition: opacity var(--ds-acc-fade-duration) var(--ds-acc-fade-ease); }
+  .ds-acc-001__content { overflow: hidden; }
+  /* DESIGNS: boxed (default), flush, cards, plus, left */
+  .ds-acc-001[data-design="flush"] { border-color: transparent; background: transparent; }
+  .ds-acc-001[data-design="flush"] .ds-acc-001__item { border-bottom: 1px solid var(--ds-acc-border); }
+  .ds-acc-001[data-design="flush"] .ds-acc-001__item + .ds-acc-001__item { border-top: 0; }
+  .ds-acc-001[data-design="cards"] { display: flex; flex-direction: column; gap: 0.5rem; border-color: transparent; overflow: visible; background: transparent; }
+  .ds-acc-001[data-design="cards"] .ds-acc-001__item { border: 1px solid var(--ds-acc-outer-border); border-radius: var(--ds-acc-radius); overflow: hidden; background: var(--ds-acc-bg); }
+  .ds-acc-001[data-design="cards"] .ds-acc-001__item + .ds-acc-001__item { border-top: 1px solid var(--ds-acc-outer-border); }
+  .ds-acc-001[data-design="plus"] .ds-acc-001__chevron { display: none; }
+  .ds-acc-001[data-design="plus"] .ds-acc-001__plus { display: block; }
+  .ds-acc-001[data-design="left"] .ds-acc-001__trigger { justify-content: flex-start; }
+  .ds-acc-001[data-design="left"] .ds-acc-001__chevron { order: -1; }
+  .ds-acc-001__inner { padding: 0 var(--ds-acc-padding-x) var(--ds-acc-padding-y); color: var(--ds-acc-muted); line-height: 1.5; }
+}
+
+@layer effects {
+  .ds-acc-001__trigger:hover { background: var(--ds-acc-bg-hover); }
+  .ds-acc-001__trigger[data-state="open"] .ds-acc-001__chevron { transform: rotate(180deg); }
+  .ds-acc-001[data-design="plus"] .ds-acc-001__trigger[data-state="open"] .ds-acc-001__vbar { opacity: 0; }
+  .ds-acc-001[data-design="left"] .ds-acc-001__chevron { transform: rotate(-90deg); }
+  .ds-acc-001[data-design="left"] .ds-acc-001__trigger[data-state="open"] .ds-acc-001__chevron { transform: rotate(0deg); }
+  .ds-acc-001__content[data-state="open"] { animation: ds-acc-001-down var(--ds-acc-expand-duration) var(--ds-acc-expand-ease); }
+  .ds-acc-001__content[data-state="closed"] { animation: ds-acc-001-up var(--ds-acc-expand-duration) var(--ds-acc-expand-ease); }
+}
+
+@keyframes ds-acc-001-down { from { height: 0; opacity: 0; } to { height: var(--_content-height); opacity: 1; } }
+@keyframes ds-acc-001-up { from { height: var(--_content-height); opacity: 1; } to { height: 0; opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-acc-001__trigger, .ds-acc-001__chevron, .ds-acc-001__vbar { transition: none; }
+  .ds-acc-001__content[data-state] { animation: none; }
+}

@@ -1,0 +1,17 @@
+/* SCR-001 Scroll progress bar. Tokens: --ds-scp-*. The fill is scaleX(--_p) (a transform), never width. Reduced motion: it still tracks scroll but without smoothing. */
+@layer components {
+  .ds-scr-001 { position: fixed; inset-block-start: 0; inset-inline: 0; z-index: var(--ds-scp-z); block-size: var(--ds-scp-height); pointer-events: none; background: transparent; }
+  .ds-scr-001__fill {
+    display: block; inline-size: 100%; block-size: 100%; transform-origin: left center; transform: scaleX(var(--_p, 0));
+    background-image: linear-gradient(90deg, var(--ds-scp-from), var(--ds-scp-to)); transition: transform var(--ds-scp-duration) var(--ds-scp-ease);
+  }
+  .ds-scr-001__fill:dir(rtl) { transform-origin: right center; }
+  /* DESIGNS: line (default), bar, bottom */
+  .ds-scr-001[data-design="bar"] { block-size: var(--ds-scp-height-thick); background: var(--ds-scp-track); }
+  .ds-scr-001[data-design="bottom"] { inset-block-start: auto; inset-block-end: 0; }
+  @media print { .ds-scr-001 { display: none; } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-scr-001__fill { transition: none; }
+}

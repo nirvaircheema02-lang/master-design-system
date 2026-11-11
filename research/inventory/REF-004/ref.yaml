@@ -1,0 +1,55 @@
+id: REF-004
+name: "Plaid: rotating border layer"
+url: https://plaid.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: On hover a conic-gradient layer inside the button rotates continuously (2.5 s linear) to draw a
+  travelling highlight around the edge.
+visual: dark fill with travelling edge light
+states:
+  - default
+  - hover
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Measured as a TRANSFORM rotation of a pseudo layer, not an animated custom property:
+  compositor-friendly. Layer is clipped by the host and masked to a ring; inner cover radius is host radius
+  minus ring width, so 0, 8px and pill all work."
+customizable:
+  - color
+  - radius
+  - ring width
+  - speed
+coupling: C
+radiusSupport: any
+a11y: Infinite animation only while hovered/focused; must stop under reduced motion and respect the 5 s rule.
+perf:
+  animated:
+    - rotate
+  js: false
+  note: rotate on a large pseudo layer; verify raster cost on low-end devices
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-plaid/probe.json#0
+  animations:
+    - target: span(child)::before
+      property: "@spin:transform"
+      durationMs: 2500
+      easing: linear
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 5
+  usability: 4
+  a11y: 3
+  performance: 4
+  themability: 4
+  simplicity: 3
+  license: 3
+  neutrality: 4
+recommendation: adapt
+proposedId: CTA-005
+notes: Replaces the @property-angle technique from the S1 spike (ADR 0003 exception) with a rotating layer; to
+  be proven in Phase 3.

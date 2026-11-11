@@ -1,0 +1,58 @@
+id: REF-052
+name: "Supabase pricing FAQ: grid-rows animation"
+url: https://supabase.com/pricing
+sourceKind: production-site
+captured: 2026-11-06
+category: ACC
+interaction: Button trigger with aria-controls; panel opens by animating grid-template-rows over 150 ms and
+  the chevron rotates 200 ms.
+visual: FAQ rows
+states:
+  - default
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "grid-template-rows 0fr to 1fr gives smooth height without measuring; layout-affecting though.
+  Radius is unaffected: the animating row sits inside a container that owns the corners and clips overflow."
+customizable:
+  - colour
+  - icon
+coupling: C
+radiusSupport: any
+a11y: aria-expanded + aria-controls present.
+perf:
+  animated:
+    - grid-template-rows
+    - rotate
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-acc-supabase-pricing/probe.json#0
+  animations:
+    - target: svg
+      property: rotate
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: div
+      property: grid-template-rows
+      durationMs: 150
+      easing: cubic-bezier(0, 0, 0.2, 1)
+    - target: span[slider]
+      property: "@pulse:opacity"
+      durationMs: 2000
+      easing: linear
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 4
+  performance: 3
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

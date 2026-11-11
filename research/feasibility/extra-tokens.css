@@ -1,0 +1,10 @@
+/* PROPOSED additional T3 tokens needed by the next-wave CTAs. All derived from existing semantic vars via color-mix:
+   no new colour input from a brand, so every brand gets them for free. Moves into the token engine in Phase 3. */
+[data-brand] {
+  --ds-cta-glow: color-mix(in oklch, var(--ds-cta-bg) 55%, transparent);
+  --ds-cta-shadow: color-mix(in oklch, var(--ds-cta-bg) 70%, black);
+  --ds-cta-spot: color-mix(in oklch, var(--ds-cta-fg) 28%, transparent);
+  --ds-cta-chip: var(--ds-cta-fg);
+  --ds-cta-fg-on-chip: var(--ds-cta-bg);
+  --ds-cta-link: var(--ds-color-accent-ink);
+}

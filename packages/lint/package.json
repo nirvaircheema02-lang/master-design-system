@@ -1,0 +1,13 @@
+{
+  "name": "@master-ds/lint",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "bin": { "master-lint": "./src/cli.ts" },
+  "exports": { ".": "./src/index.ts" },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --experimental-strip-types --test src/*.test.ts"
+  },
+  "dependencies": { "@master-ds/contracts": "workspace:*", "@master-ds/tokens": "workspace:*", "postcss": "^8.4.0" }
+}

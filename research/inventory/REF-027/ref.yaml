@@ -1,0 +1,45 @@
+id: REF-027
+name: "Primer Button: loading and inactive"
+url: https://primer.style/product/components/button/
+sourceKind: design-system
+captured: 2026-11-06
+category: CTA
+interaction: Loading keeps the label and focus with aria-disabled and a polite live region; "inactive" looks
+  disabled but stays interactive.
+visual: four variants, three sizes
+states:
+  - default
+  - hover
+  - active
+  - loading
+  - inactive
+  - disabled
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Pattern only: state semantics, independent of colour or radius."
+customizable:
+  - variant
+  - size
+coupling: A
+radiusSupport: any
+a11y: 24x24 target minimum; loading must not remove the button or focus.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: inspiration-only
+  note: Documentation read only; concept reference, nothing reused.
+measured: null
+scores:
+  distinctiveness: 3
+  usability: 5
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 4
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: "Drives a Master platform fix: our loading state currently sets disabled (drops focus). See
+  research/architecture/NOTES.md."

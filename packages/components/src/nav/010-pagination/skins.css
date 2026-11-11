@@ -1,0 +1,10 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-nav-010:not([data-skin]),
+  .ds-nav-010[data-skin="outlined"] {
+    --ds-pag-border: var(--ds-color-border-control);
+  }
+  .ds-nav-010[data-skin="ghost"] {
+    --ds-pag-border: transparent;
+  }
+}

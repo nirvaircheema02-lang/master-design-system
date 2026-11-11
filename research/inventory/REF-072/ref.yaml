@@ -1,0 +1,51 @@
+id: REF-072
+name: Wise hide-on-scroll header
+url: https://wise.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: Header slides away when scrolling down and returns when scrolling up.
+visual: hide-on-scroll bar
+states:
+  - visible
+  - hidden
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Transform-based hide; must also reveal on keyboard focus.
+customizable:
+  - height
+  - colour
+coupling: B
+radiusSupport: any
+a11y: A hidden header must reappear when focus enters it; keep it out of the tab order only while truly hidden.
+perf:
+  animated:
+    - transform
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-hdr-wise/probe.json#0
+  animations:
+    - target: div
+      property: opacity
+      durationMs: 3000
+      easing: linear
+    - target: div
+      property: opacity
+      durationMs: 3000
+      easing: linear
+  reducedMotionAnimations: null
+scores:
+  distinctiveness: 4
+  usability: 3
+  a11y: 3
+  performance: 4
+  themability: 4
+  simplicity: 3
+  license: 3
+  neutrality: 4
+recommendation: adapt
+proposedId: NAV-007
+notes: 1 of 12 measured headers hides on scroll.

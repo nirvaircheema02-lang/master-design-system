@@ -1,0 +1,17 @@
+/* TXT-001 Heading. Tokens: --ds-type-*. Static: no motion. */
+@layer components {
+  .ds-txt-001 { margin: 0; color: var(--ds-type-heading); font-family: var(--ds-type-font); font-weight: var(--ds-type-weight-bold); line-height: var(--ds-type-lh-snug); text-wrap: balance; overflow-wrap: anywhere; }
+  .ds-txt-001[data-size="xs"] { font-size: var(--ds-type-size-xs); --_fs: var(--ds-type-size-xs); }
+  .ds-txt-001[data-size="sm"] { font-size: var(--ds-type-size-sm); --_fs: var(--ds-type-size-sm); }
+  .ds-txt-001[data-size="md"] { font-size: var(--ds-type-size-md); --_fs: var(--ds-type-size-md); }
+  .ds-txt-001[data-size="lg"] { font-size: var(--ds-type-size-lg); --_fs: var(--ds-type-size-lg); }
+  .ds-txt-001[data-size="xl"] { font-size: var(--ds-type-size-xl); --_fs: var(--ds-type-size-xl); }
+  .ds-txt-001[data-size="2xl"] { font-size: var(--ds-type-size-2xl); --_fs: var(--ds-type-size-2xl); }
+  .ds-txt-001[data-size="3xl"] { font-size: var(--ds-type-size-3xl); --_fs: var(--ds-type-size-3xl); }
+  .ds-txt-001[data-size="4xl"] { font-size: var(--ds-type-size-4xl); --_fs: var(--ds-type-size-4xl); }
+  /* DESIGNS: plain (default), display, bar, rule, eyebrow */
+  .ds-txt-001[data-design="display"] { font-family: var(--ds-type-display); letter-spacing: var(--ds-type-tracking-tight); line-height: var(--ds-type-lh-tight); font-weight: var(--ds-type-weight-semibold); font-size: calc(var(--_fs) * 1.2); }
+  .ds-txt-001[data-design="bar"] { padding-inline-start: 0.6em; border-inline-start: 0.2em solid var(--ds-type-bar); }
+  .ds-txt-001[data-design="rule"] { padding-bottom: 0.35em; border-bottom: 2px solid var(--ds-type-rule); }
+  .ds-txt-001[data-design="eyebrow"] { color: var(--ds-type-bar); text-transform: uppercase; letter-spacing: var(--ds-type-tracking-wide); font-weight: var(--ds-type-weight-semibold); line-height: var(--ds-type-lh-normal); }
+}

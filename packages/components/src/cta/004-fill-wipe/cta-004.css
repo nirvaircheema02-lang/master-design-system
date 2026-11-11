@@ -1,0 +1,60 @@
+/* CTA-004 Fill Wipe: a fill layer sweeps in from an edge; the host clips it to ANY radius. */
+@layer components {
+  .ds-cta-004 {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    min-height: var(--ds-cta-height);
+    padding-inline: var(--ds-cta-padding-x);
+    border: var(--ds-cta-border-width) solid var(--ds-cta-border);
+    border-radius: var(--ds-cta-radius);
+    background: var(--ds-cta-bg);
+    color: var(--ds-cta-fg);
+    font: 600 1rem/1 var(--ds-cta-font);
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: clip;
+    transition: background-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), border-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease);
+  }
+  .ds-cta-004[data-size="sm"] { min-height: calc(var(--ds-cta-height) * 0.85); }
+  .ds-cta-004[data-size="lg"] { min-height: calc(var(--ds-cta-height) * 1.15); }
+  .ds-cta-004:focus-visible { outline: 2px solid var(--ds-cta-focus); outline-offset: 3px; }
+  .ds-cta-004:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ds-cta-004__label, .ds-cta-004__icon { position: relative; z-index: 1; }
+  .ds-cta-004[data-loading] { cursor: progress; }
+  .ds-cta-004__spinner { position: relative; z-index: 1; flex: none; width: 1em; height: 1em; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; }
+  .ds-cta-004__status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+@layer effects {
+  .ds-cta-004 { --_sx: 0; --_sy: 1; --_origin: left center; }
+  .ds-cta-004[data-direction="right"] { --_origin: right center; }
+  .ds-cta-004[data-direction="top"] { --_sx: 1; --_sy: 0; --_origin: center top; }
+  .ds-cta-004[data-direction="bottom"] { --_sx: 1; --_sy: 0; --_origin: center bottom; }
+  .ds-cta-004::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    background: var(--ds-cta-bg-hover);
+    transform: scale(var(--_sx), var(--_sy));
+    transform-origin: var(--_origin);
+    transition: transform var(--ds-cta-wipe-duration) var(--ds-cta-ease);
+  }
+  .ds-cta-004:not(:disabled):not([aria-disabled="true"]):hover { color: var(--ds-cta-fg-hover); }
+  .ds-cta-004:not(:disabled):not([aria-disabled="true"]):hover::before, .ds-cta-004:not(:disabled):not([aria-disabled="true"]):focus-visible::before { transform: scale(1, 1); }
+  .ds-cta-004__spinner { animation: ds-cta-004-spin var(--ds-cta-spin-duration) linear infinite; }
+  @keyframes ds-cta-004-spin { to { transform: rotate(360deg); } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-cta-004, .ds-cta-004::before { transition: none; }
+  /* static end state: the fill APPEARS (opacity) instead of sweeping, so nothing moves */
+  .ds-cta-004::before { transform: none; opacity: 0; }
+  .ds-cta-004:not(:disabled):not([aria-disabled="true"]):hover::before, .ds-cta-004:not(:disabled):not([aria-disabled="true"]):focus-visible::before { opacity: 1; }
+  .ds-cta-004__spinner { animation: none; border-top-color: currentColor; }
+}

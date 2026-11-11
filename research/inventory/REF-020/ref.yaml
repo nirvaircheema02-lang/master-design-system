@@ -1,0 +1,63 @@
+id: REF-020
+name: "Brex: fill fade"
+url: https://www.brex.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: Primary CTA fills over 500 ms with border colour on hover; no movement.
+visual: solid fill
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Colour transition on hover; no layout or shape change, so every radius works unchanged.
+customizable:
+  - color
+  - duration
+coupling: A
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - background-color
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-brex/probe.json#0
+  animations:
+    - target: a(host)
+      property: background-color
+      durationMs: 500
+      easing: ease
+    - target: a(host)
+      property: border-bottom-color
+      durationMs: 500
+      easing: ease
+    - target: a(host)
+      property: border-left-color
+      durationMs: 500
+      easing: ease
+    - target: a(host)
+      property: border-right-color
+      durationMs: 500
+      easing: ease
+    - target: a(host)
+      property: border-top-color
+      durationMs: 500
+      easing: ease
+  reducedMotionAnimations: 5
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: Baseline evidence for CTA-003 (slowest observed fill).

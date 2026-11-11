@@ -1,0 +1,14 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-tip-001:not([data-skin]),
+  .ds-tip-001[data-skin="inverse"] {
+    --ds-tip-bg: var(--ds-color-text-primary);
+    --ds-tip-fg: var(--ds-color-surface-base);
+    --ds-tip-border: transparent;
+  }
+  .ds-tip-001[data-skin="raised"] {
+    --ds-tip-bg: var(--ds-color-surface-raised);
+    --ds-tip-fg: var(--ds-color-text-primary);
+    --ds-tip-border: var(--ds-color-border-control);
+  }
+}

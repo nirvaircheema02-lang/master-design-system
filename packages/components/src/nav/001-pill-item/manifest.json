@@ -1,0 +1,124 @@
+{
+  "id": "NAV-001",
+  "slug": "pill-item",
+  "name": "Pill-Hover Nav Item",
+  "category": "NAV",
+  "archetype": "navitem",
+  "fixture": {
+    "props": {
+      "href": "#pricing"
+    },
+    "children": "Pricing"
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Navigation link with a pill background on hover and focus; the current page keeps a persistent pill and heavier weight.",
+  "inspiration": [],
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {
+      "duration": 150
+    },
+    "js": false,
+    "pointerVars": []
+  },
+  "slots": {},
+  "props": {},
+  "skins": [
+    {
+      "id": "tint",
+      "bind": {
+        "--ds-nav-fg": "color.text.primary",
+        "--ds-nav-bg-hover": "color.accent.subtle",
+        "--ds-nav-fg-hover": "color.accent.ink",
+        "--ds-nav-bg-current": "color.accent.subtle",
+        "--ds-nav-fg-current": "color.accent.ink"
+      }
+    },
+    {
+      "id": "neutral",
+      "bind": {
+        "--ds-nav-fg": "color.text.primary",
+        "--ds-nav-bg-hover": "color.surface.sunken",
+        "--ds-nav-fg-hover": "color.text.primary",
+        "--ds-nav-bg-current": "color.surface.sunken",
+        "--ds-nav-fg-current": "color.text.primary"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-nav-bg-current",
+    "--ds-nav-bg-hover",
+    "--ds-nav-fade-duration",
+    "--ds-nav-fade-ease",
+    "--ds-nav-fg",
+    "--ds-nav-fg-current",
+    "--ds-nav-fg-hover",
+    "--ds-nav-focus",
+    "--ds-nav-focus-width",
+    "--ds-nav-font",
+    "--ds-nav-height",
+    "--ds-nav-padding-x",
+    "--ds-nav-radius"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "current"
+  ],
+  "responsive": {
+    "touchTarget": "40px",
+    "hoverFallback": "hover is decorative; focus-visible shows the same cue"
+  },
+  "a11y": {
+    "role": "link",
+    "keyboard": [
+      "Tab",
+      "Enter"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "a"
+    ],
+    "inertStates": []
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/nav/001-pill-item",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "nav",
+      "item",
+      "pill",
+      "menu"
+    ],
+    "interaction": [
+      "hover-press"
+    ],
+    "useCases": [
+      "Items in a top bar",
+      "Simple tab-like navigation"
+    ],
+    "avoidWhen": [
+      "Large menus (use the mega menu)"
+    ],
+    "pairsWith": [
+      "NAV-006"
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+id: REF-005
+name: "Resend: glow / inner highlight"
+url: https://resend.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: Primary CTA gains a soft highlight (::after opacity + transform 300 ms) and a shadow change (200
+  ms) on hover.
+visual: dark button with light rim
+states:
+  - default
+  - hover
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Our version fades a pre-drawn shadow layer by opacity; the layer inherits radius so every shape works.
+customizable:
+  - color
+  - radius
+  - intensity
+coupling: B
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove. Highlight layer hidden under
+  reduced motion.
+perf:
+  animated:
+    - opacity
+    - transform
+    - box-shadow
+  js: false
+  note: source uses box-shadow animation; ours must not
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-resend/probe.json#1
+  animations:
+    - target: a(host)
+      property: background-color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: a(host)
+      property: box-shadow
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: a(host)
+      property: color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 3
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 4
+  performance: 3
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: adapt
+proposedId: CTA-006
+notes: "Source animates box-shadow (paint). Master rule: animate an opacity layer instead (lint rule
+  no-animated-shadow)."

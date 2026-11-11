@@ -1,0 +1,50 @@
+/* CTA-008 Icon Expansion: a chip inside the button scales up to fill it; the host clips it to ANY radius. */
+@layer components {
+  .ds-cta-008 {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    min-height: var(--ds-cta-height);
+    padding-inline: var(--ds-cta-padding-x);
+    border: var(--ds-cta-border-width) solid var(--ds-cta-border);
+    border-radius: var(--ds-cta-radius);
+    background: var(--ds-cta-bg);
+    color: var(--ds-cta-fg);
+    font: 600 1rem/1 var(--ds-cta-font);
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: clip;
+    padding-inline-end: 0.5em;
+    transition: background-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), border-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease);
+  }
+  .ds-cta-008[data-size="sm"] { min-height: calc(var(--ds-cta-height) * 0.85); }
+  .ds-cta-008[data-size="lg"] { min-height: calc(var(--ds-cta-height) * 1.15); }
+  .ds-cta-008:focus-visible { outline: 2px solid var(--ds-cta-focus); outline-offset: 3px; }
+  .ds-cta-008:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ds-cta-008__label, .ds-cta-008__icon { position: relative; z-index: 1; }
+  .ds-cta-008[data-loading] { cursor: progress; }
+  .ds-cta-008__spinner { position: relative; z-index: 1; flex: none; width: 1em; height: 1em; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; }
+  .ds-cta-008__status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+@layer effects {
+  .ds-cta-008__chip { position: relative; z-index: 0; isolation: isolate; display: grid; place-items: center; flex: none; width: 1.9em; height: 1.9em; border-radius: 999px; color: var(--ds-cta-fg-on-chip); }
+  .ds-cta-008__chip::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--ds-cta-chip); transition: transform var(--ds-cta-wipe-duration) var(--ds-cta-ease); }
+  .ds-cta-008__chip svg { width: 1.1em; height: 1.1em; }
+  .ds-cta-008:not(:disabled):not([aria-disabled="true"]):hover .ds-cta-008__chip::before, .ds-cta-008:not(:disabled):not([aria-disabled="true"]):focus-visible .ds-cta-008__chip::before { transform: scale(28); }
+  .ds-cta-008:not(:disabled):not([aria-disabled="true"]):hover, .ds-cta-008:not(:disabled):not([aria-disabled="true"]):focus-visible { color: var(--ds-cta-fg-on-chip); }
+  .ds-cta-008__spinner { animation: ds-cta-008-spin var(--ds-cta-spin-duration) linear infinite; }
+  @keyframes ds-cta-008-spin { to { transform: rotate(360deg); } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-cta-008, .ds-cta-008__chip::before { transition: none; }
+  /* static end state: a full-bleed fill APPEARS (opacity) behind the label instead of the chip growing */
+  .ds-cta-008::before { content: ""; position: absolute; inset: 0; z-index: 0; border-radius: inherit; background: var(--ds-cta-chip); opacity: 0; }
+  .ds-cta-008:not(:disabled):not([aria-disabled="true"]):hover::before, .ds-cta-008:not(:disabled):not([aria-disabled="true"]):focus-visible::before { opacity: 1; }
+  .ds-cta-008:not(:disabled):not([aria-disabled="true"]):hover .ds-cta-008__chip::before, .ds-cta-008:not(:disabled):not([aria-disabled="true"]):focus-visible .ds-cta-008__chip::before { transform: none; }
+  .ds-cta-008__spinner { animation: none; border-top-color: currentColor; }
+}

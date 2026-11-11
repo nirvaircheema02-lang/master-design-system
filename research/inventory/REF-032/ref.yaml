@@ -1,0 +1,41 @@
+id: REF-032
+name: "The Verge: editorial cards"
+url: https://www.theverge.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CRD
+interaction: Story cards show no hover change at all; hierarchy comes from type and image.
+visual: large image + headline
+states:
+  - default
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "No interaction: restraint is the design. A card variant with link underline on the headline only."
+customizable:
+  - type scale
+  - density
+coupling: A
+radiusSupport: any
+a11y: Relies on a visible link affordance on focus.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/C-theverge-cards/probe.json#1
+  animations: []
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: Evidence that editorial brands want a no-motion card.

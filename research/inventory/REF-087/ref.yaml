@@ -1,0 +1,63 @@
+id: REF-087
+name: Atlassian Textfield
+url: https://atlassian.design/components/textfield/examples
+sourceKind: design-system
+captured: 2026-11-06
+category: INP
+interaction: 36 px field whose border colour transitions in 150 ms on focus; label above; describedby wiring.
+visual: label-above field
+states:
+  - default
+  - focus
+  - invalid
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Border-colour transition.
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: describedby present on the second field.
+perf:
+  animated:
+    - border-color
+  js: false
+license:
+  status: not-applicable
+  usage: inspiration-only
+  note: Documentation read only; concept reference, nothing reused.
+measured:
+  probeFile: research/probe/U-in-atlassian/probe.json#0
+  animations:
+    - target: div[presentation]
+      property: border-bottom-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 1, 0.6, 1)
+    - target: div[presentation]
+      property: border-left-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 1, 0.6, 1)
+    - target: div[presentation]
+      property: border-right-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 1, 0.6, 1)
+    - target: div[presentation]
+      property: border-top-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 1, 0.6, 1)
+    - target: div[presentation]
+      property: box-shadow
+      durationMs: 150
+      easing: cubic-bezier(0.4, 1, 0.6, 1)
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 5
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

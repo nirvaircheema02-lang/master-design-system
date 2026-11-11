@@ -1,0 +1,43 @@
+id: REF-049
+name: GOV.UK Tabs
+url: https://design-system.service.gov.uk/components/tabs/
+sourceKind: design-system
+captured: 2026-11-06
+category: TAB
+interaction: "Progressive-enhancement tabs: a list of in-page links works without JS and is upgraded to tabs
+  with JS; panel change is instant."
+visual: plain text tabs
+states:
+  - default
+  - selected
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Pattern: no-JS fallback; no animation at all."
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Accessibility exemplar; measured tab roles appear after enhancement.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: inspiration-only
+  note: Documentation read only; concept reference, nothing reused.
+measured:
+  probeFile: research/probe/U-tabs-govuk/probe.json#0
+  animations: []
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

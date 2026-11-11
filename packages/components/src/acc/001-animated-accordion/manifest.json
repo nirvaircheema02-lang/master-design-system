@@ -1,0 +1,164 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "id": "ACC-001",
+  "slug": "animated-accordion",
+  "name": "Animated Accordion",
+  "category": "ACC",
+  "archetype": "accordion",
+  "fixture": {
+    "props": {
+      "items": [
+        {
+          "id": "included",
+          "title": "What is included?",
+          "content": "Everything in the base plan."
+        },
+        {
+          "id": "cancel",
+          "title": "Can I cancel?",
+          "content": "Yes, at any time."
+        },
+        {
+          "id": "free",
+          "title": "Is there a free tier?",
+          "content": "Yes, with limits."
+        }
+      ]
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Accordion whose panel height animates from the measured content height. Each title is a heading wrapping the only button; single or multiple open. Reduced motion removes the animation.",
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "height-expand",
+      "chevron-rotate"
+    ],
+    "params": {
+      "duration": 200
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": [
+      "height"
+    ]
+  },
+  "headless": [
+    "accordion"
+  ],
+  "props": {
+    "type": [
+      "single",
+      "multiple"
+    ],
+    "design": [
+      "boxed",
+      "flush",
+      "cards",
+      "plus",
+      "left"
+    ]
+  },
+  "skins": [
+    {
+      "id": "plain",
+      "bind": {
+        "--ds-acc-bg": "transparent",
+        "--ds-acc-outer-border": "transparent"
+      }
+    },
+    {
+      "id": "boxed",
+      "bind": {
+        "--ds-acc-bg": "color.surface.raised",
+        "--ds-acc-outer-border": "color.border.subtle"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "open",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "hover is decorative; focus-visible shows the same cue"
+  },
+  "a11y": {
+    "role": "group",
+    "keyboard": [
+      "Tab",
+      "Enter",
+      "Space",
+      "ArrowDown",
+      "ArrowUp",
+      "Home",
+      "End"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-acc-bg",
+    "--ds-acc-bg-hover",
+    "--ds-acc-border",
+    "--ds-acc-expand-duration",
+    "--ds-acc-expand-ease",
+    "--ds-acc-fade-duration",
+    "--ds-acc-fade-ease",
+    "--ds-acc-fg",
+    "--ds-acc-focus",
+    "--ds-acc-focus-width",
+    "--ds-acc-font",
+    "--ds-acc-muted",
+    "--ds-acc-outer-border",
+    "--ds-acc-padding-x",
+    "--ds-acc-padding-y",
+    "--ds-acc-radius"
+  ],
+  "code": {
+    "path": "packages/components/src/acc/001-animated-accordion",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "accordion",
+      "faq",
+      "expand",
+      "animated"
+    ],
+    "interaction": [
+      "reveal"
+    ],
+    "useCases": [
+      "FAQs and long answers",
+      "Animated open and close"
+    ],
+    "avoidWhen": [
+      "Content people need to compare side by side"
+    ],
+    "pairsWith": [
+      "TAB-001",
+      "ACC-002"
+    ]
+  }
+}

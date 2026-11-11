@@ -1,0 +1,12 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-inp-003:not([data-skin]),
+  .ds-inp-003[data-skin="outlined"] {
+    --ds-field-bg: var(--ds-color-surface-raised);
+    --ds-field-border: var(--ds-color-border-control);
+  }
+  .ds-inp-003[data-skin="filled"] {
+    --ds-field-bg: var(--ds-color-surface-sunken);
+    --ds-field-border: var(--ds-color-border-control);
+  }
+}

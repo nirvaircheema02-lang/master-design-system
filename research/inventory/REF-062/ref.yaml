@@ -1,0 +1,56 @@
+id: REF-062
+name: Sonner / shadcn toast
+url: https://sonner.emilkowal.ski/
+sourceKind: library
+captured: 2026-11-06
+category: TST
+interaction: Toast items fade and rise in over 400 ms (opacity + transform, ease); stacked in a list.
+visual: corner toast
+states:
+  - entering
+  - visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Item animation is two compositor properties.
+customizable:
+  - colour
+  - radius
+coupling: B
+radiusSupport: any
+a11y: Status role not measured on the demo.
+perf:
+  animated:
+    - opacity
+    - transform
+  js: false
+license:
+  status: unverified
+  usage: inspiration-only
+  note: Licence not verified from a primary source (register.md).
+measured:
+  probeFile: research/probe/U-toast-sonner/probe.json#0
+  animations:
+    - target: button
+      property: background-color
+      durationMs: 200
+      easing: ease
+    - target: li
+      property: opacity
+      durationMs: 400
+      easing: ease
+    - target: li
+      property: transform
+      durationMs: 400
+      easing: ease
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 3
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 2
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

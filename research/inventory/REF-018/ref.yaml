@@ -1,0 +1,49 @@
+id: REF-018
+name: "Motion Primitives: magnetic"
+url: https://motion-primitives.com/docs/magnetic
+sourceKind: library
+captured: 2026-11-06
+category: CTA
+interaction: Button follows the pointer with a small displacement while hovered (JS pointer tracking).
+visual: plain button, subtle pull
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Displacement is JS-driven so the Web Animations probe could not measure it; our sketch sets a
+  clamped translate from pointer position and disables itself under reduced motion.
+customizable:
+  - strength
+  - radius
+coupling: B
+radiusSupport: any
+a11y: JS must no-op under reduced motion; never move focus targets while keyboard focused.
+perf:
+  animated:
+    - translate
+  js: true
+license:
+  status: unverified
+  usage: inspiration-only
+  note: Licence not verified from a primary source (register.md).
+measured:
+  probeFile: research/probe/T-mp-magnetic/probe.json#0
+  animations:
+    - target: button(host)
+      property: background-color
+      durationMs: 300
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 4
+  usability: 3
+  a11y: 3
+  performance: 5
+  themability: 5
+  simplicity: 4
+  license: 2
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: Measured only the colour fade (300 ms). Magnetic behaviour NOT measured here. Feasibility sketch "mag"
+  passes.

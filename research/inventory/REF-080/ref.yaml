@@ -1,0 +1,44 @@
+id: REF-080
+name: "GitHub Explore: link card"
+url: https://github.com/explore
+sourceKind: production-site
+captured: 2026-11-06
+category: CRD
+interaction: Card title is an underlined link on hover; keyboard focus shows a solid 2px ring; no motion.
+visual: text-led link card
+states:
+  - default
+  - hover
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Title link with focus ring; the stretched-hit-area pattern would extend it.
+customizable:
+  - type scale
+  - density
+coupling: A
+radiusSupport: any
+a11y: 2px solid focus ring measured.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/C-github-explore/probe.json#0
+  animations: []
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 5
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 4
+  license: 3
+  neutrality: 5
+recommendation: adapt
+proposedId: CRD-004
+notes: "Basis for the stretched-title card: name = heading text, one primary link, hit area stretched by CSS
+  (standards notes, section 4)."

@@ -1,0 +1,47 @@
+id: REF-082
+name: "GitHub login: text field"
+url: https://github.com/login
+sourceKind: production-site
+captured: 2026-11-06
+category: INP
+interaction: Label above, 40 px field with a 6 px radius; on focus the border changes and a ring (box-shadow)
+  appears; autocomplete tokens set; required.
+visual: label-above text field
+states:
+  - default
+  - hover
+  - focus
+  - disabled
+  - invalid
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Static ring colour change; no layout shift.
+customizable:
+  - colour
+  - radius
+  - height
+coupling: A
+radiusSupport: any
+a11y: Visible label, autocomplete=username/current-password, required marked.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-in-github/probe.json#1
+  animations: []
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 5
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: adapt
+proposedId: INP-001
+notes: "Measured focus delta: border + shadow, no transition."

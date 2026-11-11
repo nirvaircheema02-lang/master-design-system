@@ -1,0 +1,10 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-nav-005:not([data-skin]),
+  .ds-nav-005[data-skin="raised"] {
+    --ds-nav-panel-shadow: var(--ds-elevation-2);
+  }
+  .ds-nav-005[data-skin="flat"] {
+    --ds-nav-panel-shadow: var(--ds-elevation-1);
+  }
+}

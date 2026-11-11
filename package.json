@@ -1,0 +1,34 @@
+{
+  "name": "master-ds",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Universal Premium Master Design System \u2014 platform monorepo (Phase 0)",
+  "type": "module",
+  "packageManager": "pnpm@10.26.1",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "build:tokens": "pnpm --filter @master-ds/tokens build",
+    "spike:s1": "node spikes/s1-radius-effects/check.mjs",
+    "spike:s3:render": "node --experimental-strip-types spikes/s3-generator/verify-rendered.mjs",
+    "check": "pnpm typecheck && pnpm lint:ds && pnpm build:tokens && pnpm build:palettes && pnpm research validate && pnpm test",
+    "lint:ds": "node --experimental-strip-types packages/lint/src/cli.ts",
+    "conformance": "node --experimental-strip-types packages/conformance/src/cli.ts",
+    "gallery:export": "pnpm --filter @master-ds/gallery export",
+    "gallery:verify": "pnpm --filter @master-ds/gallery verify",
+    "check:all": "pnpm check && pnpm spike:s1 && pnpm spike:s3:render && pnpm conformance && pnpm gallery:export && pnpm gallery:verify && pnpm feasibility && pnpm spike:s6",
+    "research": "node --experimental-strip-types packages/research/src/cli.ts",
+    "feasibility": "node --experimental-strip-types research/feasibility/check.mjs",
+    "build:skins": "node --experimental-strip-types packages/lint/src/cli.ts --write-skins",
+    "spike:s6": "node spikes/s6-headless/check.mjs",
+    "build:palettes": "pnpm --filter @master-ds/tokens build:palettes"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "playwright": "^1.64.1",
+    "typescript": "^5.6.0"
+  }
+}

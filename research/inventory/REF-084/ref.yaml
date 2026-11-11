@@ -1,0 +1,75 @@
+id: REF-084
+name: "shadcn Input: ring on focus"
+url: https://ui.shadcn.com/docs/components/input
+sourceKind: design-system
+captured: 2026-11-06
+category: INP
+interaction: 32 px field, 10 px radius; border colour and ring change over 150 ms on focus. The docs demos use
+  placeholder-only fields.
+visual: bordered field
+states:
+  - default
+  - focus
+  - disabled
+  - invalid
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Ring + border transition; demo omits visible labels.
+customizable:
+  - colour
+  - radius
+coupling: A
+radiusSupport: any
+a11y: Placeholder-only demos teach the anti-pattern (WCAG 3.3.2).
+perf:
+  animated:
+    - border-color
+    - box-shadow
+  js: false
+license:
+  status: unverified
+  usage: inspiration-only
+  note: Licence not verified from a primary source (register.md).
+measured:
+  probeFile: research/probe/U-in-shadcn/probe.json#0
+  animations:
+    - target: input
+      property: border-bottom-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: input
+      property: border-left-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: input
+      property: border-right-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: input
+      property: border-top-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: div
+      property: "@scroll-fade-reveal-b:"
+      durationMs: 1
+      easing: linear
+    - target: div
+      property: "@scroll-fade-reveal-t:"
+      durationMs: 1
+      easing: linear
+    - target: div
+      property: "@scroll-fade-reveal-b:"
+      durationMs: 1
+      easing: linear
+  reducedMotionAnimations: 3
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 2
+  performance: 4
+  themability: 5
+  simplicity: 5
+  license: 2
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: ""

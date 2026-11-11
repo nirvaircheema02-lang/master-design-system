@@ -1,0 +1,106 @@
+id: REF-070
+name: Supabase / GitHub mega menus
+url: https://supabase.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: Menu triggers change colour with their chevron in 200 ms; panels open with Escape and focus return.
+visual: mega menu panel
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Colour-only trigger feedback.
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Colour change only (allowed under reduced motion); no movement.
+perf:
+  animated:
+    - color
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-mega-supabase/probe.json#0
+  animations:
+    - target: button
+      property: color
+      durationMs: 200
+      easing: cubic-bezier(0.22, 1, 0.36, 1)
+    - target: svg
+      property: color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: svg
+      property: rotate
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: div
+      property: opacity
+      durationMs: 200
+      easing: cubic-bezier(0, 0, 0.2, 1)
+    - target: div
+      property: scale
+      durationMs: 200
+      easing: cubic-bezier(0, 0, 0.2, 1)
+    - target: div
+      property: visibility
+      durationMs: 200
+      easing: cubic-bezier(0, 0, 0.2, 1)
+    - target: svg
+      property: visibility
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: svg
+      property: visibility
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: svg
+      property: visibility
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: svg
+      property: visibility
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: svg
+      property: visibility
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: svg
+      property: visibility
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: svg
+      property: visibility
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: svg
+      property: visibility
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: svg
+      property: visibility
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: svg
+      property: visibility
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 16
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 5
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

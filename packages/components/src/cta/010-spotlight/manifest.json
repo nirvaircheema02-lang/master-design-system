@@ -1,0 +1,135 @@
+{
+  "id": "CTA-010",
+  "slug": "spotlight",
+  "name": "Spotlight CTA",
+  "category": "CTA",
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A soft pool of light follows the pointer inside the button. Pointer-driven; ignores touch and stays static under reduced motion.",
+  "inspiration": [],
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "pointer-spotlight"
+    ],
+    "params": {
+      "size": 110
+    },
+    "js": true,
+    "pointerVars": [
+      "--_mx",
+      "--_my"
+    ]
+  },
+  "slots": {
+    "label": {
+      "required": true
+    }
+  },
+  "props": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ]
+  },
+  "skins": [
+    {
+      "id": "solid-accent",
+      "bind": {
+        "--ds-cta-bg": "color.accent",
+        "--ds-cta-fg": "color.on-accent",
+        "--ds-cta-border": "transparent",
+        "--ds-cta-spot": "color.accent.hover"
+      }
+    },
+    {
+      "id": "surface-spot",
+      "bind": {
+        "--ds-cta-bg": "color.surface.raised",
+        "--ds-cta-fg": "color.text.primary",
+        "--ds-cta-border": "color.text.secondary",
+        "--ds-cta-spot": "color.surface.sunken"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-cta-bg",
+    "--ds-cta-fg",
+    "--ds-cta-border",
+    "--ds-cta-border-width",
+    "--ds-cta-radius",
+    "--ds-cta-height",
+    "--ds-cta-padding-x",
+    "--ds-cta-font",
+    "--ds-cta-focus",
+    "--ds-cta-fade-duration",
+    "--ds-cta-fade-ease",
+    "--ds-cta-spin-duration",
+    "--ds-cta-spot",
+    "--ds-cta-spot-size"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "active",
+    "loading",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "the light pool is decorative; on touch it is simply absent and keyboard focus shows it centred"
+  },
+  "a11y": {
+    "role": "button",
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/cta/010-spotlight",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "button",
+      "spotlight",
+      "pointer",
+      "premium"
+    ],
+    "interaction": [
+      "pointer",
+      "hover-press"
+    ],
+    "useCases": [
+      "Hero action on desktop",
+      "Cinematic pages"
+    ],
+    "avoidWhen": [
+      "Touch-first products"
+    ],
+    "pairsWith": [
+      "NAV-006"
+    ],
+    "effects": "full"
+  }
+}

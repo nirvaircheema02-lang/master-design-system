@@ -1,0 +1,159 @@
+{
+  "id": "CTA-015",
+  "slug": "floating-chat",
+  "name": "Floating Chat Button",
+  "category": "CTA",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "href": "https://example.com/chat",
+      "label": "Chat with us",
+      "placement": "static"
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A real link pinned to a viewport corner that opens a chat (a messaging deep link, a chat page or mailto). Round, pill or square. Enters once with a fade and rise and grows slightly on hover; both stop under reduced motion. Opens a new tab by default and says so. The icon is decorative; the name comes from the label.",
+  "inspiration": [],
+  "discovery": {
+    "tags": [
+      "chat",
+      "floating",
+      "support",
+      "whatsapp",
+      "message",
+      "fab"
+    ],
+    "interaction": [
+      "hover-press",
+      "feedback"
+    ],
+    "useCases": [
+      "Always-available chat or messaging entry",
+      "Support link on long marketing pages"
+    ],
+    "avoidWhen": [
+      "Pages where a fixed corner element covers content or other floating controls",
+      "Apps that already have a chat widget"
+    ],
+    "pairsWith": [
+      "CTA-016",
+      "NAV-006"
+    ],
+    "effects": "subtle"
+  },
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "entrance",
+      "hover-grow"
+    ],
+    "params": {
+      "duration": 500,
+      "scale": 1.08
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "headless": [],
+  "slots": {
+    "icon": {
+      "required": false
+    }
+  },
+  "props": {
+    "design": [
+      "round",
+      "pill",
+      "square"
+    ],
+    "position": [
+      "bottom-right",
+      "bottom-left"
+    ],
+    "placement": [
+      "fixed",
+      "static"
+    ]
+  },
+  "skins": [
+    {
+      "id": "accent",
+      "bind": {
+        "--ds-chat-bg": "color.accent",
+        "--ds-chat-fg": "color.on-accent"
+      }
+    },
+    {
+      "id": "success",
+      "bind": {
+        "--ds-chat-bg": "color.success",
+        "--ds-chat-fg": "color.on-success"
+      }
+    },
+    {
+      "id": "ink",
+      "bind": {
+        "--ds-chat-bg": "color.text.primary",
+        "--ds-chat-fg": "color.surface.base"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-chat-bg",
+    "--ds-chat-duration",
+    "--ds-chat-ease",
+    "--ds-chat-enter-delay",
+    "--ds-chat-enter-duration",
+    "--ds-chat-fg",
+    "--ds-chat-focus",
+    "--ds-chat-focus-width",
+    "--ds-chat-font",
+    "--ds-chat-gap",
+    "--ds-chat-hover-scale",
+    "--ds-chat-offset",
+    "--ds-chat-pad-x",
+    "--ds-chat-radius",
+    "--ds-chat-radius-box",
+    "--ds-chat-shadow",
+    "--ds-chat-size",
+    "--ds-chat-z"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible"
+  ],
+  "responsive": {
+    "touchTarget": "54px",
+    "hoverFallback": "the grow is a bonus; the button is fully visible and labelled without hover"
+  },
+  "a11y": {
+    "role": "link",
+    "keyboard": [
+      "Enter"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "a"
+    ],
+    "inertStates": []
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/cta/015-floating-chat",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  }
+}

@@ -1,0 +1,4 @@
+  component.scp = {
+    from: t("{color.accent.ink}", "color"), to: t("{color.accent.ink}", "color"), track: t("{color.border.subtle}", "color"),
+    height: t("2px", "dimension"), "height-thick": t("6px", "dimension"), z: t("{z.overlay}", "number"), duration: t("{duration.fast}", "duration"), ease: t("linear"),
+  };

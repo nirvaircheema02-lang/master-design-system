@@ -1,0 +1,70 @@
+id: REF-067
+name: Notion desktop mega menu
+url: https://www.notion.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: '"Product" button opens a mega panel with an opacity + transform entrance (250 ms); Escape closes
+  it and focus returns; no menu roles and no scroll lock.'
+visual: mega menu panel
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Disclosure pattern as recommended by the APG for site navigation: button + aria-expanded + panel."
+customizable:
+  - colour
+  - radius
+  - width
+coupling: B
+radiusSupport: any
+a11y: Matches the APG disclosure navigation guidance; verified Escape and focus return.
+perf:
+  animated:
+    - opacity
+    - transform
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-mega-notion/probe.json#0
+  animations:
+    - target: div
+      property: opacity
+      durationMs: 250
+      easing: ease-out
+    - target: div
+      property: transform
+      durationMs: 250
+      easing: ease-out
+    - target: div
+      property: visibility
+      durationMs: 250
+      easing: ease-out
+    - target: nav
+      property: "@HWB10a_navShadowScrolled:boxShadow"
+      durationMs: null
+      easing: linear
+    - target: div::after
+      property: "@PDRQGa_revealStickyBar:opacity"
+      durationMs: null
+      easing: linear
+    - target: div
+      property: "@X75v-G_marqueeFrames:transform"
+      durationMs: 60000
+      easing: linear
+  reducedMotionAnimations: 5
+scores:
+  distinctiveness: 4
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 4
+  simplicity: 3
+  license: 3
+  neutrality: 4
+recommendation: adapt
+proposedId: NAV-005
+notes: ""

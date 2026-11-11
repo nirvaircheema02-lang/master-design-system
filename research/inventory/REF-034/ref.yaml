@@ -1,0 +1,54 @@
+id: REF-034
+name: "Figma: nav indicator reveal"
+url: https://www.figma.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: Nav item shows an indicator that fades and slides in under the label (::after opacity + transform, 250 ms).
+visual: text nav, thin indicator
+states:
+  - default
+  - hover
+  - focus-visible
+  - current
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Indicator is a layer under the label; reusable for the current-page state.
+customizable:
+  - colour
+  - thickness
+coupling: B
+radiusSupport: any
+a11y: Current page must be shown without relying on hover.
+perf:
+  animated:
+    - opacity
+    - transform
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-figma/probe.json#1
+  animations:
+    - target: span(child)::after
+      property: opacity
+      durationMs: 250
+      easing: ease
+    - target: span(child)::after
+      property: transform
+      durationMs: 250
+      easing: ease
+  reducedMotionAnimations: 2
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 5
+  simplicity: 4
+  license: 3
+  neutrality: 5
+recommendation: adapt
+proposedId: NAV-002
+notes: ""

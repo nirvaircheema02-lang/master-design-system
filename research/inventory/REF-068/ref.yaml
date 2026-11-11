@@ -1,0 +1,107 @@
+id: REF-068
+name: Stripe mega menu
+url: https://stripe.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: '"Products" opens a mega panel; arrow glyphs inside translate (250 ms); the page scroll locks
+  while it is open.'
+visual: mega menu panel
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Scroll lock on a desktop disclosure is unusual.
+customizable:
+  - colour
+coupling: B
+radiusSupport: any
+a11y: Escape and focus return verified.
+perf:
+  animated:
+    - transform
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-mega-stripe/probe.json#0
+  animations:
+    - target: path
+      property: transform
+      durationMs: 250
+      easing: cubic-bezier(0.6, 0, 0.2, 0.5)
+    - target: path
+      property: transform
+      durationMs: 250
+      easing: cubic-bezier(0.6, 0, 0.2, 0.5)
+    - target: button
+      property: color
+      durationMs: 240
+      easing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+    - target: button
+      property: color
+      durationMs: 240
+      easing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+    - target: button
+      property: color
+      durationMs: 240
+      easing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+    - target: a
+      property: color
+      durationMs: 240
+      easing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+    - target: a
+      property: background-color
+      durationMs: 240
+      easing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+    - target: a
+      property: border-bottom-color
+      durationMs: 240
+      easing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+    - target: a
+      property: border-left-color
+      durationMs: 240
+      easing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+    - target: a
+      property: border-right-color
+      durationMs: 240
+      easing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+    - target: a
+      property: border-top-color
+      durationMs: 240
+      easing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+    - target: svg
+      property: opacity
+      durationMs: 240
+      easing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+    - target: span
+      property: opacity
+      durationMs: 240
+      easing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+    - target: div
+      property: opacity
+      durationMs: 240
+      easing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+    - target: nav
+      property: "@detect-scroll:"
+      durationMs: null
+      easing: linear
+    - target: svg
+      property: "@nav-hover-arrow-out:opacity"
+      durationMs: 150
+      easing: linear
+  reducedMotionAnimations: 16
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 4
+  simplicity: 3
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

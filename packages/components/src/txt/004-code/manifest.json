@@ -1,0 +1,108 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "as": [
+      "code",
+      "kbd"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "TXT-004",
+  "slug": "code",
+  "name": "Code and Key",
+  "category": "TXT",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "as": "code"
+    },
+    "children": "pnpm build:tokens"
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Inline code or a keyboard key cap in the monospace font; long code wraps instead of scrolling the page.",
+  "skins": [
+    {
+      "id": "sunken",
+      "bind": {
+        "--ds-type-code-bg": "color.surface.sunken"
+      }
+    },
+    {
+      "id": "raised",
+      "bind": {
+        "--ds-type-code-bg": "color.surface.raised"
+      }
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "code",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-type-code-bg",
+    "--ds-type-code-fg",
+    "--ds-type-kbd-bg",
+    "--ds-type-kbd-border",
+    "--ds-type-lh-normal",
+    "--ds-type-mono",
+    "--ds-type-radius",
+    "--ds-type-weight-medium"
+  ],
+  "code": {
+    "path": "packages/components/src/txt/004-code",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "code",
+      "keyboard",
+      "kbd",
+      "technical"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Inline code and shortcuts",
+      "Docs and help text"
+    ],
+    "avoidWhen": [
+      "Long code blocks"
+    ],
+    "pairsWith": [
+      "TXT-002"
+    ]
+  }
+}

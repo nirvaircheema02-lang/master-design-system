@@ -1,0 +1,42 @@
+id: REF-088
+name: Base UI Input / Field
+url: https://base-ui.com/react/components/input
+sourceKind: library
+captured: 2026-11-06
+category: INP
+interaction: Headless input with outline focus; Field parts wire label, description and error.
+visual: unstyled
+states:
+  - default
+  - focus
+  - invalid
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Candidate for the field wiring layer (ADR 0004).
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Wiring helps aria-describedby/aria-invalid; styling is ours.
+perf:
+  animated: []
+  js: false
+license:
+  status: verified-permissive
+  usage: clean-room
+  note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+measured:
+  probeFile: research/probe/U-in-baseui/probe.json#0
+  animations: []
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 5
+  simplicity: 4
+  license: 4
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

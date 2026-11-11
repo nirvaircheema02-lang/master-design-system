@@ -1,0 +1,184 @@
+{
+  "generated": "2026-11-06T16:55:47.554Z",
+  "libs": {
+    "radix": {
+      "tabs": {
+        "structure": {
+          "tablist": true,
+          "labelled": true,
+          "tabs": 3,
+          "selectedCount": 1,
+          "controls": true,
+          "panelLabelled": true,
+          "roving": "-1,-1,-1",
+          "panelTabindex": "0",
+          "tabAttrs": "orientation,radixCollectionItem,state",
+          "panelAttrs": "orientation,state",
+          "listAttrs": "orientation"
+        },
+        "arrowRight": {
+          "focusOn": "Tab 2",
+          "selected": 1
+        },
+        "end": {
+          "focusOn": "Tab 3"
+        },
+        "home": {
+          "focusOn": "Tab 1"
+        },
+        "activation": "automatic (selection follows focus)",
+        "tabIntoPanel": "tabpanel",
+        "axe": [
+          "landmark-one-main",
+          "page-has-heading-one",
+          "region"
+        ]
+      },
+      "dialog": {
+        "open": {
+          "role": "dialog",
+          "ariaModal": null,
+          "labelledby": true,
+          "describedby": true,
+          "focusInside": true,
+          "focusedEl": "#f1",
+          "portalParent": "BODY",
+          "popupAttrs": "state",
+          "outsideAriaHidden": true,
+          "outsideInert": false,
+          "bodyChildrenAriaHidden": "true,true,-,true,-,true"
+        },
+        "scrollLock": {
+          "before": {
+            "bodyOverflow": "visible",
+            "htmlOverflow": "visible",
+            "bodyStyle": null
+          },
+          "after": {
+            "bodyOverflow": "hidden",
+            "htmlOverflow": "visible",
+            "bodyStyle": "pointer-events: none;"
+          }
+        },
+        "pageScrolledWhileOpen": false,
+        "focusEscapedOnTab": false,
+        "focusEscapedOnShiftTab": false,
+        "axeOpen": [],
+        "stillMountedDuringExit": true,
+        "unmountedAfterExit": true,
+        "focusReturned": true,
+        "scrollUnlockedAfter": true,
+        "outsideClickCloses": true,
+        "reducedMotionExitInstant": true
+      }
+    },
+    "base": {
+      "tabs": {
+        "structure": {
+          "tablist": true,
+          "labelled": true,
+          "tabs": 3,
+          "selectedCount": 1,
+          "controls": false,
+          "panelLabelled": true,
+          "roving": "0,-1,-1",
+          "panelTabindex": "0",
+          "tabAttrs": "activationDirection,active,compositeItemActive,orientation",
+          "panelAttrs": "activationDirection,index,orientation",
+          "listAttrs": "activationDirection,orientation"
+        },
+        "arrowRight": {
+          "focusOn": "Tab 2",
+          "selected": 0
+        },
+        "end": {
+          "focusOn": "Tab 3"
+        },
+        "home": {
+          "focusOn": "Tab 1"
+        },
+        "activation": "manual (Enter/Space selects)",
+        "tabIntoPanel": "tabpanel",
+        "axe": [
+          "landmark-one-main",
+          "page-has-heading-one",
+          "region"
+        ]
+      },
+      "dialog": {
+        "open": {
+          "role": "dialog",
+          "ariaModal": null,
+          "labelledby": true,
+          "describedby": true,
+          "focusInside": true,
+          "focusedEl": "#f1",
+          "portalParent": "DIV",
+          "popupAttrs": "baseUiFocusable,open",
+          "outsideAriaHidden": true,
+          "outsideInert": false,
+          "bodyChildrenAriaHidden": "true,-,-"
+        },
+        "scrollLock": {
+          "before": {
+            "bodyOverflow": "visible",
+            "htmlOverflow": "visible",
+            "bodyStyle": ""
+          },
+          "after": {
+            "bodyOverflow": "hidden",
+            "htmlOverflow": "visible",
+            "bodyStyle": "overflow: hidden;"
+          }
+        },
+        "pageScrolledWhileOpen": false,
+        "focusEscapedOnTab": false,
+        "focusEscapedOnShiftTab": false,
+        "axeOpen": [],
+        "stillMountedDuringExit": true,
+        "unmountedAfterExit": true,
+        "focusReturned": true,
+        "scrollUnlockedAfter": true,
+        "outsideClickCloses": true,
+        "reducedMotionExitInstant": true
+      }
+    }
+  },
+  "sizes": {
+    "radix-tabs": {
+      "min": 27982,
+      "gzip": 9742
+    },
+    "base-tabs": {
+      "min": 36126,
+      "gzip": 13599
+    },
+    "radix-dialog": {
+      "min": 41770,
+      "gzip": 14220
+    },
+    "base-dialog": {
+      "min": 69532,
+      "gzip": 23934
+    }
+  },
+  "ssr": {
+    "radix-tabs": {
+      "ok": true,
+      "htmlBytes": 583
+    },
+    "base-tabs": {
+      "ok": true,
+      "htmlBytes": 529
+    },
+    "radix-dialog": {
+      "ok": true,
+      "htmlBytes": 100
+    },
+    "base-dialog": {
+      "ok": true,
+      "htmlBytes": 142
+    }
+  },
+  "pageErrors": []
+}

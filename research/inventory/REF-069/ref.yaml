@@ -1,0 +1,46 @@
+id: REF-069
+name: "Vercel mega menu: 700 ms fade"
+url: https://vercel.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: '"Products" panel fades in over 700 ms.'
+visual: mega menu panel
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Too slow for a menu: most measured overlays are 100-250 ms."
+customizable:
+  - colour
+coupling: B
+radiusSupport: any
+a11y: Escape and focus return verified.
+perf:
+  animated:
+    - opacity
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-mega-vercel/probe.json#0
+  animations:
+    - target: div
+      property: opacity
+      durationMs: 700
+      easing: linear
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 2
+  usability: 3
+  a11y: 4
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: Counter-example for motion tokens (see platform items).

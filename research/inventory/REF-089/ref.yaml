@@ -1,0 +1,42 @@
+id: REF-089
+name: Stripe contact form field
+url: https://stripe.com/contact/sales
+sourceKind: production-site
+captured: 2026-11-06
+category: INP
+interaction: 48 px email field with the label to the left; custom focus styling (no outline or border change
+  detected by computed style).
+visual: large field
+states:
+  - default
+  - focus
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Large target; focus style is custom and was not captured.
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Autocomplete=email set.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-in-stripe/probe.json#0
+  animations: []
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 3
+  a11y: 3
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

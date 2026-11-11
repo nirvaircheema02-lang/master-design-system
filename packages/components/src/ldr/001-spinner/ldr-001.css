@@ -1,0 +1,34 @@
+/* LDR-001 Spinner. Tokens: --ds-ldr-*. Rotation and opacity only; reduced motion = still shape + visible label. */
+@layer components {
+  .ds-ldr-001 { --_s: var(--ds-ldr-size-md); display: inline-flex; align-items: center; gap: 0.5rem; color: var(--ds-ldr-fg); font-family: var(--ds-ldr-font); font-size: 0.9375rem; }
+  .ds-ldr-001[data-size="sm"] { --_s: var(--ds-ldr-size-sm); }
+  .ds-ldr-001[data-size="lg"] { --_s: var(--ds-ldr-size-lg); }
+  .ds-ldr-001__shape { position: relative; display: inline-block; flex: none; width: var(--_s); height: var(--_s); }
+  .ds-ldr-001__shape i { display: none; }
+  .ds-ldr-001__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  /* ring (default): an arc that turns */
+  .ds-ldr-001:not([data-design="dots"]):not([data-design="bars"]) .ds-ldr-001__shape { box-sizing: border-box; border: calc(var(--_s) / 8) solid var(--ds-ldr-track); border-top-color: var(--ds-ldr-stroke); border-radius: 50%; }
+  /* dots: three dots that pulse in turn */
+  .ds-ldr-001[data-design="dots"] .ds-ldr-001__shape { display: inline-flex; align-items: center; justify-content: space-between; width: calc(var(--_s) * 1.8); }
+  .ds-ldr-001[data-design="dots"] .ds-ldr-001__shape i { display: block; width: calc(var(--_s) / 3); height: calc(var(--_s) / 3); border-radius: 50%; background: var(--ds-ldr-stroke); }
+  /* bars: three bars that breathe */
+  .ds-ldr-001[data-design="bars"] .ds-ldr-001__shape { display: inline-flex; align-items: center; justify-content: space-between; width: var(--_s); }
+  .ds-ldr-001[data-design="bars"] .ds-ldr-001__shape i { display: block; width: calc(var(--_s) / 5); height: 100%; border-radius: 1px; background: var(--ds-ldr-stroke); transform-origin: center; }
+}
+
+@layer effects {
+  .ds-ldr-001:not([data-design="dots"]):not([data-design="bars"]) .ds-ldr-001__shape { animation: ds-ldr-001-spin var(--ds-ldr-spin-duration) linear infinite; }
+  .ds-ldr-001[data-design="dots"] .ds-ldr-001__shape i { animation: ds-ldr-001-pulse var(--ds-ldr-pulse-duration) ease-in-out infinite; }
+  .ds-ldr-001[data-design="dots"] .ds-ldr-001__shape i:nth-child(2), .ds-ldr-001[data-design="bars"] .ds-ldr-001__shape i:nth-child(2) { animation-delay: 150ms; }
+  .ds-ldr-001[data-design="dots"] .ds-ldr-001__shape i:nth-child(3), .ds-ldr-001[data-design="bars"] .ds-ldr-001__shape i:nth-child(3) { animation-delay: 300ms; }
+  .ds-ldr-001[data-design="bars"] .ds-ldr-001__shape i { animation: ds-ldr-001-breathe var(--ds-ldr-pulse-duration) ease-in-out infinite; }
+}
+
+@keyframes ds-ldr-001-spin { to { transform: rotate(360deg); } }
+@keyframes ds-ldr-001-pulse { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+@keyframes ds-ldr-001-breathe { 0%, 100% { transform: scaleY(0.4); } 50% { transform: scaleY(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-ldr-001__shape, .ds-ldr-001__shape i { animation: none; }
+  .ds-ldr-001__label { position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
+}

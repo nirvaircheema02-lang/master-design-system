@@ -1,0 +1,148 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "name": [
+      "check",
+      "close",
+      "plus",
+      "minus",
+      "chevron-down",
+      "chevron-up",
+      "chevron-left",
+      "chevron-right",
+      "arrow-right",
+      "arrow-left",
+      "arrow-up",
+      "arrow-down",
+      "search",
+      "menu",
+      "info",
+      "warning",
+      "error",
+      "success",
+      "external",
+      "download",
+      "upload",
+      "calendar",
+      "user",
+      "mail",
+      "star",
+      "heart",
+      "settings",
+      "copy",
+      "trash",
+      "edit",
+      "filter",
+      "home",
+      "lock",
+      "eye"
+    ],
+    "size": [
+      "sm",
+      "md",
+      "lg",
+      "xl"
+    ],
+    "tone": [
+      "current",
+      "muted",
+      "accent",
+      "success",
+      "danger"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "ICN-001",
+  "slug": "icon",
+  "name": "Icon",
+  "category": "ICN",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "name": "check"
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "One component for the whole icon set (34 stroke icons on a 24 px grid). Decorative by default; an image with an accessible name when a label is given. Takes the text colour or a tone.",
+  "skins": [
+    {
+      "id": "default",
+      "bind": {}
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "img",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-icon-accent",
+    "--ds-icon-cap",
+    "--ds-icon-danger",
+    "--ds-icon-join",
+    "--ds-icon-muted",
+    "--ds-icon-size-lg",
+    "--ds-icon-size-md",
+    "--ds-icon-size-sm",
+    "--ds-icon-size-xl",
+    "--ds-icon-stroke",
+    "--ds-icon-success"
+  ],
+  "code": {
+    "path": "packages/components/src/icn/001-icon",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "icon",
+      "glyph",
+      "symbol",
+      "svg"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Pair with buttons, nav and status",
+      "33 stroke icons"
+    ],
+    "avoidWhen": [
+      "Icon-only controls without a label"
+    ],
+    "pairsWith": [
+      "CTA-008",
+      "BDG-001"
+    ]
+  }
+}

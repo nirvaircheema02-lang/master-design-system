@@ -1,0 +1,138 @@
+{
+  "id": "CTA-011",
+  "slug": "magnetic",
+  "name": "Magnetic CTA",
+  "category": "CTA",
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "The button face leans a few pixels toward the pointer while it is over the button. The hit area and layout never move. Pointer-driven; ignores touch and stays still under reduced motion.",
+  "inspiration": [],
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "pointer-magnet"
+    ],
+    "params": {
+      "maxX": 20,
+      "maxY": 12
+    },
+    "js": true,
+    "pointerVars": [
+      "--_tx",
+      "--_ty"
+    ]
+  },
+  "slots": {
+    "label": {
+      "required": true
+    }
+  },
+  "props": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ]
+  },
+  "skins": [
+    {
+      "id": "solid-accent",
+      "bind": {
+        "--ds-cta-bg": "color.accent",
+        "--ds-cta-bg-hover": "color.accent.hover",
+        "--ds-cta-fg": "color.on-accent",
+        "--ds-cta-fg-hover": "color.on-accent",
+        "--ds-cta-border": "transparent"
+      }
+    },
+    {
+      "id": "surface",
+      "bind": {
+        "--ds-cta-bg": "color.surface.raised",
+        "--ds-cta-bg-hover": "color.surface.sunken",
+        "--ds-cta-fg": "color.text.primary",
+        "--ds-cta-fg-hover": "color.text.primary",
+        "--ds-cta-border": "color.text.secondary"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-cta-bg",
+    "--ds-cta-bg-hover",
+    "--ds-cta-fg",
+    "--ds-cta-fg-hover",
+    "--ds-cta-border",
+    "--ds-cta-border-width",
+    "--ds-cta-radius",
+    "--ds-cta-height",
+    "--ds-cta-padding-x",
+    "--ds-cta-font",
+    "--ds-cta-focus",
+    "--ds-cta-fade-duration",
+    "--ds-cta-fade-ease",
+    "--ds-cta-spin-duration"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "active",
+    "loading",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "the lean is decorative and absent on touch"
+  },
+  "a11y": {
+    "role": "button",
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/cta/011-magnetic",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "button",
+      "magnetic",
+      "pointer",
+      "playful"
+    ],
+    "interaction": [
+      "pointer",
+      "hover-press"
+    ],
+    "useCases": [
+      "One standout action on desktop",
+      "Portfolio and agency sites"
+    ],
+    "avoidWhen": [
+      "Dense toolbars"
+    ],
+    "pairsWith": [
+      "NAV-006"
+    ],
+    "effects": "full"
+  }
+}

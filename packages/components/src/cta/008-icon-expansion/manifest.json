@@ -1,0 +1,136 @@
+{
+  "id": "CTA-008",
+  "slug": "icon-expansion",
+  "name": "Icon Expansion CTA",
+  "category": "CTA",
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A round chip with an arrow sits at the end of the button and grows to fill it on hover while the label flips colour.",
+  "inspiration": [],
+  "interaction": {
+    "class": "C",
+    "modules": [
+      "chip-expand"
+    ],
+    "params": {
+      "duration": 300
+    }
+  },
+  "slots": {
+    "label": {
+      "required": true
+    },
+    "icon": {
+      "required": false
+    }
+  },
+  "props": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ]
+  },
+  "skins": [
+    {
+      "id": "solid-accent",
+      "bind": {
+        "--ds-cta-bg": "color.accent",
+        "--ds-cta-fg": "color.on-accent",
+        "--ds-cta-border": "transparent",
+        "--ds-cta-chip": "color.on-accent",
+        "--ds-cta-fg-on-chip": "color.accent"
+      }
+    },
+    {
+      "id": "outline",
+      "bind": {
+        "--ds-cta-bg": "transparent",
+        "--ds-cta-fg": "color.accent.ink",
+        "--ds-cta-border": "color.accent.ink",
+        "--ds-cta-chip": "color.accent",
+        "--ds-cta-fg-on-chip": "color.on-accent"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-cta-bg",
+    "--ds-cta-fg",
+    "--ds-cta-border",
+    "--ds-cta-border-width",
+    "--ds-cta-radius",
+    "--ds-cta-height",
+    "--ds-cta-padding-x",
+    "--ds-cta-font",
+    "--ds-cta-focus",
+    "--ds-cta-fade-duration",
+    "--ds-cta-fade-ease",
+    "--ds-cta-spin-duration",
+    "--ds-cta-chip",
+    "--ds-cta-fg-on-chip",
+    "--ds-cta-wipe-duration",
+    "--ds-cta-ease"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [
+      "overflow:clip",
+      "position:relative"
+    ],
+    "minContrast": "AA",
+    "insetLayers": [],
+    "radiusNote": "The host clips the growing chip (overflow: clip), so square, rounded and pill corners all clip correctly. Fills buttons up to roughly 450px wide."
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "active",
+    "loading",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "chip growth is decorative; focus-visible triggers the same fill"
+  },
+  "a11y": {
+    "role": "button",
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state"
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/cta/008-icon-expansion",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "button",
+      "icon",
+      "expand",
+      "playful"
+    ],
+    "interaction": [
+      "hover-press"
+    ],
+    "useCases": [
+      "Actions with a meaningful icon",
+      "Download, send, add"
+    ],
+    "avoidWhen": [
+      "Buttons without an icon"
+    ],
+    "pairsWith": [
+      "ICN-001"
+    ],
+    "effects": "full"
+  }
+}

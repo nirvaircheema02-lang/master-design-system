@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Feasibility sketches</title>
+<link rel="stylesheet" href="../../packages/tokens/build/finova/theme.css">
+<link rel="stylesheet" href="../../packages/tokens/build/master-yellow/theme.css">
+<link rel="stylesheet" href="extra-tokens.css">
+<link rel="stylesheet" href="effects.css">
+<style>body{margin:0;font:14px system-ui}main{display:grid;grid-template-columns:1fr 1fr}.s{padding:24px;background:var(--ds-color-surface-base);color:var(--ds-color-text-primary)}table{border-spacing:10px}th{font-size:12px;text-align:left;font-weight:600}</style>
+</head><body><main id="m"></main>
+<script type="module">
+const arrow='<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 10h12M11 5l5 5-5 5"/></svg>';
+export const FX = [
+ ["glow", L=>`<button class="fx fx-glow"><span class="fx__label">${L}</span></button>`],
+ ["roll", L=>`<button class="fx fx-roll"><span class="roll"><span>${L}</span><span aria-hidden="true">${L}</span></span></button>`],
+ ["chip", L=>`<button class="fx fx-chip"><span class="fx__label">${L}</span><span class="chip" aria-hidden="true">${arrow}</span></button>`],
+ ["grad", L=>`<button class="fx fx-grad"><span class="fx__label">${L}</span></button>`],
+ ["spot", L=>`<button class="fx fx-spot" data-js="spot"><span class="fx__label">${L}</span></button>`],
+ ["mag", L=>`<button class="fx fx-mag" data-js="mag"><span class="fx__label">${L}</span></button>`],
+ ["underline", L=>`<a class="fx fx-underline" href="#x"><span class="fx__label">${L}</span></a>`],
+ ["press", L=>`<button class="fx fx-press"><span class="fx__label">${L}</span></button>`],
+];
+const reduce = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.addEventListener("pointermove", (e) => {
+  if (reduce()) return;                                   // JS effects must honour reduced motion themselves
+  const t = e.target.closest?.("[data-js]"); if (!t) return;
+  const r = t.getBoundingClientRect();
+  if (t.dataset.js === "spot") { t.style.setProperty("--_mx", (e.clientX - r.left) + "px"); t.style.setProperty("--_my", (e.clientY - r.top) + "px"); }
+  if (t.dataset.js === "mag") { const dx = (e.clientX - (r.left + r.width/2)) / r.width, dy = (e.clientY - (r.top + r.height/2)) / r.height; t.style.setProperty("--_tx", (dx * 10).toFixed(1) + "px"); t.style.setProperty("--_ty", (dy * 6).toFixed(1) + "px"); }
+});
+document.addEventListener("pointerout", (e) => { const t = e.target.closest?.("[data-js=mag]"); if (t) { t.style.removeProperty("--_tx"); t.style.removeProperty("--_ty"); } });
+const radii = ["0px","8px","9999px"];
+document.getElementById("m").innerHTML = ["finova","master-yellow"].map(b => `<section class="s" id="b-${b}" data-brand="${b}" data-mode="light"><table>${FX.map(([id,t]) => `<tr><th>${id}</th>${radii.map(r => `<td style="--ds-cta-radius:${r}" data-fx="${id}" data-r="${r}">${t("Get started")}</td>`).join("")}</tr>`).join("")}</table></section>`).join("");
+</script></body></html>

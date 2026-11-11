@@ -1,0 +1,12 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-crd-008:not([data-skin]),
+  .ds-crd-008[data-skin="raised"] {
+    --ds-aud-bg: var(--ds-color-surface-raised);
+    --ds-aud-border: var(--ds-color-border-subtle);
+  }
+  .ds-crd-008[data-skin="sunken"] {
+    --ds-aud-bg: var(--ds-color-surface-sunken);
+    --ds-aud-border: var(--ds-color-border-strong);
+  }
+}

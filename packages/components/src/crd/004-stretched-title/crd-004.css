@@ -1,0 +1,57 @@
+/* CRD-004: the title is the only link and is stretched over the whole card; focus rings the CARD. Tokens: --ds-card-*. */
+@layer components {
+  .ds-crd-004 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--ds-card-border);
+    border-radius: var(--ds-card-radius);
+    background: var(--ds-card-bg);
+    color: var(--ds-card-fg);
+    font-family: var(--ds-card-font);
+    transition: background-color var(--ds-card-fade-duration) var(--ds-card-fade-ease), border-color var(--ds-card-fade-duration) var(--ds-card-fade-ease);
+  }
+  .ds-crd-004__media { position: relative; overflow: hidden; }
+  .ds-crd-004__media img { display: block; width: 100%; aspect-ratio: var(--ds-card-media-ratio); object-fit: cover; }
+  .ds-crd-004__body { display: flex; flex-direction: column; gap: var(--ds-card-gap); padding: var(--ds-card-padding); }
+  .ds-crd-004__meta { margin: 0; font-size: 0.8125rem; color: var(--ds-card-muted); }
+  .ds-crd-004__title { margin: 0; font-size: 1.125rem; line-height: 1.3; font-weight: 600; }
+  .ds-crd-004__link { color: inherit; text-decoration: none; }
+  .ds-crd-004__link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+  .ds-crd-004__link:focus-visible { outline: none; }
+  .ds-crd-004:has(.ds-crd-004__link:focus-visible) { outline: var(--ds-card-focus-width) solid var(--ds-card-focus); outline-offset: 2px; }
+  .ds-crd-004__text { color: var(--ds-card-muted); font-size: 0.9375rem; line-height: 1.5; }
+  .ds-crd-004__actions { position: relative; z-index: 2; display: flex; gap: 0.5rem; }
+}
+
+/* DESIGNS: same markup, different look. Only component tokens are read. */
+@layer components {
+  /* elevated: no outline, a soft shadow, lifts on hover */
+  .ds-crd-004[data-design="elevated"] { border-color: transparent; box-shadow: var(--ds-card-shadow); transition: transform var(--ds-card-fade-duration) var(--ds-card-fade-ease), background-color var(--ds-card-fade-duration) var(--ds-card-fade-ease); }
+  /* accent-bar: a thick accent edge announces the card */
+  .ds-crd-004[data-design="accent-bar"] { border-inline-start: 4px solid var(--ds-card-accent); }
+  .ds-crd-004[data-design="accent-bar"] .ds-crd-004__title { color: var(--ds-card-fg); }
+  /* horizontal: picture on the left, text on the right */
+  .ds-crd-004[data-design="horizontal"] { flex-direction: row; align-items: stretch; }
+  .ds-crd-004[data-design="horizontal"] .ds-crd-004__media { flex: 0 0 38%; min-width: 6rem; }
+  .ds-crd-004[data-design="horizontal"] .ds-crd-004__media img { height: 100%; aspect-ratio: auto; }
+  .ds-crd-004[data-design="horizontal"] .ds-crd-004__body { flex: 1; justify-content: center; min-width: 0; }
+  /* minimal: no box; a heavy rule between the picture and the text */
+  .ds-crd-004[data-design="minimal"] { background: transparent; border: 0 solid var(--ds-card-fg); overflow: visible; }
+  .ds-crd-004[data-design="minimal"] .ds-crd-004__media { border-radius: var(--ds-card-radius); }
+  .ds-crd-004[data-design="minimal"] .ds-crd-004__body { padding-inline: 0; margin-top: 0.75rem; border-top: 2px solid var(--ds-card-fg); }
+}
+
+@layer effects {
+  .ds-crd-004[data-design="elevated"]:hover { box-shadow: var(--ds-card-shadow-hover); transform: translateY(-2px); }
+  .ds-crd-004[data-design="minimal"]:hover { background: transparent; border-color: var(--ds-card-accent); }
+  .ds-crd-004[data-design="minimal"]:hover .ds-crd-004__body { border-top-color: var(--ds-card-accent); }
+  .ds-crd-004:hover { background: var(--ds-card-bg-hover); border-color: var(--ds-card-border-hover); }
+  .ds-crd-004:hover .ds-crd-004__link { text-decoration: underline; text-underline-offset: 0.2em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-crd-004, .ds-crd-004[data-design="elevated"] { transition: none; }
+  .ds-crd-004[data-design="elevated"]:hover { transform: none; }
+}

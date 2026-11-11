@@ -1,0 +1,136 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "boxed",
+      "underline",
+      "filled",
+      "roomy",
+      "compact"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "INP-003",
+  "slug": "textarea",
+  "name": "Textarea with Character Count",
+  "category": "INP",
+  "archetype": "field",
+  "fixture": {
+    "props": {
+      "label": "Describe the issue",
+      "hint": "Include the steps to reproduce it.",
+      "name": "details",
+      "limit": 120
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Multi-line text field with label, hint, error and an optional soft character limit. The visible count updates as you type; screen readers hear it from a polite status region only after typing pauses. Over the limit is shown, never blocked.",
+  "skins": [
+    {
+      "id": "outlined",
+      "bind": {
+        "--ds-field-bg": "color.surface.raised",
+        "--ds-field-border": "color.border.control"
+      }
+    },
+    {
+      "id": "filled",
+      "bind": {
+        "--ds-field-bg": "color.surface.sunken",
+        "--ds-field-border": "color.border.control"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "focus-visible",
+    "invalid",
+    "over-limit",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "hover is decorative; focus-visible shows the same cue"
+  },
+  "a11y": {
+    "role": "textbox",
+    "keyboard": [
+      "Tab",
+      "typing"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-field-bg",
+    "--ds-field-border",
+    "--ds-field-border-width",
+    "--ds-field-error",
+    "--ds-field-fade-duration",
+    "--ds-field-fade-ease",
+    "--ds-field-fg",
+    "--ds-field-focus",
+    "--ds-field-focus-width",
+    "--ds-field-font",
+    "--ds-field-gap",
+    "--ds-field-hint",
+    "--ds-field-label",
+    "--ds-field-padding-x",
+    "--ds-field-placeholder",
+    "--ds-field-radius",
+    "--ds-field-textarea-min",
+    "--ds-field-underline-width",
+    "--ds-field-bg-filled"
+  ],
+  "code": {
+    "path": "packages/components/src/inp/003-textarea",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "textarea",
+      "multiline",
+      "counter",
+      "form"
+    ],
+    "interaction": [
+      "input"
+    ],
+    "useCases": [
+      "Messages and descriptions",
+      "Soft character limit"
+    ],
+    "avoidWhen": [
+      "Short one-line answers"
+    ],
+    "pairsWith": [
+      "INP-001",
+      "FRM-001"
+    ]
+  }
+}

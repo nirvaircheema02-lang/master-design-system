@@ -1,0 +1,47 @@
+id: REF-040
+name: "Monzo: fill fade"
+url: https://monzo.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: Secondary CTA fills over 300 ms on hover.
+visual: solid fill, pill
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Colour transition on hover; no layout or shape change, so every radius works unchanged.
+customizable:
+  - color
+  - radius
+coupling: A
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - background-color
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-monzo/probe.json#0
+  animations:
+    - target: button(host)
+      property: background-color
+      durationMs: 300
+      easing: cubic-bezier(0, 0, 1, 1)
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: Baseline CTA-003 evidence (pill corners).

@@ -1,0 +1,47 @@
+id: REF-079
+name: "Linear customers card: brightness shift"
+url: https://linear.app/customers
+sourceKind: production-site
+captured: 2026-11-06
+category: CRD
+interaction: Hovering shifts a CSS filter on the card image (200 ms).
+visual: image card
+states:
+  - default
+  - hover
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: filter animates (paint-heavy).
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Focus ring 1px; low visibility.
+perf:
+  animated:
+    - filter
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/C-linear-customers/probe.json#0
+  animations:
+    - target: div(child)
+      property: filter
+      durationMs: 200
+      easing: cubic-bezier(0.215, 0.61, 0.355, 1)
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 3
+  performance: 3
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

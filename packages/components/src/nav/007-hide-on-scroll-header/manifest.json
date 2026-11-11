@@ -1,0 +1,150 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {},
+  "id": "NAV-007",
+  "slug": "hide-on-scroll-header",
+  "name": "Hide-on-Scroll Header",
+  "category": "NAV",
+  "archetype": "header",
+  "fixture": {
+    "props": {
+      "links": [
+        {
+          "href": "#s5",
+          "label": "Products"
+        },
+        {
+          "href": "#s10",
+          "label": "Pricing",
+          "current": true
+        },
+        {
+          "href": "#s15",
+          "label": "Docs"
+        },
+        {
+          "href": "#s20",
+          "label": "Contact"
+        }
+      ],
+      "navLabel": "Primary"
+    },
+    "children": "Aster"
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Site header that slides away when scrolling down and returns on scroll up, at the top, or on any keyboard use. Hidden = visibility hidden (out of the tab order); Tab shows it before focus moves. Also keeps scroll-padding-top.",
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "slide-hide"
+    ],
+    "params": {
+      "duration": 200
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "skins": [
+    {
+      "id": "soft",
+      "bind": {
+        "--ds-nav-header-shadow": "elevation.1",
+        "--ds-nav-header-border": "color.border.subtle"
+      }
+    },
+    {
+      "id": "lifted",
+      "bind": {
+        "--ds-nav-header-shadow": "elevation.2",
+        "--ds-nav-header-border": "color.border.control"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "current",
+    "hidden"
+  ],
+  "responsive": {
+    "touchTarget": "36px",
+    "hoverFallback": "hover is decorative; focus-visible shows the ring"
+  },
+  "a11y": {
+    "role": "banner",
+    "keyboard": [
+      "Tab",
+      "Enter"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "a"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-nav-radius",
+    "--ds-nav-bg-current",
+    "--ds-nav-bg-hover",
+    "--ds-nav-fade-duration",
+    "--ds-nav-fade-ease",
+    "--ds-nav-fg",
+    "--ds-nav-fg-current",
+    "--ds-nav-fg-hover",
+    "--ds-nav-focus",
+    "--ds-nav-focus-width",
+    "--ds-nav-font",
+    "--ds-nav-header-bg",
+    "--ds-nav-header-border",
+    "--ds-nav-header-height",
+    "--ds-nav-header-shadow",
+    "--ds-nav-header-slide-duration",
+    "--ds-nav-header-slide-ease",
+    "--ds-nav-header-z",
+    "--ds-nav-height",
+    "--ds-nav-padding-x"
+  ],
+  "code": {
+    "path": "packages/components/src/nav/007-hide-on-scroll-header",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "header",
+      "scroll",
+      "hide",
+      "site"
+    ],
+    "interaction": [
+      "scroll"
+    ],
+    "useCases": [
+      "Long pages where the header should get out of the way",
+      "Reading-heavy sites"
+    ],
+    "avoidWhen": [
+      "Pages where the header must always show"
+    ],
+    "pairsWith": [
+      "NAV-008",
+      "NAV-004"
+    ]
+  }
+}

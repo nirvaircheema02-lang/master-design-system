@@ -1,0 +1,56 @@
+/* LAY-004 Process timeline. Tokens: --ds-ptl-*. Content is static and full contrast; only the rail fill and head follow scroll
+   (transform + opacity, driven by custom properties the component sets). Reduced motion removes every glide. */
+@layer components {
+  .ds-lay-004 { --_n: var(--ds-ptl-node-size); position: relative; box-sizing: border-box; min-width: 0; color: var(--ds-ptl-fg); font-family: var(--ds-ptl-font); }
+  .ds-lay-004[data-design="minimal"] { --_n: 0.875rem; }
+  .ds-lay-004__list { position: relative; z-index: 1; display: flex; flex-direction: column; gap: var(--ds-ptl-gap); margin: 0; padding: 0; list-style: none; }
+
+  /* the rail: from the first node's centre to the last node's centre (JS sets --_top / --_bot; the fallback is close) */
+  .ds-lay-004__rail {
+    position: absolute; z-index: 0; pointer-events: none; width: var(--ds-ptl-line-width);
+    inset-inline-start: calc(var(--_n) / 2 - var(--ds-ptl-line-width) / 2);
+    inset-block-start: var(--_top, calc(var(--_n) / 2)); inset-block-end: var(--_bot, calc(var(--_n) / 2));
+  }
+  .ds-lay-004__line { position: absolute; inset: 0; border-radius: 999px; background: var(--ds-ptl-line); }
+  .ds-lay-004__fill { position: absolute; inset: 0; border-radius: 999px; background: var(--ds-ptl-fill); transform-origin: top center; transform: scaleY(var(--_p, 1)); transition: transform var(--ds-ptl-glide-duration) var(--ds-ptl-glide-ease); }
+  .ds-lay-004__head { position: absolute; inset-inline: 0; inset-block-start: 0; height: 100%; transform: translateY(calc(var(--_p, 1) * 100%)); opacity: var(--_hv, 0); transition: transform var(--ds-ptl-glide-duration) var(--ds-ptl-glide-ease), opacity var(--ds-ptl-fade-duration) var(--ds-ptl-fade-ease); }
+  .ds-lay-004__core, .ds-lay-004__glow { position: absolute; inset-inline-start: 50%; inset-block-start: 0; border-radius: 50%; background: var(--ds-ptl-head); }
+  .ds-lay-004__core { width: 0.3125rem; height: 0.3125rem; margin: -0.15625rem; }
+  .ds-lay-004__glow { width: 1.125rem; height: 1.125rem; margin: -0.5625rem; opacity: 0.28; }
+
+  /* steps */
+  .ds-lay-004__step { position: relative; display: grid; grid-template-columns: var(--_n) minmax(0, 1fr); column-gap: var(--ds-ptl-col-gap); align-items: start; }
+  .ds-lay-004__node {
+    box-sizing: border-box; display: grid; place-items: center; width: var(--_n); height: var(--_n); border-radius: 50%;
+    background: var(--ds-ptl-node-bg); border: 2px solid var(--ds-ptl-node-border); color: var(--ds-ptl-node-fg);
+    font-size: 0.8125rem; font-weight: 800; letter-spacing: 0.02em; font-variant-numeric: tabular-nums;
+    transition: border-color var(--ds-ptl-fade-duration) var(--ds-ptl-fade-ease), background-color var(--ds-ptl-fade-duration) var(--ds-ptl-fade-ease);
+  }
+  .ds-lay-004__step:not([data-state="todo"]) .ds-lay-004__node { border-color: var(--ds-ptl-node-border-on); color: var(--ds-ptl-node-fg-on); }
+  .ds-lay-004__step[data-state="current"] .ds-lay-004__node { background: var(--ds-ptl-node-bg-current); color: var(--ds-ptl-node-fg-current); }
+  .ds-lay-004__body { min-width: 0; padding-block-start: 0.5625rem; }
+  .ds-lay-004__no { display: none; }
+  .ds-lay-004__title { margin: 0; font-size: 1.25rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; overflow-wrap: anywhere; }
+  .ds-lay-004__text { max-width: var(--ds-ptl-text-max); margin: 0; margin-block-start: 0.5rem; color: var(--ds-ptl-muted); font-size: 0.9375rem; line-height: 1.7; }
+}
+
+/* DESIGNS: numbered (default) | alternate (steps swing left and right of a centred line from a medium viewport) | minimal (a dot, the number as a small label) */
+@layer components {
+  .ds-lay-004[data-design="minimal"] .ds-lay-004__node { font-size: 0; border-width: 2px; margin-block-start: 0.1875rem; }
+  .ds-lay-004[data-design="minimal"] .ds-lay-004__body { padding-block-start: 0; }
+  .ds-lay-004[data-design="minimal"] .ds-lay-004__no { display: block; margin-block-end: 0.125rem; color: var(--ds-ptl-muted); font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.06em; font-variant-numeric: tabular-nums; }
+  .ds-lay-004[data-design="minimal"] .ds-lay-004__title { font-size: 1.125rem; }
+
+  @media (min-width: 48rem) {
+    .ds-lay-004[data-design="alternate"] .ds-lay-004__rail { inset-inline-start: calc(50% - var(--ds-ptl-line-width) / 2); }
+    .ds-lay-004[data-design="alternate"] .ds-lay-004__step { grid-template-columns: minmax(0, 1fr) var(--_n) minmax(0, 1fr); }
+    .ds-lay-004[data-design="alternate"] .ds-lay-004__node { grid-column: 2; grid-row: 1; }
+    .ds-lay-004[data-design="alternate"] .ds-lay-004__body { grid-column: 3; grid-row: 1; }
+    .ds-lay-004[data-design="alternate"] .ds-lay-004__step:nth-child(even) .ds-lay-004__body { grid-column: 1; text-align: end; }
+    .ds-lay-004[data-design="alternate"] .ds-lay-004__step:nth-child(even) .ds-lay-004__text { margin-inline-start: auto; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-lay-004__fill, .ds-lay-004__head, .ds-lay-004__node { transition: none; }
+}

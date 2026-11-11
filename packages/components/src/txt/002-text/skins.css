@@ -1,0 +1,10 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-txt-002:not([data-skin]),
+  .ds-txt-002[data-skin="strong"] {
+    --ds-type-text: var(--ds-color-text-primary);
+  }
+  .ds-txt-002[data-skin="soft"] {
+    --ds-type-text: var(--ds-color-text-secondary);
+  }
+}

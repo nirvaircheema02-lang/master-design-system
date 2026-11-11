@@ -1,0 +1,50 @@
+id: REF-059
+name: Radix Dropdown Menu
+url: https://www.radix-ui.com/primitives/docs/components/dropdown-menu
+sourceKind: library
+captured: 2026-11-06
+category: DLG
+interaction: Menu button that opens a menu panel with a 400 ms keyframe entrance; Escape closes and focus
+  returns to the trigger.
+visual: popover menu
+states:
+  - closed
+  - open
+  - item-highlight
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Headless menu with typeahead and arrow keys; styling via data-state.
+customizable:
+  - colour
+  - radius
+coupling: A
+radiusSupport: any
+a11y: Menu roles are correct HERE (an actions menu), unlike site navigation.
+perf:
+  animated:
+    - opacity
+    - transform
+  js: false
+license:
+  status: verified-permissive
+  usage: dependency
+  note: MIT, primary LICENSE read (register.md).
+measured:
+  probeFile: research/probe/U-menu-radix/probe.json#0
+  animations:
+    - target: div[menu]
+      property: "@styles-module__r2AoZG__slideUpAndFade:opacity+transform"
+      durationMs: 400
+      easing: linear
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 3
+  usability: 5
+  a11y: 5
+  performance: 4
+  themability: 5
+  simplicity: 3
+  license: 5
+  neutrality: 5
+recommendation: adapt
+proposedId: DLG-003
+notes: Actions menu, not navigation (APG).

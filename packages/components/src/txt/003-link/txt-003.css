@@ -1,0 +1,22 @@
+/* TXT-003 Link. Tokens: --ds-type-*. Colour change is a transition; the underline is always there. */
+@layer components {
+  .ds-txt-003 {
+    color: var(--ds-type-link); font-family: var(--ds-type-font); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; border-radius: var(--ds-type-radius);
+    transition: color var(--ds-type-fade-duration) var(--ds-type-fade-ease);
+  }
+  .ds-txt-003:focus-visible { outline: var(--ds-type-focus-width) solid var(--ds-type-focus); outline-offset: 2px; }
+  .ds-txt-003__ext, .ds-txt-003__arrow { width: 0.95em; height: 0.95em; margin-inline-start: 0.2em; vertical-align: -0.12em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ds-txt-003__vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  /* DESIGNS: underline (default), thick, arrow, bold */
+  .ds-txt-003[data-design="thick"] { text-decoration-thickness: 2px; text-underline-offset: 0.25em; }
+  .ds-txt-003[data-design="bold"] { font-weight: var(--ds-type-weight-semibold); }
+}
+
+@layer effects {
+  .ds-txt-003:hover { color: var(--ds-type-link-hover); text-decoration-thickness: 2px; }
+  .ds-txt-003[data-design="thick"]:hover { text-decoration-thickness: 3px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-txt-003 { transition: none; }
+}

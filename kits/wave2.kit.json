@@ -1,0 +1,8 @@
+{ "instances": [
+  { "ref": "CTA-006@1.0.0", "skin": "surface-glow", "props": { "size": "md" } },
+  { "ref": "CTA-007@1.0.0", "skin": "outline-tint", "props": { "size": "md" } },
+  { "ref": "CTA-008@1.0.0", "skin": "outline", "props": { "size": "md" } },
+  { "ref": "CTA-009@1.0.0", "skin": "surface-gradient", "props": { "size": "md" } },
+  { "ref": "CTA-012@1.0.0", "skin": "neutral", "props": {} },
+  { "ref": "CTA-013@1.0.0", "skin": "surface-ink", "props": { "size": "md" } }
+] }

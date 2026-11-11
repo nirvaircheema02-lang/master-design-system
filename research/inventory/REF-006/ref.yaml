@@ -1,0 +1,54 @@
+id: REF-006
+name: "Figma: underline / indicator reveal"
+url: https://www.figma.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: A line under a text link fades and slides in (::after opacity + transform, 250 ms ease) on hover.
+visual: text link with thin rule
+states:
+  - default
+  - hover
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Link has no box, so radius is irrelevant; rule is a scaleX layer; works for any colour.
+customizable:
+  - color
+  - thickness
+  - offset
+coupling: B
+radiusSupport: any
+a11y: Rule must also appear on :focus-visible, not hover only.
+perf:
+  animated:
+    - opacity
+    - transform
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-figma/probe.json#0
+  animations:
+    - target: span(child)::after
+      property: opacity
+      durationMs: 250
+      easing: ease
+    - target: span(child)::after
+      property: transform
+      durationMs: 250
+      easing: ease
+  reducedMotionAnimations: 2
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: adapt
+proposedId: CTA-012
+notes: Measured on a nav link; applies to inline and standalone text links.

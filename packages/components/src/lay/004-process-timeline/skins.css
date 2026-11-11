@@ -1,0 +1,29 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-lay-004:not([data-skin]),
+  .ds-lay-004[data-skin="accent"] {
+    --ds-ptl-fill: var(--ds-color-accent-ink);
+    --ds-ptl-head: var(--ds-color-accent-ink);
+    --ds-ptl-node-border-on: var(--ds-color-accent-ink);
+    --ds-ptl-node-fg-on: var(--ds-color-accent-ink);
+    --ds-ptl-node-bg-current: var(--ds-color-accent-subtle);
+    --ds-ptl-node-fg-current: var(--ds-color-accent-ink);
+  }
+  .ds-lay-004[data-skin="ink"] {
+    --ds-ptl-fill: var(--ds-color-text-primary);
+    --ds-ptl-head: var(--ds-color-text-primary);
+    --ds-ptl-node-border-on: var(--ds-color-text-primary);
+    --ds-ptl-node-fg-on: var(--ds-color-text-primary);
+    --ds-ptl-node-bg-current: var(--ds-color-surface-sunken);
+    --ds-ptl-node-fg-current: var(--ds-color-text-primary);
+  }
+  .ds-lay-004[data-skin="on-raised"] {
+    --ds-ptl-node-bg: var(--ds-color-surface-raised);
+    --ds-ptl-fill: var(--ds-color-accent-ink);
+    --ds-ptl-head: var(--ds-color-accent-ink);
+    --ds-ptl-node-border-on: var(--ds-color-accent-ink);
+    --ds-ptl-node-fg-on: var(--ds-color-accent-ink);
+    --ds-ptl-node-bg-current: var(--ds-color-accent-subtle);
+    --ds-ptl-node-fg-current: var(--ds-color-accent-ink);
+  }
+}

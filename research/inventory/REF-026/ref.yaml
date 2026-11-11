@@ -1,0 +1,44 @@
+id: REF-026
+name: Base UI Button
+url: https://base-ui.com/react/components/button
+sourceKind: design-system
+captured: 2026-11-06
+category: CTA
+interaction: "Headless button: data-disabled attribute, focusableWhenDisabled for loading, render prop to swap
+  the element, nativeButton flag."
+visual: unstyled
+states:
+  - default
+  - disabled
+  - loading
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Candidate headless layer for complex widgets (ADR 0004). Adapter boundary keeps us swappable.
+customizable:
+  - render
+  - state attributes
+coupling: A
+radiusSupport: any
+a11y: Documents the loading-keeps-focus caveat and aria-labelledby for label changes.
+perf:
+  animated: []
+  js: false
+license:
+  status: verified-permissive
+  usage: dependency
+  note: MIT, primary LICENSE read (register.md).
+measured:
+  probeFile: research/probe/D-baseui-button/probe.json#0
+  animations: []
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 5
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 4
+  license: 5
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: MIT verified. Use as dependency candidate in Phase 4 evaluation, not a CTA component.

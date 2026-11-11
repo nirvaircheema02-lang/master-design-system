@@ -1,0 +1,12 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-nav-002:not([data-skin]),
+  .ds-nav-002[data-skin="accent"] {
+    --ds-nav-fg: var(--ds-color-text-primary);
+    --ds-nav-indicator: var(--ds-color-accent-ink);
+  }
+  .ds-nav-002[data-skin="neutral"] {
+    --ds-nav-fg: var(--ds-color-text-primary);
+    --ds-nav-indicator: var(--ds-color-text-primary);
+  }
+}

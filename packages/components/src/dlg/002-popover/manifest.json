@@ -1,0 +1,133 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [
+    "popover"
+  ],
+  "props": {},
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "fade-slide"
+    ],
+    "params": {
+      "duration": 150
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "DLG-002",
+  "slug": "popover",
+  "name": "Popover",
+  "category": "DLG",
+  "archetype": "popover",
+  "fixture": {
+    "props": {
+      "triggerLabel": "Delivery details",
+      "label": "Delivery details",
+      "title": "Delivery"
+    },
+    "children": "Orders ship within two working days. Track a parcel from your account page."
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Non-modal popover with interactive content. Focus moves in on open; Escape closes and returns focus to the trigger; tabbing or clicking out closes it. The page behind stays live (not inert, scrollable).",
+  "skins": [
+    {
+      "id": "raised",
+      "bind": {
+        "--ds-pop-border": "color.border.subtle",
+        "--ds-pop-shadow": "elevation.2"
+      }
+    },
+    {
+      "id": "flat",
+      "bind": {
+        "--ds-pop-border": "color.border.control",
+        "--ds-pop-shadow": "elevation.1"
+      }
+    }
+  ],
+  "states": [
+    "closed",
+    "open",
+    "hover",
+    "focus-visible"
+  ],
+  "responsive": {
+    "touchTarget": "36px",
+    "hoverFallback": "opens on click or tap; hover never opens it"
+  },
+  "a11y": {
+    "role": "dialog",
+    "keyboard": [
+      "Enter",
+      "Space",
+      "Escape",
+      "Tab"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-pop-radius",
+    "--ds-pop-bg",
+    "--ds-pop-bg-hover",
+    "--ds-pop-border",
+    "--ds-pop-ease",
+    "--ds-pop-enter-duration",
+    "--ds-pop-exit-duration",
+    "--ds-pop-fg",
+    "--ds-pop-focus",
+    "--ds-pop-focus-width",
+    "--ds-pop-font",
+    "--ds-pop-gap",
+    "--ds-pop-muted",
+    "--ds-pop-padding",
+    "--ds-pop-shadow",
+    "--ds-pop-trigger-border",
+    "--ds-pop-width",
+    "--ds-pop-z"
+  ],
+  "code": {
+    "path": "packages/components/src/dlg/002-popover",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "popover",
+      "panel",
+      "overlay",
+      "small"
+    ],
+    "interaction": [
+      "overlay"
+    ],
+    "useCases": [
+      "Small panels attached to a button",
+      "Extra options"
+    ],
+    "avoidWhen": [
+      "Critical decisions (use a dialog)"
+    ],
+    "pairsWith": [
+      "INP-001"
+    ]
+  }
+}

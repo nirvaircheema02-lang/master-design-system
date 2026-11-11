@@ -1,0 +1,82 @@
+/* S1 — radius/colour-agnostic effects. Consumes ONLY component-tier vars (--ds-cta-*) and semantic vars. */
+@layer components, effects;
+
+@property --ds-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@layer components {
+  .cta {
+    --_bw: 2px;
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    min-height: var(--ds-cta-height);
+    padding-inline: var(--ds-cta-padding-x);
+    border: 0;
+    border-radius: var(--ds-cta-radius);
+    background: var(--ds-cta-bg);
+    color: var(--ds-cta-fg);
+    font: 600 1rem/1 var(--ds-font-sans);
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: clip; /* clips every inner layer to the (any) radius */
+  }
+  .cta:focus-visible { outline: 2px solid var(--ds-color-focus); outline-offset: 3px; }
+  .cta[disabled] { opacity: 0.5; cursor: not-allowed; }
+  .cta__label { position: relative; z-index: 1; }
+}
+
+@layer effects {
+  /* ---- CTA-001 shimmer: class B, radius any ---- */
+  .cta--shimmer::after {
+    content: ""; position: absolute; inset: 0; z-index: 0; border-radius: inherit;
+    background: linear-gradient(105deg, transparent 30%, var(--ds-cta-shimmer-hl) 50%, transparent 70%);
+    transform: translateX(-100%);
+  }
+  .cta--shimmer:is(:hover, [data-force-state="hover"]) { background: var(--ds-cta-bg-hover); }
+  .cta--shimmer:is(:hover, [data-force-state="hover"])::after {
+    animation: s1-shimmer var(--ds-cta-shimmer-duration) var(--ds-cta-ease) both;
+  }
+  @keyframes s1-shimmer { to { transform: translateX(100%); } }
+
+  /* ---- Fill wipe: class C (needs inner layer), radius any ---- */
+  .cta--wipe { background: transparent; color: var(--ds-color-accent-ink); box-shadow: inset 0 0 0 var(--_bw) currentColor; }
+  .cta--wipe::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; background: var(--ds-cta-bg);
+    transform: scaleX(0); transform-origin: left; transition: transform var(--ds-duration-base) var(--ds-cta-ease);
+  }
+  .cta--wipe:is(:hover, [data-force-state="hover"]) { color: var(--ds-cta-fg); box-shadow: none; }
+  .cta--wipe:is(:hover, [data-force-state="hover"])::before { transform: scaleX(1); }
+
+  /* ---- Sliding arrow: class C (icon slot + inner clip), radius any ---- */
+  .cta__icon { position: relative; z-index: 1; display: inline-grid; width: 1.25em; height: 1.25em; overflow: clip; }
+  .cta__icon > svg { grid-area: 1 / 1; width: 100%; height: 100%; transition: transform var(--ds-duration-base) var(--ds-cta-ease); }
+  .cta__icon > svg + svg { transform: translateX(-120%); }
+  .cta--arrow:is(:hover, [data-force-state="hover"]) .cta__icon > svg:first-child { transform: translateX(120%); }
+  .cta--arrow:is(:hover, [data-force-state="hover"]) .cta__icon > svg + svg { transform: translateX(0); }
+  .cta--arrow:is(:hover, [data-force-state="hover"]) { background: var(--ds-cta-bg-hover); }
+
+  /* ---- Animated border: class C (masked ring layer), radius via inherit ---- */
+  .cta--ring { background: var(--ds-color-surface-raised); color: var(--ds-color-text-primary); overflow: visible; }
+  .cta--ring::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; border-radius: inherit; padding: var(--_bw);
+    background: conic-gradient(from var(--ds-angle), transparent 0 55%, var(--ds-cta-bg) 80%, transparent 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+  }
+  .cta--ring:is(:hover, [data-force-state="hover"])::before { animation: s1-spin 1.6s linear infinite; }
+  @keyframes s1-spin { to { --ds-angle: 360deg; } }
+}
+
+/* Reduced motion = final/static state, not "slower". */
+@media (prefers-reduced-motion: reduce) {
+  .cta--shimmer::after { animation: none !important; display: none; }
+  .cta--wipe::before { transition: none; }
+  .cta__icon > svg { transition: none; }
+  .cta--ring::before { animation: none !important; background: var(--ds-cta-bg); }
+}

@@ -1,0 +1,54 @@
+id: REF-009
+name: "Cal.com: icon swap with blur"
+url: https://cal.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: Icon inside the button crossfades with a blur/opacity/transform enter and exit (300 ms) on hover.
+visual: solid dark button with icon
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Icon slot swap; the clip is on the inner icon box, not the button edge, so the outer radius never
+  affects it. Blur/filter animation is paint-heavy.
+customizable:
+  - icon
+  - color
+coupling: C
+radiusSupport: any
+a11y: Decorative icon only.
+perf:
+  animated:
+    - filter
+    - opacity
+    - transform
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-cal/probe.json#0
+  animations:
+    - target: img(child)
+      property: "@exit:filter+opacity+transform"
+      durationMs: 300
+      easing: linear
+    - target: img(child)
+      property: "@enter:filter+opacity+transform"
+      durationMs: 300
+      easing: linear
+  reducedMotionAnimations: 4
+scores:
+  distinctiveness: 4
+  usability: 3
+  a11y: 4
+  performance: 3
+  themability: 4
+  simplicity: 3
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: Option for CTA-002 icon motion; avoid animating filter in the Master.

@@ -1,0 +1,31 @@
+{
+  "name": "@master-ds/gallery",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -p 4320",
+    "build": "next build",
+    "start": "next start -p 4320",
+    "typecheck": "tsc --noEmit",
+    "export": "GALLERY_EXPORT=1 next build",
+    "verify": "node verify.mjs"
+  },
+  "dependencies": {
+    "@master-ds/components": "workspace:*",
+    "@master-ds/contracts": "workspace:*",
+    "next": "^15.5.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@master-ds/headless": "workspace:*",
+    "@master-ds/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5.6.0",
+    "playwright": "^1.64.1",
+    "@axe-core/playwright": "^4.10.0"
+  }
+}

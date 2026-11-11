@@ -1,0 +1,52 @@
+id: REF-025
+name: shadcn/ui Button
+url: https://ui.shadcn.com/docs/components/button
+sourceKind: design-system
+captured: 2026-11-06
+category: CTA
+interaction: Button exposes variant and size as props, supports an inline icon via data-icon, and transitions
+  colours over 150 ms.
+visual: six variants, sizes
+states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Props API is a fixed set; styling is CSS variables via Tailwind.
+customizable:
+  - variant
+  - size
+  - icon
+coupling: A
+radiusSupport: any
+a11y: No accessibility section on the page (read 2026-11-05).
+perf:
+  animated:
+    - background-color
+    - color
+  js: false
+license:
+  status: unverified
+  usage: inspiration-only
+  note: Licence not verified from a primary source (register.md).
+measured:
+  probeFile: research/probe/L-shadcn-button/probe.json#1
+  animations:
+    - target: button(host)
+      property: background-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 3
+  performance: 5
+  themability: 4
+  simplicity: 5
+  license: 2
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: MIT shown on repo page, full text unread, so treated as concept reference only.

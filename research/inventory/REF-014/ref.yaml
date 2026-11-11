@@ -1,0 +1,53 @@
+id: REF-014
+name: "Aceternity: press / lift button"
+url: https://ui.aceternity.com/components/tailwindcss-buttons
+sourceKind: library
+captured: 2026-11-06
+category: CTA
+interaction: Button shifts a few pixels and its shadow changes on hover (box-shadow + translate, 200 ms).
+visual: offset-shadow button
+states:
+  - default
+  - hover
+  - active
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Pattern is generic (offset layer + translate). Aceternity code and visuals must not be copied.
+customizable:
+  - color
+  - offset
+coupling: B
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - translate
+    - box-shadow
+  js: false
+license:
+  status: proprietary
+  usage: inspiration-only
+  note: "Aceternity: proprietary and ambiguous terms (register.md). Do not copy code or visuals."
+measured:
+  probeFile: research/probe/L-aceternity-buttons/probe.json#2
+  animations:
+    - target: button(host)
+      property: box-shadow
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button(host)
+      property: translate
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 2
+scores:
+  distinctiveness: 3
+  usability: 4
+  a11y: 4
+  performance: 2
+  themability: 3
+  simplicity: 4
+  license: 2
+  neutrality: 3
+recommendation: inspiration
+proposedId: null
+notes: Inspiration for CTA-013 press depth; implementation is original (feasibility sketch "press").

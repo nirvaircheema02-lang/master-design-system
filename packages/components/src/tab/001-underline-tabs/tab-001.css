@@ -1,0 +1,65 @@
+/* TAB-001 Underline tabs. Tokens: --ds-tab-*. The indicator is ONE line moved with transform from measured geometry. */
+@layer components {
+  .ds-tab-001 { font-family: var(--ds-tab-font); color: var(--ds-tab-fg-active); }
+  .ds-tab-001__list {
+    position: relative; display: flex; gap: 0; overflow-x: auto; scrollbar-width: none;
+    background: var(--ds-tab-list-bg); border-bottom: 1px solid var(--ds-tab-border); border-radius: var(--ds-tab-radius) var(--ds-tab-radius) 0 0;
+  }
+  .ds-tab-001__list::-webkit-scrollbar { display: none; }
+  .ds-tab-001__tab {
+    position: relative; flex: none; display: inline-flex; align-items: center; justify-content: center;
+    min-height: var(--ds-tab-height); padding: 0 var(--ds-tab-padding-x); margin: 0; border: 0; border-radius: var(--ds-tab-radius);
+    background: transparent; color: var(--ds-tab-fg); font: inherit; font-size: 0.9375rem; font-weight: 600; line-height: 1.2; white-space: nowrap; cursor: pointer;
+    transition: background-color var(--ds-tab-fade-duration) var(--ds-tab-fade-ease), color var(--ds-tab-fade-duration) var(--ds-tab-fade-ease);
+  }
+  .ds-tab-001__tab[data-state="active"] { color: var(--ds-tab-fg-active); }
+  .ds-tab-001__tab[data-disabled] { opacity: 0.45; cursor: not-allowed; }
+  .ds-tab-001__tab:focus-visible, .ds-tab-001__panel:focus-visible { outline: var(--ds-tab-focus-width) solid var(--ds-tab-focus); outline-offset: -2px; }
+  .ds-tab-001__panel { padding: var(--ds-tab-panel-padding); line-height: 1.55; }
+  /* the indicator: width is a unitless scale of a 1px line, so only `transform` ever animates */
+  .ds-tab-001__list::after {
+    content: ""; position: absolute; left: 0; bottom: 0; width: 1px; height: var(--ds-tab-indicator-height); background: var(--ds-tab-indicator);
+    transform-origin: 0 0; transform: translateX(var(--_x, 0px)) scaleX(var(--_w, 0));
+    transition: transform var(--ds-tab-slide-duration) var(--ds-tab-slide-ease);
+  }
+  /* before the first measurement (server render, first paint) the active tab carries its own underline */
+  .ds-tab-001__list:not([data-measured]) .ds-tab-001__tab[data-state="active"]::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: var(--ds-tab-indicator-height); background: var(--ds-tab-indicator);
+  }
+}
+
+/* DESIGNS: underline (default), pill, segmented, vertical, folder. Only component tokens are read. */
+@layer components {
+  /* pill: the selected tab is a filled accent pill (no sliding bar) */
+  .ds-tab-001[data-design="pill"] .ds-tab-001__list { border-bottom: 0; gap: 0.25rem; background: transparent; }
+  .ds-tab-001[data-design="pill"] .ds-tab-001__list::after, .ds-tab-001[data-design="pill"] .ds-tab-001__tab[data-state="active"]::after { content: none; }
+  .ds-tab-001[data-design="pill"] .ds-tab-001__tab[data-state="active"] { background: var(--ds-tab-bg-active); color: var(--ds-tab-fg-on-active); }
+  /* segmented: a sunken capsule holding the options; the selected one is a raised chip */
+  .ds-tab-001[data-design="segmented"] .ds-tab-001__list { display: inline-flex; border-bottom: 0; padding: 0.25rem; gap: 0.125rem; background: var(--ds-tab-capsule-bg); border-radius: var(--ds-tab-radius); }
+  .ds-tab-001[data-design="segmented"] .ds-tab-001__list::after, .ds-tab-001[data-design="segmented"] .ds-tab-001__tab[data-state="active"]::after { content: none; }
+  .ds-tab-001[data-design="segmented"] .ds-tab-001__tab[data-state="active"] { background: var(--ds-tab-raised); box-shadow: var(--ds-tab-shadow); color: var(--ds-tab-fg-active); }
+  /* folder: tabs sit on a bordered panel; the selected tab opens into it */
+  .ds-tab-001[data-design="folder"] .ds-tab-001__list { overflow: visible; position: relative; z-index: 1; border-bottom: 1px solid var(--ds-tab-panel-border); }
+  .ds-tab-001[data-design="folder"] .ds-tab-001__list::after, .ds-tab-001[data-design="folder"] .ds-tab-001__tab[data-state="active"]::after { content: none; }
+  .ds-tab-001[data-design="folder"] .ds-tab-001__tab { border: 1px solid transparent; border-bottom: 0; margin-bottom: -1px; }
+  .ds-tab-001[data-design="folder"] .ds-tab-001__tab[data-state="active"] { background: var(--ds-tab-raised); border-color: var(--ds-tab-panel-border); color: var(--ds-tab-fg-active); box-shadow: 0 1px 0 var(--ds-tab-raised); }
+  .ds-tab-001[data-design="folder"] .ds-tab-001__panel { margin-top: -1px; padding: 1rem; background: var(--ds-tab-raised); border: 1px solid var(--ds-tab-panel-border); border-top: 0; border-radius: 0 0 var(--ds-tab-radius) var(--ds-tab-radius); }
+  /* vertical: a column of tabs beside the panel; the bar slides up and down */
+  .ds-tab-001[data-design="vertical"] { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 1.25rem; align-items: start; }
+  .ds-tab-001[data-design="vertical"] .ds-tab-001__list { flex-direction: column; overflow: visible; border-bottom: 0; border-inline-end: 1px solid var(--ds-tab-border); border-radius: 0; }
+  .ds-tab-001[data-design="vertical"] .ds-tab-001__tab { justify-content: flex-start; }
+  .ds-tab-001[data-design="vertical"] .ds-tab-001__list::after {
+    left: auto; right: -1px; bottom: auto; top: 0; width: var(--ds-tab-indicator-height); height: 1px; transform-origin: 0 0; transform: translateY(var(--_y, 0px)) scaleY(var(--_h, 0));
+  }
+  .ds-tab-001[data-design="vertical"] .ds-tab-001__list:not([data-measured]) .ds-tab-001__tab[data-state="active"]::after { left: auto; right: -1px; top: 0; bottom: 0; width: var(--ds-tab-indicator-height); height: auto; }
+  .ds-tab-001[data-design="vertical"] .ds-tab-001__panel { padding: 0; }
+}
+
+@layer effects {
+  .ds-tab-001__tab:not([data-disabled]):hover { background: var(--ds-tab-bg-hover); color: var(--ds-tab-fg-active); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-tab-001__tab { transition: none; }
+  .ds-tab-001__list::after { transition: none; }
+}

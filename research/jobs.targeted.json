@@ -1,0 +1,7 @@
+[
+  { "id": "T-magicui-shimmer", "url": "https://magicui.design/docs/components/shimmer-button", "scope": "main", "match": "^shimmer" },
+  { "id": "T-magicui-pulsating", "url": "https://magicui.design/docs/components/pulsating-button", "scope": "main", "match": "^pulsating" },
+  { "id": "T-aceternity-moving-border", "url": "https://ui.aceternity.com/components/moving-border", "scope": "main", "match": "borders are cool" },
+  { "id": "T-aceternity-hover-border", "url": "https://ui.aceternity.com/components/hover-border-gradient", "scope": "main", "match": "aceternity ui" },
+  { "id": "T-mp-magnetic", "url": "https://motion-primitives.com/docs/magnetic", "scope": "main", "match": "^submit$" }
+]

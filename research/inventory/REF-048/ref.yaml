@@ -1,0 +1,51 @@
+id: REF-048
+name: "Stripe docs: tabs without panel roles"
+url: https://docs.stripe.com/payments/quickstart
+sourceKind: production-site
+captured: 2026-11-06
+category: TAB
+interaction: Language tabs that look right but expose no aria-controls, no tabpanel role and no panel label;
+  focus moves with arrows, selection does not follow.
+visual: text tabs, 300 ms opacity swap
+states:
+  - default
+  - selected
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Visual pattern is fine; the markup is the anti-pattern.
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: "Fails the APG tab pattern: panels are not programmatically tied to tabs."
+perf:
+  animated:
+    - opacity
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-tabs-stripe-docs/probe.json#0
+  animations:
+    - target: div
+      property: opacity
+      durationMs: 300
+      easing: ease-in-out
+    - target: div
+      property: opacity
+      durationMs: 300
+      easing: ease-in-out
+  reducedMotionAnimations: 2
+scores:
+  distinctiveness: 2
+  usability: 3
+  a11y: 1
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: reject
+proposedId: null
+notes: Evidence that production tab UIs often omit the wiring; our harness requires it.

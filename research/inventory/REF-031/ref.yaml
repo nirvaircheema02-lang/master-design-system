@@ -1,0 +1,49 @@
+id: REF-031
+name: "Vercel templates: card tint"
+url: https://vercel.com/templates
+sourceKind: production-site
+captured: 2026-11-06
+category: CRD
+interaction: Whole card is a link; its surface tints over 150 ms on hover while content stays put.
+visual: image card with tint
+states:
+  - default
+  - hover
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Colour-only surface change; works with any card radius and any brand.
+customizable:
+  - surface colour
+  - radius
+  - density
+coupling: A
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - background-color
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/C-vercel-templates/probe.json#0
+  animations:
+    - target: a(child)
+      property: background-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 5
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: adapt
+proposedId: CRD-001
+notes: Baseline card.

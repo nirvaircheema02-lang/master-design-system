@@ -1,0 +1,46 @@
+id: REF-017
+name: "Aceternity: hover-border-gradient"
+url: https://ui.aceternity.com/components/hover-border-gradient
+sourceKind: library
+captured: 2026-11-06
+category: CTA
+interaction: Button with gradient border; background fades over 500 ms on hover.
+visual: dark pill with gradient rim
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Gradient rim around a pill; rim needs the same inherit/mask technique as the animated border.
+customizable:
+  - color
+coupling: C
+radiusSupport: any
+a11y: Gradient border must not be the only focus indicator.
+perf:
+  animated:
+    - background-color
+  js: false
+license:
+  status: proprietary
+  usage: inspiration-only
+  note: "Aceternity: proprietary and ambiguous terms (register.md). Do not copy code or visuals."
+measured:
+  probeFile: research/probe/T-aceternity-hover-border/probe.json#0
+  animations:
+    - target: button(host)
+      property: background-color
+      durationMs: 500
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 3
+  usability: 3
+  a11y: 3
+  performance: 4
+  themability: 3
+  simplicity: 3
+  license: 2
+  neutrality: 3
+recommendation: inspiration
+proposedId: null
+notes: ""

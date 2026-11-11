@@ -1,0 +1,122 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "classic",
+      "bar",
+      "centered",
+      "bold",
+      "inline"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "CRD-005",
+  "slug": "stat-card",
+  "name": "Stat Card",
+  "category": "CRD",
+  "archetype": "stat",
+  "fixture": {
+    "props": {
+      "label": "Monthly revenue",
+      "value": "$48,230",
+      "delta": {
+        "text": "12.4%",
+        "direction": "up",
+        "intent": "positive",
+        "versus": "vs last month"
+      },
+      "description": "Recurring plus one-off sales."
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A labelled figure as a description list (label and value are programmatically tied) with an optional change. Direction is an arrow AND words for screen readers; colour only says whether it is good news. Not interactive.",
+  "skins": [
+    {
+      "id": "plain",
+      "bind": {
+        "--ds-stat-border": "color.border.subtle"
+      }
+    },
+    {
+      "id": "outlined",
+      "bind": {
+        "--ds-stat-border": "color.border.control"
+      }
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "group",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-stat-radius",
+    "--ds-stat-bg",
+    "--ds-stat-border",
+    "--ds-stat-down",
+    "--ds-stat-fg",
+    "--ds-stat-flat",
+    "--ds-stat-font",
+    "--ds-stat-gap",
+    "--ds-stat-muted",
+    "--ds-stat-padding",
+    "--ds-stat-up"
+  ],
+  "code": {
+    "path": "packages/components/src/crd/005-stat-card",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "stat",
+      "kpi",
+      "number",
+      "metric"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Key figures and KPIs",
+      "Dashboards"
+    ],
+    "avoidWhen": [
+      "Long explanations"
+    ],
+    "pairsWith": [
+      "TBL-001",
+      "BDG-001"
+    ]
+  }
+}

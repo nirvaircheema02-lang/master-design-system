@@ -1,0 +1,144 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "dir": "txt/005-section-header",
+  "id": "TXT-005",
+  "slug": "section-header",
+  "name": "Section Header",
+  "category": "TXT",
+  "description": "Opens a page section: a small eyebrow label, a real heading (its level is chosen separately from its look) with an optional highlighted word, and a lede paragraph. Three designs: stacked, centered, split. Static; wrap in RVL-001 for an entrance.",
+  "fixture": {
+    "props": {
+      "eyebrow": "Overview",
+      "title": "A short headline with one highlighted word",
+      "highlight": "highlighted",
+      "lede": "One supporting sentence that explains what the section covers."
+    }
+  },
+  "props": {
+    "design": [
+      "stacked",
+      "centered",
+      "split"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "skins": [
+    {
+      "id": "accent",
+      "bind": {
+        "--ds-sech-eyebrow": "color.accent.ink",
+        "--ds-sech-hl": "color.accent.ink",
+        "--ds-sech-hl-to": "color.accent.ink"
+      }
+    },
+    {
+      "id": "gradient",
+      "bind": {
+        "--ds-sech-eyebrow": "color.accent.ink",
+        "--ds-sech-hl": "color.accent.ink",
+        "--ds-sech-hl-to": "color.text.primary"
+      }
+    },
+    {
+      "id": "neutral",
+      "bind": {
+        "--ds-sech-eyebrow": "color.text.secondary",
+        "--ds-sech-hl": "color.text.primary",
+        "--ds-sech-hl-to": "color.text.primary"
+      }
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "heading",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "discovery": {
+    "tags": [
+      "section",
+      "header",
+      "eyebrow",
+      "title",
+      "lede",
+      "heading"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Opening a page section",
+      "Landing-page section intros"
+    ],
+    "avoidWhen": [
+      "A plain heading is enough (use TXT-001)",
+      "The page title of an app screen"
+    ],
+    "pairsWith": [
+      "RVL-001",
+      "TXT-001",
+      "TXT-002"
+    ]
+  },
+  "tokens": [
+    "--ds-sech-display",
+    "--ds-sech-eyebrow",
+    "--ds-sech-eyebrow-size",
+    "--ds-sech-eyebrow-tracking",
+    "--ds-sech-eyebrow-weight",
+    "--ds-sech-fg",
+    "--ds-sech-font",
+    "--ds-sech-gap",
+    "--ds-sech-hl",
+    "--ds-sech-hl-to",
+    "--ds-sech-lede-lh",
+    "--ds-sech-lede-max",
+    "--ds-sech-lede-min",
+    "--ds-sech-measure",
+    "--ds-sech-muted",
+    "--ds-sech-rule-length",
+    "--ds-sech-rule-width",
+    "--ds-sech-split-gap",
+    "--ds-sech-title-lh",
+    "--ds-sech-title-max",
+    "--ds-sech-title-min",
+    "--ds-sech-title-tracking",
+    "--ds-sech-title-weight"
+  ],
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "archetype": "atom",
+  "code": {
+    "path": "packages/components/src/txt/005-section-header",
+    "hash": null
+  }
+}

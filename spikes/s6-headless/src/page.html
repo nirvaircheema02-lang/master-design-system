@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>headless spike</title>
+<style>
+body{font:16px system-ui;margin:24px} .list{display:flex;gap:8px} .tab{padding:8px 12px} .tab[data-state=active],.tab[data-active]{font-weight:700;border-bottom:2px solid #000}
+.panel{padding:12px}
+.rx-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4)} .rx-overlay[data-state=open]{animation:fi 200ms ease} .rx-overlay[data-state=closed]{animation:fo 200ms ease forwards}
+.rx-popup{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:#fff;padding:24px;min-width:300px} .rx-popup[data-state=open]{animation:fi 200ms ease} .rx-popup[data-state=closed]{animation:fo 200ms ease forwards}
+.bu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);transition:opacity 200ms} .bu-overlay[data-starting-style],.bu-overlay[data-ending-style]{opacity:0}
+.bu-popup{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:#fff;padding:24px;min-width:300px;transition:opacity 200ms} .bu-popup[data-starting-style],.bu-popup[data-ending-style]{opacity:0}
+@keyframes fi{from{opacity:0}to{opacity:1}} @keyframes fo{from{opacity:1}to{opacity:0}}
+@media (prefers-reduced-motion:reduce){.rx-overlay,.rx-popup{animation:none!important}.bu-overlay,.bu-popup{transition:none}}
+</style></head><body><div id="app"></div></body></html>

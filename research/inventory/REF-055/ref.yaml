@@ -1,0 +1,55 @@
+id: REF-055
+name: Base UI Dialog
+url: https://base-ui.com/react/components/dialog
+sourceKind: library
+captured: 2026-11-06
+category: DLG
+interaction: Headless modal dialog with starting/ending-style transitions (opacity 150/100 ms), three modal
+  modes and configurable initial/final focus.
+visual: centred modal
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Equivalent behaviour to Radix in spike S6; 23.9 KB gzip vs 14.2 KB.
+customizable:
+  - everything via CSS
+coupling: A
+radiusSupport: any
+a11y: Same verified behaviours; focus guards need a settle in tests.
+perf:
+  animated:
+    - opacity
+  js: false
+license:
+  status: verified-permissive
+  usage: clean-room
+  note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+measured:
+  probeFile: research/probe/U-dlg-baseui/probe.json#0
+  animations:
+    - target: div[presentation]
+      property: opacity
+      durationMs: 150
+      easing: ease
+    - target: div[dialog]
+      property: opacity
+      durationMs: 100
+      easing: ease-out
+    - target: div[dialog]
+      property: transform
+      durationMs: 100
+      easing: ease-out
+  reducedMotionAnimations: 3
+scores:
+  distinctiveness: 3
+  usability: 5
+  a11y: 5
+  performance: 4
+  themability: 5
+  simplicity: 3
+  license: 4
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: Alternative adapter target (ADR 0004).

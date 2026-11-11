@@ -1,0 +1,122 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "subtle",
+      "solid",
+      "outline",
+      "dot"
+    ],
+    "tone": [
+      "neutral",
+      "accent",
+      "success",
+      "danger"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "BDG-001",
+  "slug": "badge",
+  "name": "Badge",
+  "category": "BDG",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "tone": "accent"
+    },
+    "children": "Active"
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A short status or count: plain text with a tone, never interactive, never the only carrier of meaning. Four designs: subtle, solid, outline, dot.",
+  "skins": [
+    {
+      "id": "default",
+      "bind": {}
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "status",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-badge-radius",
+    "--ds-badge-accent-bg",
+    "--ds-badge-accent-fg",
+    "--ds-badge-accent-solid-bg",
+    "--ds-badge-accent-solid-fg",
+    "--ds-badge-danger-fg",
+    "--ds-badge-danger-solid-bg",
+    "--ds-badge-danger-solid-fg",
+    "--ds-badge-font",
+    "--ds-badge-height",
+    "--ds-badge-neutral-bg",
+    "--ds-badge-neutral-fg",
+    "--ds-badge-neutral-line",
+    "--ds-badge-neutral-solid-bg",
+    "--ds-badge-neutral-solid-fg",
+    "--ds-badge-padding-x",
+    "--ds-badge-size",
+    "--ds-badge-success-fg",
+    "--ds-badge-success-solid-bg",
+    "--ds-badge-success-solid-fg",
+    "--ds-badge-weight"
+  ],
+  "code": {
+    "path": "packages/components/src/bdg/001-badge",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "badge",
+      "status",
+      "label",
+      "tag"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Status and counts",
+      "Short labels"
+    ],
+    "avoidWhen": [
+      "Anything clickable (use a chip)"
+    ],
+    "pairsWith": [
+      "CRD-005",
+      "TBL-001"
+    ]
+  }
+}

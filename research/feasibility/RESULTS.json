@@ -1,0 +1,118 @@
+{
+  "rows": [
+    {
+      "id": "glow",
+      "name": "Glow halo",
+      "class": "B",
+      "js": false,
+      "checks": 134,
+      "failures": 0,
+      "animated": [
+        "opacity"
+      ],
+      "perf": "compositor",
+      "firstFail": null
+    },
+    {
+      "id": "roll",
+      "name": "Text roll",
+      "class": "C",
+      "js": false,
+      "checks": 110,
+      "failures": 0,
+      "animated": [
+        "transform"
+      ],
+      "perf": "compositor",
+      "firstFail": null
+    },
+    {
+      "id": "chip",
+      "name": "Icon expansion",
+      "class": "C",
+      "js": false,
+      "checks": 134,
+      "failures": 0,
+      "animated": [
+        "color",
+        "transform"
+      ],
+      "perf": "paint",
+      "firstFail": null
+    },
+    {
+      "id": "grad",
+      "name": "Gradient shift",
+      "class": "B",
+      "js": false,
+      "checks": 134,
+      "failures": 0,
+      "animated": [
+        "backgroundPositionX"
+      ],
+      "perf": "paint",
+      "firstFail": null
+    },
+    {
+      "id": "spot",
+      "name": "Spotlight (cursor)",
+      "class": "B",
+      "js": true,
+      "checks": 146,
+      "failures": 0,
+      "animated": [
+        "opacity"
+      ],
+      "perf": "compositor",
+      "firstFail": null
+    },
+    {
+      "id": "mag",
+      "name": "Magnetic pull",
+      "class": "B",
+      "js": true,
+      "checks": 122,
+      "failures": 0,
+      "animated": [
+        "translate"
+      ],
+      "perf": "compositor",
+      "firstFail": null
+    },
+    {
+      "id": "underline",
+      "name": "Underline draw (link)",
+      "class": "B",
+      "js": false,
+      "checks": 62,
+      "failures": 0,
+      "animated": [
+        "transform"
+      ],
+      "perf": "compositor",
+      "firstFail": null
+    },
+    {
+      "id": "press",
+      "name": "Press depth",
+      "class": "B",
+      "js": false,
+      "checks": 134,
+      "failures": 0,
+      "animated": [
+        "transform"
+      ],
+      "perf": "compositor",
+      "firstFail": null
+    }
+  ],
+  "tokensProposed": [
+    "--ds-cta-chip",
+    "--ds-cta-fg-on-chip",
+    "--ds-cta-glow",
+    "--ds-cta-link",
+    "--ds-cta-shadow",
+    "--ds-cta-spot"
+  ],
+  "lintViolations": []
+}

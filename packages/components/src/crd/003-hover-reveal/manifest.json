@@ -1,0 +1,136 @@
+{
+  "id": "CRD-003",
+  "slug": "hover-reveal",
+  "name": "Hover-Reveal Card",
+  "category": "CRD",
+  "archetype": "card",
+  "fixture": {
+    "props": {
+      "title": "Quarterly report",
+      "href": "#report",
+      "meta": "Report · 12 min read",
+      "image": {
+        "src": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='400'%3E%3Crect width='640' height='400' fill='%23c8d0e0'/%3E%3C/svg%3E",
+        "alt": ""
+      },
+      "reveal": "More detail appears here on hover or focus, and always on touch."
+    },
+    "children": "A short summary of what the card links to."
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Stretched-title card with a supplementary panel that fades in over the picture on hover and focus. Title always visible; always shown on touch.",
+  "inspiration": [],
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "reveal-fade"
+    ],
+    "params": {
+      "duration": 150
+    },
+    "js": false,
+    "pointerVars": []
+  },
+  "slots": {},
+  "props": {},
+  "skins": [
+    {
+      "id": "outlined",
+      "bind": {
+        "--ds-card-bg": "color.surface.raised",
+        "--ds-card-bg-hover": "color.surface.sunken",
+        "--ds-card-border": "color.border.subtle",
+        "--ds-card-border-hover": "color.border.control"
+      }
+    },
+    {
+      "id": "filled",
+      "bind": {
+        "--ds-card-bg": "color.surface.sunken",
+        "--ds-card-bg-hover": "color.surface.raised",
+        "--ds-card-border": "transparent",
+        "--ds-card-border-hover": "color.border.control"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-card-bg",
+    "--ds-card-bg-hover",
+    "--ds-card-border",
+    "--ds-card-border-hover",
+    "--ds-card-fade-duration",
+    "--ds-card-fade-ease",
+    "--ds-card-fg",
+    "--ds-card-focus",
+    "--ds-card-focus-width",
+    "--ds-card-font",
+    "--ds-card-gap",
+    "--ds-card-media-ratio",
+    "--ds-card-muted",
+    "--ds-card-overlay",
+    "--ds-card-padding",
+    "--ds-card-radius"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": [],
+    "radiusNote": "The reveal panel sits inside the clipped media frame, so the card radius clips it."
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "hover is decorative; focus-visible shows the same cue"
+  },
+  "a11y": {
+    "role": "link",
+    "keyboard": [
+      "Tab",
+      "Enter"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "a"
+    ],
+    "inertStates": []
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/crd/003-hover-reveal",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "card",
+      "reveal",
+      "hover",
+      "media"
+    ],
+    "interaction": [
+      "reveal",
+      "hover-press"
+    ],
+    "useCases": [
+      "Cards with a short reveal on hover or focus",
+      "Portfolios"
+    ],
+    "avoidWhen": [
+      "Content that must always be visible"
+    ],
+    "pairsWith": [
+      "CRD-002"
+    ],
+    "effects": "subtle"
+  }
+}

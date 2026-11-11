@@ -1,0 +1,7 @@
+[
+  { "id": "U-smoke-radix-tabs", "url": "https://www.radix-ui.com/primitives/docs/components/tabs", "kind": "tab", "scope": "main", "max": 1 },
+  { "id": "U-smoke-radix-accordion", "url": "https://www.radix-ui.com/primitives/docs/components/accordion", "kind": "accordion", "scope": "main", "max": 1 },
+  { "id": "U-smoke-radix-dialog", "url": "https://www.radix-ui.com/primitives/docs/components/dialog", "kind": "trigger", "scope": "main", "match": "edit profile|open|dialog", "max": 1 },
+  { "id": "U-smoke-github-login", "url": "https://github.com/login", "kind": "input", "max": 2 },
+  { "id": "U-smoke-stripe-header", "url": "https://stripe.com/", "kind": "header", "max": 1 }
+]

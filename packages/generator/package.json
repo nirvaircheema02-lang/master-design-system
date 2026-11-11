@@ -1,0 +1,20 @@
+{
+  "name": "@master-ds/generator",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "master": "./src/cli.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@master-ds/contracts": "workspace:*",
+    "@master-ds/tokens": "workspace:*"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --experimental-strip-types --test src/*.test.ts"
+  }
+}

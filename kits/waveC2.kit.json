@@ -1,0 +1,6 @@
+{ "instances": [
+  { "ref": "NAV-005@1.0.0", "skin": "flat", "props": {} },
+  { "ref": "NAV-004@1.0.0", "skin": "outlined", "props": { "side": "right" } },
+  { "ref": "DLG-002@1.0.0", "skin": "flat", "props": {} },
+  { "ref": "TIP-001@1.0.0", "skin": "raised", "props": { "side": "bottom" } }
+] }

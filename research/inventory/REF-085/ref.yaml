@@ -1,0 +1,46 @@
+id: REF-085
+name: "Vercel login: aria-only label"
+url: https://vercel.com/login
+sourceKind: production-site
+captured: 2026-11-06
+category: INP
+interaction: Email field with NO visible label (only aria-label) and a box-shadow ring transition (150 ms).
+visual: unlabelled field
+states:
+  - default
+  - focus
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Anti-pattern: visible labels are required (WCAG 3.3.2)."
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Visible label missing.
+perf:
+  animated:
+    - box-shadow
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-in-vercel/probe.json#0
+  animations:
+    - target: div
+      property: box-shadow
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 2
+  a11y: 1
+  performance: 4
+  themability: 4
+  simplicity: 5
+  license: 3
+  neutrality: 4
+recommendation: reject
+proposedId: null
+notes: ""

@@ -1,0 +1,2684 @@
+[
+ {
+  "id": "slate",
+  "slug": "p-slate",
+  "name": "Slate",
+  "group": "Neutral bases",
+  "note": "Cool blue-grey; calm and technical.",
+  "seeds": {
+   "primary": "#334155",
+   "neutral": "#64748b"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f2f5fa",
+    "100": "#e6ecf3",
+    "200": "#d3dbe8",
+    "300": "#b9c5d7",
+    "400": "#9dacc1",
+    "500": "#8393ab",
+    "600": "#69798f",
+    "700": "#515f71",
+    "800": "#334155",
+    "900": "#272e39",
+    "950": "#161b22"
+   },
+   "neutral": {
+    "50": "#f1f5fc",
+    "100": "#e3ecf9",
+    "200": "#d3dbe8",
+    "300": "#bcc5d1",
+    "400": "#a3acb8",
+    "500": "#8b939f",
+    "600": "#707883",
+    "700": "#575e69",
+    "800": "#3e4650",
+    "900": "#282e38",
+    "950": "#181b1f"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f1f5fc",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e3ecf9",
+    "text.primary": "#181b1f",
+    "text.secondary": "#575e69",
+    "border.subtle": "#d3dbe8",
+    "border.control": "#707883",
+    "accent.DEFAULT": "#334155",
+    "accent.ink": "#334155",
+    "accent.subtle": "#f2f5fa",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#334155"
+   },
+   "dark": {
+    "surface.base": "#181b1f",
+    "surface.raised": "#282e38",
+    "surface.sunken": "#282e38",
+    "text.primary": "#f1f5fc",
+    "text.secondary": "#bcc5d1",
+    "border.subtle": "#3e4650",
+    "border.control": "#8b939f",
+    "accent.DEFAULT": "#334155",
+    "accent.ink": "#9dacc1",
+    "accent.subtle": "#272e39",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#9dacc1"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "gray",
+  "slug": "p-gray",
+  "name": "Gray",
+  "group": "Neutral bases",
+  "note": "Slightly cool grey; the safe default.",
+  "seeds": {
+   "primary": "#374151",
+   "neutral": "#6b7280"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f3f5f9",
+    "100": "#e8ebf1",
+    "200": "#d5dbe5",
+    "300": "#bcc5d3",
+    "400": "#a1acbd",
+    "500": "#8793a5",
+    "600": "#6d788a",
+    "700": "#555e6d",
+    "800": "#374151",
+    "900": "#292e36",
+    "950": "#171b21"
+   },
+   "neutral": {
+    "50": "#f2f5fc",
+    "100": "#e4ebf9",
+    "200": "#d4dbe8",
+    "300": "#bec4d2",
+    "400": "#a4abb8",
+    "500": "#8c929f",
+    "600": "#717884",
+    "700": "#585e69",
+    "800": "#404550",
+    "900": "#292e38",
+    "950": "#181b1f"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f2f5fc",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e4ebf9",
+    "text.primary": "#181b1f",
+    "text.secondary": "#585e69",
+    "border.subtle": "#d4dbe8",
+    "border.control": "#717884",
+    "accent.DEFAULT": "#374151",
+    "accent.ink": "#374151",
+    "accent.subtle": "#f3f5f9",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#374151"
+   },
+   "dark": {
+    "surface.base": "#181b1f",
+    "surface.raised": "#292e38",
+    "surface.sunken": "#292e38",
+    "text.primary": "#f2f5fc",
+    "text.secondary": "#bec4d2",
+    "border.subtle": "#404550",
+    "border.control": "#8c929f",
+    "accent.DEFAULT": "#374151",
+    "accent.ink": "#a1acbd",
+    "accent.subtle": "#292e36",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#a1acbd"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "zinc",
+  "slug": "p-zinc",
+  "name": "Zinc",
+  "group": "Neutral bases",
+  "note": "Almost pure grey with a hint of violet.",
+  "seeds": {
+   "primary": "#3f3f46",
+   "neutral": "#71717a"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f5f5f6",
+    "100": "#ebebed",
+    "200": "#dadadf",
+    "300": "#c3c3c9",
+    "400": "#aaaab1",
+    "500": "#919199",
+    "600": "#76767e",
+    "700": "#5d5d63",
+    "800": "#3f3f46",
+    "900": "#2d2d31",
+    "950": "#1a1a1d"
+   },
+   "neutral": {
+    "50": "#f4f4fa",
+    "100": "#eaeaf4",
+    "200": "#dadae4",
+    "300": "#c3c3cd",
+    "400": "#aaaab3",
+    "500": "#91919b",
+    "600": "#76767f",
+    "700": "#5d5d65",
+    "800": "#44444c",
+    "900": "#2d2d35",
+    "950": "#1a1a1e"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f4fa",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#eaeaf4",
+    "text.primary": "#1a1a1e",
+    "text.secondary": "#5d5d65",
+    "border.subtle": "#dadae4",
+    "border.control": "#76767f",
+    "accent.DEFAULT": "#3f3f46",
+    "accent.ink": "#3f3f46",
+    "accent.subtle": "#f5f5f6",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#3f3f46"
+   },
+   "dark": {
+    "surface.base": "#1a1a1e",
+    "surface.raised": "#2d2d35",
+    "surface.sunken": "#2d2d35",
+    "text.primary": "#f4f4fa",
+    "text.secondary": "#c3c3cd",
+    "border.subtle": "#44444c",
+    "border.control": "#91919b",
+    "accent.DEFAULT": "#3f3f46",
+    "accent.ink": "#aaaab1",
+    "accent.subtle": "#2d2d31",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#aaaab1"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "neutral",
+  "slug": "p-neutral",
+  "name": "Neutral",
+  "group": "Neutral bases",
+  "note": "True neutral grey, no tint.",
+  "seeds": {
+   "primary": "#404040",
+   "neutral": "#737373"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f5f5f5",
+    "100": "#ebebeb",
+    "200": "#dbdbdb",
+    "300": "#c4c4c4",
+    "400": "#ababab",
+    "500": "#929292",
+    "600": "#777777",
+    "700": "#5d5d5d",
+    "800": "#404040",
+    "900": "#2e2e2e",
+    "950": "#1b1b1b"
+   },
+   "neutral": {
+    "50": "#f5f5f5",
+    "100": "#ebebeb",
+    "200": "#dbdbdb",
+    "300": "#c4c4c4",
+    "400": "#ababab",
+    "500": "#929292",
+    "600": "#777777",
+    "700": "#5d5d5d",
+    "800": "#454545",
+    "900": "#2e2e2e",
+    "950": "#1b1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f5f5f5",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#ebebeb",
+    "text.primary": "#1b1b1b",
+    "text.secondary": "#5d5d5d",
+    "border.subtle": "#dbdbdb",
+    "border.control": "#777777",
+    "accent.DEFAULT": "#404040",
+    "accent.ink": "#404040",
+    "accent.subtle": "#f5f5f5",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#404040"
+   },
+   "dark": {
+    "surface.base": "#1b1b1b",
+    "surface.raised": "#2e2e2e",
+    "surface.sunken": "#2e2e2e",
+    "text.primary": "#f5f5f5",
+    "text.secondary": "#c4c4c4",
+    "border.subtle": "#454545",
+    "border.control": "#929292",
+    "accent.DEFAULT": "#404040",
+    "accent.ink": "#ababab",
+    "accent.subtle": "#2e2e2e",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#ababab"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "stone",
+  "slug": "p-stone",
+  "name": "Stone",
+  "group": "Neutral bases",
+  "note": "Warm grey; editorial and soft.",
+  "seeds": {
+   "primary": "#44403c",
+   "neutral": "#78716c"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f6f5f4",
+    "100": "#ecebe9",
+    "200": "#dddad8",
+    "300": "#c7c3c0",
+    "400": "#aeaaa6",
+    "500": "#96918d",
+    "600": "#7b7672",
+    "700": "#615d59",
+    "800": "#44403c",
+    "900": "#2f2d2b",
+    "950": "#1c1a19"
+   },
+   "neutral": {
+    "50": "#f8f4f1",
+    "100": "#f1e9e4",
+    "200": "#e1d9d3",
+    "300": "#cac2bd",
+    "400": "#b1a9a4",
+    "500": "#98918b",
+    "600": "#7d7671",
+    "700": "#635c57",
+    "800": "#4a443f",
+    "900": "#322c28",
+    "950": "#1d1a18"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f8f4f1",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#f1e9e4",
+    "text.primary": "#1d1a18",
+    "text.secondary": "#635c57",
+    "border.subtle": "#e1d9d3",
+    "border.control": "#7d7671",
+    "accent.DEFAULT": "#44403c",
+    "accent.ink": "#44403c",
+    "accent.subtle": "#f6f5f4",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#44403c"
+   },
+   "dark": {
+    "surface.base": "#1d1a18",
+    "surface.raised": "#322c28",
+    "surface.sunken": "#322c28",
+    "text.primary": "#f8f4f1",
+    "text.secondary": "#cac2bd",
+    "border.subtle": "#4a443f",
+    "border.control": "#98918b",
+    "accent.DEFAULT": "#44403c",
+    "accent.ink": "#aeaaa6",
+    "accent.subtle": "#2f2d2b",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#aeaaa6"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "red",
+  "slug": "p-red",
+  "name": "Red",
+  "group": "Accent hues",
+  "note": "Urgent, bold, financial-risk red.",
+  "seeds": {
+   "primary": "#dc2626"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#fff2f0",
+    "100": "#ffe4e0",
+    "200": "#ffcdc6",
+    "300": "#ffaba0",
+    "400": "#ff7f72",
+    "500": "#fa4941",
+    "600": "#dc2626",
+    "700": "#b00e14",
+    "800": "#85060c",
+    "900": "#5b0306",
+    "950": "#3a0002"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#dc2626",
+    "accent.ink": "#b00e14",
+    "accent.subtle": "#fff2f0",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#b00e14"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#dc2626",
+    "accent.ink": "#ff7f72",
+    "accent.subtle": "#5b0306",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#ff7f72"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "orange",
+  "slug": "p-orange",
+  "name": "Orange",
+  "group": "Accent hues",
+  "note": "Energetic and friendly.",
+  "seeds": {
+   "primary": "#ea580c"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#fff2ed",
+    "100": "#ffe5db",
+    "200": "#ffcebc",
+    "300": "#ffad8f",
+    "400": "#ff8252",
+    "500": "#ea580c",
+    "600": "#c74800",
+    "700": "#9e3700",
+    "800": "#772700",
+    "900": "#521800",
+    "950": "#330c00"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#ea580c",
+    "accent.ink": "#9e3700",
+    "accent.subtle": "#fff2ed",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#9e3700"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#ea580c",
+    "accent.ink": "#ff8252",
+    "accent.subtle": "#521800",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#ff8252"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "amber",
+  "slug": "p-amber",
+  "name": "Amber",
+  "group": "Accent hues",
+  "note": "Warm, attention-friendly gold.",
+  "seeds": {
+   "primary": "#d97706"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#fff3ea",
+    "100": "#ffe6d4",
+    "200": "#ffd0ad",
+    "300": "#fbb278",
+    "400": "#ec9245",
+    "500": "#d97706",
+    "600": "#b15f00",
+    "700": "#8c4a00",
+    "800": "#693600",
+    "900": "#472300",
+    "950": "#2c1300"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#d97706",
+    "accent.ink": "#8c4a00",
+    "accent.subtle": "#fff3ea",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#8c4a00"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#d97706",
+    "accent.ink": "#ec9245",
+    "accent.subtle": "#472300",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#ec9245"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "yellow",
+  "slug": "p-yellow",
+  "name": "Yellow",
+  "group": "Accent hues",
+  "note": "Bright; uses a dark label automatically.",
+  "seeds": {
+   "primary": "#eab308"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#fef4e0",
+    "100": "#faeac7",
+    "200": "#f3d89d",
+    "300": "#eab308",
+    "400": "#d3a31c",
+    "500": "#b78b00",
+    "600": "#967100",
+    "700": "#765900",
+    "800": "#584100",
+    "900": "#3b2b00",
+    "950": "#241900"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#eab308",
+    "accent.ink": "#765900",
+    "accent.subtle": "#fef4e0",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#765900"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#eab308",
+    "accent.ink": "#eab308",
+    "accent.subtle": "#3b2b00",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#eab308"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "lime",
+  "slug": "p-lime",
+  "name": "Lime",
+  "group": "Accent hues",
+  "note": "Fresh, eco, growth.",
+  "seeds": {
+   "primary": "#65a30d"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#edfae4",
+    "100": "#dff3cf",
+    "200": "#c6e7ab",
+    "300": "#a6d57d",
+    "400": "#85bf4c",
+    "500": "#65a30d",
+    "600": "#538900",
+    "700": "#406c00",
+    "800": "#2e5000",
+    "900": "#1e3600",
+    "950": "#102000"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#65a30d",
+    "accent.ink": "#406c00",
+    "accent.subtle": "#edfae4",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#406c00"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#65a30d",
+    "accent.ink": "#85bf4c",
+    "accent.subtle": "#1e3600",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#85bf4c"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "green",
+  "slug": "p-green",
+  "name": "Green",
+  "group": "Accent hues",
+  "note": "Success, finance, health.",
+  "seeds": {
+   "primary": "#16a34a"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#e8fbea",
+    "100": "#d4f5d9",
+    "200": "#b4ebbd",
+    "300": "#89da98",
+    "400": "#5ac574",
+    "500": "#16a34a",
+    "600": "#00903e",
+    "700": "#00712f",
+    "800": "#005421",
+    "900": "#003914",
+    "950": "#002209"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#16a34a",
+    "accent.ink": "#00712f",
+    "accent.subtle": "#e8fbea",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#00712f"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#16a34a",
+    "accent.ink": "#5ac574",
+    "accent.subtle": "#003914",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#5ac574"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "emerald",
+  "slug": "p-emerald",
+  "name": "Emerald",
+  "group": "Accent hues",
+  "note": "Calm green with a blue lean.",
+  "seeds": {
+   "primary": "#059669"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#e8faf1",
+    "100": "#d5f4e4",
+    "200": "#b5e9cf",
+    "300": "#8bd7b3",
+    "400": "#5dc196",
+    "500": "#2faa7c",
+    "600": "#059669",
+    "700": "#006f4d",
+    "800": "#005338",
+    "900": "#003824",
+    "950": "#002114"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#059669",
+    "accent.ink": "#006f4d",
+    "accent.subtle": "#e8faf1",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#006f4d"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#059669",
+    "accent.ink": "#2faa7c",
+    "accent.subtle": "#003824",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#2faa7c"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "teal",
+  "slug": "p-teal",
+  "name": "Teal",
+  "group": "Accent hues",
+  "note": "Trustworthy blue-green.",
+  "seeds": {
+   "primary": "#0d9488"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#e8faf7",
+    "100": "#d5f2ee",
+    "200": "#b5e7df",
+    "300": "#8bd4ca",
+    "400": "#5dbeb2",
+    "500": "#30a79a",
+    "600": "#0d9488",
+    "700": "#006d64",
+    "800": "#00514a",
+    "900": "#003631",
+    "950": "#00201d"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#0d9488",
+    "accent.ink": "#006d64",
+    "accent.subtle": "#e8faf7",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#006d64"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#0d9488",
+    "accent.ink": "#30a79a",
+    "accent.subtle": "#003631",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#30a79a"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "cyan",
+  "slug": "p-cyan",
+  "name": "Cyan",
+  "group": "Accent hues",
+  "note": "Clear, technical, fresh.",
+  "seeds": {
+   "primary": "#0891b2"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#e7f9ff",
+    "100": "#d4f1fb",
+    "200": "#b3e4f5",
+    "300": "#88d0e9",
+    "400": "#5ab9d8",
+    "500": "#2aa1c2",
+    "600": "#0891b2",
+    "700": "#006881",
+    "800": "#004d60",
+    "900": "#003441",
+    "950": "#001f28"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#0891b2",
+    "accent.ink": "#006881",
+    "accent.subtle": "#e7f9ff",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#006881"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#0891b2",
+    "accent.ink": "#2aa1c2",
+    "accent.subtle": "#001f28",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#2aa1c2"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "sky",
+  "slug": "p-sky",
+  "name": "Sky",
+  "group": "Accent hues",
+  "note": "Open, light, approachable blue.",
+  "seeds": {
+   "primary": "#0284c7"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#ecf7ff",
+    "100": "#daeeff",
+    "200": "#b9e0ff",
+    "300": "#89ccff",
+    "400": "#5bb4f3",
+    "500": "#2f9bdf",
+    "600": "#0284c7",
+    "700": "#006398",
+    "800": "#004972",
+    "900": "#00314e",
+    "950": "#001d30"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#0284c7",
+    "accent.ink": "#006398",
+    "accent.subtle": "#ecf7ff",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#006398"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#0284c7",
+    "accent.ink": "#5bb4f3",
+    "accent.subtle": "#00314e",
+    "on-accent": "#111111",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#5bb4f3"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "blue",
+  "slug": "p-blue",
+  "name": "Blue",
+  "group": "Accent hues",
+  "note": "The classic product blue.",
+  "seeds": {
+   "primary": "#2563eb"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f0f5ff",
+    "100": "#e1ecff",
+    "200": "#c8dbff",
+    "300": "#a5c4ff",
+    "400": "#7da9ff",
+    "500": "#548cff",
+    "600": "#2563eb",
+    "700": "#1d52c6",
+    "800": "#133c96",
+    "900": "#0a2768",
+    "950": "#031644"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#2563eb",
+    "accent.ink": "#1d52c6",
+    "accent.subtle": "#f0f5ff",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#1d52c6"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#2563eb",
+    "accent.ink": "#7da9ff",
+    "accent.subtle": "#0a2768",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#7da9ff"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "indigo",
+  "slug": "p-indigo",
+  "name": "Indigo",
+  "group": "Accent hues",
+  "note": "Deep, confident blue-violet.",
+  "seeds": {
+   "primary": "#4f46e5"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f2f4ff",
+    "100": "#e6eaff",
+    "200": "#d1d8ff",
+    "300": "#b5bfff",
+    "400": "#96a2ff",
+    "500": "#7982ff",
+    "600": "#5d5bfa",
+    "700": "#4f46e5",
+    "800": "#35319a",
+    "900": "#22206b",
+    "950": "#121046"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#4f46e5",
+    "accent.ink": "#4f46e5",
+    "accent.subtle": "#f2f4ff",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#4f46e5"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#4f46e5",
+    "accent.ink": "#96a2ff",
+    "accent.subtle": "#22206b",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#96a2ff"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "violet",
+  "slug": "p-violet",
+  "name": "Violet",
+  "group": "Accent hues",
+  "note": "Creative, modern.",
+  "seeds": {
+   "primary": "#7c3aed"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f5f3ff",
+    "100": "#ebe8ff",
+    "200": "#dcd4ff",
+    "300": "#c6b8ff",
+    "400": "#af97ff",
+    "500": "#9a73ff",
+    "600": "#7c3aed",
+    "700": "#6931c9",
+    "800": "#4e2299",
+    "900": "#34156a",
+    "950": "#1f0845"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#7c3aed",
+    "accent.ink": "#7c3aed",
+    "accent.subtle": "#f5f3ff",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#7c3aed"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#7c3aed",
+    "accent.ink": "#af97ff",
+    "accent.subtle": "#34156a",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#af97ff"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "purple",
+  "slug": "p-purple",
+  "name": "Purple",
+  "group": "Accent hues",
+  "note": "Premium and expressive.",
+  "seeds": {
+   "primary": "#9333ea"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f7f3ff",
+    "100": "#efe6ff",
+    "200": "#e3d1ff",
+    "300": "#d1b3ff",
+    "400": "#bf8fff",
+    "500": "#ae66ff",
+    "600": "#9333ea",
+    "700": "#7825c2",
+    "800": "#5a1893",
+    "900": "#3d0e65",
+    "950": "#250442"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#9333ea",
+    "accent.ink": "#9333ea",
+    "accent.subtle": "#f7f3ff",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#9333ea"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#9333ea",
+    "accent.ink": "#bf8fff",
+    "accent.subtle": "#3d0e65",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#bf8fff"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "fuchsia",
+  "slug": "p-fuchsia",
+  "name": "Fuchsia",
+  "group": "Accent hues",
+  "note": "Loud, playful.",
+  "seeds": {
+   "primary": "#c026d3"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#fef0ff",
+    "100": "#fce1ff",
+    "200": "#f9c6ff",
+    "300": "#f49fff",
+    "400": "#ed6dfd",
+    "500": "#d744ea",
+    "600": "#c026d3",
+    "700": "#9402a5",
+    "800": "#6f007c",
+    "900": "#4c0055",
+    "950": "#2f0035"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#c026d3",
+    "accent.ink": "#9402a5",
+    "accent.subtle": "#fef0ff",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#9402a5"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#c026d3",
+    "accent.ink": "#ed6dfd",
+    "accent.subtle": "#4c0055",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#ed6dfd"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "pink",
+  "slug": "p-pink",
+  "name": "Pink",
+  "group": "Accent hues",
+  "note": "Warm, human, consumer.",
+  "seeds": {
+   "primary": "#db2777"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#fff1f4",
+    "100": "#ffe3ea",
+    "200": "#ffcad8",
+    "300": "#ffa6c0",
+    "400": "#ff76a5",
+    "500": "#f4448b",
+    "600": "#db2777",
+    "700": "#aa0558",
+    "800": "#810141",
+    "900": "#58012b",
+    "950": "#380018"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#db2777",
+    "accent.ink": "#aa0558",
+    "accent.subtle": "#fff1f4",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#aa0558"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#db2777",
+    "accent.ink": "#ff76a5",
+    "accent.subtle": "#58012b",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#ff76a5"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "rose",
+  "slug": "p-rose",
+  "name": "Rose",
+  "group": "Accent hues",
+  "note": "Passionate red-pink.",
+  "seeds": {
+   "primary": "#e11d48"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#fff1f1",
+    "100": "#ffe4e4",
+    "200": "#ffcccd",
+    "300": "#ffa9ac",
+    "400": "#ff7c85",
+    "500": "#fc405d",
+    "600": "#e11d48",
+    "700": "#b00032",
+    "800": "#850024",
+    "900": "#5c0016",
+    "950": "#3a000a"
+   },
+   "neutral": {
+    "50": "#f4f5f6",
+    "100": "#e9ebee",
+    "200": "#d9dbdd",
+    "300": "#c2c4c7",
+    "400": "#a9abad",
+    "500": "#919295",
+    "600": "#76777a",
+    "700": "#5c5e60",
+    "800": "#444547",
+    "900": "#2d2e30",
+    "950": "#1a1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f5f6",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e9ebee",
+    "text.primary": "#1a1b1b",
+    "text.secondary": "#5c5e60",
+    "border.subtle": "#d9dbdd",
+    "border.control": "#76777a",
+    "accent.DEFAULT": "#e11d48",
+    "accent.ink": "#b00032",
+    "accent.subtle": "#fff1f1",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#b00032"
+   },
+   "dark": {
+    "surface.base": "#1a1b1b",
+    "surface.raised": "#2d2e30",
+    "surface.sunken": "#2d2e30",
+    "text.primary": "#f4f5f6",
+    "text.secondary": "#c2c4c7",
+    "border.subtle": "#444547",
+    "border.control": "#919295",
+    "accent.DEFAULT": "#e11d48",
+    "accent.ink": "#ff7c85",
+    "accent.subtle": "#5c0016",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#ff7c85"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "ken-red",
+  "slug": "p-ken-red",
+  "name": "Ken Red",
+  "group": "Curated",
+  "note": "Ken Research: red used for calls to action only, on a warm neutral.",
+  "seeds": {
+   "primary": "#b01f24",
+   "neutral": "#8a7f7a"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#fff2f0",
+    "100": "#ffe4e1",
+    "200": "#ffcdc7",
+    "300": "#ffaba2",
+    "400": "#ff7e76",
+    "500": "#ec5c56",
+    "600": "#cc3d3b",
+    "700": "#b01f24",
+    "800": "#7c1d1d",
+    "900": "#551211",
+    "950": "#360607"
+   },
+   "neutral": {
+    "50": "#faf4f1",
+    "100": "#f5e8e3",
+    "200": "#e4d8d2",
+    "300": "#cdc1bc",
+    "400": "#b4a8a3",
+    "500": "#9b908a",
+    "600": "#807570",
+    "700": "#655b56",
+    "800": "#4c433e",
+    "900": "#352c27",
+    "950": "#1e1a18"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#faf4f1",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#f5e8e3",
+    "text.primary": "#1e1a18",
+    "text.secondary": "#655b56",
+    "border.subtle": "#e4d8d2",
+    "border.control": "#807570",
+    "accent.DEFAULT": "#b01f24",
+    "accent.ink": "#b01f24",
+    "accent.subtle": "#fff2f0",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#b01f24"
+   },
+   "dark": {
+    "surface.base": "#1e1a18",
+    "surface.raised": "#352c27",
+    "surface.sunken": "#352c27",
+    "text.primary": "#faf4f1",
+    "text.secondary": "#cdc1bc",
+    "border.subtle": "#4c433e",
+    "border.control": "#9b908a",
+    "accent.DEFAULT": "#b01f24",
+    "accent.ink": "#ff7e76",
+    "accent.subtle": "#551211",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#ff7e76"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "corporate-navy",
+  "slug": "p-corporate-navy",
+  "name": "Corporate Navy",
+  "group": "Curated",
+  "note": "Consulting and enterprise: navy with a slate neutral.",
+  "seeds": {
+   "primary": "#1e3a8a",
+   "secondary": "#0f172a",
+   "neutral": "#64748b"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f1f5ff",
+    "100": "#e2ebff",
+    "200": "#cadbff",
+    "300": "#a8c3ff",
+    "400": "#85a8f9",
+    "500": "#698ee6",
+    "600": "#5073c8",
+    "700": "#3c59a1",
+    "800": "#1e3a8a",
+    "900": "#1b2b54",
+    "950": "#0d1935"
+   },
+   "neutral": {
+    "50": "#f1f5fc",
+    "100": "#e3ecf9",
+    "200": "#d3dbe8",
+    "300": "#bcc5d1",
+    "400": "#a3acb8",
+    "500": "#8b939f",
+    "600": "#707883",
+    "700": "#575e69",
+    "800": "#3e4650",
+    "900": "#282e38",
+    "950": "#181b1f"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f1f5fc",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e3ecf9",
+    "text.primary": "#181b1f",
+    "text.secondary": "#575e69",
+    "border.subtle": "#d3dbe8",
+    "border.control": "#707883",
+    "accent.DEFAULT": "#1e3a8a",
+    "accent.ink": "#1e3a8a",
+    "accent.subtle": "#f1f5ff",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#1e3a8a"
+   },
+   "dark": {
+    "surface.base": "#181b1f",
+    "surface.raised": "#282e38",
+    "surface.sunken": "#282e38",
+    "text.primary": "#f1f5fc",
+    "text.secondary": "#bcc5d1",
+    "border.subtle": "#3e4650",
+    "border.control": "#8b939f",
+    "accent.DEFAULT": "#1e3a8a",
+    "accent.ink": "#85a8f9",
+    "accent.subtle": "#1b2b54",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#85a8f9"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "forest",
+  "slug": "p-forest",
+  "name": "Forest",
+  "group": "Curated",
+  "note": "Natural, grounded; warm stone neutral.",
+  "seeds": {
+   "primary": "#166534",
+   "neutral": "#78716c"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#ecf9ef",
+    "100": "#dcf2e0",
+    "200": "#c2e6c9",
+    "300": "#9fd3ab",
+    "400": "#7bbd8c",
+    "500": "#5ca570",
+    "600": "#408956",
+    "700": "#166534",
+    "800": "#20512f",
+    "900": "#13361e",
+    "950": "#08200f"
+   },
+   "neutral": {
+    "50": "#f8f4f1",
+    "100": "#f1e9e4",
+    "200": "#e1d9d3",
+    "300": "#cac2bd",
+    "400": "#b1a9a4",
+    "500": "#98918b",
+    "600": "#7d7671",
+    "700": "#635c57",
+    "800": "#4a443f",
+    "900": "#322c28",
+    "950": "#1d1a18"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f8f4f1",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#f1e9e4",
+    "text.primary": "#1d1a18",
+    "text.secondary": "#635c57",
+    "border.subtle": "#e1d9d3",
+    "border.control": "#7d7671",
+    "accent.DEFAULT": "#166534",
+    "accent.ink": "#166534",
+    "accent.subtle": "#ecf9ef",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#166534"
+   },
+   "dark": {
+    "surface.base": "#1d1a18",
+    "surface.raised": "#322c28",
+    "surface.sunken": "#322c28",
+    "text.primary": "#f8f4f1",
+    "text.secondary": "#cac2bd",
+    "border.subtle": "#4a443f",
+    "border.control": "#98918b",
+    "accent.DEFAULT": "#166534",
+    "accent.ink": "#5ca570",
+    "accent.subtle": "#08200f",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#5ca570"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "ocean",
+  "slug": "p-ocean",
+  "name": "Ocean",
+  "group": "Curated",
+  "note": "Teal-blue with a bright blue accent.",
+  "seeds": {
+   "primary": "#0e7490",
+   "accent": "#2563eb",
+   "neutral": "#64748b"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#eaf8fe",
+    "100": "#d8f0f9",
+    "200": "#bae2f2",
+    "300": "#94cee4",
+    "400": "#6cb7d2",
+    "500": "#479fbc",
+    "600": "#2783a0",
+    "700": "#0e7490",
+    "800": "#0d4d5f",
+    "900": "#063341",
+    "950": "#011e28"
+   },
+   "neutral": {
+    "50": "#f1f5fc",
+    "100": "#e3ecf9",
+    "200": "#d3dbe8",
+    "300": "#bcc5d1",
+    "400": "#a3acb8",
+    "500": "#8b939f",
+    "600": "#707883",
+    "700": "#575e69",
+    "800": "#3e4650",
+    "900": "#282e38",
+    "950": "#181b1f"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f1f5fc",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e3ecf9",
+    "text.primary": "#181b1f",
+    "text.secondary": "#575e69",
+    "border.subtle": "#d3dbe8",
+    "border.control": "#707883",
+    "accent.DEFAULT": "#2563eb",
+    "accent.ink": "#1d52c6",
+    "accent.subtle": "#f0f5ff",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#1d52c6"
+   },
+   "dark": {
+    "surface.base": "#181b1f",
+    "surface.raised": "#282e38",
+    "surface.sunken": "#282e38",
+    "text.primary": "#f1f5fc",
+    "text.secondary": "#bcc5d1",
+    "border.subtle": "#3e4650",
+    "border.control": "#8b939f",
+    "accent.DEFAULT": "#2563eb",
+    "accent.ink": "#7da9ff",
+    "accent.subtle": "#0a2768",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#7da9ff"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "sunset",
+  "slug": "p-sunset",
+  "name": "Sunset",
+  "group": "Curated",
+  "note": "Orange primary with a pink accent.",
+  "seeds": {
+   "primary": "#ea580c",
+   "accent": "#db2777",
+   "neutral": "#78716c"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#fff2ed",
+    "100": "#ffe5db",
+    "200": "#ffcebc",
+    "300": "#ffad8f",
+    "400": "#ff8252",
+    "500": "#ea580c",
+    "600": "#c74800",
+    "700": "#9e3700",
+    "800": "#772700",
+    "900": "#521800",
+    "950": "#330c00"
+   },
+   "neutral": {
+    "50": "#f8f4f1",
+    "100": "#f1e9e4",
+    "200": "#e1d9d3",
+    "300": "#cac2bd",
+    "400": "#b1a9a4",
+    "500": "#98918b",
+    "600": "#7d7671",
+    "700": "#635c57",
+    "800": "#4a443f",
+    "900": "#322c28",
+    "950": "#1d1a18"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f8f4f1",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#f1e9e4",
+    "text.primary": "#1d1a18",
+    "text.secondary": "#635c57",
+    "border.subtle": "#e1d9d3",
+    "border.control": "#7d7671",
+    "accent.DEFAULT": "#db2777",
+    "accent.ink": "#aa0558",
+    "accent.subtle": "#fff1f4",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#aa0558"
+   },
+   "dark": {
+    "surface.base": "#1d1a18",
+    "surface.raised": "#322c28",
+    "surface.sunken": "#322c28",
+    "text.primary": "#f8f4f1",
+    "text.secondary": "#cac2bd",
+    "border.subtle": "#4a443f",
+    "border.control": "#98918b",
+    "accent.DEFAULT": "#db2777",
+    "accent.ink": "#ff76a5",
+    "accent.subtle": "#58012b",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#ff76a5"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "plum",
+  "slug": "p-plum",
+  "name": "Plum",
+  "group": "Curated",
+  "note": "Deep purple with a pink accent.",
+  "seeds": {
+   "primary": "#6b21a8",
+   "accent": "#db2777",
+   "neutral": "#71717a"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f7f2ff",
+    "100": "#f0e6ff",
+    "200": "#e4d1ff",
+    "300": "#d3b2ff",
+    "400": "#c18eff",
+    "500": "#ad6cf3",
+    "600": "#914fd4",
+    "700": "#6b21a8",
+    "800": "#562982",
+    "900": "#3a1a59",
+    "950": "#230c39"
+   },
+   "neutral": {
+    "50": "#f4f4fa",
+    "100": "#eaeaf4",
+    "200": "#dadae4",
+    "300": "#c3c3cd",
+    "400": "#aaaab3",
+    "500": "#91919b",
+    "600": "#76767f",
+    "700": "#5d5d65",
+    "800": "#44444c",
+    "900": "#2d2d35",
+    "950": "#1a1a1e"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f4f4fa",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#eaeaf4",
+    "text.primary": "#1a1a1e",
+    "text.secondary": "#5d5d65",
+    "border.subtle": "#dadae4",
+    "border.control": "#76767f",
+    "accent.DEFAULT": "#db2777",
+    "accent.ink": "#aa0558",
+    "accent.subtle": "#fff1f4",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#aa0558"
+   },
+   "dark": {
+    "surface.base": "#1a1a1e",
+    "surface.raised": "#2d2d35",
+    "surface.sunken": "#2d2d35",
+    "text.primary": "#f4f4fa",
+    "text.secondary": "#c3c3cd",
+    "border.subtle": "#44444c",
+    "border.control": "#91919b",
+    "accent.DEFAULT": "#db2777",
+    "accent.ink": "#ff76a5",
+    "accent.subtle": "#58012b",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#ff76a5"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "midnight",
+  "slug": "p-midnight",
+  "name": "Midnight",
+  "group": "Curated",
+  "note": "Indigo on cool slate; great in dark mode.",
+  "seeds": {
+   "primary": "#4338ca",
+   "neutral": "#64748b"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f2f4ff",
+    "100": "#e6eaff",
+    "200": "#d1d8ff",
+    "300": "#b5bfff",
+    "400": "#96a2ff",
+    "500": "#7982ff",
+    "600": "#5e5ff1",
+    "700": "#4338ca",
+    "800": "#353495",
+    "900": "#222267",
+    "950": "#131243"
+   },
+   "neutral": {
+    "50": "#f1f5fc",
+    "100": "#e3ecf9",
+    "200": "#d3dbe8",
+    "300": "#bcc5d1",
+    "400": "#a3acb8",
+    "500": "#8b939f",
+    "600": "#707883",
+    "700": "#575e69",
+    "800": "#3e4650",
+    "900": "#282e38",
+    "950": "#181b1f"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f1f5fc",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e3ecf9",
+    "text.primary": "#181b1f",
+    "text.secondary": "#575e69",
+    "border.subtle": "#d3dbe8",
+    "border.control": "#707883",
+    "accent.DEFAULT": "#4338ca",
+    "accent.ink": "#4338ca",
+    "accent.subtle": "#f2f4ff",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#4338ca"
+   },
+   "dark": {
+    "surface.base": "#181b1f",
+    "surface.raised": "#282e38",
+    "surface.sunken": "#282e38",
+    "text.primary": "#f1f5fc",
+    "text.secondary": "#bcc5d1",
+    "border.subtle": "#3e4650",
+    "border.control": "#8b939f",
+    "accent.DEFAULT": "#4338ca",
+    "accent.ink": "#96a2ff",
+    "accent.subtle": "#222267",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#96a2ff"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "sand",
+  "slug": "p-sand",
+  "name": "Sand",
+  "group": "Curated",
+  "note": "Earthy gold on warm stone; luxury and lifestyle.",
+  "seeds": {
+   "primary": "#a16207",
+   "neutral": "#78716c"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#fff3e7",
+    "100": "#fde7d2",
+    "200": "#f7d4b1",
+    "300": "#ebb987",
+    "400": "#d99d5d",
+    "500": "#c38237",
+    "600": "#a16207",
+    "700": "#854f01",
+    "800": "#633a00",
+    "900": "#442600",
+    "950": "#291500"
+   },
+   "neutral": {
+    "50": "#f8f4f1",
+    "100": "#f1e9e4",
+    "200": "#e1d9d3",
+    "300": "#cac2bd",
+    "400": "#b1a9a4",
+    "500": "#98918b",
+    "600": "#7d7671",
+    "700": "#635c57",
+    "800": "#4a443f",
+    "900": "#322c28",
+    "950": "#1d1a18"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f8f4f1",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#f1e9e4",
+    "text.primary": "#1d1a18",
+    "text.secondary": "#635c57",
+    "border.subtle": "#e1d9d3",
+    "border.control": "#7d7671",
+    "accent.DEFAULT": "#a16207",
+    "accent.ink": "#854f01",
+    "accent.subtle": "#fff3e7",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#854f01"
+   },
+   "dark": {
+    "surface.base": "#1d1a18",
+    "surface.raised": "#322c28",
+    "surface.sunken": "#322c28",
+    "text.primary": "#f8f4f1",
+    "text.secondary": "#cac2bd",
+    "border.subtle": "#4a443f",
+    "border.control": "#98918b",
+    "accent.DEFAULT": "#a16207",
+    "accent.ink": "#d99d5d",
+    "accent.subtle": "#442600",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#d99d5d"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "mono",
+  "slug": "p-mono",
+  "name": "Mono",
+  "group": "Curated",
+  "note": "Black and white; lets content carry the colour.",
+  "seeds": {
+   "primary": "#111111",
+   "neutral": "#737373"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f5f5f5",
+    "100": "#ebebeb",
+    "200": "#dbdbdb",
+    "300": "#c4c4c4",
+    "400": "#ababab",
+    "500": "#929292",
+    "600": "#777777",
+    "700": "#5d5d5d",
+    "800": "#454545",
+    "900": "#2e2e2e",
+    "950": "#111111"
+   },
+   "neutral": {
+    "50": "#f5f5f5",
+    "100": "#ebebeb",
+    "200": "#dbdbdb",
+    "300": "#c4c4c4",
+    "400": "#ababab",
+    "500": "#929292",
+    "600": "#777777",
+    "700": "#5d5d5d",
+    "800": "#454545",
+    "900": "#2e2e2e",
+    "950": "#1b1b1b"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f5f5f5",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#ebebeb",
+    "text.primary": "#1b1b1b",
+    "text.secondary": "#5d5d5d",
+    "border.subtle": "#dbdbdb",
+    "border.control": "#777777",
+    "accent.DEFAULT": "#111111",
+    "accent.ink": "#111111",
+    "accent.subtle": "#f5f5f5",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#111111"
+   },
+   "dark": {
+    "surface.base": "#1b1b1b",
+    "surface.raised": "#2e2e2e",
+    "surface.sunken": "#2e2e2e",
+    "text.primary": "#f5f5f5",
+    "text.secondary": "#c4c4c4",
+    "border.subtle": "#454545",
+    "border.control": "#929292",
+    "accent.DEFAULT": "#111111",
+    "accent.ink": "#ababab",
+    "accent.subtle": "#2e2e2e",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#ababab"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "fintech",
+  "slug": "p-fintech",
+  "name": "Fintech",
+  "group": "Curated",
+  "note": "Bold blue with a navy secondary; sharp, numeric, serious.",
+  "seeds": {
+   "primary": "#1f4fd8",
+   "secondary": "#0b1f4b"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f0f5ff",
+    "100": "#e2ebff",
+    "200": "#c9dbff",
+    "300": "#a7c4ff",
+    "400": "#80a8ff",
+    "500": "#5a8bff",
+    "600": "#3469f4",
+    "700": "#1f4fd8",
+    "800": "#193b96",
+    "900": "#0e2768",
+    "950": "#051544"
+   },
+   "neutral": {
+    "50": "#f2f5fc",
+    "100": "#e4ebf9",
+    "200": "#d4dbe8",
+    "300": "#bdc4d2",
+    "400": "#a4abb8",
+    "500": "#8c929f",
+    "600": "#717884",
+    "700": "#585e69",
+    "800": "#3f4550",
+    "900": "#292e38",
+    "950": "#181b1f"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f2f5fc",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e4ebf9",
+    "text.primary": "#181b1f",
+    "text.secondary": "#585e69",
+    "border.subtle": "#d4dbe8",
+    "border.control": "#717884",
+    "accent.DEFAULT": "#1f4fd8",
+    "accent.ink": "#1f4fd8",
+    "accent.subtle": "#f0f5ff",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#1f4fd8"
+   },
+   "dark": {
+    "surface.base": "#181b1f",
+    "surface.raised": "#292e38",
+    "surface.sunken": "#292e38",
+    "text.primary": "#f2f5fc",
+    "text.secondary": "#bdc4d2",
+    "border.subtle": "#3f4550",
+    "border.control": "#8c929f",
+    "accent.DEFAULT": "#1f4fd8",
+    "accent.ink": "#80a8ff",
+    "accent.subtle": "#0e2768",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#80a8ff"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "material-purple",
+  "slug": "p-material-purple",
+  "name": "Material Purple",
+  "group": "Material seeds",
+  "note": "Material You baseline seed (purple).",
+  "seeds": {
+   "primary": "#6750a4",
+   "neutral": "#79747e"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f5f3ff",
+    "100": "#ece8ff",
+    "200": "#dcd4ff",
+    "300": "#c7b9fc",
+    "400": "#af9cee",
+    "500": "#9781da",
+    "600": "#7c66bc",
+    "700": "#6750a4",
+    "800": "#483972",
+    "900": "#30254e",
+    "950": "#1c1531"
+   },
+   "neutral": {
+    "50": "#f7f4f9",
+    "100": "#eee8f4",
+    "200": "#ded8e3",
+    "300": "#c7c1cc",
+    "400": "#aea8b3",
+    "500": "#95909a",
+    "600": "#7a757f",
+    "700": "#605b65",
+    "800": "#47434c",
+    "900": "#302c34",
+    "950": "#1c1a1e"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f7f4f9",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#eee8f4",
+    "text.primary": "#1c1a1e",
+    "text.secondary": "#605b65",
+    "border.subtle": "#ded8e3",
+    "border.control": "#7a757f",
+    "accent.DEFAULT": "#6750a4",
+    "accent.ink": "#6750a4",
+    "accent.subtle": "#f5f3ff",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#6750a4"
+   },
+   "dark": {
+    "surface.base": "#1c1a1e",
+    "surface.raised": "#302c34",
+    "surface.sunken": "#302c34",
+    "text.primary": "#f7f4f9",
+    "text.secondary": "#c7c1cc",
+    "border.subtle": "#47434c",
+    "border.control": "#95909a",
+    "accent.DEFAULT": "#6750a4",
+    "accent.ink": "#af9cee",
+    "accent.subtle": "#30254e",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#af9cee"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "material-green",
+  "slug": "p-material-green",
+  "name": "Material Green",
+  "group": "Material seeds",
+  "note": "Material You green seed.",
+  "seeds": {
+   "primary": "#386a20",
+   "neutral": "#74796d"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#eff9eb",
+    "100": "#e0f1da",
+    "200": "#c9e5be",
+    "300": "#aad29b",
+    "400": "#8abb77",
+    "500": "#6ea359",
+    "600": "#54873e",
+    "700": "#386a20",
+    "800": "#2d4f1f",
+    "900": "#1d3512",
+    "950": "#0f2007"
+   },
+   "neutral": {
+    "50": "#f3f6ef",
+    "100": "#e8eee0",
+    "200": "#d8ddd0",
+    "300": "#c1c6b9",
+    "400": "#a8ada0",
+    "500": "#8f9488",
+    "600": "#757a6e",
+    "700": "#5b6054",
+    "800": "#42473c",
+    "900": "#2b3025",
+    "950": "#191b17"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f3f6ef",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e8eee0",
+    "text.primary": "#191b17",
+    "text.secondary": "#5b6054",
+    "border.subtle": "#d8ddd0",
+    "border.control": "#757a6e",
+    "accent.DEFAULT": "#386a20",
+    "accent.ink": "#386a20",
+    "accent.subtle": "#eff9eb",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#386a20"
+   },
+   "dark": {
+    "surface.base": "#191b17",
+    "surface.raised": "#2b3025",
+    "surface.sunken": "#2b3025",
+    "text.primary": "#f3f6ef",
+    "text.secondary": "#c1c6b9",
+    "border.subtle": "#42473c",
+    "border.control": "#8f9488",
+    "accent.DEFAULT": "#386a20",
+    "accent.ink": "#6ea359",
+    "accent.subtle": "#0f2007",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#6ea359"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ },
+ {
+  "id": "material-blue",
+  "slug": "p-material-blue",
+  "name": "Material Blue",
+  "group": "Material seeds",
+  "note": "Material You blue seed.",
+  "seeds": {
+   "primary": "#0b57d0",
+   "neutral": "#74777f"
+  },
+  "ramps": {
+   "primary": {
+    "50": "#f0f5ff",
+    "100": "#e0ecff",
+    "200": "#c7dcff",
+    "300": "#a3c5ff",
+    "400": "#79aaff",
+    "500": "#4d8eff",
+    "600": "#286fea",
+    "700": "#0b57d0",
+    "800": "#0f3f90",
+    "900": "#082a63",
+    "950": "#021740"
+   },
+   "neutral": {
+    "50": "#f3f5fa",
+    "100": "#e8ebf4",
+    "200": "#d7dbe3",
+    "300": "#c1c4cd",
+    "400": "#a7abb3",
+    "500": "#8f929a",
+    "600": "#74777f",
+    "700": "#5b5d65",
+    "800": "#42454c",
+    "900": "#2b2e34",
+    "950": "#191a1e"
+   }
+  },
+  "roles": {
+   "light": {
+    "surface.base": "#f3f5fa",
+    "surface.raised": "#ffffff",
+    "surface.sunken": "#e8ebf4",
+    "text.primary": "#191a1e",
+    "text.secondary": "#5b5d65",
+    "border.subtle": "#d7dbe3",
+    "border.control": "#74777f",
+    "accent.DEFAULT": "#0b57d0",
+    "accent.ink": "#0b57d0",
+    "accent.subtle": "#f0f5ff",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#0b57d0"
+   },
+   "dark": {
+    "surface.base": "#191a1e",
+    "surface.raised": "#2b2e34",
+    "surface.sunken": "#2b2e34",
+    "text.primary": "#f3f5fa",
+    "text.secondary": "#c1c4cd",
+    "border.subtle": "#42454c",
+    "border.control": "#8f929a",
+    "accent.DEFAULT": "#0b57d0",
+    "accent.ink": "#79aaff",
+    "accent.subtle": "#082a63",
+    "on-accent": "#ffffff",
+    "success": "#16703c",
+    "danger": "#b3261e",
+    "focus": "#79aaff"
+   }
+  },
+  "contrast": {
+   "total": 50,
+   "failing": 0
+  }
+ }
+]

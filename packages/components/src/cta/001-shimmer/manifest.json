@@ -1,0 +1,128 @@
+{
+  "id": "CTA-001",
+  "slug": "shimmer",
+  "name": "Shimmer CTA",
+  "category": "CTA",
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Solid call-to-action with a left-to-right light sweep on hover. Original look: yellow, pill, dark label.",
+  "inspiration": [],
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "shimmer-sweep"
+    ],
+    "params": {
+      "duration": 700,
+      "angle": 105
+    }
+  },
+  "slots": {
+    "label": {
+      "required": true
+    },
+    "iconTrailing": {
+      "required": false
+    }
+  },
+  "props": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ]
+  },
+  "skins": [
+    {
+      "id": "solid-accent",
+      "bind": {
+        "--ds-cta-bg": "color.accent",
+        "--ds-cta-bg-hover": "color.accent.hover",
+        "--ds-cta-fg": "color.on-accent",
+        "--ds-cta-fg-hover": "color.on-accent",
+        "--ds-cta-border": "transparent"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-cta-bg",
+    "--ds-cta-bg-hover",
+    "--ds-cta-fg",
+    "--ds-cta-fg-hover",
+    "--ds-cta-border",
+    "--ds-cta-border-width",
+    "--ds-cta-radius",
+    "--ds-cta-height",
+    "--ds-cta-padding-x",
+    "--ds-cta-font",
+    "--ds-cta-focus",
+    "--ds-cta-fade-duration",
+    "--ds-cta-fade-ease",
+    "--ds-cta-spin-duration",
+    "--ds-cta-shimmer-hl",
+    "--ds-cta-shimmer-duration",
+    "--ds-cta-ease"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [
+      "overflow:clip",
+      "position:relative"
+    ],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "active",
+    "loading",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "sweep is decorative; hover colour change is the only hover-only cue"
+  },
+  "a11y": {
+    "role": "button",
+    "keyboard": [
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state"
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/cta/001-shimmer",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "button",
+      "shimmer",
+      "premium",
+      "hero"
+    ],
+    "interaction": [
+      "hover-press"
+    ],
+    "useCases": [
+      "Primary call to action on a landing page",
+      "Draw the eye to one main action"
+    ],
+    "avoidWhen": [
+      "Many buttons on one screen"
+    ],
+    "pairsWith": [
+      "NAV-006",
+      "CRD-004"
+    ],
+    "effects": "subtle"
+  }
+}

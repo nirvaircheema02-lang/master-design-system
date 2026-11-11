@@ -1,0 +1,10 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-tbl-001:not([data-skin]),
+  .ds-tbl-001[data-skin="plain"] {
+    --ds-tbl-stripe: transparent;
+  }
+  .ds-tbl-001[data-skin="striped"] {
+    --ds-tbl-stripe: var(--ds-color-surface-sunken);
+  }
+}

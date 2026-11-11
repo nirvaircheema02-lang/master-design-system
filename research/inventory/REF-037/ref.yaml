@@ -1,0 +1,46 @@
+id: REF-037
+name: "Stripe: nav link fade"
+url: https://stripe.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: Logo/nav link fades (opacity 240 ms) on hover.
+visual: logo link
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Opacity only.
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - opacity
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/N-stripe-nav/probe.json#1
+  animations:
+    - target: a(host)
+      property: opacity
+      durationMs: 240
+      easing: cubic-bezier(0.45, 0.05, 0.55, 0.95)
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 1
+  usability: 3
+  a11y: 4
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: ""

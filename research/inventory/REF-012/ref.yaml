@@ -1,0 +1,51 @@
+id: REF-012
+name: "Magic UI: rainbow button"
+url: https://magicui.design/docs/components/rainbow-button
+sourceKind: library
+captured: 2026-11-06
+category: CTA
+interaction: Multi-hue gradient glow/border that scrolls continuously (background-position, 2 s linear, infinite).
+visual: dark button, rainbow edge
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Hues are fixed, so it cannot follow a brand palette; a single-brand-ramp gradient would be a
+  different effect.
+customizable:
+  - speed
+coupling: B
+radiusSupport: any
+a11y: Infinite at rest; fails the 5 s motion rule without a pause control.
+perf:
+  animated:
+    - background-position
+  js: false
+license:
+  status: verified-permissive
+  usage: clean-room
+  note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+measured:
+  probeFile: research/probe/L-magicui-rainbow-button/probe.json#1
+  animations:
+    - target: button(host)
+      property: "@rainbow:backgroundPositionX+backgroundPositionY"
+      durationMs: 2000
+      easing: linear
+    - target: button(host)::before
+      property: "@rainbow:backgroundPositionX+backgroundPositionY"
+      durationMs: 2000
+      easing: linear
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 4
+  usability: 3
+  a11y: 3
+  performance: 2
+  themability: 2
+  simplicity: 3
+  license: 4
+  neutrality: 1
+recommendation: inspiration
+proposedId: null
+notes: "Brand-neutrality 1: rainbow hues belong to no brand. Gradient-shift (CTA-009) uses the brand ramp instead."

@@ -1,0 +1,154 @@
+{
+  "id": "CTA-016",
+  "slug": "cta-band",
+  "name": "CTA Band",
+  "category": "CTA",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "eyebrow": "Next step",
+      "title": "Ready to talk about your project?",
+      "text": "Tell us what you are working on. We reply within two working days with a clear next step."
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "The closing call-to-action panel of a page: eyebrow, heading, one paragraph and up to two action slots. The default skin is an inverted panel that stands apart from the page in light and dark mode. Left, centered or split. Static.",
+  "inspiration": [],
+  "discovery": {
+    "tags": [
+      "cta",
+      "band",
+      "closing",
+      "panel",
+      "banner"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Closing call to action at the end of a page",
+      "A mid-page conversion break"
+    ],
+    "avoidWhen": [
+      "More than two actions",
+      "Inline promos inside body copy"
+    ],
+    "pairsWith": [
+      "CTA-001",
+      "CTA-006",
+      "TXT-005",
+      "NAV-011"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "headless": [],
+  "slots": {
+    "primary": {
+      "required": false
+    },
+    "secondary": {
+      "required": false
+    }
+  },
+  "props": {
+    "design": [
+      "left",
+      "centered",
+      "split"
+    ]
+  },
+  "skins": [
+    {
+      "id": "ink",
+      "bind": {
+        "--ds-bnd-bg": "color.text.primary",
+        "--ds-bnd-fg": "color.surface.base",
+        "--ds-bnd-muted": "color.surface.sunken",
+        "--ds-bnd-border": "color.border.strong"
+      }
+    },
+    {
+      "id": "accent",
+      "bind": {
+        "--ds-bnd-bg": "color.accent",
+        "--ds-bnd-fg": "color.on-accent",
+        "--ds-bnd-muted": "color.on-accent",
+        "--ds-bnd-border": "color.accent.hover"
+      }
+    },
+    {
+      "id": "raised",
+      "bind": {
+        "--ds-bnd-bg": "color.surface.raised",
+        "--ds-bnd-fg": "color.text.primary",
+        "--ds-bnd-muted": "color.text.secondary",
+        "--ds-bnd-border": "color.border.subtle"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-bnd-bg",
+    "--ds-bnd-border",
+    "--ds-bnd-display",
+    "--ds-bnd-fg",
+    "--ds-bnd-font",
+    "--ds-bnd-gap",
+    "--ds-bnd-gap-actions",
+    "--ds-bnd-glow-a",
+    "--ds-bnd-glow-b",
+    "--ds-bnd-label-size",
+    "--ds-bnd-lh-relaxed",
+    "--ds-bnd-lh-tight",
+    "--ds-bnd-max",
+    "--ds-bnd-muted",
+    "--ds-bnd-pad",
+    "--ds-bnd-pad-wide",
+    "--ds-bnd-pad-y",
+    "--ds-bnd-radius",
+    "--ds-bnd-text-max",
+    "--ds-bnd-text-size",
+    "--ds-bnd-title-size",
+    "--ds-bnd-tracking-tight",
+    "--ds-bnd-tracking-wide",
+    "--ds-bnd-weight-bold",
+    "--ds-bnd-weight-semibold"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a (the action slots own their targets)",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "region",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/cta/016-cta-band",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  }
+}

@@ -1,0 +1,59 @@
+id: REF-043
+name: "Base UI Tabs: sliding indicator"
+url: https://base-ui.com/react/components/tabs
+sourceKind: library
+captured: 2026-11-06
+category: TAB
+interaction: Tabs with manual activation (arrows move focus, Enter/Space select) and an indicator that slides
+  under the active tab, driven by CSS variables (translate + width, 150 ms).
+visual: underline tabs with indicator
+states:
+  - default
+  - hover
+  - focus-visible
+  - selected
+  - disabled
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Headless parts; indicator position comes from CSS variables, so it follows any tab size or radius.
+customizable:
+  - colour
+  - indicator thickness
+  - orientation
+coupling: B
+radiusSupport: any
+a11y: Selected tab tied to a labelled panel; manual activation avoids sluggish arrow keys; reduced motion
+  removes the slide.
+perf:
+  animated:
+    - translate
+    - width
+  js: false
+license:
+  status: verified-permissive
+  usage: clean-room
+  note: MIT per research/licenses/register.md; implement clean-room from the observed behaviour.
+measured:
+  probeFile: research/probe/U-tabs-baseui/probe.json#0
+  animations:
+    - target: span[presentation]
+      property: translate
+      durationMs: 150
+      easing: ease-in-out
+    - target: span[presentation]
+      property: width
+      durationMs: 150
+      easing: ease-in-out
+  reducedMotionAnimations: 2
+scores:
+  distinctiveness: 3
+  usability: 5
+  a11y: 5
+  performance: 4
+  themability: 4
+  simplicity: 3
+  license: 4
+  neutrality: 4
+recommendation: adapt
+proposedId: TAB-001
+notes: "MIT verified. Measured: roving tabindex 0/-1/-1, arrow moves focus only, indicator translate+width 150
+  ms. aria-controls only on the mounted panel."

@@ -1,0 +1,110 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "ring",
+      "dots",
+      "bars"
+    ],
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ]
+  },
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "spin"
+    ],
+    "params": {
+      "duration": 800
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "LDR-001",
+  "slug": "spinner",
+  "name": "Spinner",
+  "category": "LDR",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "label": "Loading report"
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A loading indicator with role=status and a text label. Under reduced motion nothing spins: the shape is still and the label is shown. Three designs: ring, dots, bars.",
+  "skins": [
+    {
+      "id": "default",
+      "bind": {}
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "status",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-ldr-fg",
+    "--ds-ldr-font",
+    "--ds-ldr-pulse-duration",
+    "--ds-ldr-size-lg",
+    "--ds-ldr-size-md",
+    "--ds-ldr-size-sm",
+    "--ds-ldr-spin-duration",
+    "--ds-ldr-stroke",
+    "--ds-ldr-track"
+  ],
+  "code": {
+    "path": "packages/components/src/ldr/001-spinner",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "spinner",
+      "loading",
+      "wait",
+      "progress"
+    ],
+    "interaction": [
+      "feedback"
+    ],
+    "useCases": [
+      "Short waits with unknown length",
+      "Inline loading"
+    ],
+    "avoidWhen": [
+      "Long waits (use a progress bar)"
+    ],
+    "pairsWith": [
+      "CTA-014"
+    ]
+  }
+}

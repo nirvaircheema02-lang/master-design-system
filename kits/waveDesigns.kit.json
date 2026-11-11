@@ -1,0 +1,8 @@
+{ "instances": [
+  { "ref": "CRD-004@1.0.0", "skin": "outlined", "props": { "design": "horizontal" } },
+  { "ref": "INP-001@1.0.0", "skin": "filled", "props": { "design": "floating" } },
+  { "ref": "TAB-001@1.0.0", "skin": "line", "props": { "design": "vertical", "activation": "manual" } },
+  { "ref": "NAV-006@1.0.0", "skin": "lifted", "props": { "design": "accent" } },
+  { "ref": "TBL-001@1.0.0", "skin": "plain", "props": { "design": "rows" } },
+  { "ref": "DLG-001@1.0.0", "skin": "outlined", "props": { "design": "sheet" } }
+] }

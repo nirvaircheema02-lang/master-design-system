@@ -1,0 +1,68 @@
+id: REF-064
+name: "Vercel mobile menu: dialog without focus"
+url: https://vercel.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: The mobile menu is role=dialog with aria-modal=true and traps Tab, but focus does NOT move inside
+  when it opens.
+visual: mobile menu
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Anti-pattern: modal semantics without initial focus. Radius is unaffected: a full-height
+  edge-anchored panel with no outer corners to clip."
+customizable:
+  - colour
+coupling: C
+radiusSupport: any
+a11y: Focus must move into a modal on open (APG).
+perf:
+  animated:
+    - visibility
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-drawer-vercel/probe.json#0
+  animations:
+    - target: a[link]
+      property: visibility
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: a[link]
+      property: visibility
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: a[link]
+      property: visibility
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: div
+      property: opacity
+      durationMs: 700
+      easing: linear
+    - target: div
+      property: "@marquee:transform"
+      durationMs: 40000
+      easing: linear
+    - target: div
+      property: "@marquee:transform"
+      durationMs: 40000
+      easing: linear
+  reducedMotionAnimations: 4
+scores:
+  distinctiveness: 2
+  usability: 3
+  a11y: 1
+  performance: 4
+  themability: 4
+  simplicity: 3
+  license: 3
+  neutrality: 4
+recommendation: reject
+proposedId: null
+notes: ""

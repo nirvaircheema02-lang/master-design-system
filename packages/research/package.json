@@ -1,0 +1,13 @@
+{
+  "name": "@master-ds/research",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "bin": { "master-research": "./src/cli.ts" },
+  "exports": { ".": "./src/index.ts" },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --experimental-strip-types --test src/*.test.ts"
+  },
+  "dependencies": { "playwright": "^1.64.1", "yaml": "^2.6.0", "zod": "^4.0.0" }
+}

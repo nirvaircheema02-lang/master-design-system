@@ -1,0 +1,9 @@
+  component.tsl = {
+    bg: t("{color.surface.raised}", "color"), fg: t("{color.text.primary}", "color"), muted: t("{color.text.secondary}", "color"), border: t("{color.border.subtle}", "color"),
+    radius: t("{radius.container}", "dimension"), padding: t(dx.cardPad, "dimension"), font: t("{font.sans}"),
+    mark: t("{color.accent.ink}", "color"), "avatar-bg": t("{color.accent.subtle}", "color"), "avatar-fg": t("{color.accent.ink}", "color"),
+    track: t("{color.border.control}", "color"), "track-height": t("0.25rem", "dimension"), fill: t("{color.accent.ink}", "color"),
+    "btn-bg": t("{color.surface.raised}", "color"), "btn-bg-hover": t("{color.surface.sunken}", "color"), "btn-fg": t("{color.text.primary}", "color"), "btn-border": t("{color.border.control}", "color"), "btn-radius": t("{radius.control}", "dimension"),
+    focus: t("{color.focus}", "color"), "focus-width": t("2px", "dimension"),
+    "slide-duration": t("{duration.slow}", "duration"), "slide-ease": t("{ease.out}"), "fade-duration": t("{duration.fast}", "duration"), "fade-ease": t("{ease.standard}"),
+  };

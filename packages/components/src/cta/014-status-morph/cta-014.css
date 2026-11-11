@@ -1,0 +1,49 @@
+/* CTA-014 Status Morph: label -> spinner -> check | cross inside a fixed-size button. Colours come from tokens. */
+@layer components {
+  .ds-cta-014 {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    min-height: var(--ds-cta-height);
+    padding-inline: var(--ds-cta-padding-x);
+    border: var(--ds-cta-border-width) solid var(--ds-cta-border);
+    border-radius: var(--ds-cta-radius);
+    background: var(--ds-cta-bg);
+    color: var(--ds-cta-fg);
+    font: 600 1rem/1 var(--ds-cta-font);
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), border-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease);
+  }
+  .ds-cta-014[data-size="sm"] { min-height: calc(var(--ds-cta-height) * 0.85); }
+  .ds-cta-014[data-size="lg"] { min-height: calc(var(--ds-cta-height) * 1.15); }
+  .ds-cta-014:focus-visible { outline: 2px solid var(--ds-cta-focus); outline-offset: 3px; }
+  .ds-cta-014:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ds-cta-014__label { position: relative; z-index: 1; transition: opacity var(--ds-cta-fade-duration) var(--ds-cta-fade-ease); }
+  .ds-cta-014[data-loading] { cursor: progress; }
+  /* spinner and marks sit centred over the (hidden) label; margins, not transforms, so the spinner can rotate freely */
+  .ds-cta-014__spinner, .ds-cta-014__mark { position: absolute; left: 50%; top: 50%; opacity: 0; }
+  .ds-cta-014__spinner { width: 1em; height: 1em; margin: -0.5em 0 0 -0.5em; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; }
+  .ds-cta-014__mark { width: 1.25em; height: 1.25em; margin: -0.625em 0 0 -0.625em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; clip-path: inset(0 100% 0 0); transition: opacity var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), clip-path var(--ds-cta-wipe-duration) var(--ds-cta-ease); }
+  .ds-cta-014__status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+@layer effects {
+  .ds-cta-014:not(:disabled):not([aria-disabled="true"]):hover[data-status="idle"] { background: var(--ds-cta-bg-hover); color: var(--ds-cta-fg-hover); }
+  .ds-cta-014:not([data-status="idle"]) .ds-cta-014__label { opacity: 0; }
+  .ds-cta-014[data-status="loading"] .ds-cta-014__spinner { opacity: 1; animation: ds-cta-014-spin var(--ds-cta-spin-duration) linear infinite; }
+  @keyframes ds-cta-014-spin { to { transform: rotate(360deg); } }
+  .ds-cta-014[data-status="success"] { background: var(--ds-cta-ok-bg); color: var(--ds-cta-ok-fg); border-color: transparent; }
+  .ds-cta-014[data-status="success"] .ds-cta-014__check { opacity: 1; clip-path: inset(0 0 0 0); }
+  .ds-cta-014[data-status="error"] { background: var(--ds-cta-err-bg); color: var(--ds-cta-err-fg); border-color: transparent; }
+  .ds-cta-014[data-status="error"] .ds-cta-014__cross { opacity: 1; clip-path: inset(0 0 0 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-cta-014, .ds-cta-014__label, .ds-cta-014__mark { transition: none; }
+  .ds-cta-014[data-status="loading"] .ds-cta-014__spinner { animation: none; border-top-color: currentColor; }
+}

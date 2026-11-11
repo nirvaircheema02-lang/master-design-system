@@ -1,0 +1,9 @@
+  component.bnd = {
+    bg: t("{color.text.primary}", "color"), fg: t("{color.surface.base}", "color"), muted: t("{color.surface.sunken}", "color"), border: t("{color.border.strong}", "color"), radius: t("{radius.container}", "dimension"),
+    "pad-y": t("{space.16}", "dimension"), pad: t("{space.10}", "dimension"), "pad-wide": t("{space.16}", "dimension"), gap: t("{space.8}", "dimension"), "gap-actions": t("{space.3}", "dimension"),
+    max: t("47.5rem", "dimension"), "text-max": t("38.75rem", "dimension"), font: t("{font.sans}"), display: t("{font.display}"),
+    "title-size": t("{font-size.3xl}", "dimension"), "text-size": t("{font-size.md}", "dimension"), "label-size": t("{font-size.xs}", "dimension"),
+    "weight-bold": t("{font-weight.bold}", "number"), "weight-semibold": t("{font-weight.semibold}", "number"), "lh-tight": t("{line-height.tight}", "number"), "lh-relaxed": t("{line-height.relaxed}", "number"),
+    "tracking-tight": t("{tracking.tight}", "dimension"), "tracking-wide": t("{tracking.wide}", "dimension"),
+    "glow-a": t("color-mix(in oklch, {color.accent.DEFAULT} 40%, transparent)", "color"), "glow-b": t("color-mix(in oklch, {color.accent.DEFAULT} 18%, transparent)", "color"),
+  };

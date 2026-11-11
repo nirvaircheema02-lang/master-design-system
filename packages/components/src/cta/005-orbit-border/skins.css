@@ -1,0 +1,22 @@
+/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
+@layer components {
+  .ds-cta-005:not([data-skin]),
+  .ds-cta-005[data-skin="solid-accent"] {
+    --ds-cta-bg: var(--ds-color-accent);
+    --ds-cta-bg-hover: var(--ds-color-accent-hover);
+    --ds-cta-fg: var(--ds-color-on-accent);
+    --ds-cta-fg-hover: var(--ds-color-on-accent);
+    --ds-cta-border: transparent;
+    --ds-cta-ring: var(--ds-color-on-accent);
+    --ds-cta-ring-base: var(--ds-color-accent-hover);
+  }
+  .ds-cta-005[data-skin="surface-ring"] {
+    --ds-cta-bg: var(--ds-color-surface-raised);
+    --ds-cta-bg-hover: var(--ds-color-surface-sunken);
+    --ds-cta-fg: var(--ds-color-text-primary);
+    --ds-cta-fg-hover: var(--ds-color-text-primary);
+    --ds-cta-border: transparent;
+    --ds-cta-ring: var(--ds-color-accent-ink);
+    --ds-cta-ring-base: var(--ds-color-border-strong);
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "bar",
+      "thin",
+      "steps"
+    ]
+  },
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "fill",
+      "indeterminate-slide"
+    ],
+    "params": {
+      "duration": 300
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "LDR-002",
+  "slug": "progress",
+  "name": "Progress Bar",
+  "category": "LDR",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "label": "Upload progress",
+      "value": 64,
+      "showValue": true
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A progress bar with role=progressbar, a name and exact values (aria-valuenow omitted while indeterminate). The fill scales with transform, never width. Three designs: bar, thin, steps.",
+  "skins": [
+    {
+      "id": "default",
+      "bind": {}
+    }
+  ],
+  "states": [
+    "default",
+    "indeterminate"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "progressbar",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-ldr-radius",
+    "--ds-ldr-bar-border",
+    "--ds-ldr-bar-fill",
+    "--ds-ldr-bar-gap",
+    "--ds-ldr-bar-height",
+    "--ds-ldr-bar-height-thin",
+    "--ds-ldr-bar-track",
+    "--ds-ldr-fg",
+    "--ds-ldr-fill-duration",
+    "--ds-ldr-fill-ease",
+    "--ds-ldr-font",
+    "--ds-ldr-muted",
+    "--ds-ldr-slide-duration"
+  ],
+  "code": {
+    "path": "packages/components/src/ldr/002-progress",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "progress",
+      "bar",
+      "loading",
+      "steps"
+    ],
+    "interaction": [
+      "feedback"
+    ],
+    "useCases": [
+      "Uploads and multi-step flows",
+      "Known progress"
+    ],
+    "avoidWhen": [
+      "Unknown length (use indeterminate or a spinner)"
+    ],
+    "pairsWith": [
+      "FRM-001"
+    ]
+  }
+}

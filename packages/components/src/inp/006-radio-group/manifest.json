@@ -1,0 +1,150 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "dot",
+      "card",
+      "pill",
+      "bar",
+      "large"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "INP-006",
+  "slug": "radio-group",
+  "name": "Radio Group",
+  "category": "INP",
+  "archetype": "choice",
+  "fixture": {
+    "props": {
+      "legend": "Delivery speed",
+      "hint": "Choose one.",
+      "name": "speed",
+      "defaultValue": "standard",
+      "options": [
+        {
+          "value": "standard",
+          "label": "Standard",
+          "hint": "3 to 5 working days"
+        },
+        {
+          "value": "express",
+          "label": "Express"
+        },
+        {
+          "value": "overnight",
+          "label": "Overnight",
+          "disabled": true
+        }
+      ]
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A fieldset with a legend and native radios in one named group: arrow keys move and select, Tab leaves the group, one stop for the whole group.",
+  "skins": [
+    {
+      "id": "outlined",
+      "bind": {
+        "--ds-choice-bg": "color.surface.raised"
+      }
+    },
+    {
+      "id": "filled",
+      "bind": {
+        "--ds-choice-bg": "color.surface.sunken"
+      }
+    }
+  ],
+  "states": [
+    "unselected",
+    "selected",
+    "focus-visible",
+    "invalid",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "36px",
+    "hoverFallback": "the whole label row is the hit area"
+  },
+  "a11y": {
+    "role": "radiogroup",
+    "keyboard": [
+      "Tab",
+      "ArrowDown",
+      "ArrowUp",
+      "ArrowLeft",
+      "ArrowRight"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-choice-bg",
+    "--ds-choice-bg-checked",
+    "--ds-choice-border",
+    "--ds-choice-border-width",
+    "--ds-choice-error",
+    "--ds-choice-fade-duration",
+    "--ds-choice-fade-ease",
+    "--ds-choice-fg-check",
+    "--ds-choice-focus",
+    "--ds-choice-focus-width",
+    "--ds-choice-font",
+    "--ds-choice-gap",
+    "--ds-choice-hint",
+    "--ds-choice-label",
+    "--ds-choice-size",
+    "--ds-choice-radius"
+  ],
+  "code": {
+    "path": "packages/components/src/inp/006-radio-group",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "radio",
+      "single-choice",
+      "form",
+      "choice"
+    ],
+    "interaction": [
+      "input"
+    ],
+    "useCases": [
+      "Pick exactly one of a few options",
+      "Delivery or plan choices"
+    ],
+    "avoidWhen": [
+      "Long lists (use select)"
+    ],
+    "pairsWith": [
+      "FRM-001",
+      "INP-004"
+    ]
+  }
+}

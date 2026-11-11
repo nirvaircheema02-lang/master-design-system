@@ -1,0 +1,104 @@
+id: REF-073
+name: Linear fixed header with scroll-padding
+url: https://linear.app/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: Fixed header and html scroll-padding-top set, so anchor and focus targets are not covered.
+visual: fixed bar
+states:
+  - top
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: The scroll-padding companion is the part worth keeping.
+customizable:
+  - height
+coupling: A
+radiusSupport: any
+a11y: Satisfies the intent of WCAG 2.4.11 (technique C43).
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/U-hdr-linear/probe.json#0
+  animations:
+    - target: circle
+      property: "@grid-dot-0-0-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-0-1-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-0-2-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-0-3-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-0-4-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-1-0-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-1-1-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-1-2-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-1-3-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-1-4-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-2-0-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-2-1-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-2-2-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-2-3-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-2-4-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+    - target: circle
+      property: "@grid-dot-3-0-upDown:opacity"
+      durationMs: 2800
+      easing: linear
+  reducedMotionAnimations: null
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: Only 2 of 12 measured headers (Linear, Notion) set scroll-padding-top.

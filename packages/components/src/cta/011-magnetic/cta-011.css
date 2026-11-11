@@ -1,0 +1,46 @@
+/* CTA-011 Magnetic: the FACE leans toward the pointer via `translate`; the host never moves. JS only writes --_tx/--_ty. */
+@layer components {
+  .ds-cta-011 {
+    position: relative;
+    display: inline-flex;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    border-radius: var(--ds-cta-radius);
+    cursor: pointer;
+  }
+  .ds-cta-011:focus-visible { outline: 2px solid var(--ds-cta-focus); outline-offset: 3px; }
+  .ds-cta-011:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ds-cta-011__face {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    min-height: var(--ds-cta-height);
+    padding-inline: var(--ds-cta-padding-x);
+    border: var(--ds-cta-border-width) solid var(--ds-cta-border);
+    border-radius: inherit;
+    background: var(--ds-cta-bg);
+    color: var(--ds-cta-fg);
+    font: 600 1rem/1 var(--ds-cta-font);
+    white-space: nowrap;
+    translate: var(--_tx, 0) var(--_ty, 0);
+    transition: translate var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), background-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease);
+  }
+  .ds-cta-011[data-size="sm"] .ds-cta-011__face { min-height: calc(var(--ds-cta-height) * 0.85); }
+  .ds-cta-011[data-size="lg"] .ds-cta-011__face { min-height: calc(var(--ds-cta-height) * 1.15); }
+  .ds-cta-011[data-loading] { cursor: progress; }
+  .ds-cta-011__spinner { position: relative; z-index: 1; flex: none; width: 1em; height: 1em; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; }
+  .ds-cta-011__status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+@layer effects {
+  .ds-cta-011:not(:disabled):not([aria-disabled="true"]):hover .ds-cta-011__face, .ds-cta-011:not(:disabled):not([aria-disabled="true"]):focus-visible .ds-cta-011__face { background: var(--ds-cta-bg-hover); color: var(--ds-cta-fg-hover); }
+  .ds-cta-011__spinner { animation: ds-cta-011-spin var(--ds-cta-spin-duration) linear infinite; }
+  @keyframes ds-cta-011-spin { to { transform: rotate(360deg); } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-cta-011__face { transition: none; translate: none; }
+  .ds-cta-011__spinner { animation: none; border-top-color: currentColor; }
+}

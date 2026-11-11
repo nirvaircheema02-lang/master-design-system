@@ -1,0 +1,135 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "slash",
+      "chevron",
+      "dot",
+      "arrow",
+      "boxed"
+    ]
+  },
+  "id": "NAV-009",
+  "slug": "breadcrumb",
+  "name": "Breadcrumb",
+  "category": "NAV",
+  "archetype": "breadcrumb",
+  "fixture": {
+    "props": {
+      "items": [
+        {
+          "label": "Home",
+          "href": "#s1"
+        },
+        {
+          "label": "Reports",
+          "href": "#s2"
+        },
+        {
+          "label": "Market outlook",
+          "href": "#s3"
+        },
+        {
+          "label": "Current report"
+        }
+      ],
+      "label": "Breadcrumb"
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Labelled nav landmark with an ordered list; the last item is the current page (aria-current). Links stay underlined, separators are decorative CSS, and the trail wraps instead of scrolling.",
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "skins": [
+    {
+      "id": "accent",
+      "bind": {
+        "--ds-nav-crumb-fg": "color.accent.ink"
+      }
+    },
+    {
+      "id": "neutral",
+      "bind": {
+        "--ds-nav-crumb-fg": "color.text.primary"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "current"
+  ],
+  "responsive": {
+    "touchTarget": "24px",
+    "hoverFallback": "hover only thickens the underline; focus-visible shows the ring"
+  },
+  "a11y": {
+    "role": "navigation",
+    "keyboard": [
+      "Tab",
+      "Enter"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "a"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-nav-radius",
+    "--ds-nav-crumb-current",
+    "--ds-nav-crumb-fg",
+    "--ds-nav-crumb-gap",
+    "--ds-nav-crumb-sep",
+    "--ds-nav-focus",
+    "--ds-nav-focus-width",
+    "--ds-nav-font"
+  ],
+  "code": {
+    "path": "packages/components/src/nav/009-breadcrumb",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "breadcrumb",
+      "trail",
+      "location",
+      "navigation"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "Deep sites with several levels",
+      "Showing where you are"
+    ],
+    "avoidWhen": [
+      "Flat sites"
+    ],
+    "pairsWith": [
+      "NAV-006"
+    ]
+  }
+}

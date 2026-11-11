@@ -1,0 +1,16 @@
+{
+  "name": "@master-ds/components",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "react": "^19.3.1"
+  },
+  "dependencies": {
+    "@master-ds/headless": "workspace:*"
+  }
+}

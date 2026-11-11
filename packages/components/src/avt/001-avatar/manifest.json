@@ -1,0 +1,121 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "circle",
+      "rounded",
+      "square",
+      "ring"
+    ],
+    "size": [
+      "sm",
+      "md",
+      "lg",
+      "xl"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "AVT-001",
+  "slug": "avatar",
+  "name": "Avatar",
+  "category": "AVT",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "name": "Aarav Mehta"
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "A picture, or the initials when there is no picture or it fails to load, with one accessible name either way. Four sizes, four designs.",
+  "skins": [
+    {
+      "id": "tint",
+      "bind": {
+        "--ds-avt-bg": "color.accent.subtle",
+        "--ds-avt-fg": "color.accent.ink"
+      }
+    },
+    {
+      "id": "neutral",
+      "bind": {
+        "--ds-avt-bg": "color.surface.sunken",
+        "--ds-avt-fg": "color.text.primary"
+      }
+    }
+  ],
+  "states": [
+    "default"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "not interactive"
+  },
+  "a11y": {
+    "role": "img",
+    "keyboard": [],
+    "reducedMotion": "static-end-state",
+    "elements": [],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-avt-radius",
+    "--ds-avt-bg",
+    "--ds-avt-fg",
+    "--ds-avt-font",
+    "--ds-avt-ring",
+    "--ds-avt-ring-gap",
+    "--ds-avt-ring-width",
+    "--ds-avt-size-lg",
+    "--ds-avt-size-md",
+    "--ds-avt-size-sm",
+    "--ds-avt-size-xl"
+  ],
+  "code": {
+    "path": "packages/components/src/avt/001-avatar",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "avatar",
+      "person",
+      "profile",
+      "initials"
+    ],
+    "interaction": [
+      "none"
+    ],
+    "useCases": [
+      "People in lists, comments and headers",
+      "Fallback to initials"
+    ],
+    "avoidWhen": [
+      "Logos (use an image)"
+    ],
+    "pairsWith": [
+      "NAV-006",
+      "TBL-001"
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "id": "NAV-002",
+  "slug": "indicator-item",
+  "name": "Indicator-Reveal Nav Item",
+  "category": "NAV",
+  "archetype": "navitem",
+  "fixture": {
+    "props": {
+      "href": "#pricing"
+    },
+    "children": "Pricing"
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Navigation link whose underline indicator draws in on hover and focus; the current page always shows it. Reduced motion: indicator appears.",
+  "inspiration": [],
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "indicator-reveal"
+    ],
+    "params": {
+      "duration": 300
+    },
+    "js": false,
+    "pointerVars": []
+  },
+  "slots": {},
+  "props": {},
+  "skins": [
+    {
+      "id": "accent",
+      "bind": {
+        "--ds-nav-fg": "color.text.primary",
+        "--ds-nav-indicator": "color.accent.ink"
+      }
+    },
+    {
+      "id": "neutral",
+      "bind": {
+        "--ds-nav-fg": "color.text.primary",
+        "--ds-nav-indicator": "color.text.primary"
+      }
+    }
+  ],
+  "tokens": [
+    "--ds-nav-fade-ease",
+    "--ds-nav-fg",
+    "--ds-nav-focus",
+    "--ds-nav-focus-width",
+    "--ds-nav-font",
+    "--ds-nav-height",
+    "--ds-nav-indicator",
+    "--ds-nav-indicator-width",
+    "--ds-nav-padding-x",
+    "--ds-nav-slide-duration"
+  ],
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "current"
+  ],
+  "responsive": {
+    "touchTarget": "40px",
+    "hoverFallback": "hover is decorative; focus-visible shows the same cue"
+  },
+  "a11y": {
+    "role": "link",
+    "keyboard": [
+      "Tab",
+      "Enter"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "a"
+    ],
+    "inertStates": []
+  },
+  "figma": null,
+  "code": {
+    "path": "packages/components/src/nav/002-indicator-item",
+    "hash": null
+  },
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "discovery": {
+    "tags": [
+      "nav",
+      "item",
+      "indicator",
+      "menu"
+    ],
+    "interaction": [
+      "hover-press",
+      "reveal"
+    ],
+    "useCases": [
+      "Top bar items with an indicator line",
+      "Editorial sites"
+    ],
+    "avoidWhen": [
+      "Touch-only navigation"
+    ],
+    "pairsWith": [
+      "NAV-006"
+    ]
+  }
+}

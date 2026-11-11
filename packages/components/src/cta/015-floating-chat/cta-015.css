@@ -1,0 +1,40 @@
+/* CTA-015 Floating Chat Button. Tokens: --ds-chat-*. Motion: one entrance (opacity + transform) and a hover grow; both removed under reduced motion. */
+@layer components {
+  .ds-cta-015 {
+    position: relative; isolation: isolate; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-chat-gap);
+    min-width: var(--ds-chat-size); min-height: var(--ds-chat-size); padding: 0; background: var(--ds-chat-bg); color: var(--ds-chat-fg); border-radius: var(--ds-chat-radius);
+    box-shadow: var(--ds-chat-shadow); font: 600 1rem/1 var(--ds-chat-font); text-decoration: none; cursor: pointer;
+  }
+  .ds-cta-015[data-placement="fixed"] { position: fixed; bottom: calc(var(--ds-chat-offset) + env(safe-area-inset-bottom, 0px)); z-index: var(--ds-chat-z); }
+  .ds-cta-015[data-placement="fixed"][data-position="bottom-right"] { right: calc(var(--ds-chat-offset) + env(safe-area-inset-right, 0px)); }
+  .ds-cta-015[data-placement="fixed"][data-position="bottom-left"] { left: calc(var(--ds-chat-offset) + env(safe-area-inset-left, 0px)); }
+  .ds-cta-015:focus-visible { outline: var(--ds-chat-focus-width) solid var(--ds-chat-focus); outline-offset: 3px; }
+  .ds-cta-015__icon { flex: none; width: 1.5rem; height: 1.5rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  span.ds-cta-015__icon { display: inline-flex; }
+  span.ds-cta-015__icon > svg { width: 100%; height: 100%; }
+  .ds-cta-015__label, .ds-cta-015__vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+  /* DESIGNS: round (default, circle), pill (icon + visible label), square (control radius) */
+  .ds-cta-015[data-design="square"] { border-radius: var(--ds-chat-radius-box); }
+  .ds-cta-015[data-design="pill"] { padding-inline: var(--ds-chat-pad-x); }
+  .ds-cta-015[data-design="pill"] .ds-cta-015__label { position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
+
+  @media print { .ds-cta-015[data-placement="fixed"] { display: none; } }
+}
+
+@layer effects {
+  .ds-cta-015::before {
+    content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; box-shadow: 0 0.5rem 2rem var(--ds-chat-bg); opacity: 0;
+    transition: opacity var(--ds-chat-duration) var(--ds-chat-ease);
+  }
+  .ds-cta-015 { transition: transform var(--ds-chat-duration) var(--ds-chat-ease); animation: ds-cta-015-in var(--ds-chat-enter-duration) var(--ds-chat-ease) var(--ds-chat-enter-delay) backwards; }
+  .ds-cta-015:hover, .ds-cta-015:focus-visible { transform: scale(var(--ds-chat-hover-scale)); }
+  .ds-cta-015:hover::before, .ds-cta-015:focus-visible::before { opacity: 0.5; }
+  @keyframes ds-cta-015-in { from { opacity: 0; transform: scale(0.5) translateY(1.25rem); } to { opacity: 1; transform: none; } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-cta-015 { animation: none; transition: none; }
+  .ds-cta-015::before { transition: none; }
+  .ds-cta-015:hover, .ds-cta-015:focus-visible { transform: none; }
+}

@@ -1,0 +1,339 @@
+[
+ {
+  "id": "slate",
+  "name": "Slate",
+  "group": "Neutral bases",
+  "note": "Cool blue-grey; calm and technical.",
+  "seeds": {
+   "primary": "#334155",
+   "neutral": "#64748b"
+  }
+ },
+ {
+  "id": "gray",
+  "name": "Gray",
+  "group": "Neutral bases",
+  "note": "Slightly cool grey; the safe default.",
+  "seeds": {
+   "primary": "#374151",
+   "neutral": "#6b7280"
+  }
+ },
+ {
+  "id": "zinc",
+  "name": "Zinc",
+  "group": "Neutral bases",
+  "note": "Almost pure grey with a hint of violet.",
+  "seeds": {
+   "primary": "#3f3f46",
+   "neutral": "#71717a"
+  }
+ },
+ {
+  "id": "neutral",
+  "name": "Neutral",
+  "group": "Neutral bases",
+  "note": "True neutral grey, no tint.",
+  "seeds": {
+   "primary": "#404040",
+   "neutral": "#737373"
+  }
+ },
+ {
+  "id": "stone",
+  "name": "Stone",
+  "group": "Neutral bases",
+  "note": "Warm grey; editorial and soft.",
+  "seeds": {
+   "primary": "#44403c",
+   "neutral": "#78716c"
+  }
+ },
+ {
+  "id": "red",
+  "name": "Red",
+  "group": "Accent hues",
+  "note": "Urgent, bold, financial-risk red.",
+  "seeds": {
+   "primary": "#dc2626"
+  }
+ },
+ {
+  "id": "orange",
+  "name": "Orange",
+  "group": "Accent hues",
+  "note": "Energetic and friendly.",
+  "seeds": {
+   "primary": "#ea580c"
+  }
+ },
+ {
+  "id": "amber",
+  "name": "Amber",
+  "group": "Accent hues",
+  "note": "Warm, attention-friendly gold.",
+  "seeds": {
+   "primary": "#d97706"
+  }
+ },
+ {
+  "id": "yellow",
+  "name": "Yellow",
+  "group": "Accent hues",
+  "note": "Bright; uses a dark label automatically.",
+  "seeds": {
+   "primary": "#eab308"
+  }
+ },
+ {
+  "id": "lime",
+  "name": "Lime",
+  "group": "Accent hues",
+  "note": "Fresh, eco, growth.",
+  "seeds": {
+   "primary": "#65a30d"
+  }
+ },
+ {
+  "id": "green",
+  "name": "Green",
+  "group": "Accent hues",
+  "note": "Success, finance, health.",
+  "seeds": {
+   "primary": "#16a34a"
+  }
+ },
+ {
+  "id": "emerald",
+  "name": "Emerald",
+  "group": "Accent hues",
+  "note": "Calm green with a blue lean.",
+  "seeds": {
+   "primary": "#059669"
+  }
+ },
+ {
+  "id": "teal",
+  "name": "Teal",
+  "group": "Accent hues",
+  "note": "Trustworthy blue-green.",
+  "seeds": {
+   "primary": "#0d9488"
+  }
+ },
+ {
+  "id": "cyan",
+  "name": "Cyan",
+  "group": "Accent hues",
+  "note": "Clear, technical, fresh.",
+  "seeds": {
+   "primary": "#0891b2"
+  }
+ },
+ {
+  "id": "sky",
+  "name": "Sky",
+  "group": "Accent hues",
+  "note": "Open, light, approachable blue.",
+  "seeds": {
+   "primary": "#0284c7"
+  }
+ },
+ {
+  "id": "blue",
+  "name": "Blue",
+  "group": "Accent hues",
+  "note": "The classic product blue.",
+  "seeds": {
+   "primary": "#2563eb"
+  }
+ },
+ {
+  "id": "indigo",
+  "name": "Indigo",
+  "group": "Accent hues",
+  "note": "Deep, confident blue-violet.",
+  "seeds": {
+   "primary": "#4f46e5"
+  }
+ },
+ {
+  "id": "violet",
+  "name": "Violet",
+  "group": "Accent hues",
+  "note": "Creative, modern.",
+  "seeds": {
+   "primary": "#7c3aed"
+  }
+ },
+ {
+  "id": "purple",
+  "name": "Purple",
+  "group": "Accent hues",
+  "note": "Premium and expressive.",
+  "seeds": {
+   "primary": "#9333ea"
+  }
+ },
+ {
+  "id": "fuchsia",
+  "name": "Fuchsia",
+  "group": "Accent hues",
+  "note": "Loud, playful.",
+  "seeds": {
+   "primary": "#c026d3"
+  }
+ },
+ {
+  "id": "pink",
+  "name": "Pink",
+  "group": "Accent hues",
+  "note": "Warm, human, consumer.",
+  "seeds": {
+   "primary": "#db2777"
+  }
+ },
+ {
+  "id": "rose",
+  "name": "Rose",
+  "group": "Accent hues",
+  "note": "Passionate red-pink.",
+  "seeds": {
+   "primary": "#e11d48"
+  }
+ },
+ {
+  "id": "ken-red",
+  "name": "Ken Red",
+  "group": "Curated",
+  "note": "Ken Research: red used for calls to action only, on a warm neutral.",
+  "seeds": {
+   "primary": "#b01f24",
+   "neutral": "#8a7f7a"
+  }
+ },
+ {
+  "id": "corporate-navy",
+  "name": "Corporate Navy",
+  "group": "Curated",
+  "note": "Consulting and enterprise: navy with a slate neutral.",
+  "seeds": {
+   "primary": "#1e3a8a",
+   "secondary": "#0f172a",
+   "neutral": "#64748b"
+  }
+ },
+ {
+  "id": "forest",
+  "name": "Forest",
+  "group": "Curated",
+  "note": "Natural, grounded; warm stone neutral.",
+  "seeds": {
+   "primary": "#166534",
+   "neutral": "#78716c"
+  }
+ },
+ {
+  "id": "ocean",
+  "name": "Ocean",
+  "group": "Curated",
+  "note": "Teal-blue with a bright blue accent.",
+  "seeds": {
+   "primary": "#0e7490",
+   "accent": "#2563eb",
+   "neutral": "#64748b"
+  }
+ },
+ {
+  "id": "sunset",
+  "name": "Sunset",
+  "group": "Curated",
+  "note": "Orange primary with a pink accent.",
+  "seeds": {
+   "primary": "#ea580c",
+   "accent": "#db2777",
+   "neutral": "#78716c"
+  }
+ },
+ {
+  "id": "plum",
+  "name": "Plum",
+  "group": "Curated",
+  "note": "Deep purple with a pink accent.",
+  "seeds": {
+   "primary": "#6b21a8",
+   "accent": "#db2777",
+   "neutral": "#71717a"
+  }
+ },
+ {
+  "id": "midnight",
+  "name": "Midnight",
+  "group": "Curated",
+  "note": "Indigo on cool slate; great in dark mode.",
+  "seeds": {
+   "primary": "#4338ca",
+   "neutral": "#64748b"
+  }
+ },
+ {
+  "id": "sand",
+  "name": "Sand",
+  "group": "Curated",
+  "note": "Earthy gold on warm stone; luxury and lifestyle.",
+  "seeds": {
+   "primary": "#a16207",
+   "neutral": "#78716c"
+  }
+ },
+ {
+  "id": "mono",
+  "name": "Mono",
+  "group": "Curated",
+  "note": "Black and white; lets content carry the colour.",
+  "seeds": {
+   "primary": "#111111",
+   "neutral": "#737373"
+  }
+ },
+ {
+  "id": "fintech",
+  "name": "Fintech",
+  "group": "Curated",
+  "note": "Bold blue with a navy secondary; sharp, numeric, serious.",
+  "seeds": {
+   "primary": "#1f4fd8",
+   "secondary": "#0b1f4b"
+  }
+ },
+ {
+  "id": "material-purple",
+  "name": "Material Purple",
+  "group": "Material seeds",
+  "note": "Material You baseline seed (purple).",
+  "seeds": {
+   "primary": "#6750a4",
+   "neutral": "#79747e"
+  }
+ },
+ {
+  "id": "material-green",
+  "name": "Material Green",
+  "group": "Material seeds",
+  "note": "Material You green seed.",
+  "seeds": {
+   "primary": "#386a20",
+   "neutral": "#74796d"
+  }
+ },
+ {
+  "id": "material-blue",
+  "name": "Material Blue",
+  "group": "Material seeds",
+  "note": "Material You blue seed.",
+  "seeds": {
+   "primary": "#0b57d0",
+   "neutral": "#74777f"
+  }
+ }
+]

@@ -1,0 +1,51 @@
+/* CTA-006 Glow: a pre-drawn halo layer fades in by OPACITY (the shadow itself never animates). */
+@layer components {
+  .ds-cta-006 {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    min-height: var(--ds-cta-height);
+    padding-inline: var(--ds-cta-padding-x);
+    border: var(--ds-cta-border-width) solid var(--ds-cta-border);
+    border-radius: var(--ds-cta-radius);
+    background: var(--ds-cta-bg);
+    color: var(--ds-cta-fg);
+    font: 600 1rem/1 var(--ds-cta-font);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease), border-color var(--ds-cta-fade-duration) var(--ds-cta-fade-ease);
+  }
+  .ds-cta-006[data-size="sm"] { min-height: calc(var(--ds-cta-height) * 0.85); }
+  .ds-cta-006[data-size="lg"] { min-height: calc(var(--ds-cta-height) * 1.15); }
+  .ds-cta-006:focus-visible { outline: 2px solid var(--ds-cta-focus); outline-offset: 3px; }
+  .ds-cta-006:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ds-cta-006__label, .ds-cta-006__icon { position: relative; z-index: 1; }
+  .ds-cta-006[data-loading] { cursor: progress; }
+  .ds-cta-006__spinner { position: relative; z-index: 1; flex: none; width: 1em; height: 1em; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; }
+  .ds-cta-006__status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+@layer effects {
+  .ds-cta-006::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    box-shadow: 0 0 22px 4px color-mix(in oklch, var(--ds-cta-glow) 55%, transparent);
+    opacity: 0;
+    transition: opacity var(--ds-cta-fade-duration) var(--ds-cta-fade-ease);
+  }
+  .ds-cta-006:not(:disabled):not([aria-disabled="true"]):hover, .ds-cta-006:not(:disabled):not([aria-disabled="true"]):focus-visible { background: var(--ds-cta-bg-hover); color: var(--ds-cta-fg-hover); }
+  .ds-cta-006:not(:disabled):not([aria-disabled="true"]):hover::before, .ds-cta-006:not(:disabled):not([aria-disabled="true"]):focus-visible::before { opacity: 1; }
+  .ds-cta-006__spinner { animation: ds-cta-006-spin var(--ds-cta-spin-duration) linear infinite; }
+  @keyframes ds-cta-006-spin { to { transform: rotate(360deg); } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-cta-006, .ds-cta-006::before { transition: none; }
+  .ds-cta-006__spinner { animation: none; border-top-color: currentColor; }
+}

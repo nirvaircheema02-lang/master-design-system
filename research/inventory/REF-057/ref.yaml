@@ -1,0 +1,81 @@
+id: REF-057
+name: Primer Dialog
+url: https://primer.style/product/components/dialog/
+sourceKind: design-system
+captured: 2026-11-06
+category: DLG
+interaction: Modal dialog with aria-modal=true, named, focus inside, trapped, Escape and return.
+visual: centred modal
+states:
+  - closed
+  - open
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Behaviour reference only.
+customizable:
+  - colour
+coupling: A
+radiusSupport: any
+a11y: Verified behaviours pass.
+perf:
+  animated: []
+  js: false
+license:
+  status: not-applicable
+  usage: inspiration-only
+  note: Documentation read only; concept reference, nothing reused.
+measured:
+  probeFile: research/probe/U-dlg-primer/probe.json#0
+  animations:
+    - target: button
+      property: background-color
+      durationMs: 80
+      easing: cubic-bezier(0.65, 0, 0.35, 1)
+    - target: nav
+      property: "@prc-UnderlineNav-detect-overflow-6HuSH:"
+      durationMs: null
+      easing: linear
+    - target: div
+      property: "@wp77fa_detect-scroll:"
+      durationMs: null
+      easing: linear
+    - target: div
+      property: "@wp77fa_detect-scroll:"
+      durationMs: null
+      easing: linear
+    - target: div
+      property: "@wp77fa_detect-scroll:"
+      durationMs: null
+      easing: linear
+    - target: div
+      property: "@wp77fa_detect-scroll:"
+      durationMs: null
+      easing: linear
+    - target: div
+      property: "@wp77fa_detect-scroll:"
+      durationMs: null
+      easing: linear
+    - target: div
+      property: "@wp77fa_detect-scroll:"
+      durationMs: null
+      easing: linear
+    - target: div
+      property: "@prc-Dialog-dialog-backdrop-appear-tCG2K:opacity"
+      durationMs: 200
+      easing: linear
+    - target: div[dialog]
+      property: "@prc-Dialog-Overlay--motion-scaleFade-mE6-C:opacity+transform"
+      durationMs: 200
+      easing: linear
+  reducedMotionAnimations: 9
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 5
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: ""

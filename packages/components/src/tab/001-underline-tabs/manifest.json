@@ -1,0 +1,172 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "id": "TAB-001",
+  "slug": "underline-tabs",
+  "name": "Underline Tabs",
+  "category": "TAB",
+  "archetype": "tabs",
+  "fixture": {
+    "props": {
+      "activation": "automatic",
+      "label": "Sections",
+      "tabs": [
+        {
+          "id": "overview",
+          "label": "Overview",
+          "content": "Overview panel content."
+        },
+        {
+          "id": "usage",
+          "label": "Usage",
+          "content": "Usage panel content."
+        },
+        {
+          "id": "pricing",
+          "label": "Pricing",
+          "content": "Pricing panel content."
+        }
+      ]
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Tabs with an underline indicator that slides to the selected tab (one transform-only line, measured). Activation (automatic or manual) is an explicit required prop. Roving tabindex, arrows, Home/End and tab-panel wiring come from the headless adapter.",
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "indicator-slide"
+    ],
+    "params": {
+      "duration": 150
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "headless": [
+    "tabs"
+  ],
+  "props": {
+    "activation": [
+      "automatic",
+      "manual"
+    ],
+    "design": [
+      "underline",
+      "pill",
+      "segmented",
+      "vertical",
+      "folder"
+    ]
+  },
+  "skins": [
+    {
+      "id": "line",
+      "bind": {
+        "--ds-tab-list-bg": "transparent",
+        "--ds-tab-border": "color.border.subtle"
+      }
+    },
+    {
+      "id": "contained",
+      "bind": {
+        "--ds-tab-list-bg": "color.surface.sunken",
+        "--ds-tab-border": "transparent"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "selected",
+    "disabled"
+  ],
+  "responsive": {
+    "touchTarget": "40px",
+    "hoverFallback": "hover is decorative; the indicator and focus ring carry state"
+  },
+  "a11y": {
+    "role": "tablist",
+    "keyboard": [
+      "Tab",
+      "ArrowLeft",
+      "ArrowRight",
+      "Home",
+      "End",
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-tab-radius",
+    "--ds-tab-bg-active",
+    "--ds-tab-bg-hover",
+    "--ds-tab-border",
+    "--ds-tab-capsule-bg",
+    "--ds-tab-fade-duration",
+    "--ds-tab-fade-ease",
+    "--ds-tab-fg",
+    "--ds-tab-fg-active",
+    "--ds-tab-fg-on-active",
+    "--ds-tab-focus",
+    "--ds-tab-focus-width",
+    "--ds-tab-font",
+    "--ds-tab-height",
+    "--ds-tab-indicator",
+    "--ds-tab-indicator-height",
+    "--ds-tab-list-bg",
+    "--ds-tab-padding-x",
+    "--ds-tab-panel-border",
+    "--ds-tab-panel-padding",
+    "--ds-tab-raised",
+    "--ds-tab-shadow",
+    "--ds-tab-slide-duration",
+    "--ds-tab-slide-ease"
+  ],
+  "code": {
+    "path": "packages/components/src/tab/001-underline-tabs",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "tabs",
+      "panels",
+      "sections",
+      "switch"
+    ],
+    "interaction": [
+      "reveal",
+      "input"
+    ],
+    "useCases": [
+      "Switch between related views",
+      "Settings sections"
+    ],
+    "avoidWhen": [
+      "Steps in a process (use steps)"
+    ],
+    "pairsWith": [
+      "ACC-001",
+      "CRD-004"
+    ]
+  }
+}

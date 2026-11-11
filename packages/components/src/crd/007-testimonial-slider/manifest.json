@@ -1,0 +1,171 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "card",
+      "segments",
+      "plain"
+    ]
+  },
+  "interaction": {
+    "class": "B",
+    "modules": [
+      "slide",
+      "progress-fill"
+    ],
+    "params": {
+      "interval": 6500,
+      "duration": 500
+    },
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "CRD-007",
+  "slug": "testimonial-slider",
+  "name": "Testimonial Slider",
+  "category": "CRD",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "items": [
+        {
+          "quote": "A placeholder testimonial about how clear the process was and how the team kept every promise it made.",
+          "name": "Alex Morgan",
+          "role": "Head of Operations, Example Co"
+        },
+        {
+          "quote": "Another placeholder quote: the work shipped on time and the handover notes were easy to follow.",
+          "name": "Sam Rivera",
+          "role": "Founder, Sample Studio"
+        },
+        {
+          "quote": "A third placeholder quote about communication, honesty and a calm way of working together.",
+          "name": "Jordan Lee",
+          "role": "Product Lead, Demo Labs"
+        }
+      ],
+      "interval": 6500
+    }
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "Quotes slide one at a time with an avatar-initials author line, a progress bar (or segments) that doubles as a slide picker, previous/next buttons and a pause button. Auto-advance stops on hover, on keyboard focus, on Pause (WCAG 2.2.2) and under reduced motion. Three designs.",
+  "skins": [
+    {
+      "id": "accent",
+      "bind": {
+        "--ds-tsl-mark": "color.accent.ink",
+        "--ds-tsl-avatar-bg": "color.accent.subtle",
+        "--ds-tsl-avatar-fg": "color.accent.ink",
+        "--ds-tsl-fill": "color.accent.ink"
+      }
+    },
+    {
+      "id": "neutral",
+      "bind": {
+        "--ds-tsl-mark": "color.text.primary",
+        "--ds-tsl-avatar-bg": "color.surface.sunken",
+        "--ds-tsl-avatar-fg": "color.text.primary",
+        "--ds-tsl-fill": "color.text.primary"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "paused"
+  ],
+  "responsive": {
+    "touchTarget": "44px",
+    "hoverFallback": "hover only pauses auto-advance; touch has the pause button, the picker and previous/next"
+  },
+  "a11y": {
+    "role": "region",
+    "keyboard": [
+      "Tab",
+      "Shift+Tab",
+      "Enter",
+      "Space"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "button"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-tsl-avatar-bg",
+    "--ds-tsl-avatar-fg",
+    "--ds-tsl-bg",
+    "--ds-tsl-border",
+    "--ds-tsl-btn-bg",
+    "--ds-tsl-btn-bg-hover",
+    "--ds-tsl-btn-border",
+    "--ds-tsl-btn-fg",
+    "--ds-tsl-btn-radius",
+    "--ds-tsl-fade-duration",
+    "--ds-tsl-fade-ease",
+    "--ds-tsl-fg",
+    "--ds-tsl-fill",
+    "--ds-tsl-focus",
+    "--ds-tsl-focus-width",
+    "--ds-tsl-font",
+    "--ds-tsl-mark",
+    "--ds-tsl-muted",
+    "--ds-tsl-padding",
+    "--ds-tsl-radius",
+    "--ds-tsl-slide-duration",
+    "--ds-tsl-slide-ease",
+    "--ds-tsl-track",
+    "--ds-tsl-track-height"
+  ],
+  "code": {
+    "path": "packages/components/src/crd/007-testimonial-slider",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "testimonial",
+      "slider",
+      "carousel",
+      "quote",
+      "review",
+      "social-proof"
+    ],
+    "interaction": [
+      "scroll",
+      "feedback",
+      "input"
+    ],
+    "useCases": [
+      "A few customer quotes in one place",
+      "Social proof next to a heading"
+    ],
+    "avoidWhen": [
+      "Only one quote (use a plain figure)",
+      "Quotes the visitor must read in full without waiting (use a list)"
+    ],
+    "pairsWith": [
+      "TXT-005",
+      "CRD-008",
+      "CTA-016"
+    ],
+    "effects": "subtle"
+  }
+}

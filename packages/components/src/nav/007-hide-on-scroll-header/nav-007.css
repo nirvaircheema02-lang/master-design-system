@@ -1,0 +1,30 @@
+/* NAV-007 Hide-on-scroll header. Tokens: --ds-nav-*. Slides with transform only; hidden = visibility: hidden (not tabbable). */
+@layer components {
+  .ds-nav-007 {
+    position: sticky; top: 0; z-index: var(--ds-nav-header-z); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.25rem 1rem;
+    min-height: var(--ds-nav-header-height); box-sizing: border-box; padding: 0.25rem 1rem; background: var(--ds-nav-header-bg); color: var(--ds-nav-fg);
+    border-bottom: 1px solid var(--ds-nav-header-border); box-shadow: var(--ds-nav-header-shadow); font-family: var(--ds-nav-font);
+    transform: none; visibility: visible; transition: transform var(--ds-nav-header-slide-duration) var(--ds-nav-header-slide-ease);
+  }
+  .ds-nav-007[data-hidden="true"] {
+    transform: translateY(-100%); visibility: hidden;
+    transition: transform var(--ds-nav-header-slide-duration) var(--ds-nav-header-slide-ease), visibility 0s linear var(--ds-nav-header-slide-duration);
+  }
+  .ds-nav-007__brand { display: inline-flex; align-items: center; min-height: var(--ds-nav-height); padding: 0 0.5rem; border-radius: var(--ds-nav-radius); color: var(--ds-nav-fg); font-size: 1.125rem; font-weight: 700; text-decoration: none; }
+  .ds-nav-007__list { display: flex; flex-wrap: wrap; gap: 0.25rem; margin: 0; padding: 0; list-style: none; }
+  .ds-nav-007__link {
+    display: inline-flex; align-items: center; min-height: var(--ds-nav-height); padding: 0 var(--ds-nav-padding-x); border-radius: var(--ds-nav-radius);
+    color: var(--ds-nav-fg); font-size: 0.9375rem; font-weight: 500; text-decoration: none;
+    transition: background-color var(--ds-nav-fade-duration) var(--ds-nav-fade-ease), color var(--ds-nav-fade-duration) var(--ds-nav-fade-ease);
+  }
+  .ds-nav-007__link[aria-current="page"] { background: var(--ds-nav-bg-current); color: var(--ds-nav-fg-current); font-weight: 700; }
+  .ds-nav-007__brand:focus-visible, .ds-nav-007__link:focus-visible { outline: var(--ds-nav-focus-width) solid var(--ds-nav-focus); outline-offset: 2px; }
+}
+
+@layer effects {
+  .ds-nav-007__link:hover { background: var(--ds-nav-bg-hover); color: var(--ds-nav-fg-hover); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-nav-007, .ds-nav-007[data-hidden="true"], .ds-nav-007__link { transition: none; }
+}

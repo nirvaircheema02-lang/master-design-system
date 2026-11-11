@@ -1,0 +1,117 @@
+{
+  "constraints": {
+    "radiusSupport": "any",
+    "requiresHost": [],
+    "minContrast": "AA",
+    "insetLayers": []
+  },
+  "figma": null,
+  "testing": {
+    "conformance": "none",
+    "a11y": "pending",
+    "visual": null
+  },
+  "inspiration": [],
+  "slots": {},
+  "headless": [],
+  "props": {
+    "design": [
+      "underline",
+      "thick",
+      "arrow",
+      "bold"
+    ]
+  },
+  "interaction": {
+    "class": "A",
+    "modules": [],
+    "params": {},
+    "js": false,
+    "pointerVars": [],
+    "layoutProps": []
+  },
+  "id": "TXT-003",
+  "slug": "link",
+  "name": "Link",
+  "category": "TXT",
+  "archetype": "atom",
+  "fixture": {
+    "props": {
+      "href": "#s2"
+    },
+    "children": "Read the full report"
+  },
+  "version": "1.0.0",
+  "lifecycle": "alpha",
+  "description": "An inline link that is NEVER marked by colour alone (always underlined), strengthens on hover, shows a focus ring, and can warn that it opens a new tab. Four designs.",
+  "skins": [
+    {
+      "id": "accent",
+      "bind": {
+        "--ds-type-link": "color.accent.ink"
+      }
+    },
+    {
+      "id": "neutral",
+      "bind": {
+        "--ds-type-link": "color.text.primary"
+      }
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible"
+  ],
+  "responsive": {
+    "touchTarget": "n/a",
+    "hoverFallback": "hover only thickens the underline; focus-visible shows the ring"
+  },
+  "a11y": {
+    "role": "link",
+    "keyboard": [
+      "Tab",
+      "Enter"
+    ],
+    "reducedMotion": "static-end-state",
+    "elements": [
+      "a"
+    ],
+    "inertStates": []
+  },
+  "tokens": [
+    "--ds-type-fade-duration",
+    "--ds-type-fade-ease",
+    "--ds-type-focus",
+    "--ds-type-focus-width",
+    "--ds-type-font",
+    "--ds-type-link",
+    "--ds-type-link-hover",
+    "--ds-type-radius",
+    "--ds-type-weight-semibold"
+  ],
+  "code": {
+    "path": "packages/components/src/txt/003-link",
+    "hash": null
+  },
+  "discovery": {
+    "tags": [
+      "link",
+      "anchor",
+      "inline"
+    ],
+    "interaction": [
+      "hover-press"
+    ],
+    "useCases": [
+      "Links inside text",
+      "External and arrow links"
+    ],
+    "avoidWhen": [
+      "Primary calls to action (use a button)"
+    ],
+    "pairsWith": [
+      "TXT-002"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+id: REF-078
+name: "Awwwards: hover reveal card"
+url: https://www.awwwards.com/websites/
+sourceKind: production-site
+captured: 2026-11-06
+category: CRD
+interaction: Hovering a card reveals an information layer (opacity + visibility, 300 ms).
+visual: image card with hover overlay
+states:
+  - default
+  - hover
+  - focus-within
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Information only on hover fails keyboard and touch; ours reveals on focus-within and shows the title always.
+customizable:
+  - colour
+  - radius
+coupling: B
+radiusSupport: any
+a11y: Hover-only content is an accessibility risk; keep essential content visible.
+perf:
+  animated:
+    - opacity
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/C-awwwards/probe.json#0
+  animations:
+    - target: div(child)
+      property: opacity
+      durationMs: 300
+      easing: ease
+    - target: div(child)
+      property: visibility
+      durationMs: 300
+      easing: ease
+  reducedMotionAnimations: 2
+scores:
+  distinctiveness: 3
+  usability: 3
+  a11y: 3
+  performance: 5
+  themability: 4
+  simplicity: 4
+  license: 3
+  neutrality: 3
+recommendation: adapt
+proposedId: CRD-003
+notes: ""

@@ -1,0 +1,48 @@
+id: REF-033
+name: "Mercury: pill hover on nav links"
+url: https://mercury.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: NAV
+interaction: Nav link gets a filled pill background over 300 ms on hover.
+visual: text links, pill hover
+states:
+  - default
+  - hover
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Colour-only background on a rounded box; radius comes from the nav-item token.
+customizable:
+  - surface colour
+  - radius
+coupling: A
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - background-color
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/N-mercury-nav/probe.json#1
+  animations:
+    - target: a(host)
+      property: background-color
+      durationMs: 300
+      easing: cubic-bezier(0, 0, 0.2, 1)
+  reducedMotionAnimations: 1
+scores:
+  distinctiveness: 2
+  usability: 5
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: adapt
+proposedId: NAV-001
+notes: Baseline nav item.

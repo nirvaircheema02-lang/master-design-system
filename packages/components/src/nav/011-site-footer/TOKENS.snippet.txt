@@ -1,0 +1,7 @@
+  component.ftr = {
+    bg: t("{color.surface.sunken}", "color"), fg: t("{color.text.primary}", "color"), muted: t("{color.text.secondary}", "color"), border: t("{color.border.subtle}", "color"),
+    radius: t("{radius.control}", "dimension"), font: t("{font.sans}"), gap: t("2.5rem", "dimension"), gutter: t("{space.4}", "dimension"), "padding-y": t("3.5rem", "dimension"),
+    "max-width": t("80rem", "dimension"), "link-height": t("1.75rem", "dimension"), focus: t("{color.focus}", "color"), "focus-width": t("2px", "dimension"),
+    sig: t("{color.text.primary}", "color"), "sig-strength": t("14%"), "sig-size": t("clamp(2.75rem, 17.4vw, 16rem)"),
+    "fade-duration": t("{duration.fast}", "duration"), "fade-ease": t("{ease.standard}"),
+  };

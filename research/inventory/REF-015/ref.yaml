@@ -1,0 +1,68 @@
+id: REF-015
+name: "Aceternity: invert button"
+url: https://ui.aceternity.com/components/tailwindcss-buttons
+sourceKind: library
+captured: 2026-11-06
+category: CTA
+interaction: Fill, text colour and border colour swap on hover (200 ms).
+visual: outline to solid inversion
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: "Colour only: a skin of the solid-fade CTA."
+customizable:
+  - color
+coupling: A
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - background-color
+    - color
+    - border-color
+  js: false
+license:
+  status: proprietary
+  usage: inspiration-only
+  note: "Aceternity: proprietary and ambiguous terms (register.md). Do not copy code or visuals."
+measured:
+  probeFile: research/probe/L-aceternity-buttons/probe.json#0
+  animations:
+    - target: button(host)
+      property: background-color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button(host)
+      property: border-bottom-color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button(host)
+      property: border-left-color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button(host)
+      property: border-right-color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button(host)
+      property: border-top-color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+    - target: button(host)
+      property: color
+      durationMs: 200
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 6
+scores:
+  distinctiveness: 2
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 4
+  simplicity: 5
+  license: 2
+  neutrality: 4
+recommendation: inspiration
+proposedId: null
+notes: Becomes skin "outline-invert" of CTA-003.

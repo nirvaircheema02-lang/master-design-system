@@ -1,0 +1,351 @@
+[
+  {
+    "id": "L-magicui-shimmer-button",
+    "url": "https://magicui.design/docs/components/shimmer-button",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-magicui-rainbow-button",
+    "url": "https://magicui.design/docs/components/rainbow-button",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-magicui-interactive-hover-button",
+    "url": "https://magicui.design/docs/components/interactive-hover-button",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-magicui-pulsating-button",
+    "url": "https://magicui.design/docs/components/pulsating-button",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-magicui-shiny-button",
+    "url": "https://magicui.design/docs/components/shiny-button",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-magicui-animated-subscribe-button",
+    "url": "https://magicui.design/docs/components/animated-subscribe-button",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-aceternity-moving-border",
+    "url": "https://ui.aceternity.com/components/moving-border",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-aceternity-hover-border",
+    "url": "https://ui.aceternity.com/components/hover-border-gradient",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-aceternity-buttons",
+    "url": "https://ui.aceternity.com/components/tailwindcss-buttons",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-reactbits-magnet",
+    "url": "https://reactbits.dev/animations/magnet",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-reactbits-click-spark",
+    "url": "https://reactbits.dev/animations/click-spark",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-reactbits-shiny-text",
+    "url": "https://reactbits.dev/text-animations/shiny-text",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-reactbits-star-border",
+    "url": "https://reactbits.dev/animations/star-border",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-motionprimitives-magnetic",
+    "url": "https://motion-primitives.com/docs/magnetic",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-motionprimitives-spotlight",
+    "url": "https://motion-primitives.com/docs/spotlight",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-motionprimitives-text-shimmer",
+    "url": "https://motion-primitives.com/docs/text-shimmer",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-motionprimitives-animated-background",
+    "url": "https://motion-primitives.com/docs/animated-background",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "L-shadcn-button",
+    "url": "https://ui.shadcn.com/docs/components/button",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "D-baseui-button",
+    "url": "https://base-ui.com/react/components/button",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "D-radix-button",
+    "url": "https://www.radix-ui.com/themes/docs/components/button",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "D-atlassian-button",
+    "url": "https://atlassian.design/components/button/examples",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "D-carbon-button",
+    "url": "https://carbondesignsystem.com/components/button/usage/",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "D-polaris-button",
+    "url": "https://polaris-react.shopify.com/components/actions/button",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "D-primer-button",
+    "url": "https://primer.style/components/button",
+    "kind": "cta",
+    "scope": "main"
+  },
+  {
+    "id": "D-material-buttons",
+    "url": "https://m3.material.io/components/buttons/overview",
+    "kind": "cta"
+  },
+  {
+    "id": "S-stripe",
+    "url": "https://stripe.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-linear",
+    "url": "https://linear.app/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-vercel",
+    "url": "https://vercel.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-framer",
+    "url": "https://www.framer.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-raycast",
+    "url": "https://www.raycast.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-resend",
+    "url": "https://resend.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-cal",
+    "url": "https://cal.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-supabase",
+    "url": "https://supabase.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-ramp",
+    "url": "https://ramp.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-mercury",
+    "url": "https://mercury.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-notion",
+    "url": "https://www.notion.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-figma",
+    "url": "https://www.figma.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-arc",
+    "url": "https://arc.net/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-cursor",
+    "url": "https://cursor.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-wise",
+    "url": "https://wise.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-revolut",
+    "url": "https://www.revolut.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-monzo",
+    "url": "https://monzo.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-plaid",
+    "url": "https://plaid.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-brex",
+    "url": "https://www.brex.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-shopify",
+    "url": "https://www.shopify.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-mckinsey",
+    "url": "https://www.mckinsey.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-bcg",
+    "url": "https://www.bcg.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-deloitte",
+    "url": "https://www.deloitte.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-wired",
+    "url": "https://www.wired.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-theverge",
+    "url": "https://www.theverge.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-nytimes",
+    "url": "https://www.nytimes.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-aesop",
+    "url": "https://www.aesop.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-glossier",
+    "url": "https://www.glossier.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-patagonia",
+    "url": "https://www.patagonia.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "S-cartier",
+    "url": "https://www.cartier.com/",
+    "kind": "cta"
+  },
+  {
+    "id": "C-vercel-templates",
+    "url": "https://vercel.com/templates",
+    "kind": "card"
+  },
+  {
+    "id": "C-framer-gallery",
+    "url": "https://www.framer.com/gallery/",
+    "kind": "card"
+  },
+  {
+    "id": "C-mckinsey-insights",
+    "url": "https://www.mckinsey.com/featured-insights",
+    "kind": "card"
+  },
+  {
+    "id": "C-theverge-cards",
+    "url": "https://www.theverge.com/",
+    "kind": "card"
+  },
+  {
+    "id": "C-aesop-cards",
+    "url": "https://www.aesop.com/",
+    "kind": "card"
+  },
+  {
+    "id": "N-stripe-nav",
+    "url": "https://stripe.com/",
+    "kind": "nav"
+  },
+  {
+    "id": "N-linear-nav",
+    "url": "https://linear.app/",
+    "kind": "nav"
+  },
+  {
+    "id": "N-vercel-nav",
+    "url": "https://vercel.com/",
+    "kind": "nav"
+  },
+  {
+    "id": "N-notion-nav",
+    "url": "https://www.notion.com/",
+    "kind": "nav"
+  },
+  {
+    "id": "N-mercury-nav",
+    "url": "https://mercury.com/",
+    "kind": "nav"
+  }
+]

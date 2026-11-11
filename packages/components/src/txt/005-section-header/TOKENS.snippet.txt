@@ -1,0 +1,7 @@
+  component.sech = {
+    fg: t("{color.text.primary}", "color"), muted: t("{color.text.secondary}", "color"), eyebrow: t("{color.accent.ink}", "color"), hl: t("{color.accent.ink}", "color"), "hl-to": t("{color.accent.ink}", "color"),
+    font: t("{font.sans}"), display: t("{font.display}"), gap: t("0.875rem", "dimension"), measure: t("44rem", "dimension"), "split-gap": t("{space.12}", "dimension"),
+    "eyebrow-size": t("{font-size.xs}", "dimension"), "eyebrow-weight": t("{font-weight.semibold}", "number"), "eyebrow-tracking": t("0.16em", "dimension"), "rule-length": t("1.125rem", "dimension"), "rule-width": t("1px", "dimension"),
+    "title-min": t("{font-size.xl}", "dimension"), "title-max": t("{font-size.4xl}", "dimension"), "title-weight": t("{font-weight.bold}", "number"), "title-tracking": t("{tracking.tight}", "dimension"), "title-lh": t("{line-height.tight}", "number"),
+    "lede-min": t("{font-size.sm}", "dimension"), "lede-max": t("{font-size.lg}", "dimension"), "lede-lh": t("{line-height.relaxed}", "number"),
+  };

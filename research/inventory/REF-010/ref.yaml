@@ -1,0 +1,58 @@
+id: REF-010
+name: "Framer: opacity with spring-like easing"
+url: https://www.framer.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: CTA fades 400 ms using a CSS linear() easing that approximates a spring.
+visual: solid CTA
+states:
+  - default
+  - hover
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: linear() easing is a motion-token change only, no structure.
+customizable:
+  - duration
+  - easing
+coupling: A
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - opacity
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-framer/probe.json#0
+  animations:
+    - target: a(host)
+      property: opacity
+      durationMs: 400
+      easing: linear(0 0%, 0.024 2.5641025641025643%, 0.0823 5.128205128205128%, 0.1594 7.692307692307692%, 0.2448
+        10.256410256410255%, 0.3315 12.82051282051282%, 0.4152 15.384615384615383%, 0.4934 17.94871794871795%,
+        0.5646 20.51282051282051%, 0.6282 23.076923076923077%, 0.6844 25.641025641025642%, 0.7334
+        28.205128205128208%, 0.7758 30.769230769230774%, 0.8122 33.333333333333336%, 0.8432 35.8974358974359%,
+        0.8694 38.46153846153846%, 0.8916 41.02564102564102%, 0.9102 43.589743589743584%, 0.9258
+        46.153846153846146%, 0.9388 48.71794871794871%, 0.9496 51.28205128205127%, 0.9586 53.84615384615383%,
+        0.966 56.410256410256395%, 0.9722 58.97435897435896%, 0.9772 61.53846153846152%, 0.9814
+        64.10256410256409%, 0.9848 66.66666666666666%, 0.9876 69.23076923076923%, 0.9899 71.7948717948718%,
+        0.9918 74.35897435897436%, 0.9933 76.92307692307693%, 0.9946 79.4871794871795%, 0.9956
+        82.05128205128207%, 0.9964 84.61538461538463%, 0.9971 87.17948717948718%, 0.9977 89.74358974358975%,
+        0.9981 92.30769230769232%, 0.9985 94.87179487179488%, 0.9988 97.43589743589743%, 1 100%)
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 4
+  usability: 4
+  a11y: 4
+  performance: 5
+  themability: 5
+  simplicity: 4
+  license: 3
+  neutrality: 5
+recommendation: inspiration
+proposedId: null
+notes: 'Motion-token evidence: add a "spring" easing token expressed as linear(); check Baseline support
+  before use.'

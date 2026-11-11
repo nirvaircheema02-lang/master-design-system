@@ -1,0 +1,51 @@
+id: REF-002
+name: "Vercel: solid CTA fade"
+url: https://vercel.com/
+sourceKind: production-site
+captured: 2026-11-06
+category: CTA
+interaction: Primary CTA changes fill over 150 ms on hover with a standard ease; nothing else moves.
+visual: solid fill, small radius
+states:
+  - default
+  - hover
+  - focus-visible
+responsive: Hover is decorative; on coarse pointers the :active state carries the feedback.
+feasibility: Colour transition on hover; no layout or shape change, so every radius works unchanged.
+customizable:
+  - color
+  - radius
+  - size
+  - duration
+coupling: A
+radiusSupport: any
+a11y: Colour change only, which reduced-motion allows; no movement to remove.
+perf:
+  animated:
+    - background-color
+  js: false
+license:
+  status: not-applicable
+  usage: clean-room
+  note: "Public production site: behaviour observed with the probe; no code, CSS or assets reused."
+measured:
+  probeFile: research/probe/S-vercel/probe.json#1
+  animations:
+    - target: a(host)
+      property: background-color
+      durationMs: 150
+      easing: cubic-bezier(0.4, 0, 0.2, 1)
+  reducedMotionAnimations: 0
+scores:
+  distinctiveness: 2
+  usability: 5
+  a11y: 5
+  performance: 5
+  themability: 5
+  simplicity: 5
+  license: 3
+  neutrality: 5
+recommendation: adapt
+proposedId: CTA-003
+notes: Baseline CTA. 41 of 109 measured CTAs are colour/opacity-only, so a polished plain fill is the most
+  common premium treatment and our CTAs currently have NO transition on hover.

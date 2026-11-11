@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@import "../../packages/tokens/build/finova/theme.css";
+@import "../../packages/tokens/build/finova/tailwind-theme.css";
+@source "./sample.html";
