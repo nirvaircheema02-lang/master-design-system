@@ -17,3 +17,6 @@ packages/headless/.tmp-*
 apps/gallery/.next-dev
 apps/gallery/.shots
 *.tsbuildinfo
+brands/singhtech.json
+kits/singhtech.kit.json
+docs/brands/SINGHTECH.md
