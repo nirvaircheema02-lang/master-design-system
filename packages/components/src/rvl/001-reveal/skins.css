@@ -1,7 +1,0 @@
-/* Generated from manifest.json by `pnpm build:skins`. Do not edit. */
-@layer components {
-  .ds-rvl-001:not([data-skin]),
-  .ds-rvl-001[data-skin="default"] {
-
-  }
-}

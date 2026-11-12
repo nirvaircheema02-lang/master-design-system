@@ -1,6 +1,0 @@
-  component.chat = {
-    bg: t("{color.accent.DEFAULT}", "color"), fg: t("{color.on-accent}", "color"), size: t("3.375rem", "dimension"), radius: t("{radius.full}", "dimension"), "radius-box": t("{radius.control}", "dimension"),
-    offset: t("{space.6}", "dimension"), z: t("{z.sticky}", "number"), shadow: t("{elevation.2}"), gap: t("{space.2}", "dimension"), "pad-x": t("{space.5}", "dimension"),
-    "hover-scale": t("1.08", "number"), duration: t("{duration.quick}", "duration"), ease: t("{ease.out}"), "enter-duration": t("{duration.slow}", "duration"), "enter-delay": t("{duration.slow}", "duration"),
-    focus: t("{color.focus}", "color"), "focus-width": t("2px", "dimension"), font: t("{font.sans}"),
-  };

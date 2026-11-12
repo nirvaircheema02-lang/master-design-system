@@ -1,8 +1,0 @@
-# NAV-011 Site Footer
-What: the page's closing region as a `<footer>` (contentinfo): brand block, link columns (each a real heading + list), contact items, bottom bar with a copyright slot and small links, and an optional huge decorative `signature` word (`aria-hidden`, never read aloud). Static, no JavaScript.
-When: once per page, as a direct child of the page root outside `<main>` (nested inside `<main>`/`<article>` a `<footer>` is not a contentinfo landmark).
-Props: `brand` (required), `description`, `action`, `columns[{heading, links[]}]`, `contact[{label, value, href?}]`, `contactHeading`, `legal`, `bottomLinks`, `signature`, `navLabel`, `legalNavLabel`, `headingLevel` (2-4), `skin`, `design`, `className`.
-Designs: `columns` (default: brand | link columns | contact on one row), `centered` (one centred stack), `split` (brand + contact on the left, ruled link cells on the right, start-aligned word). Skins: `sunken` (default), `accent`.
-Token family: `ftr` (snippet in TOKENS.snippet.txt; must be pasted into theme.ts before the lint/build see it).
-Known limits: the site's "footer revealed from under the page" scroll effect is not included (it needs scroll JS and a fixed layer); the signature word has no gradient (a gradient needs colour stops from tokens). On the `accent` skin links share the foreground colour and are told apart by the hover underline and the list structure.
-Not verified: screen readers (VoiceOver/NVDA), 320px/200% zoom in a real browser, contrast of the accent skin for every brand (the brand contract guarantees accent vs on-accent only), landmark exposure in the gallery shell (depends on where the fixture is mounted).

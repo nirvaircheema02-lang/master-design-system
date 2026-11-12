@@ -266,8 +266,8 @@ T("catches (breadcrumb): the nav has no name", ...CRUMB, rep("Component.tsx", " 
 T("catches (breadcrumb): a long trail scrolls sideways instead of wrapping", ...CRUMB, rep("nav-009.css", "flex-wrap: wrap;", "flex-wrap: nowrap; white-space: nowrap;"), "reflow-320");
 const HDR6 = ["NAV-006", "006-sticky-header", "nav"] as const;
 T("catches (sticky header): not sticky", ...HDR6, rep("nav-006.css", "position: sticky; top: 0;", "position: relative; top: 0;"), ["position-sticky", "stays-pinned"]);
-T("catches (sticky header): no scroll-padding-top (focus slides under it)", ...HDR6, rep("Component.tsx", "root.style.scrollPaddingTop = `${el.offsetHeight + 8}px`;", ""), ["scroll-padding-top", "focus-not-obscured", "anchor-not-hidden"]);
-T("catches (sticky header): scroll-padding smaller than the header", ...HDR6, rep("Component.tsx", "`${el.offsetHeight + 8}px`", "`${Math.round(el.offsetHeight / 3)}px`"), ["scroll-padding-top", "focus-not-obscured", "anchor-not-hidden"]);
+T("catches (sticky header): no scroll-padding-top (focus slides under it)", ...HDR6, rep("Component.tsx", "root.style.scrollPaddingTop = `${el.offsetHeight + (parseFloat(getComputedStyle(el).top) || 0) + 8}px`;", ""), ["scroll-padding-top", "focus-not-obscured", "anchor-not-hidden"]);
+T("catches (sticky header): scroll-padding smaller than the header", ...HDR6, rep("Component.tsx", "`${el.offsetHeight + (parseFloat(getComputedStyle(el).top) || 0) + 8}px`", "`${Math.round(el.offsetHeight / 3)}px`"), ["scroll-padding-top", "focus-not-obscured", "anchor-not-hidden"]);
 T("catches (sticky header): two navs share a name", ...HDR6, rep("Component.tsx", "<nav aria-label={navLabel}>", '<nav aria-label="Footer">'), "nav-names-unique");
 T("catches (sticky header): nothing separates it from the page", ...HDR6, (d) => { rep("nav-006.css", "border-bottom: 1px solid var(--ds-nav-header-border); box-shadow: var(--ds-nav-header-shadow);", "")(d); }, "header-delineated");
 const HDR7 = ["NAV-007", "007-hide-on-scroll-header", "nav"] as const;
@@ -347,9 +347,9 @@ T("catches (radio): the radios do not form one group", ...RAD, rep("Component.ts
 T("catches (radio): selected state shown by colour alone", ...RAD, rep("inp-006.css", "  .ds-inp-006__input:checked + .ds-inp-006__dot::after { opacity: 1; }\n", ""), "state-not-colour-only");
 T("catches (radio): focus ring removed", ...RAD, rep("inp-006.css", /\.ds-inp-006__input:focus-visible \+ \.ds-inp-006__dot \{[^}]*\}/, ""), "focus-visible");
 const SW = ["INP-007", "007-switch", "inp"] as const;
-T("catches (switch): the thumb never moves", ...SW, rep("inp-007.css", "background: var(--ds-choice-thumb-on); transform: translateX(calc(var(--ds-choice-track-w) - var(--ds-choice-track-h))); }", "background: var(--ds-choice-thumb-on); }"), "state-not-colour-only");
+T("catches (switch): the thumb never moves", ...SW, rep("inp-007.css", "background: var(--ds-choice-thumb-on); transform: translateX(calc(var(--_w) - var(--_t) - var(--_i) * 2)); }", "background: var(--ds-choice-thumb-on); }"), "state-not-colour-only");
 T("catches (switch): not exposed as a switch", ...SW, rep("Component.tsx", 'type="checkbox" role="switch"', 'type="checkbox"'), "role-switch");
-T("catches (switch): thumb vanishes on the OFF track", ...SW, rep("inp-007.css", "border-radius: 50%; background: var(--ds-choice-thumb);", "border-radius: 50%; background: var(--ds-choice-track-off);"), "thumb-off-contrast");
+T("catches (switch): thumb vanishes on the OFF track", ...SW, rep("inp-007.css", "border-radius: calc(var(--_r) * 0.6);  background: var(--ds-choice-thumb);", "border-radius: calc(var(--_r) * 0.6);  background: var(--ds-choice-track-off);"), "thumb-off-contrast");
 T("catches (switch): the thumb and track jump instead of sliding", ...SW, (d) => { rep("inp-007.css", "transition: transform var(--ds-choice-fade-duration) var(--ds-choice-fade-ease), background-color var(--ds-choice-fade-duration) var(--ds-choice-fade-ease);", "")(d); rep("inp-007.css", "transition: background-color var(--ds-choice-fade-duration) var(--ds-choice-fade-ease);\n  }\n  .ds-inp-007__thumb", "}\n  .ds-inp-007__thumb")(d); }, "check-transition");
 const STAT = ["CRD-005", "005-stat-card", "crd"] as const;
 T("catches (stat): the label is not tied to its value", ...STAT, rep("Component.tsx", '<dt className="ds-crd-005__label">{label}</dt>', '<dd className="ds-crd-005__label">{label}</dd>'), "label-tied-to-value");

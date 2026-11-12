@@ -1,4 +1,0 @@
-  component.rotw = {
-    from: t("{color.accent.ink}", "color"), to: t("{color.accent.ink}", "color"), distance: t("0.875rem", "dimension"),
-    "fade-duration": t("{duration.slow}", "duration"), "move-duration": t("{duration.slow}", "duration"), ease: t("{ease.out}"),
-  };

@@ -1,4 +1,0 @@
-  component.rvl = {
-    distance: t("2rem", "dimension"), shift: t("0.625rem", "dimension"), "rise-scale": t("0.975", "number"), "pop-scale": t("0.94", "number"),
-    "fade-duration": t("{duration.slow}", "duration"), "move-duration": t("{duration.slow}", "duration"), ease: t("{ease.out}"),
-  };

@@ -1,8 +1,0 @@
-# CRD-007 Testimonial Slider
-What: quotes slide one at a time; avatar-initials author line, a progress bar (or segments) that is also the slide picker, previous/next buttons and a pause button. Archetype `atom` (the brief's choice), class B (track slide + fill, transform only).
-When: 2-6 short customer quotes in one spot. For one quote use a plain figure. Client component (`'use client'`).
-Props: `items[{quote,name,role}]`, `interval` (ms, default 6500), `autoAdvance` (default true), `labels` (all screen-reader strings, `{n}`/`{total}`/`{name}` placeholders), `skin`, `design`. Token family `tsl`.
-Designs: `card` (default, one continuous bar), `segments` (one pill per quote), `plain` (no box, centred, larger quote). Skins: `accent`, `neutral`.
-Behaviour: auto-advance stops on mouse hover, on keyboard focus (focus-visible only), after the Pause button (WCAG 2.2.2), and always under reduced motion (no timer, no pause button, no sliding). Slides not showing are `inert`. Live region is `off` while rotating itself and `polite` once stopped. Picker is plain buttons with `aria-current` (not a tablist; deviation from the site's tab roles, which had no tabpanels).
-Known limits: without JS only the first quote shows (the rest are `inert`, controls inert). The bar fill is a transform, not the site's width animation.
-Verified (headless Chromium, scratch harness): inert flags, auto-advance after 6.5 s, hover pause, Pause button, next/prev wrap, picker, reduced motion (no advance), 44px targets, 320px no horizontal scroll, light/dark. NOT verified: conformance harness (needs an `atom` branch for CRD-007), screen-reader announcements, touch behaviour on a real device, RTL (`:dir(rtl)` rules written, not rendered).

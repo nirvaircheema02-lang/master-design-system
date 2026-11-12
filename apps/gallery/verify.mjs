@@ -36,7 +36,7 @@ ok(/master library/i.test(await page.locator(".flow").innerText()) && /brand ui 
 ok((await page.locator(".steps li").count()) === 4, "Overview shows the 4-step workflow");
 await page.goto(`${BASE}/components/`);
 await page.waitForSelector(".card");
-ok((await page.locator(".card").count()) === 68, "the components page shows 68 component cards");
+ok((await page.locator(".card").count()) === 57, "the components page shows 57 component cards");
 ok(await page.locator(".card").evaluateAll((cs) => cs.every((c) => c.querySelector(".stage-mini")?.children.length > 0)), "each card renders the real component");
 ok(/CTA-001/.test(await page.locator(".card", { hasText: "CTA-001" }).first().innerText()) && !/class [ABC]|token-only|conformance/.test(await page.locator(".card").first().innerText()), "card shows the id and no engineering badges");
 await page.screenshot({ path: join(shots, "home.png") });
@@ -273,7 +273,7 @@ for (const id of ["INP-004", "INP-007", "ACC-001", "CRD-005", "NAV-010", "TST-00
 // 3n. discovery: search, filters, command palette, Interactions page
 await go("/components/");
 await page.waitForSelector(".card");
-ok(/68 of 68/.test(await page.locator(".gal-count").innerText()), "the gallery starts with all 68 components");
+ok(/57 of 57/.test(await page.locator(".gal-count").innerText()), "the gallery starts with all 57 components");
 await page.fill("#gal-q", "modal"); await page.waitForTimeout(150);
 const modalCards = await page.locator(".card").count();
 ok(modalCards >= 1 && modalCards < 10 && (await page.locator(".card b a", { hasText: "Modal Dialog" }).count()) === 1, `searching “modal” finds the dialog (${modalCards} cards)`);
@@ -288,7 +288,7 @@ await page.getByRole("button", { name: "Form controls" }).click();
 await page.getByRole("button", { name: "Pointer-reactive" }).click(); await page.waitForTimeout(100);
 ok((await page.locator(".card").count()) === 2 && (await page.locator(".card", { hasText: "Magnetic" }).count()) === 1, "the Pointer-reactive filter shows the two pointer CTAs");
 await page.getByRole("button", { name: "Clear all" }).click(); await page.waitForTimeout(100);
-ok((await page.locator(".card").count()) === 68, "Clear all restores every component");
+ok((await page.locator(".card").count()) === 57, "Clear all restores every component");
 await page.goto(`${BASE}/components/?kind=overlay%7Cscroll&variants=1`); await page.waitForSelector(".card"); await page.waitForTimeout(200);
 const urlCards = await page.locator(".card").count();
 ok(urlCards >= 1 && urlCards < 20 && (await page.getByRole("button", { name: "Overlays and layers" }).getAttribute("aria-pressed")) === "true", `filters can be opened from a shared link (${urlCards} cards)`);
@@ -441,7 +441,7 @@ await page.click('[data-pattern="saas"] a.pat-use'); await page.waitForSelector(
 ok(/10 components in kit/.test(await page.locator(".steps-meta").innerText()), "“Use this kit” fills the Brand UI Kit and opens the workflow");
 await page.evaluate(() => localStorage.clear());
 const reg = await page.evaluate(async () => (await fetch("/registry.json")).json());
-ok(reg.components.length === 68 && reg.presets.length === 4 && ["finova", "lifestyle", "master-yellow", "corporate"].every((s) => reg.brands.some((b) => b.slug === s)), "registry.json lists 68 components, 4 presets and the reference brands");
+ok(reg.components.length === 57 && reg.presets.length === 4 && ["finova", "lifestyle", "master-yellow", "corporate"].every((s) => reg.brands.some((b) => b.slug === s)), "registry.json lists 57 components, 4 presets and the reference brands");
 const refs = new Set(reg.components.map((c) => c.ref));
 ok(reg.presets.every((p) => p.components.every((r) => refs.has(r))), "every preset component in registry.json exists");
 ok(["icons", "typeScale", "effects"].every((k) => k in reg.schemas.brandConfig.properties) && reg.options.effects.join() === "minimal,subtle,full", "registry.json carries the brand schema and the allowed option values");
